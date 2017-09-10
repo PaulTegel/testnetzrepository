@@ -1,0 +1,13 @@
+[Unit]
+Description=Dnsmasq under Docker
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/local/bin/docker-dnsmasq/start.sh
+ExecStartPost=/usr/local/bin/docker-dnsmasq/resolv.sh
+ExecStop=/usr/local/bin/docker-dnsmasq/stop.sh
+ExecReload=/usr/local/bin/docker-dnsmasq/reload.sh
+
+[Install]
+WantedBy=multi-user.target

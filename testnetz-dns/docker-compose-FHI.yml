@@ -1,0 +1,134 @@
+version: "2.1"
+
+services:
+
+
+
+
+    work-station.wp3:
+        image: docker-registry:5000/testnetz/work-station.wp3
+        build:
+            context: ./work-station/wp3
+        hostname: work-station_wp3
+        environment:
+            - TESTNETZ_WAIT_INTERFACE=eth1
+            - TESTNETZ_GATEWAY=10.0.2.2
+        cap_add:
+            - ALL
+        networks:
+#            konn-lan:
+#                ipv4_address: 10.33.128.221
+#                interface_index: 0 #eth0
+            local-net:
+                ipv4_address: 10.0.2.221
+                interface_index: 0 #eth0
+            management:
+                ipv4_address: 10.60.5.91
+                interface_index: 1 #eth2
+
+    work-station.wp2:
+        image: docker-registry:5000/testnetz/work-station.wp2
+        build:
+            context: ./work-station/wp2
+        hostname: work-station_wp2
+        environment:
+            - TESTNETZ_WAIT_INTERFACE=eth1
+            - TESTNETZ_GATEWAY=10.0.2.2
+        cap_add:
+            - ALL
+        networks:
+            local-net:
+                ipv4_address: 10.0.2.210
+                interface_index: 0 #eth0
+            management:
+                ipv4_address: 10.60.5.90
+                interface_index: 1 #eth2
+
+#    dns-sis.dnsmasq:
+#        image: docker-registry:5000/testnetz/dns-sis.dnsmasq
+#        build:
+#            context: ./dns-sis/dnsmasq
+#        hostname: dns-sis_dnsmasq
+#        cap_add:
+#            - ALL
+#        environment:
+#            - TESTNETZ_GATEWAY=10.0.2.2
+#            - TESTNETZ_WAIT_INTERFACE=eth2
+#        networks:
+#            sis-vpn:
+#                ipv4_address: 172.25.0.4
+#                interface_index: 0 #eth0
+#            management:
+#                ipv4_address: 10.60.5.35
+#                interface_index: 1 #eth1
+#            local-net:
+#                ipv4_address: 10.0.2.222
+#                interface_index: 2 #eth4
+
+
+    dns-sis.dnsmasq2:
+        image: docker-registry:5000/testnetz/dns-sis.dnsmasq2
+        build:
+            context: ./dns-sis/dnsmasq2
+        hostname: dns-sis_dnsmasq_2
+        cap_add:
+            - ALL
+        environment:
+            - TESTNETZ_GATEWAY=10.0.2.2
+            - TESTNETZ_WAIT_INTERFACE=eth2
+        networks:
+            sis-vpn:
+                ipv4_address: 172.25.0.5
+                interface_index: 0 #eth0
+            management:
+                ipv4_address: 10.60.5.36
+                interface_index: 1 #eth1
+            local-net:
+                ipv4_address: 10.0.2.223
+                interface_index: 2 #eth4
+
+
+
+
+
+networks:
+    
+
+    # LE-Netz im Parallel-Modus
+    # eth0 des Konnektors
+    konn-lan:
+        driver: macvlan
+        driver_opts:
+            parent: ${KONN_LAN_INTERFACE:-invalid}
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.33.128.0/24 #192.168.2.0/24
+                  gateway: 10.33.128.1 #192.168.2.199
+
+    # Kontrolle der simulierten Komponenten
+    management:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.60.5.0/24
+
+
+    # Zugangszone SIS
+    sis-vpn:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.25.0.0/28
+                  gateway: 172.25.0.14
+    
+
+    local-net:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.0.2.0/24
+                  gateway: 10.0.2.2

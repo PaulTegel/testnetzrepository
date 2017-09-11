@@ -1,0 +1,36 @@
+$ORIGIN	24.172.in-addr.arpa.
+
+$TTL	3600
+
+@	IN	SOA	nameserver.namd.telematik-test. root.nameserver.namd.telematik-test. (
+				1	; serial number
+				3600	; refresh timeout
+				1800	; retry timeout
+				7200	; authority timeout
+				1800 )	; negative cache TTL
+@	IN	NS	nameserver.namd.telematik-test.
+64.0	IN	PTR	ntp-test.zeitd.telematik-test.
+1.0	IN	PTR	nameserver.namd.telematik-test.
+64.1	IN	PTR	intermed.vsdm.telematik-test.
+
+$INCLUDE K24.172.in-addr.arpa.+008+43069.key
+$INCLUDE K24.172.in-addr.arpa.+008+50808.key
+
+
+gematik.de.	IN	SOA	172.25.0.4 (
+				1	; serial number
+				3600	; refresh timeout
+				1800	; retry timeout
+				7200	; authority timeout
+				1800 )	; negative cache TTL
+
+
+
+;194.25.148.138
+
+
+
+
+
+
+

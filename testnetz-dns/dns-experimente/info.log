@@ -1,0 +1,64 @@
+root@CampusX :-) > dnssec-keygen -a rsamd5 -b 2048 -n zone gematik.de
+Generating key pair............+++ ................+++ 
+Kgematik.de.+001+41640
+root@CampusX :-) > 
+root@CampusX :-) > 
+root@CampusX :-) > 
+root@CampusX :-) > ls
+Kgematik.de.+001+41640.key  Kgematik.de.+001+41640.private
+root@CampusX :-) > 
+root@CampusX :-) > 
+root@CampusX :-) > cat Kgematik.de.+001+41640.key
+; This is a zone-signing key, keyid 41640, for gematik.de.
+; Created: 20170911112945 (Mon Sep 11 13:29:45 2017)
+; Publish: 20170911112945 (Mon Sep 11 13:29:45 2017)
+; Activate: 20170911112945 (Mon Sep 11 13:29:45 2017)
+gematik.de. IN DNSKEY 256 3 1 AwEAAbqGL+28AOioVrtDCN8g8t+X+zZuqs+KwW9Vi6qydUmWLMlmfgpY agDuYBuAI84yOvZ7UkHCZEP7oLIMmIp2N3W6YC8sD/wBmEqqzK6BozMp hq2/gRP61JOev+szEDhKxjbCgwOLjIHQeZyOa6cT5Q36UJNbkSAfdtQ2 AKifoEZLiF4C7Bhc1Xu2MFmCjIaiOZg4STTDMy3Zqgm+nXJqXPCBzaj9 gzOPKaPv2BmY9WQYL/KCRrwpz2uZBE1V1EpoSWNxfVnYyRj8CQ/bKXZe TDI+Fj0RCmc5Y/w/Zj8zI0Z7F3tO2at/e8EWdZ9YIcrEP+8NpF+7UUKJ lU3bDtWiqEU=
+root@CampusX :-) > 
+root@CampusX :-) > 
+root@CampusX :-) > 
+root@CampusX :-) > dnssec-makekeyset -a Kgematik.de.+001+41640
+bash: dnssec-makekeyset: command not found
+root@CampusX :-) > 
+root@CampusX :-) > 
+
+
+
+*********************************************************************************
+
+
+dnssec-keygen -a rsamd5 -b 2048 -n zone gematik.de
+
+
+dnssec-makekeyset -a Kgematik.deXXXXXXXXXXXXXXXXXXXXXXXXxx
+
+
+Zone signieren
+
+dnssec-signzone -o gematik.de gematik.de
+
+
+
+
+#Bind
+
+ZSK
+dnssec-keygen -a RSASHA1 -b 1024 -n ZONE gematik.de
+KSK
+dnssec-keygen -a RSASHA1 -b 2048 -f KSK -n ZONE gematik.de
+
+
+dnssec-signzone -S -N INCREMENT gematik.de
+
+
+
+
+zone "gematik.de" {
+        type master;
+        file "gematik.de.signed";
+	allow-query { any; };
+        allow-transfer { ....; };
+};
+
+
+

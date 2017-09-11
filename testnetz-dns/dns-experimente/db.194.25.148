@@ -1,0 +1,15 @@
+$TTL 3600
+148.25.194.in-addr.arpa.	IN	SOA	172.25.0.4 (
+					1	; serial number
+					3600	; refresh timeout
+					1800	; retry timeout
+					7200	; authority timeout
+					1800 )	; negative cache TTL
+
+gematik.de.	IN	NS	172.25.0.4
+
+
+
+
+
+

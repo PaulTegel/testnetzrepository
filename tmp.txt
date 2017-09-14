@@ -1,0 +1,384 @@
+#/root/Documents/Test-Ausfuehrung
+
+
+sudo apt-get install openjdk-8-jdk openjdk-8-demo openjdk-8-doc openjdk-8-jre-headless openjdk-8-source
+
+
+fakeroot make-jpkg jdk-8u131-linux-x64.tar.gz
+vi /etc/sudoers 
+visudo
+
+
+The Debian package has been created in the current directory.
+You can install the package as root with:
+
+    dpkg -i oracle-java8-jdk_8u131_amd64.deb
+
+
+
+
+paul@CampusX:~$ sudo dpkg -i oracle-java8-jdk_8u131_amd64.deb
+
+
+
+
+**********************************
+
+root@CampusX:~# cd workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./propertyHousekeeping.sh
+
+
+
+root@CampusX:~# cd workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./propertyHousekeeping.sh 
+arp -s 10.10.8.15 00:30:d6:16:62:9b
+start housekeeping
+Aktualisiere Properties
+Start computing
+[Fatal Error] :-1:-1: Premature end of file.
+FAILED: Es ist ein Fehler aufgetreten:
+++++++++++++++++++
+Bitte Testablauf kontrollieren
+++++++++++++++++++
+finished housekeeping
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung#
+
+
+**************************
+
+
+Owo1!Raw1
+Owo1!Raw1
+
+
+
+
+iptables -t nat -L
+
+route del -net 192.168.2.211 gw 10.33.128.230 netmask 255.255.255.255 dev eth0
+
+Jira:  Weiss@Fraunhofer
+
+
+
+
+
+
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./Ausfuehrungssessions/MAI_2017/PAUL/PAKET21/startAutomatedRunPlans.sh
+
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./startTestCases.sh TIP1_A_4542_01
+
+
+****************************************
+
+modprobe 8021q
+vconfig add eth0 10
+
+ifconfig eth0.10 10.33.128.57 netmask 255.255.255.0 up
+ifconfig eth0.10 10.33.128.57/24 up
+
+
+****************
+
+auto eth0.10
+iface eth0.10 inet static
+ address 10.33.128.57
+ netmask 255.255.255.0
+
+******************************************
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+
++++++++++++++++++++++
+
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./startTestCases.sh TIP1_A_5411_01
+
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_4_1_r18720_CampusX_MEHDI_PAKET1_2017_07_06# 
+
+
+
+
+
+***********
+container's IP address from the host
+
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+****************
+Linux Kernel update
+
+Status – Welcher Kernel ist installiert?
+uname -r
+/etc/apt/sources.list
+deb http://http.debian.net/debian jessie-backports main
+deb http://ftp.de.debian.org/debian/ jessie-backports main contrib non-free
+apt-get update
+
+apt-cache search -t jessie-backports linux-image
+------>>>>>linux-image-4.9.0-0.bpo.3-amd64
+ die passenden Header installieren
+apt-get install linux-image-4.9.0-0.bpo.3-amd64 linux-headers-4.9.0-0.bpo.3-amd64
+
+***************
+from/to Konnektor
+scp -P 2222  root@10.10.8.15:/tmp/remoteClient1_crt.pem .
+scp -P 2222  root@10.10.8.15:/tmp/remoteClient1.pem .
+
+scp -P 2222 remoteClient1.pem  root@10.10.8.15:/tmp/
+scp -P 2222 remoteClient1_crt.pem  root@10.10.8.15:/tmp/
+
+/opt/secure/current/konn/conf
+
+
+scp -P 2222 remoteClient1.pem  root@10.10.8.15:/opt/secure/current/konn/conf/
+scp -P 2222 remoteClient1_crt.pem  root@10.10.8.15:/opt/secure/current/konn/conf/
+
+***********
+sshpass -p '123456' ssh root@10.60.5.68 "date -u +%s> ../tmp/dateNTP&&exit"
+
+sshpass -p "123456" scp -p  root@10.60.5.68:/tmp/dateNTP ../tmp
+sshpass -p "123456" scp -p  root@10.60.5.68:/tmp/dateNTP ./tmp
+
+************************
+	
+		CETP
+
+Aktiviere CETP Empfänger
+Führe Konnektor Neustart aus
+Warte bis zu 30 Minuten auf CETP Nachricht...
+Warte maximal 1800 Sekunden auf Events ................................................................
+Keine Events empfangen nach 1800 Sekunden.
+
+************************
+
+
+
+*****************************************
+Message from syslogd@CampusX at Jul 25 23:15:22 ...
+ kernel:[731025.731274] unregister_netdevice: waiting for lo to become free. Usage count = 1
+
+Message from syslogd@CampusX at Jul 25 23:15:32 ...
+ kernel:[731035.811197] unregister_netdevice: waiting for lo to become free. Usage count = 1
+
+*****************************************
+
+systemctl restart NetworkManager.service
+*************************
+
+
+
+
+read -p "Press any key..."
+
+Warte ne Weile, damit der Konnektor alle Folgeaktivitäten abschliessen kann ...
+
+
+***********************************************
+
+
+git reset --hard ac911477bdfc805e5feb227ec9b893274225fde5
+git reset --hard 567379bf7e9e16b3ee0a87cb6d0f94bede777678
+git push --force
+remote: GitLab: You are not allowed to force push code to a protected branch on this project.
+
+
+***********************************************
+TIP1_A_4810_13
+
+LokAdmin	'Lokaler-Administrator'	 #K0nnekt0rLok	#K0nnekt0rLok1
+
+RemAdmin	'Remote-Administrator'	 #K0nnekt0rRem	#K0nnekt0rRem1
+
+SupAdmin	'Super-Administrator'	 #K0nnekt0rSup	#K0nnekt0rSup1
+
+
+
+myadmin		#K0nnekt0rn	#K0nnekt0rn1
+
+
+
+
+************************************************************
+
+
+
+Git uses a username and the email address to associate commits with you identity
+
+Setting your username in Git
+git config --global user.name "Max Mustermann"
+
+Setting your commit email address in Git
+git config --global user.email "email@mail.com"
+
+****
+
+abfragen
+git config --global user.name
+git config --global user.email
+
+************************************************************
+Konnektor
+
+/usr/sbin/tcpdump
+
++++++++++++++++++++++++++++++++
+
+mac 2.network-card
+00:50:b6:18:2d:42
+
+*****************************************************
+
+
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 70:5a:0f:47:28:eb brd ff:ff:ff:ff:ff:ff
+    inet 10.33.128.101/24 brd 10.33.128.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet 10.10.8.6/24 brd 10.10.8.255 scope global eth0:0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::725a:fff:fe47:28eb/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enx803f5d091950: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 80:3f:5d:09:19:50 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.3.100/24 brd 192.168.3.255 scope global enx803f5d091950
+       valid_lft forever preferred_lft forever
+    inet6 fe80::823f:5dff:fe09:1950/64 scope link 
+       valid_lft forever preferred_lft forever
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 02:42:b1:9f:b6:37 brd ff:ff:ff:ff:ff:ff
+    inet 10.250.0.1/16 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:b1ff:fe9f:b637/64 scope link 
+       valid_lft forever preferred_lft forever
+16340: enx0050b6182d42: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:50:b6:18:2d:42 brd ff:ff:ff:ff:ff:ff
+    inet 10.128.33.250/24 brd 10.128.33.255 scope global enx0050b6182d42
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:b6ff:fe18:2d42/64 scope link 
+       valid_lft forever preferred_lft forever
+
+enx0050b6182d42 Link encap:Ethernet  HWaddr 
+  
+          inet addr:10.128.33.250  Bcast:10.128.33.255  Mask:255.255.255.0
+          inet6 addr: fe80::250:b6ff:fe18:2d42/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:205438 errors:0 dropped:2884 overruns:0 frame:0
+          TX packets:1823 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:35932519 (34.2 MiB)  TX bytes:173979 (169.9 KiB)
+
+***********************************************************************************************
+ifconfig enx0050b6182d42 down
+ifconfig enx0050b6182d42 hw ether 80:50:b6:18:2d:42
+ifconfig enx0050b6182d42 up
+
+systemctl restart networking.service
+journalctl -xe
+
+***********************************************************************************************
+
+Job for networking.service failed because the control process exited with error code.
+See "systemctl status networking.service" and "journalctl -xe" for details.
+
+
+
+
+
+
+
+***********************************************************************************************
+git commit -m 'to get through from host to router.nat & add scripts for start,stop and build Docker environment'
+
+
+
+
+
+git add  build-FHI start-FHI stop-FHI work-station/wp2/run.sh work-station/wp3/run.sh
+
+git rm work-station/wp1/Dockerfile work-station/wp2/dhcp.sh work-station/wp2/dummy-runit.sh  work-station/wp2/resolv.conf
+
+git add docker-compose-FHI.yml router/nat/nat.sh sis-konzentrator/strongswan/nat.sh work-station/wp2/Dockerfile work-station/wp3/Dockerfile
+**********************************
+
+21 Aug. 2017
+
+change ip-range of local-net to 10.33.128.0/24
+
+Docker Umgebung wurde an lokalen Netz angepasst.
+
+Es wird eine zweite Netzwerkkarte benötigt. Entsprechend muss man .env Datei anpassen.
+Beispiel:
+KONN_LAN_INTERFACE=eth0
+KONN_WAN_INTERFACE=***
+KONN_LAN_2_INTERFACE=***
+
+Die start-, stop-, build-FHI.sh, reset_Docker_TestEnvironment.sh(eclipse) scripte wurden auch angepasst.
+
+*************************
+
+
+
+kt-a	00:0d:f8:03:8e:f4	10.33.128.103
+
+kt-b	 00:0d:f8:03:8c:4a	 10.33.128.104
+
+kt-c	 00:0d:f8:03:8c:4d	10.33.128.105
+
+70:5a:0f:47:28:eb	10.33.128.101
+
+00:30:d6:16:62:9b	10.33.128.230
+
+
+
+ip route add default via 10.33.128.1 dev eth0
+ip addr add 10.33.128.102/24 dev eth0
+
+ip -s -s neigh flush all
+ip -s -s neigh flush all
+****************************************
+dpkg -l dnsmasq\*
+
+*****************************
+Listening on dns-traffic
+tcpdump -vvv -s 0 -l -n port 53 -i any
+
+
+
+
+
+
+
+
+https://askubuntu.com/questions/16728/hide-current-working-directory-in-terminal
+
+
+ip r a 172.25.0.4 dev eth0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.tichyseinblick.de/

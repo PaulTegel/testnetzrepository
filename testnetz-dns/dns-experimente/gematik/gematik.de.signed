@@ -1,0 +1,102 @@
+; File written on Thu Sep 14 14:36:31 2017
+; dnssec_signzone version 9.9.5-9+deb8u11-Debian
+gematik.de.		3600	IN SOA	nameserver.public.gematik.de. root.nameserver.gematik.de. (
+					10         ; serial
+					60         ; refresh (1 minute)
+					1800       ; retry (30 minutes)
+					7200       ; expire (2 hours)
+					0          ; minimum (0 seconds)
+					)
+			3600	RRSIG	SOA 5 2 3600 (
+					20171014113631 20170914113631 13947 gematik.de.
+					PBG3si8TuCcRm4btDjxGhGzdEVoolYKJ9sc4
+					no+zmI0QpIhvNiA0DzfDO+EPx28pbLyImnjl
+					ndhujBAXkZjTJjInVldRsT+IfyLUy1Nfx0ZP
+					V8DIR8v+9xT3B+F9Vk9o4b7eha8UQ6RtlOnQ
+					ASc6ZTfg20y8Gq0l9uGW6N0j/tY= )
+			3600	NS	nameserver.public.gematik.de.
+			3600	RRSIG	NS 5 2 3600 (
+					20171014113631 20170914113631 13947 gematik.de.
+					CK9CDg8UV1aFVIuSPa75HjyPSUc2GYph1niJ
+					R+CNbLVoMq7zGYYIHFtbxnbQJBiX+/rBBz6r
+					U0zD5R6ZpxjkdyLHemPvQy8z3jWYZpObsBEq
+					FdcZB3Kw+xumw3q5ID4fCLTw67djYCfHnb+C
+					+eLlCWOz/JJy3mPvgzCNanxkdRE= )
+			0	NSEC	gematik.de.gematik.de. NS SOA RRSIG NSEC DNSKEY
+			0	RRSIG	NSEC 5 2 0 (
+					20171014113631 20170914113631 13947 gematik.de.
+					gWOnsd2fSltRI1e/Ns5PCfr7IsiqntfCeRV9
+					EA+HplAPoQsWhyDgEqOxk4WUIWVPHZhl7iyN
+					yeUsf1+VXBRazqsja+IMWR4FChR2FOQJguhb
+					XgAjvynmWaJPNaNrYLvYCAc5XzW3Ujaz4vVh
+					ADSwLPzN9vq9NUtCz+ojyP5Mo7o= )
+			3600	DNSKEY	256 3 5 (
+					AwEAAabakiJI7uSN3hFj356ujF43JvRsAeGG
+					yYbNx0eOsRAYF1MUCVl/JiVqvsjxKtbsllks
+					zNgeOovcv7fsfrdwSNcvZFoScJ6smKCXricA
+					p9aqcHDnOA23vw6NW4BWLn4QTyIdvsoXAGD7
+					r5ux1H2v8Wd6R/z12CCzvmUZjSFyV3lf
+					) ; ZSK; alg = RSASHA1; key id = 13947
+			3600	DNSKEY	257 3 5 (
+					AwEAAcrYM3KIFAvgXH1nRFZaLV1RS0W7v72K
+					5MjWuJlqJzmNfeaJYY3zWYqrGtUpJ85ii5kf
+					XQCzNc8pwpQPZjpIhFlGBc5RH4zuBs6cODOf
+					Ao+R9MnYqGYznbd41s0/o8BAvAnaMlJcYtmr
+					6J2ythKadb4BAXHBFVdFN1trblV4667dCitd
+					O9rkV4qpdQmmnM/854Ey4IuuwZTx14Fd9dm5
+					Nlmj+bs58Sekk2SQxFxdsUMtvlPVtmiytvY5
+					zk/1ZCpvM2aoLvPNw1voI4qvjlETRcnQHjdv
+					djJf18hwWzXMQoTNCDtU2Wyv7Jac+mKYzzAB
+					ZXOLELlIeS5SEeG5lsBTvZk=
+					) ; KSK; alg = RSASHA1; key id = 31177
+			3600	RRSIG	DNSKEY 5 2 3600 (
+					20171014113631 20170914113631 13947 gematik.de.
+					JyLFbW3bxJBno9msQhH9OGZJlvsvxOlUPhvP
+					GhhbRHgWR5xGWCiXtjVAvK55Uy8FATn9hL7k
+					/x9EqSkoPajKzdyPUSTqLO9Aw1AizcmOXccL
+					NtdgcFZMumvtK/cC7nC9eX1NoSldwX4c1lck
+					pa3ld1GTpbxNMS6vIyQ+oNoDufM= )
+			3600	RRSIG	DNSKEY 5 2 3600 (
+					20171014113631 20170914113631 31177 gematik.de.
+					K+s3uGm3bcJBKw1dM8DNkQz7UK9vnwi1F0XL
+					7jNkwKniOPnTKrkM7xyjoMHje33iwO60Gybb
+					ur0y3XXdvyTXTau1KtWZj76e3323uqd7jJ+x
+					6GVIy2fkuDKblWUT+PnypaFoDzm6prWxg75H
+					2pVf5AuLpfn30j67DPNlqD524Q2bG+KFtf1k
+					J+G+ChTVtP0RVHIHncXdM8VKu1ScpycAFEII
+					UTOBFz9aoNT40WYGEIFz4R6CzZyc/FCAPona
+					sxrMSuHNLs/vS1mvxDg1I+7e74LnBbWs/Ja6
+					fbhRKCvNYkLK7yLPNl4Snau8BWgQ7/oUv2vD
+					PixtNJLY7hHEEKXo3w== )
+nameserver.public.gematik.de. 3600 IN A	172.25.0.4
+			3600	RRSIG	A 5 4 3600 (
+					20171014113631 20170914113631 13947 gematik.de.
+					XEEbXFW5m3rhIRDgGmU31wGNhtw0XJSUlbnb
+					xEjt9cxSHI+ubsOKZr+NQH7u67+HI4wHyYf5
+					Och+AnFpHhu7m9SoPGH1Eudj6ZwqrCDXEtRq
+					7qrTtw7IZCOIkBoq+eai6s5lU9alsyR3slp8
+					wIiHwIYDs8ma83eOF5bZPCr+W0E= )
+			0	NSEC	gematik.de. A RRSIG NSEC
+			0	RRSIG	NSEC 5 4 0 (
+					20171014113631 20170914113631 13947 gematik.de.
+					oJTGYWovImtE6sieg+oPgrvoBc6gd9Aq03VB
+					xq0tOXF08b+rwx0awadbbyrJQyfY6ln337aF
+					CgcWFOmsTqPpwGldMA1JrEDuFcVzaNEHLZKW
+					JRPcGj2V5iey6Gdw1KGjt/4FTL+UU7ebtE56
+					0mVTq9aXtGkn7M26PoXRcEHIKio= )
+gematik.de.gematik.de.	3600	IN A	194.25.148.138
+			3600	RRSIG	A 5 4 3600 (
+					20171014113631 20170914113631 13947 gematik.de.
+					Lox5VkO36weaVs2KJBRSaHGNpYXQg/PTVwMw
+					y6ivrntwE7Z9P/VYsaNr8vWtFNKuzBL1gHYq
+					CpuD3cwVAuWvNRDaYUd+WhwS+SM/Q6CpPQtN
+					cHDUtXeuVVLjEP3Em8ZLakcb/wzbfhysO9id
+					t+GlDOvRQ4jrv6GBt+aXg47z9Co= )
+			0	NSEC	nameserver.public.gematik.de. A RRSIG NSEC
+			0	RRSIG	NSEC 5 4 0 (
+					20171014113631 20170914113631 13947 gematik.de.
+					Ar6ePcuhdliPGLtTXmyOOsC3dCKgvDxygcPY
+					K5MonK8djvG/yAztd78WyXmecs0OZ40i3vN6
+					G0GhXxJaSsFeNEDbz9O/QN8W+YKqFzZoeJuJ
+					UqRz5c8/pqweI37z9u9BB/ApaWtUs6rzvhcV
+					YO6THyXMaiyE7/somqGXSTEXjWo= )

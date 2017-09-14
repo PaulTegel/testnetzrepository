@@ -1,0 +1,80 @@
+dig DNSKEY gematik.de. @localhost +multiline
+
+; <<>> DiG 9.9.5-9+deb8u13-Debian <<>> DNSKEY gematik.de. @localhost +multiline
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54232
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;gematik.de.		IN DNSKEY
+
+;; ANSWER SECTION:
+gematik.de.		3600 IN	DNSKEY 256 3 5 (
+				AwEAAabakiJI7uSN3hFj356ujF43JvRsAeGGyYbNx0eO
+				sRAYF1MUCVl/JiVqvsjxKtbsllkszNgeOovcv7fsfrdw
+				SNcvZFoScJ6smKCXricAp9aqcHDnOA23vw6NW4BWLn4Q
+				TyIdvsoXAGD7r5ux1H2v8Wd6R/z12CCzvmUZjSFyV3lf
+				) ; ZSK; alg = RSASHA1; key id = 13947
+gematik.de.		3600 IN	DNSKEY 257 3 5 (
+				AwEAAcrYM3KIFAvgXH1nRFZaLV1RS0W7v72K5MjWuJlq
+				JzmNfeaJYY3zWYqrGtUpJ85ii5kfXQCzNc8pwpQPZjpI
+				hFlGBc5RH4zuBs6cODOfAo+R9MnYqGYznbd41s0/o8BA
+				vAnaMlJcYtmr6J2ythKadb4BAXHBFVdFN1trblV4667d
+				CitdO9rkV4qpdQmmnM/854Ey4IuuwZTx14Fd9dm5Nlmj
+				+bs58Sekk2SQxFxdsUMtvlPVtmiytvY5zk/1ZCpvM2ao
+				LvPNw1voI4qvjlETRcnQHjdvdjJf18hwWzXMQoTNCDtU
+				2Wyv7Jac+mKYzzABZXOLELlIeS5SEeG5lsBTvZk=
+				) ; KSK; alg = RSASHA1; key id = 31177
+
+;; Query time: 13 msec
+;; SERVER: ::1#53(::1)
+;; WHEN: Thu Sep 14 16:10:35 CEST 2017
+;; MSG SIZE  rcvd: 463
+
+root@dns-sis_bind9:~# 
+root@dns-sis_bind9:~# 
+root@dns-sis_bind9:~# 
+root@dns-sis_bind9:~# 
+root@dns-sis_bind9:~# dig A gematik.de. @localhost +noadditional +dnssec +multiline
+
+; <<>> DiG 9.9.5-9+deb8u13-Debian <<>> A gematik.de. @localhost +noadditional +dnssec +multiline
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12261
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 4, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 4096
+;; QUESTION SECTION:
+;gematik.de.		IN A
+
+;; AUTHORITY SECTION:
+gematik.de.		0 IN SOA nameserver.public.gematik.de. root.nameserver.gematik.de. (
+				10         ; serial
+				60         ; refresh (1 minute)
+				1800       ; retry (30 minutes)
+				7200       ; expire (2 hours)
+				0          ; minimum (0 seconds)
+				)
+gematik.de.		0 IN RRSIG SOA 5 2 3600 (
+				20171014124001 20170914124001 13947 gematik.de.
+				ngAF/Dpbe/w97NY3U8YsoxBVdws5GHl+tJ70Y65My3wl
+				VNC2mNxWvQFUjZQP7gZa4OwQteVAZbWCFfQWV9OJBW41
+				zi/cmfeePMSbJeo0vegGwlOjLVTC34eQCDgPTJEIuWir
+				2ZF2A8QxVt2u+TAIa25Tn4/zoiu2cqH1oKNsm1k= )
+gematik.de.		0 IN NSEC gematik.de.gematik.de. NS SOA RRSIG NSEC DNSKEY
+gematik.de.		0 IN RRSIG NSEC 5 2 0 (
+				20171014124001 20170914124001 13947 gematik.de.
+				HV+LSieR4NRP/Vi/t4LInkEhRGb7iVtLp+9xSlyaJkIu
+				HEWBGKtaO65JLIGEwoMP0dChVeeF2mwY1jmwZkOzxxQJ
+				0cfON7pVsdh+W/KfECQDXZ9ZQs+Jv6hvs1IjLuq8oXXq
+				KtK4E/7TMSnQpSBAXFuQ0Gs5qVXdmIvs9jfdTOg= )
+
+;; Query time: 0 msec
+;; SERVER: ::1#53(::1)
+;; WHEN: Thu Sep 14 16:11:46 CEST 2017
+;; MSG SIZE  rcvd: 493
+

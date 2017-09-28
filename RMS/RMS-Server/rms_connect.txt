@@ -1,0 +1,40 @@
+### Vorbereitung
+Installation von mitmproxy auf der WAN-Sim (Host)
+apt-get install mitmproxy
+
+Installation von Java (wenn nciht bereits schon installiert)
+apt-get install default-jre
+
+### Testclient
+Entpacken des Zipfiles und kopieren in das Rootverzeichnis.
+/test-client/bin/test-client first-time-setup Ausführbar machen.
+
+### Konnektor registrieren
+test-client/config/local.conf mit der ICSSN der gSMC-K des zu registrierenden Konnektor ergänzen:
+
+konnektor {
+   # REQUIRED
+   #iccsn = "aff861c26ccc"
+   #iccsn = "aff861c26ccf"
+   iccsn = "<ICCSN>"
+   
+mtimproxy starten.
+
+/test-client/bin/test-client first-time-setup aufrufen
+
+Ausgabe:
+2017-09-08 17:06:29 INFO  FirstTimeSetupTask:45 - Be aware that the credentials are not stored anywhere, so keep them safe!
+{
+  "devicePassword":"INtq1d5ssn4u",
+  "deviceUser":"device_80276883120000011166",
+  "status":"SUCCESSFUL"
+}
+
+Daten bei Konnektor eintragen (Fernwartung)
+•	Nutzername: management/<individueller Nutzername>
+•	Kennwort: <individuelles Kennwort>
+
+Konnektor ist nun im RMS verfügbar.
+
+### Fehlerquellen
+Host (WAN-Sim) erreicht server.domain.com nicht > hosts Datei anpassen.

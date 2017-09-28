@@ -1,0 +1,301 @@
+df -h
+lsblk
+mount
+mc
+ping wp.pl
+cat /etc/resolv.conf
+cd /etc
+cd system
+cd sysconfig
+ls -ltr
+cd network-scripts/
+ls -ltr
+vi ifcfg-eth0
+reboot
+ping wp.pl
+ps -ef | grep sshd
+nc
+yum install nc telnet mc iostat
+nc
+nc -v localhost 22
+poweroff
+ifconfig
+cd /etc/sysconfig/network-scripts/
+ls -l
+ls -l | grep ifcfg
+lspci
+yum install lspci
+apropos lspci
+yum provides "*/lspci"
+yum install pciutils
+lspci
+ls -ltr
+ifconfig eth1 up
+ifconfig
+ls -ltr
+cp ifcfg-eth0 ifcfg-eth1
+vi ifcfg-eth1
+reboot
+ifconfig
+ls -la /home
+df -h
+iotop
+htop
+top
+mc
+cd /var/log
+ls -ltr
+tail lastlog 
+reset
+mc
+ls -ltr
+less messages 
+less secure 
+cat wtmp 
+reset
+ls -l
+df -h
+hostname -v stage
+vi /etc/hosts
+vi ig/network
+vi /etc/sysconfig/network
+vi /etc/hosts
+ping server
+cd /etc/sysconfig
+vi selinux 
+reboot
+service iptables stop
+chkconfig iptables off
+chkconfig --list iptables
+env
+locale
+export LC_ALL=en_EN.UTF-8
+export LC_ALL=en_US.UTF-8
+locale
+chkconfig --list iptables
+ping 8.8.8.8
+cat /etc/resolv.conf
+ping google.pl
+ping 8.8.4.4
+route -n
+ping 212.77.98.9
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+yum update
+yum install java-1.7.0-openjdk ruby ruby-libs ruby-dev
+gem list
+yum install java-1.7.0-openjdk ruby ruby-libs ruby-devel rubygems gcc wget
+gem list
+gem install moneta -v '< 0.7.0'
+gem install net-ssh -v 2.2.2 --no-ri --no-rdoc
+gem install net-ssh-gateway -v 1.1.0 --no-ri --no-rdoc --ignore-dependencies
+gem install net-ssh-multi -v 1.1.0 --no-ri --no-rdoc --ignore-dependencies
+gem install highline -v 1.6.21 --no-ri --no-rdoc --ignore-dependencies
+gem install mime-types -v 1.22
+gem install mixlib-shellout -v 1.3.0
+gem install ohai --no-rdoc --no-ri --verbose -v 6.24.2
+gem install chef --no-ri --verbose -v 10.34.6
+gem list | wc -l
+chef-solo -v
+ll
+tar xfv ./chef-solo-v7.47.12.tgz -C /
+cd /var/
+ll
+cd chef-solo/
+ll
+g
+mkdir /var/config
+cd /var
+ls -ltr
+ln -s /var/chef-solo/config/chef_config /var/config/chef_config.rb
+vi .bash_profile 
+vi .bash_history 
+ifconfig
+systemctl
+/etc/init.d/network restart
+ifconfig
+exit
+cd /var
+ls -l
+vi cookbooks_installer.sh
+cat c8y.local.crt | sed ':a;N;$!ba;s/\n/\\n/g'
+vi cumulocity.json 
+cat c8y.local.key | sed ':a;N;$!ba;s/\n/\\n/g'
+vi cumulocity.json 
+mv cumulocity.json cumulocity.json.orig
+vi 
+vi cumulocity.json 
+mv cumulocity.json cumulocity.json.c8y.local
+mv cumulocity.json.orig cumulocity.json
+vi hosts
+vi network 
+tar xvf chef-solo-v7.47.12.tgz -C /
+vi cumulocity-dev-singlenode.rb 
+df -h
+df -i
+date
+cd /var/chef-solo/
+cd roles/
+ls -ltr
+vi cumulocity-dev-singlenode.rb
+c8y deploy:target dt.json -b build
+c8y deploy:target targets/dt.json -b build
+cd /var/chef-solo
+vi cumulocity-dev-singlenode.rb
+cd roles/
+vi cumulocity-dev-singlenode.rb
+cd /var/log
+ls -ltr
+cd nginx/
+ll
+cat error.log 
+cd ../cumulocity/
+ll
+tail -f *
+ls -ltr
+vi /etc/sysconfig/network
+vi /etc/hosts
+ping stage.c8y.local
+vi /var/chef-solo/roles/cumulocity-dev-singlenode.rb
+pwd
+cd /var/chef-solo/
+ll
+cd data_bags/
+ll
+cd certs/mc
+mc
+pwd
+chef-solo -c soloconf.rb -j runlist.json
+vi roles/cumulocity-dev-singlenode.rb 
+chef-solo -c soloconf.rb -j runlist.json
+vi roles/cumulocity-dev-singlenode.rb 
+chef-solo -c soloconf.rb -j runlist.json
+wget https://cumulocity_ext:ExTdo0skq01^eX@yum.cumulocity.com/centos/6/cumulocity-ext/x86_64/repodata/repmod.xml
+wget https://cumulocity_ext:ExTdo0skq01^eX@yum.cumulocity.com/centos/6/cumulocity-ext/x86_64/repodata/repomd.xml
+ls -ltr
+rm repomd.xml 
+ls
+vi roles/cumulocity-dev-singlenode.rb 
+yum update
+cd /etc/yum.repos.d/
+ll
+vi cumulocity-ext.repo 
+yum update
+cd /var/chef-solo/
+chef-solo -c soloconf.rb -j runlist.json
+vi cumulocity-ext.repo 
+vi roles/cumulocity-dev-singlenode.rb 
+chef-solo -c soloconf.rb -j runlist.json
+vi /etc/nginx/certs/c8y.local.cert 
+mc
+chef-solo -c soloconf.rb -j runlist.json
+ps -ef | grep nginx
+su - postgres
+ll /etc/cumulocity/espertech.license
+ll /etc/cumulocity/
+ls -l 
+vi c8y.licence 
+mc
+hostname -v server
+hostanem server
+cd /var/chef-solo/
+cd roles/
+ll
+vi cumulocity-dev-singlenode.rb
+mc
+cd /var
+cd chef-solo/
+ll
+chef-solo -c soloconf.rb -j runlist.json
+su - postgres
+cp -p /var/chef-solo/c8y.licence /etc/cumulocity/
+vi /var/chef-solo/roles/cumulocity-dev-singlenode.rb
+chef-solo -c soloconf.rb -j runlist.json
+grep micros /etc/cumulocity/cumulocity-core.properties
+service cumulocity-core-karaf stop
+service cumulocity-core-karaf start
+yum install lsb
+yum provides device-simulator-agent-server | grep 7.47
+yum install device-simulator-agent-server-7.47.4-1
+chkconfig --add device-simulator-agent-server
+chkconfig device-simulator-agent-server on
+chkconfig --list device-simulator-agent-server
+vi /etc/device-simulator/device-simulator-agent-server.properties
+service device-simulator-agent-server start
+/var/chef-solo/roles/cumulocity-dev-singlenode.rb
+vi /var/chef-solo/roles/cumulocity-dev-singlenode.rb
+chef-solo -c soloconf.rb -j runlist.json
+pwd
+vi /var/chef-solo/roles/cumulocity-dev-singlenode.rb
+pwd
+chef-solo -c soloconf.rb -j runlist.json
+vi /var/chef/cache/chef-stacktrace.out
+cd roles/
+cd el-sysctl
+ll
+vi metadata.rb 
+cd ..
+ll
+cd ..
+ll
+chef-solo -c soloconf.rb -j runlist.json
+grep micros /etc/cumulocity/cumulocity-core.properties
+service cumulocity-core-karaf stop
+service cumulocity-core-karaf start
+df -h
+yum provides smartrule-agent-server-esper | grep 7.47
+yum install smartrule-agent-server-esper-7.47.4-1
+vi /etc/smartrule-esper/smartrule-agent-server-esper.properties
+cd /etc/smartrule-esper/epl
+ls -l
+vi /etc/smartrule-esper/smartrule-agent-server-esper-logging.xml
+chkconfig --add smartrule-agent-server-esper
+chkconfig smartrule-agent-server-esper on
+chkconfig --list smartrule-agent-server-esper
+service smartrule-agent-server-esper start
+ps -e f
+ps -ef | grep mongo
+pwd
+cd /var/chef-solo/
+ll
+yum provides cumulocity-ui-deployment | grep 7.47 | sort
+yum install cumulocity-ui-deployment-7.47.2-1
+export PATH=/opt/c8y/node-v6.7.0-linux-x64/bin/:$PATH
+which c8y
+mc
+yum install unzip
+mc
+cd /etc/
+vi rc.local 
+reboot
+ps -ef | grep mongo
+ls -l /etc/rc.local 
+vi  /etc/rc.local
+reboot
+ps -ef | grep mongo
+ps -ef 
+service karaf start
+service smartrule-agent-server-esper start
+service cumulocity-core-karaf start
+poweroff
+ifconfig
+vi /etc/hosts
+poweroff
+ifconfig
+vi /etc/smartrule-esper/smartrule-agent-server-esper.properties
+cd /var/chef-solo/
+ll
+cd roles/
+ll
+vi cumulocity-dev-singlenode.rb
+cd ..
+chef-solo -c soloconf.rb -j runlist.json
+service cumulocity-core-karaf stop
+service cumulocity-core-karaf start
+ps -ef | grep mongo
+top -d 1
+cd
+poweroff
+passwd
+vi .bash_history 
+poweroff
+[1~

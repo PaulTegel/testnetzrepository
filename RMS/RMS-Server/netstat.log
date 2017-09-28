@@ -1,0 +1,29 @@
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address               Foreign Address             State       User       Inode      PID/Program name   
+tcp        0      0 0.0.0.0:33216               0.0.0.0:*                   LISTEN      500        9690       1492/java           
+tcp        0      0 0.0.0.0:7777                0.0.0.0:*                   LISTEN      0          9282       1434/nginx          
+tcp        0      0 0.0.0.0:8101                0.0.0.0:*                   LISTEN      500        9830       1492/java           
+tcp        0      0 0.0.0.0:8999                0.0.0.0:*                   LISTEN      500        11688      1492/java           
+tcp        0      0 0.0.0.0:8199                0.0.0.0:*                   LISTEN      500        9692       1492/java           
+tcp        0      0 0.0.0.0:8008                0.0.0.0:*                   LISTEN      0          9283       1434/nginx          
+tcp        0      0 0.0.0.0:27017               0.0.0.0:*                   LISTEN      0          9676       1558/mongod         
+tcp        0      0 0.0.0.0:6666                0.0.0.0:*                   LISTEN      0          9903       1223/java           
+tcp        0      0 0.0.0.0:1099                0.0.0.0:*                   LISTEN      500        9817       1492/java           
+tcp        0      0 0.0.0.0:8334                0.0.0.0:*                   LISTEN      0          9868       1345/java           
+tcp        0      0 0.0.0.0:8303                0.0.0.0:*                   LISTEN      500        10895      1492/java           
+tcp        0      0 0.0.0.0:8111                0.0.0.0:*                   LISTEN      0          9284       1434/nginx          
+tcp        0      0 127.0.0.1:46672             0.0.0.0:*                   LISTEN      500        9804       1492/java           
+tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      0          9280       1434/nginx          
+tcp        0      0 0.0.0.0:8181                0.0.0.0:*                   LISTEN      500        9831       1492/java           
+tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      0          8725       1156/sshd           
+tcp        0      0 127.0.0.1:631               0.0.0.0:*                   LISTEN      0          8629       1112/cupsd          
+tcp        0      0 0.0.0.0:5432                0.0.0.0:*                   LISTEN      26         8781       1188/postmaster     
+tcp        0      0 127.0.0.1:25                0.0.0.0:*                   LISTEN      0          9068       1334/master         
+tcp        0      0 0.0.0.0:1883                0.0.0.0:*                   LISTEN      500        11494      1492/java           
+tcp        0      0 0.0.0.0:443                 0.0.0.0:*                   LISTEN      0          9281       1434/nginx          
+tcp        0      0 0.0.0.0:8989                0.0.0.0:*                   LISTEN      0          16557      1206/java           
+tcp        0      0 0.0.0.0:42559               0.0.0.0:*                   LISTEN      500        9697       1492/java           
+tcp        0      0 :::22                       :::*                        LISTEN      0          8727       1156/sshd           
+tcp        0      0 :::5432                     :::*                        LISTEN      26         8782       1188/postmaster     
+udp        0      0 0.0.0.0:68                  0.0.0.0:*                               0          8240       924/dhclient        
+udp        0      0 0.0.0.0:631                 0.0.0.0:*                               0          8632       1112/cupsd          

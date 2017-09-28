@@ -1,0 +1,94 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.0  19364  1532 ?        Ss   13:16   0:00 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    13:16   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    13:16   0:00 [migration/0]
+root         4  0.0  0.0      0     0 ?        S    13:16   0:00 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S    13:16   0:00 [stopper/0]
+root         6  0.0  0.0      0     0 ?        S    13:16   0:00 [watchdog/0]
+root         7  0.0  0.0      0     0 ?        S    13:16   0:00 [events/0]
+root         8  0.0  0.0      0     0 ?        S    13:16   0:00 [events/0]
+root         9  0.0  0.0      0     0 ?        S    13:16   0:00 [events_long/0]
+root        10  0.0  0.0      0     0 ?        S    13:16   0:00 [events_power_ef]
+root        11  0.0  0.0      0     0 ?        S    13:16   0:00 [cgroup]
+root        12  0.0  0.0      0     0 ?        S    13:16   0:00 [khelper]
+root        13  0.0  0.0      0     0 ?        S    13:16   0:00 [netns]
+root        14  0.0  0.0      0     0 ?        S    13:16   0:00 [async/mgr]
+root        15  0.0  0.0      0     0 ?        S    13:16   0:00 [pm]
+root        16  0.0  0.0      0     0 ?        S    13:16   0:00 [sync_supers]
+root        17  0.0  0.0      0     0 ?        S    13:16   0:00 [bdi-default]
+root        18  0.0  0.0      0     0 ?        S    13:16   0:00 [kintegrityd/0]
+root        19  0.0  0.0      0     0 ?        S    13:16   0:00 [kblockd/0]
+root        20  0.0  0.0      0     0 ?        S    13:16   0:00 [kacpid]
+root        21  0.0  0.0      0     0 ?        S    13:16   0:00 [kacpi_notify]
+root        22  0.0  0.0      0     0 ?        S    13:16   0:00 [kacpi_hotplug]
+root        23  0.0  0.0      0     0 ?        S    13:16   0:00 [ata_aux]
+root        24  0.0  0.0      0     0 ?        S    13:16   0:00 [ata_sff/0]
+root        25  0.0  0.0      0     0 ?        S    13:16   0:00 [ksuspend_usbd]
+root        26  0.0  0.0      0     0 ?        S    13:16   0:00 [khubd]
+root        27  0.0  0.0      0     0 ?        S    13:16   0:00 [kseriod]
+root        28  0.0  0.0      0     0 ?        S    13:16   0:00 [md/0]
+root        29  0.0  0.0      0     0 ?        S    13:16   0:00 [md_misc/0]
+root        30  0.0  0.0      0     0 ?        S    13:16   0:00 [linkwatch]
+root        33  0.0  0.0      0     0 ?        S    13:16   0:00 [khungtaskd]
+root        34  0.0  0.0      0     0 ?        S    13:16   0:00 [kswapd0]
+root        35  0.0  0.0      0     0 ?        SN   13:16   0:00 [ksmd]
+root        36  0.0  0.0      0     0 ?        SN   13:16   0:00 [khugepaged]
+root        37  0.0  0.0      0     0 ?        S    13:16   0:00 [aio/0]
+root        38  0.0  0.0      0     0 ?        S    13:16   0:00 [crypto/0]
+root        45  0.0  0.0      0     0 ?        S    13:16   0:00 [kthrotld/0]
+root        47  0.0  0.0      0     0 ?        S    13:16   0:00 [kpsmoused]
+root        48  0.0  0.0      0     0 ?        S    13:16   0:00 [usbhid_resumer]
+root        49  0.0  0.0      0     0 ?        S    13:16   0:00 [deferwq]
+root        82  0.0  0.0      0     0 ?        S    13:16   0:00 [kdmremove]
+root        83  0.0  0.0      0     0 ?        S    13:16   0:00 [kstriped]
+root       186  0.0  0.0      0     0 ?        S    13:16   0:00 [scsi_eh_0]
+root       191  0.0  0.0      0     0 ?        S    13:16   0:00 [scsi_eh_1]
+root       213  0.0  0.0      0     0 ?        S    13:16   0:00 [scsi_eh_2]
+root       268  0.0  0.0      0     0 ?        S    13:16   0:00 [kdmflush]
+root       281  0.0  0.0      0     0 ?        S    13:16   0:00 [jbd2/dm-0-8]
+root       282  0.0  0.0      0     0 ?        S    13:16   0:00 [ext4-dio-unwrit]
+root       362  0.0  0.0  10848   960 ?        S<s  13:16   0:00 /sbin/udevd -d
+root       615  0.0  0.0  10852   988 ?        S<   13:16   0:00 /sbin/udevd -d
+root       642  0.0  0.0      0     0 ?        S    13:16   0:00 [flush-253:0]
+root       648  0.0  0.0      0     0 ?        S    13:16   0:00 [jbd2/sda1-8]
+root       649  0.0  0.0      0     0 ?        S    13:16   0:00 [ext4-dio-unwrit]
+root       685  0.0  0.0      0     0 ?        S    13:16   0:00 [kauditd]
+root       924  0.0  0.0   9124   704 ?        Ss   13:16   0:00 /sbin/dhclient -H server -1 -q -lf /var/lib/dhclient/dhclient-eth0.leases -pf /var/run/dhclient-eth0.pid eth0
+root      1028  0.0  0.0  29772   840 ?        S<sl 13:17   0:00 auditd
+root      1062  0.0  0.0 251192  1624 ?        Sl   13:17   0:00 /sbin/rsyslogd -i /var/run/syslogd.pid -c 5
+dbus      1091  0.0  0.0  21440   940 ?        Ss   13:17   0:00 dbus-daemon --system
+root      1112  0.0  0.0 189092  3408 ?        Ss   13:17   0:00 cupsd -C /etc/cups/cupsd.conf
+root      1156  0.0  0.0  66260  1164 ?        Ss   13:17   0:00 /usr/sbin/sshd
+postgres  1188  0.1  0.8 250928 36228 ?        S    13:17   0:00 /usr/pgsql-9.1/bin/postmaster -p 5432 -D /var/lib/pgsql/9.1/data
+postgres  1190  0.0  0.0 177404  1496 ?        Ss   13:17   0:00 postgres: logger process                                        
+postgres  1192  0.0  0.0 250928  2292 ?        Ss   13:17   0:00 postgres: writer process                                        
+postgres  1193  0.0  0.0 250928  1708 ?        Ss   13:17   0:00 postgres: wal writer process                                    
+postgres  1194  0.0  0.0 252232  3088 ?        Ss   13:17   0:00 postgres: autovacuum launcher process                           
+postgres  1195  0.0  0.0 179640  1760 ?        Ss   13:17   0:00 postgres: stats collector process                               
+root      1206 11.5 10.4 6444240 423016 ?      Sl   13:17   0:39 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-0.b11.el6_9.x86_64/bin/java -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/cumulocity/cumulocity-cep-server-%p.hprof -XX:NativeMemoryTracking=summary -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/var/log/cumulocity/cumulocity-cep-server-gc.log -XX:-UseGCLogFileRotation -XX:NumberOfGCLogFiles=1 -XX:GCLogFileSize=50M -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark -Xms1g -Xmx4g -XX:PermSize=512m -XX:MaxPermSize=512m -jar /usr/lib/cumulocity/cumulocity-cep-server.jar
+root      1223  5.6  7.5 2536584 305296 ?      Sl   13:17   0:19 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-0.b11.el6_9.x86_64/bin/java -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/device-simulator/device-simulator-agent-server-%p.hprof -XX:NativeMemoryTracking=summary -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/var/log/device-simulator/device-simulator-agent-server-gc.log -XX:-UseGCLogFileRotation -XX:NumberOfGCLogFiles=1 -XX:GCLogFileSize=50M -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark -Xms128m -Xmx384m -XX:PermSize=64m -XX:MaxPermSize=128m -jar /usr/lib/device-simulator/device-simulator-agent-server.jar
+root      1334  0.0  0.0  80960  3484 ?        Ss   13:17   0:00 /usr/libexec/postfix/master
+postfix   1340  0.0  0.0  81040  3432 ?        S    13:17   0:00 pickup -l -t fifo -u
+postfix   1341  0.0  0.0  81108  3484 ?        S    13:17   0:00 qmgr -l -t fifo -u
+root      1345  4.5  7.0 2506424 284904 ?      Sl   13:17   0:15 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-0.b11.el6_9.x86_64/bin/java -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/smartrule-esper/smartrule-agent-server-esper-%p.hprof -XX:NativeMemoryTracking=summary -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/var/log/smartrule-esper/smartrule-agent-server-esper-gc.log -XX:-UseGCLogFileRotation -XX:NumberOfGCLogFiles=1 -XX:GCLogFileSize=50M -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark -Xms128m -Xmx384m -XX:PermSize=64m -XX:MaxPermSize=128m -jar /usr/lib/smartrule-esper/smartrule-agent-server-esper.jar
+root      1434  0.0  0.0 135464  2840 ?        Ss   13:17   0:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
+nginx     1436  0.0  0.1 139196  6744 ?        S    13:17   0:00 nginx: worker process                   
+nginx     1437  0.0  0.1 139196  6744 ?        S    13:17   0:00 nginx: worker process                   
+nginx     1438  0.0  0.1 139196  7100 ?        S    13:17   0:00 nginx: worker process                   
+nginx     1439  0.0  0.1 139196  6744 ?        S    13:17   0:00 nginx: worker process                   
+nginx     1440  0.0  0.0 135656  3244 ?        S    13:17   0:00 nginx: cache manager process            
+karaf     1492 18.1 13.7 4843940 558232 ?      Sl   13:17   1:01 /usr/java/default/bin/java -XX:+UseConcMarkSweepGC -Djava.rmi.server.hostname=127.0.0.1 -Djava.rmi.server.useLocalHostname=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8199 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -server -server -Xms1211M -Xmx2423M -XX:PermSize=16M -XX:MaxPermSize=512M -Dcom.sun.management.jmxremote -Djava.endorsed.dirs=/usr/java/default/jre/lib/endorsed:/usr/java/default/lib/endorsed:/usr/share/cumulocity-core-karaf/lib/endorsed -Djava.ext.dirs=/usr/java/default/jre/lib/ext:/usr/java/default/lib/ext:/usr/share/cumulocity-core-karaf/lib/ext -Dkaraf.instances=/usr/share/cumulocity-core-karaf/instances -Dkaraf.home=/usr/share/cumulocity-core-karaf -Dkaraf.base=/usr/share/cumulocity-core-karaf -Dkaraf.data=/usr/share/cumulocity-core-karaf/data -Djava.io.tmpdir=/usr/share/cumulocity-core-karaf/data/tmp -Djava.util.logging.config.file=/usr/share/cumulocity-core-karaf/etc/java.util.logging.properties -Dkaraf.startLocalConsole=false -Dkaraf.startRemoteShell=true -classpath /usr/share/cumulocity-core-karaf/lib/karaf-jaas-boot.jar:/usr/share/cumulocity-core-karaf/lib/karaf.jar org.apache.karaf.main.Main
+root      1521  0.0  0.0 116892  1240 ?        Ss   13:17   0:00 crond
+root      1538  0.0  0.0  21112   496 ?        Ss   13:17   0:00 /usr/sbin/atd
+root      1558  0.8  1.2 444068 50928 ?        Sl   13:17   0:03 mongod -f /etc/mongo/mongomongod7.conf
+root      1591  0.0  0.0  69828  2344 ?        Ss   13:18   0:00 login -- root     
+root      1593  0.0  0.0   4068   592 tty2     Ss+  13:18   0:00 /sbin/mingetty /dev/tty2
+root      1595  0.0  0.0   4068   592 tty3     Ss+  13:18   0:00 /sbin/mingetty /dev/tty3
+root      1597  0.0  0.0   4068   588 tty4     Ss+  13:18   0:00 /sbin/mingetty /dev/tty4
+root      1599  0.0  0.0   4068   592 tty5     Ss+  13:18   0:00 /sbin/mingetty /dev/tty5
+root      1601  0.0  0.0   4068   584 tty6     Ss+  13:18   0:00 /sbin/mingetty /dev/tty6
+postgres  1731  0.1  0.2 253316  8276 ?        Ss   13:19   0:00 postgres: postgres cumulocity 127.0.0.1(42994) idle             
+postgres  1818  0.4  0.1 252624  6512 ?        Ss   13:19   0:00 postgres: postgres cumulocity 127.0.0.1(43010) idle             
+root      1836  0.0  0.1 577732  5684 ?        Sl   13:21   0:00 /usr/sbin/console-kit-daemon --no-daemon
+root      1902  0.0  0.0 108324  1916 tty1     Ss   13:21   0:00 -bash
+root      1966  0.0  0.0 110252  1172 tty1     R+   13:23   0:00 ps aux

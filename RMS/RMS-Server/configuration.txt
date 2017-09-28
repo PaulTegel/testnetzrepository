@@ -1,0 +1,134 @@
+### VM Konfiguration
+ETH1: Host-only adapter, Netz 11.222.0.0/24 (vnet0)
+ETH2: Bridge, eth0
+
+Login der VM
+VirtualBox - Visuel (englische Tastatur)
+USER: 		root
+PASSWORT:	rootßpassword
+
+Remote
+USER: 		root
+PASSWORT:	root-password
+
+### Tausch der Zertifikate
+Zertifikate (rms_cert.zip) von https://jira.t-systems-mms.eu/browse/GEMATIK-647 beziehen und auf der VM ersetzen.
+
+Webserverkonfiguration 	> /etc/nginx/
+Zertifikate 			> /etc/nginx/certs/
+
+Dabei ggf. vorhandenen Dateien überschreiben.
+
+Webserver muss neugestartet werden mit: "service nginx restart"
+
+### Arbeitsplatz anpassen
+Auf der VM die IP für die LAN Anbindingung auslesen (192.168.2.X) und die hosts Datei anpassen.
+
+Windows - Datei als Administrator öffnen
+Zeile "192.168.2.X server server.domain.com" zu "C:\Windows\System32\drivers\etc\hosts" hinzufügen.
+
+Linux
+Zeile "192.168.2.X server server.domain.com" zu "/etc/hosts" hinzufügen.
+
+### VM - server.domain.com (RMS)
+Default Route hinzufügen: ip r add default via 11.222.0.3 dev eth0
+
+Mit ip r nochmals prüfen, sollte wie folgt aussehen:
+11.222.0.0/24 dev eth0  proto kernel  scope link  src 11.222.0.186
+192.168.2.0/24 dev eth1  proto kernel  scope link  src 192.168.2.186
+169.254.0.0/16 dev eth0  scope link  metric 1002
+169.254.0.0/16 dev eth1  scope link  metric 1003
+default via 11.222.0.3 dev eth0
+
+### Anpassungen DNS (bind)
+VM - public.dns.test
+Erstellen der Datei "/etc/bind/db.domain.com.conf" mit folgendem Inhalt:
+
+; Zone file for domain.com
+$TTL    3600
+$ORIGIN domain.com.
+@       IN      SOA     @    admin.domain.com. (
+                     2012033101         ; Serial
+                           3600         ; Refresh
+                           1800         ; Retry
+                         604800         ; Expire
+                          43200 )       ; Negative Cache TTL
+
+        IN      NS      public.dnsc.test.
+
+@               IN      A       11.222.0.186
+server          IN      A       11.222.0.186
+
+Ergänzen der Konfigurationsdatei "/etc/bind/named.conf.local":
+
+        zone "domain.com." {
+                 type master;
+                 file "/etc/bind/db.domain.com.conf";
+        };
+
+Bind muss neugestartet werden mit: "service bind9 restart"		
+		
+VM - sis-konzentrator.test
+
+Erstellen der Konfigurationsdatei "/etc/bind/db.domain.com.conf":
+
+; Zone file for domain.com
+$TTL    3600
+$ORIGIN domain.com.
+@       IN      SOA     @    admin.domain.com. (
+                     2012033101         ; Serial
+                           3600         ; Refresh
+                           1800         ; Retry
+                         604800         ; Expire
+                          43200 )       ; Negative Cache TTL
+
+@        IN      NS      ns1.nameserver.domain.com.
+
+ns1.nameserver  IN      A       10.50.3.4
+server          IN      A       11.222.0.186
+
+Ergänzen der Konfigurationsdatei "/etc/bind/named.conf.local". Bei view telematik folgendes zusätzlich eintragen:
+
+zone "domain.com." {
+                type master;
+                file "/etc/bind/db.domain.com.conf.signed";
+};
+
+Erstellen der Schlüssel für die neue Zone:
+dnssec-keygen -a RSASHA256 -b 2048 -r /dev/urandom -n ZONE domain.com
+dnssec-keygen -a RSASHA256 -b 2048 -f KSK -r /dev/urandom -n ZONE domain.com
+
+Die erstellen Schlüssel in der db.domain.com.conf eintragen:
+; signing keys for DNSSEC
+$include /etc/bind/keys/Kdomain.com.XXXXXXXXXX.key
+$include /etc/bind/keys/Kdomain.com.XXXXXXXXXX.key
+
+
+
+Anpassen der Datei "/etc/bind/db.root.fake" mit folgendem Inhalt: (XXX mit dem Wert aus der Datei dsset-domain.com ersetzen)
+domain.com.     IN      NS      ns1.nameserver.domain.com
+ns1.nameserver.domain.com IN A 10.50.3.4
+domain.com.     IN      DS 6247  8 2 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Die Zone domain.com signieren:
+dnssec-signzone -K keys/ -o domain.com. db.domain.com.conf				
+				
+Bind muss neugestartet werden mit: "service bind9 restart"
+
+### RMS - Webinterface
+URL: https://server.domain.com/apps/devicemanagement/index.html?showTenant
+
+Login für Oberfläche
+TENANT: management
+USER: 		admin
+PASSWORT: 	admin-pass
+
+### Einstellungen Konnektor
+
+ToDo -  sind noch nicht bekannt
+
+### Einstellungen testen
+Ping von Konnektor zu RMS (server.domain.com) > check
+dig über SIS und IAG > check
+Stand aktuell Verbindung zu RMS wird verscuht aufzubauen, scheitert an Authentication.
+				

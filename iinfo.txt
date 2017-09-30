@@ -1,0 +1,106 @@
+
+
+
+
+
+git clone benutzername@host:/pfad/zum/repository
+
+
+git clone https://paul@ftp1.openlimit.com/poc/ansible.git
+
+git clone https://paul@ftp1.openlimit.com/poc/testnetz.git
+
+git clone https://paul@ftp1.openlimit.com/poc/compose.git
+
+
+
+
+
+
+sudo apt install setuptools
+
+sudo apt-get install -y python-setuptools
+sudo apt-get install python-pip
+
+
+pip uninstall docker-py; pip uninstall docker; pip install docker
+pip install --upgrade pip
+
+sudo easy_install pip
+#sudo pip install ansible
+
+
+
+1)	sudo apt-get install python-pip python-dev
+
+?2)	sudo pip install ansible==1.9.3
+
+
+#ansible 2.2.1.0
+#sudo pip install ansible==2.2.1.0
+
+3)	apt install python3-pip
+
+4)	pip install --upgrade setuptools
+
+5)	apt-get install libxml2-dev and libxslt1-dev
+
+
+6)apt-get install libssl-dev
+7)apt-get install libffi-dev
+
+apt-get install setuptools python
+
+compose paketieren
+
+Der angepasste docker-compose code muss paketiert werden. Aktuell kann es durch auschecken dieses Repositories und Aufruf von python setup.py install installiert werden.
+
+
+# Basis-Image Erstellung
+ansible-playbook -i inventory base-image.yml
+
+# Lokale Docker Einrichtung
+ansible-playbook -i localhost_inventory client-docker.yml
+
+.)	pip install --upgrade setuptools pip
+
+.)	pip install --upgrade ansible
+.)	ip link add link eth0 name eth0.99 type vlan id 99
+
+
+git config --global credential.helper 'cache --timeout=3600'
+chown paul * -R
+
+
+****************
+ip link add link eth1 name eth1.1248 type vlan id 1248
+
+ip link add link enp0s3 name enp0s3.333 type vlan id 333
+*******************
+
+
+cfdisk
+
+mkfs.ext3 /dev/sda3
+
+
+https://linux-club.de/wiki/opensuse/Partitionen_vergr%c3%b6%c3%9fern_(GParted)
+
+
+fdisk -l /dev/sda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

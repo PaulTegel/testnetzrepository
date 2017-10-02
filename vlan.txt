@@ -1,0 +1,52 @@
+
+
+auto eth0.2
+iface eth0.2 inet static
+  address 192.168.2.1
+  netmask 255.255.255.0
+
+auto eth0.3
+iface eth0.3 inet static
+  address 192.168.3.1
+  netmask 255.255.255.0
+-----
+ifup eth0.2
+ifup eth0.3
+
+
+
+
+
+
+
+
+
+lsmod | grep 8021q
+modprobe 8021q
+
+
+auto vlan2
+iface vlan2 inet static
+  address 192.168.2.1
+  netmask 255.255.255.0
+  vlan-raw-device eth0*
+
+* This is only needed when using a naming convention that does not incorporate the physical interface name
+
+**********************************************
+
+ip link add link eth0 name eth0.2 type vlan id 2
+
+oder 
+
+vconfig add eth0 2
+
+*******************************************
+
+bound
+
+snort
+**********************
+http://www.microhowto.info/tutorials/802.1q.html
+
+

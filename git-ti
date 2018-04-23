@@ -1,0 +1,7 @@
+git pull origin dns-ti-zonefile
+
+git branch dns-ti-zonefile
+
+git checkout dns-ti-zonefile
+
+git branch --set-upstream-to=origin/dns-ti-zonefile

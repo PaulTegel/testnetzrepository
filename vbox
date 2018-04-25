@@ -1,0 +1,9 @@
+Um den in VirtualBox eingestellten "gemeinsamen Ordner" "home" <-> %userprofile% auf dem Windows-Rechner
+automatisch im Ubuntu-Linux mouten zu koennen, muessen folgende Pakete intalliert werden:
+        # apt-get update
+        # apt-get install dkms
+        # apt-get install virtualbox-guest-utils
+Der Mountpoint /media/sf_home im Ubuntu-Linux muss vorhanden sein.
+Nach einem Neustart sollte der Inhalt des Windows-Ordners "home" dann unter /media/sf_home zur Verfuegung stehen.
+
+

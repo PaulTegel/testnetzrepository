@@ -1,0 +1,3 @@
+pip install requests==2.18.0
+
+ pip install --upgrade pip

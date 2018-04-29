@@ -1,0 +1,11 @@
+paul@debian:~/compose$ grep -r 'interface_index' *
+compose/config/config_schema_v2.1.json:                        "interface_index": {"type": "integer"},
+Übereinstimmungen in Binärdatei compose/service.pyc
+compose/service.py:        # Make sure that networks with interface_index properties are added to
+compose/service.py:        # Sort the networks according to interface_index
+compose/service.py:        def cmp_interface_index(a, b):
+compose/service.py:        def get_interface_index(list_entry):
+compose/service.py:            interface_index = netdef.get('interface_index', None)
+compose/service.py:            return interface_index
+compose/service.py:        ordered_networks = sorted(network_list, cmp_interface_index, get_interface_index)
+

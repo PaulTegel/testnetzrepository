@@ -10,6 +10,8 @@ pip install texttable==0.9.1
 pip install ipam-client
 
 
+pip install pysimplesoap
+pip install docker-py
 
 
 

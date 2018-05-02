@@ -1,0 +1,23 @@
+Client:
+ Version:	18.03.0-ce
+ API version:	1.37
+ Go version:	go1.9.4
+ Git commit:	0520e24
+ Built:	Wed Mar 21 23:11:46 2018
+ OS/Arch:	linux/amd64
+ Experimental:	false
+ Orchestrator:	swarm
+
+Server:
+ Engine:
+  Version:	18.03.0-ce
+  API version:	1.37 (minimum version 1.12)
+  Go version:	go1.9.4
+  Git commit:	0520e24
+  Built:	Wed Mar 21 23:10:17 2018
+  OS/Arch:	linux/amd64
+  Experimental:	false
+docker-compose version 1.21.1, build unknown
+docker-py version: 3.3.0
+CPython version: 2.7.13
+OpenSSL version: OpenSSL 1.1.0f  25 May 2017

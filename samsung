@@ -1,0 +1,21 @@
+
+
+oot@debian:/home/paul# pip install requests==0.3.1
+Collecting requests==0.3.1
+  Downloading https://files.pythonhosted.org/packages/5e/c0/76fac9445cd8b6394eacae1e098ca0c97767cc0112e45e68521f553df003/requests-0.3.1.tar.gz
+Building wheels for collected packages: requests
+  Running setup.py bdist_wheel for requests ... done
+  Stored in directory: /root/.cache/pip/wheels/b4/40/43/01445ccdc1be905af6dbc79d45f25800ce30f12c67b7977dda
+Successfully built requests
+docker-py 1.10.6 has requirement requests!=2.11.0,>=2.5.2, but you'll have requests 0.3.1 which is incompatible.
+docker 3.3.0 has requirement requests!=2.18.0,>=2.14.2, but you'll have requests 0.3.1 which is incompatible.
+docker-compose 1.21.1 has requirement requests!=2.11.0,!=2.12.2,!=2.18.0,<2.19,>=2.6.1, but you'll have requests 0.3.1 which is incompatible.
+Installing collected packages: requests
+  Found existing installation: requests 2.18.4
+    Uninstalling requests-2.18.4:
+      Successfully uninstalled requests-2.18.4
+Successfully installed requests-0.3.1
+
+
+
+ 

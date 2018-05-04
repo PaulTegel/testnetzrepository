@@ -1,0 +1,20 @@
+docker tag nginx:1.9 localhost:50000/nginx
+
+docker push localhost:50000/nginx
+
+
+
+
+
+
+
+
+docker tag nginx:1.9 docker-registry:50000/nginx
+docker push docker-registry:50000/nginx
+
+
+
+
+docker tag docker-registry:50000/tomf/cts:2.3.4 docker-registry:50000/tomf/cts
+docker push docker-registry:50000/tomf/cts
+

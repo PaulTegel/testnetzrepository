@@ -1,3 +1,12 @@
- Wichtig ist dabei, dass das Programm im Pfad liegt. Im was? Im Pfad, auch PATH genannt. Es gibt eine Umgebungsvariable, in der bestimmte Ordner stehen. Wenn man jetzt einen Programmnamen eingibt, sucht die Shell automatisch in diesen Ordnern und führt das Programm aus, wenn es vorhanden ist.
+ Wichtig ist dabei, dass das Programm im Pfad liegt. Im was? Im Pfad, auch PATH genannt.
+ Es gibt eine Umgebungsvariable PATH, in der bestimmte Ordner stehen.
 
-Wenn ein Programm nicht im Pfad zu finden ist, dann startet es auch nicht. Solche Programme startet man zumeist, indem die Startdatei per Hand ausgeführt wird. Man bewegt sich also wie oben beschrieben mit cd in das Verzeichnis, in dem die Datei gespeichert ist und startet diese dann mit:
+ Mit echo $PATH überprüft man, ob Programm im Pfad liegt. 
+
+
+ Wenn man jetzt einen Programmnamen eingibt,
+ sucht die Shell automatisch in diesen Ordnern und führt das Programm aus, wenn es vorhanden ist.
+
+Wenn ein Programm nicht im Pfad zu finden ist, dann startet es auch nicht.
+ Solche Programme startet man zumeist, indem die Startdatei per Hand ausgeführt wird.
+ Man bewegt sich also wie oben beschrieben mit cd in das Verzeichnis, in dem die Datei gespeichert ist und startet diese dann mit:

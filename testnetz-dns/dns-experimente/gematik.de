@@ -1,0 +1,14 @@
+$ORIGIN	gematik.de.
+$TTL	3600
+
+@	IN	SOA	nameserver.public.gematik.de. root.nameserver.gematik.de. (
+				9	; serial number
+				60	; refresh timeout
+				1800	; retry timeout
+				7200	; authority timeout
+				0 )	; negative cache TTL
+@	IN	NS	nameserver.public
+nameserver.public	IN	A	172.25.0.4
+
+;gematik
+gematik.de	IN	A	194.25.148.138

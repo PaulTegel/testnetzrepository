@@ -1,0 +1,1 @@
+a=$(curl localhost:15142 | grep konnektors ) ; echo "" ; echo $a

@@ -1,0 +1,83 @@
+	**Clientsysteme**
+ivorisdent	CLNT-A
+C2		CLNT-B
+
+	**Arbeitsplatz**
+WP1	WP1
+WP2	WP2
+WP3	WP3
+
+	**Mandant**
+Mandant1	Mandant1	
+Mandant2	Mandant2
+
+SMB
+80276883110261200655
+80276883110261200656
+
+####	80276883110261200667
+
+
+	**WP1**
+Zugeordnete Kartenterminals
+02:42:0a:21:80:08
+02:42:0a:21:80:09
+#######02:42:0a:21:80:10
+
+
+	**WP2**
+Zugeordnete Kartenterminals
+02:42:0a:21:80:09
+
+
+	**WP3**
+Zugeordnete Kartenterminals
+02:42:0a:21:80:10
+
+	
+	**Mandant1**
+Zugeordnete Kartenterminals
+02:42:0a:21:80:08	CTA
+02:42:0a:21:80:09	CTB
+02:42:0a:21:80:10	CTC	
+
+
+Zugeordnete SMBs
+80276883110261200655
+80276883110261200656
+
+Zugeordnete Arbeitsplätze
+WP1
+WP2
+
+Zugeordnete Clientsysteme
+ivorisdent
+C2
+
+Arbeitsplätze zugeordneter Clientsysteme 
+ivorisdent	WP1
+ivorisdent	WP2
+
+
+	**Mandant2**
+Zugeordnete Kartenterminals
+02:42:0a:21:80:09	CTB
+
+Zugeordnete SMBs 
+80276883110261200656
+
+Zugeordnete Arbeitsplätze
+WP2
+
+Zugeordnete Clientsysteme
+ivorisdent
+C2	CLNT-B
+
+Arbeitsplätze zugeordneter Clientsysteme
+ivorisdent	WP2
+
+
+
+  
+
+

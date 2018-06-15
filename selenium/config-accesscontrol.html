@@ -1,0 +1,852 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="submodule" content="accesscontrol">
+        <title>Konnektor Administration</title>
+        <link type="text/css" rel="stylesheet" href="config-accesscontrol_files/a.css">
+        <script type="text/javascript" src="config-accesscontrol_files/a"></script>
+        <link rel="icon" href="https://10.10.8.15:4433/img/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+
+    <div class="wrapper">
+        <header class="header" style="text-align: left;">
+
+            <!-- Caption (left)-->
+            <span style="font-weight: bold; ">Konnektor</span><span style="color: lightgrey"> Administration</span>
+
+            <!-- Buttons (right) -->
+            
+                <span style="float: right; margin-top: -5px;">
+                    <form action="/" method="post">
+                        <span style="font-size: 12px; margin-top: -5px;">Angemeldet als <span class="fakelink" style="font-weight: bold">
+                                <a href="https://10.10.8.15:4433/config/user/pw/">Administrator</a></span>&nbsp;
+                            <span>
+                                <input value="Abmelden" name="_btn_logout" id="btnLogout" class="logoutButton" type="submit"><div class="exitButton batch" id="btn_restart" style="font-size: 11px !important; padding:10px; margin-left: 2px; font-weight: bold"></div>      </span>
+                        </span>
+                    </form>
+                </span>
+           <!-- Environment (left) -->
+            <br>
+            <span style="float:left; font-size: 12px;">
+                <span style="color: #555; font-weight: bold">Testumgebung</span>            </span>
+
+
+            <script type="text/javascript">
+                $("#btn_restart").click(function(event) {
+                    bootbox.dialog({
+                        title: "Beenden",
+                        message: "Möchten Sie den Konnektor neu 
+starten?<br/><br/>Bitte beachten Sie, dass mögliche 
+Kommunikationsverbindungen zum Konnektor getrennt werden und andere 
+Administratoren vom System abgemeldet werden. Nicht gespeicherte 
+Einstellungen gehen verloren.",
+                        closeButton: true,
+                        buttons: {
+                            cancel: {
+                                label: "Abbrechen",
+                                className: "btn_danger"
+                            },
+                            restart: {
+                                label: "<i class='batch' 
+data-icon='&#xF0B0;'></i> Neu starten",
+                                className: "button",
+                                callback: function(){
+                                    
+window.location.replace("/config/system/restart/");
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+
+        </header>
+<div class="alert alert-warning">In das  Sicherheitsprotokoll wurden neue Meldungen geschrieben.<div style="float: right; margin-top: -7px; margin-right: 5px" class="button" onclick="gotoProtocol()">Anzeigen</div></div>
+                    <script type="text/javascript">
+                        function gotoProtocol() {
+                            window.location.href="/config/protocol/?goto=security";
+                        }
+                        </script>
+                   <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="https://10.10.8.15:4433/" id="Hauptmenü"> Hauptmenü</a></li>
+<li class="breadcrumb-item"><a href="https://10.10.8.15:4433/config/accesscontrol/">Zugriffsberechtigungen</a></li>
+</ol>
+<form accept-charset="UTF-8" id="form_master" action="" method="post" enctype="multipart/form-data" novalidate="" autocomplete="off">
+<input name="sid" value="8c8394e4-5739-4be7-a7b1-8c6c8223f1d4" type="hidden">
+<input name="_sender" value="form" type="hidden">
+<input name="_buttons[]" value="_btn_apply" type="hidden">
+
+<!-- begin group -->
+<div class="content">
+
+<!-- itemRender() -->
+<a name="_anchor_item_0"></a>
+<div class="panel panel-default" style="margin-bottom:25px;"><div class="panel-heading panel-heading-big">Einstellungen<span style="float:right; margin-top:17px;"><div class="content" id="form_id_cap_save_clientsettings">
+<div class="caption"></div>
+<div class="value">
+<input name="_btn_save_clientsettings_0_value" value="" type="hidden">
+<input name="_buttons[]" value="_btn_save_clientsettings_0" type="hidden">
+<button type="submit" class="button" formaction=".#_anchor_item_0" id="form_id_save_clientsettings" name="_btn_save_clientsettings_0">  Übernehmen</button>
+</div>
+</div>
+</span>
+</div>
+<div class="panel-body" style="padding-top:20px;">
+
+<!-- end group -->
+</div>
+<div class="content" id="form_id_cap_tls_mandatory_cb">
+<div class="caption">TLS erforderlich:</div>
+<div class="value">
+<div class="toggle btn btn-default off btn-sm" data-toggle="toggle" style="width: 56.5px; height: 31px;"><input data-toggle="toggle" class="checkbox" formaction=".#_anchor_item_0" id="form_id_tls_mandatory_cb" name="form_name_tls_mandatory_cb" type="checkbox"><div class="toggle-group"><label class="btn btn-primary btn-sm toggle-on">An</label><label class="btn btn-default btn-sm active toggle-off">Aus</label><span class="toggle-handle btn btn-default btn-sm"></span></div></div>
+</div>
+<div id="tls_mandatory_cb_help" class="help">Diese Option gibt an, ob eine verschlüsselte Verbindung zwischen Clientsystem und Konnektor genutzt werden muss.</div></div>
+<div class="content" id="form_id_cap_accesscontrol_csauth_cb">
+<div class="caption">Authentifizierung erforderlich:</div>
+<div class="value">
+<div class="toggle btn btn-primary btn-sm" data-toggle="toggle" style="width: 56.5px; height: 31px;"><input data-toggle="toggle" class="checkbox" formaction=".#_anchor_item_0" id="form_id_accesscontrol_csauth_cb" name="form_name_accesscontrol_csauth_cb" checked="checked" type="checkbox"><div class="toggle-group"><label class="btn btn-primary btn-sm toggle-on">An</label><label class="btn btn-default btn-sm active toggle-off">Aus</label><span class="toggle-handle btn btn-default btn-sm"></span></div></div>
+</div>
+<div id="accesscontrol_csauth_cb_help" class="help">Gibt an, ob eine Clientsystem-Authentifizierung verpflichtend ist.</div></div>
+<div class="content" id="form_id_cap_accesscontrol_authmode_option">
+<div class="caption">Authentifizierungsmodus:</div>
+<div class="value">
+<select id="form_id_accesscontrol_authmode_option" class="combobox" name="form_name_accesscontrol_authmode_option">
+<option value="Zertifikat">Zertifikat</option>
+<option selected="selected" value="Nutzername">Nutzername</option>
+</select>
+</div>
+</div>
+<div class="content" id="form_id_cap_accesscontrol_opendvd_cb">
+<div class="caption">Offener Dienstverzeichnisdienst:</div>
+<div class="value">
+<div class="toggle btn btn-primary btn-sm" data-toggle="toggle" style="width: 56.5px; height: 31px;"><input data-toggle="toggle" class="checkbox" formaction=".#_anchor_item_0" id="form_id_accesscontrol_opendvd_cb" name="form_name_accesscontrol_opendvd_cb" checked="checked" type="checkbox"><div class="toggle-group"><label class="btn btn-primary btn-sm toggle-on">An</label><label class="btn btn-default btn-sm active toggle-off">Aus</label><span class="toggle-handle btn btn-default btn-sm"></span></div></div>
+</div>
+<div id="accesscontrol_opendvd_cb_help" class="help">Angabe, ob der Dienstverzeichnisdienst über eine ungesicherte Verbindung erreichbar ist.</div></div>
+
+<!-- endRendering() --></div></div>
+<!-- begin group -->
+<div class="content">
+
+<!-- itemRender() -->
+<a name="_anchor_item_6"></a>
+<div class="panel panel-default" style="margin-bottom:25px;"><div class="panel-heading">Clientsysteme
+</div>
+<div class="panel-body" style="padding-top:20px;">
+
+<!-- end group -->
+</div>
+<div class="content" id="form_id_cap_accesscontrol_cs_table">
+<div class="caption">Clientsysteme:</div>
+<div class="value">
+<div class="wideList" id="form_id_accesscontrol_cs_table"><table width="100%"><tbody><tr style="background: #449fe4">
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+Clientsystem-ID
+</th>
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+Beschreibung
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_cs_table_cs_no_0">ivorisdent</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_cs_table_cs_name_0">CLNT-A</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_cs_table_cs_edit_0" name="_btn_cs_edit_0_value" value="ivorisdent" type="hidden">
+<input name="_buttons[]" value="_btn_cs_edit_0" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_6" name="_btn_cs_edit_0" value="Bearbeiten" type="submit"></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_cs_table_cs_delete_0" name="_btn_cs_delete_0_value" value="ivorisdent" type="hidden">
+<input name="_buttons[]" value="_btn_cs_delete_0" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_6" name="_btn_cs_delete_0" value="Löschen" type="submit"></td>
+</tr>
+</tbody></table></div></div>
+</div>
+<div class="content" id="form_id_cap_accesscontrol_csid_text">
+<div class="caption">Clientsystem-ID:</div>
+<div class="value">
+<input id="form_id_accesscontrol_csid_text" name="form_name_accesscontrol_csid_text" style="width:200px; " autocomplete="off" type="text"> 
+</div>
+<div id="accesscontrol_csid_text_help" class="help">ID des neu anzulegenden Clientsystems</div></div>
+<div class="content" id="form_id_cap_accesscontrol_csdescription_text">
+<div class="caption">Beschreibung:</div>
+<div class="value">
+<input id="form_id_accesscontrol_csdescription_text" name="form_name_accesscontrol_csdescription_text" style="width:200px; " autocomplete="off" type="text"> 
+</div>
+<div id="accesscontrol_csdescription_text_help" class="help">Beschreibung des neuen Clientsystems (optional)</div></div>
+<div class="content" id="form_id_cap_add_cs">
+<div class="caption"></div>
+<div class="value">
+<input name="_btn_add_cs_0_value" value="" type="hidden">
+<input name="_buttons[]" value="_btn_add_cs_0" type="hidden">
+<button type="submit" class="button" formaction=".#_anchor_item_6" id="form_id_add_cs" name="_btn_add_cs_0"><i class="batch" data-icon=""></i>   Clientsystem hinzufügen</button>
+</div>
+</div>
+
+<!-- endRendering() --></div></div>
+<!-- begin group -->
+<div class="content">
+
+<!-- itemRender() -->
+<a name="_anchor_item_11"></a>
+<div class="panel panel-default" style="margin-bottom:25px;"><div class="panel-heading">Arbeitsplatz
+</div>
+<div class="panel-body" style="padding-top:20px;">
+
+<!-- end group -->
+</div>
+<div class="content" id="form_id_cap_accesscontrol_workplaces_table">
+<div class="caption">Arbeitsplätze:</div>
+<div class="value">
+<div class="wideList" id="form_id_accesscontrol_workplaces_table"><table width="100%"><tbody><tr style="background: #449fe4">
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+ID
+</th>
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+Beschreibung
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_workplaces_table_wp_no_0">WP1</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_workplaces_table_wp_name_0">WP1</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_workplaces_table_wp_edit_0" name="_btn_wp_edit_0_value" value="WP1" type="hidden">
+<input name="_buttons[]" value="_btn_wp_edit_0" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_11" name="_btn_wp_edit_0" value="Bearbeiten" type="submit"></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_workplaces_table_wp_delete_0" name="_btn_wp_delete_0_value" value="WP1" type="hidden">
+<input name="_buttons[]" value="_btn_wp_delete_0" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_11" name="_btn_wp_delete_0" value="Löschen" type="submit"></td>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_workplaces_table_wp_no_1">WP2</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_workplaces_table_wp_name_1">WP2</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_workplaces_table_wp_edit_1" name="_btn_wp_edit_1_value" value="WP2" type="hidden">
+<input name="_buttons[]" value="_btn_wp_edit_1" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_11" name="_btn_wp_edit_1" value="Bearbeiten" type="submit"></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_workplaces_table_wp_delete_1" name="_btn_wp_delete_1_value" value="WP2" type="hidden">
+<input name="_buttons[]" value="_btn_wp_delete_1" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_11" name="_btn_wp_delete_1" value="Löschen" type="submit"></td>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_workplaces_table_wp_no_2">WP3</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_workplaces_table_wp_name_2">WP3</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_workplaces_table_wp_edit_2" name="_btn_wp_edit_2_value" value="WP3" type="hidden">
+<input name="_buttons[]" value="_btn_wp_edit_2" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_11" name="_btn_wp_edit_2" value="Bearbeiten" type="submit"></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_workplaces_table_wp_delete_2" name="_btn_wp_delete_2_value" value="WP3" type="hidden">
+<input name="_buttons[]" value="_btn_wp_delete_2" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_11" name="_btn_wp_delete_2" value="Löschen" type="submit"></td>
+</tr>
+</tbody></table></div></div>
+</div>
+<div class="content" id="form_id_cap_accesscontrol_wpid_text">
+<div class="caption">Arbeitsplatz-ID:</div>
+<div class="value">
+<input id="form_id_accesscontrol_wpid_text" name="form_name_accesscontrol_wpid_text" style="width:200px; " autocomplete="off" type="text"> 
+</div>
+<div id="accesscontrol_wpid_text_help" class="help">ID des neu anzulegenden Arbeitsplatzes</div></div>
+<div class="content" id="form_id_cap_accesscontrol_wpdescription_text">
+<div class="caption">Beschreibung:</div>
+<div class="value">
+<input id="form_id_accesscontrol_wpdescription_text" name="form_name_accesscontrol_wpdescription_text" style="width:200px; " autocomplete="off" type="text"> 
+</div>
+<div id="accesscontrol_wpdescription_text_help" class="help">Beschreibung des neuen Arbeitsplatzes (optional)</div></div>
+<div class="content" id="form_id_cap_add_workplace">
+<div class="caption"></div>
+<div class="value">
+<input name="_btn_add_workplace_0_value" value="" type="hidden">
+<input name="_buttons[]" value="_btn_add_workplace_0" type="hidden">
+<button type="submit" class="button" formaction=".#_anchor_item_11" id="form_id_add_workplace" name="_btn_add_workplace_0"><i class="batch" data-icon=""></i>   Arbeitsplatz hinzufügen</button>
+</div>
+</div>
+
+<!-- endRendering() --></div></div>
+<!-- begin group -->
+<div class="content">
+
+<!-- itemRender() -->
+<a name="_anchor_item_16"></a>
+<div class="panel panel-default" style="margin-bottom:25px;"><div class="panel-heading">Mandant
+</div>
+<div class="panel-body" style="padding-top:20px;">
+
+<!-- end group -->
+</div>
+<div class="content" id="form_id_cap_accesscontrol_mandants_table">
+<div class="caption">Mandanten:</div>
+<div class="value">
+<div class="wideList" id="form_id_accesscontrol_mandants_table"><table width="100%"><tbody><tr style="background: #449fe4">
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+ID
+</th>
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+Beschreibung
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_mandants_table_mandant_no_0">Mandant1</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_mandants_table_mandant_name_0">Mandant1</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_mandants_table_mandant_edit_0" name="_btn_mandant_edit_0_value" value="Mandant1" type="hidden">
+<input name="_buttons[]" value="_btn_mandant_edit_0" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_16" name="_btn_mandant_edit_0" value="Bearbeiten" type="submit"></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_mandants_table_mandant_delete_0" name="_btn_mandant_delete_0_value" value="Mandant1" type="hidden">
+<input name="_buttons[]" value="_btn_mandant_delete_0" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_16" name="_btn_mandant_delete_0" value="Löschen" type="submit"></td>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_mandants_table_mandant_no_1">Mandant2</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_mandants_table_mandant_name_1">Mandant2</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_mandants_table_mandant_edit_1" name="_btn_mandant_edit_1_value" value="Mandant2" type="hidden">
+<input name="_buttons[]" value="_btn_mandant_edit_1" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_16" name="_btn_mandant_edit_1" value="Bearbeiten" type="submit"></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_mandants_table_mandant_delete_1" name="_btn_mandant_delete_1_value" value="Mandant2" type="hidden">
+<input name="_buttons[]" value="_btn_mandant_delete_1" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_16" name="_btn_mandant_delete_1" value="Löschen" type="submit"></td>
+</tr>
+</tbody></table></div></div>
+</div>
+<div class="content" id="form_id_cap_accesscontrol_mandantid_text">
+<div class="caption">Mandanten-ID:</div>
+<div class="value">
+<input id="form_id_accesscontrol_mandantid_text" name="form_name_accesscontrol_mandantid_text" style="width:200px; " autocomplete="off" type="text"> 
+</div>
+<div id="accesscontrol_mandantid_text_help" class="help">ID des neu anzulegenden Mandanten</div></div>
+<div class="content" id="form_id_cap_accesscontrol_mandantdescription_text">
+<div class="caption">Beschreibung:</div>
+<div class="value">
+<input id="form_id_accesscontrol_mandantdescription_text" name="form_name_accesscontrol_mandantdescription_text" style="width:200px; " autocomplete="off" type="text"> 
+</div>
+<div id="accesscontrol_mandantdescription_text_help" class="help">Beschreibung des neuen Mandanten (optional)</div></div>
+<div class="content" id="form_id_cap_add_mandant">
+<div class="caption"></div>
+<div class="value">
+<input name="_btn_add_mandant_0_value" value="" type="hidden">
+<input name="_buttons[]" value="_btn_add_mandant_0" type="hidden">
+<button type="submit" class="button" formaction=".#_anchor_item_16" id="form_id_add_mandant" name="_btn_add_mandant_0"><i class="batch" data-icon=""></i>   Mandant hinzufügen</button>
+</div>
+</div>
+
+<!-- endRendering() --></div></div>
+<!-- begin group -->
+<div class="content">
+
+<!-- itemRender() -->
+<a name="_anchor_item_21"></a>
+<div class="panel panel-default" style="margin-bottom:25px;"><div class="panel-heading">SMB
+</div>
+<div class="panel-body" style="padding-top:20px;">
+
+<!-- end group -->
+</div>
+<div class="content" id="form_id_cap_accesscontrol_smb_table">
+<div class="caption">SMBs:</div>
+<div class="value">
+<div class="wideList" id="form_id_accesscontrol_smb_table"><table width="100%"><tbody><tr style="background: #449fe4">
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+ID
+</th>
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+ICCSN
+</th>
+<th style="width: 150px;text-align:left; padding: 3px;color: white;">
+HSM
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_smb_table_smb_no_0">1</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_smb_table_smb_iccsn_0">80276883110261200655</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_smb_table_smb_isHsm_0">Nein</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_smb_table_smb_delete_0" name="_btn_smb_delete_0_value" value="1" type="hidden">
+<input name="_buttons[]" value="_btn_smb_delete_0" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_21" name="_btn_smb_delete_0" value="Löschen" type="submit"></td>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_smb_table_smb_no_1">2</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:300px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_smb_table_smb_iccsn_1">80276883110261200654</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<div id="_lbl_accesscontrol_smb_table_smb_isHsm_1">Nein</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_accesscontrol_smb_table_smb_delete_1" name="_btn_smb_delete_1_value" value="2" type="hidden">
+<input name="_buttons[]" value="_btn_smb_delete_1" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_21" name="_btn_smb_delete_1" value="Löschen" type="submit"></td>
+</tr>
+</tbody></table></div></div>
+</div>
+
+<!-- endRendering() --></div></div>
+<!-- begin group -->
+<div class="content">
+
+<!-- itemRender() -->
+<a name="_anchor_item_25"></a>
+<div class="panel panel-default" style="margin-bottom:25px;"><div class="panel-heading">Sichere Anzeige
+</div>
+<div class="panel-body" style="padding-top:20px;">
+
+<!-- end group -->
+</div>
+<div class="content" id="form_id_cap_accesscontrol_etv_table">
+<div class="caption">Sichere Anzeigen:</div>
+<div class="value">
+<div class="wideList" id="form_id_accesscontrol_etv_table"><table width="100%"><tbody><tr style="background: #449fe4">
+<th style="width: 200px;text-align:left; padding: 3px;color: white;">
+ID
+</th>
+<th style="width: 300px;text-align:left; padding: 3px;color: white;">
+Beschreibung
+</th>
+<th style="width: 200px;text-align:left; padding: 3px;color: white;">
+Arbeitsplatz-ID
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+</tr>
+</tbody></table></div></div>
+</div>
+<div class="content" id="form_id_cap_accesscontrol_etvid_text">
+<div class="caption">Anzeige-ID:</div>
+<div class="value">
+<input id="form_id_accesscontrol_etvid_text" name="form_name_accesscontrol_etvid_text" style="width:200px; " autocomplete="off" type="text"> 
+</div>
+<div id="accesscontrol_etvid_text_help" class="help">ID der neu anzulegenden Sicheren Anzeige</div></div>
+<div class="content" id="form_id_cap_accesscontrol_etvdescription_text">
+<div class="caption">Beschreibung:</div>
+<div class="value">
+<input id="form_id_accesscontrol_etvdescription_text" name="form_name_accesscontrol_etvdescription_text" style="width:200px; " autocomplete="off" type="text"> 
+</div>
+<div id="accesscontrol_etvdescription_text_help" class="help">Beschreibung der neuen Sicheren Anzeige (optional)</div></div>
+<div class="content" id="form_id_cap_accesscontrol_etvwp_option">
+<div class="caption">Arbeitsplatzzuordnung:</div>
+<div class="value">
+<select id="form_id_accesscontrol_etvwp_option" class="combobox" name="form_name_accesscontrol_etvwp_option">
+<option selected="selected" value=""></option>
+<option value="WP1 - WP1">WP1 - WP1</option>
+<option value="WP2 - WP2">WP2 - WP2</option>
+<option value="WP3 - WP3">WP3 - WP3</option>
+</select>
+</div>
+<div id="accesscontrol_etvwp_option_help" class="help">Arbeitsplatz, dem die neue Sichere Anzeige zugeordnet wird.</div></div>
+<div class="content" id="form_id_cap_add_etv">
+<div class="caption"></div>
+<div class="value">
+<input name="_btn_add_etv_0_value" value="" type="hidden">
+<input name="_buttons[]" value="_btn_add_etv_0" type="hidden">
+<button type="submit" class="button" formaction=".#_anchor_item_25" id="form_id_add_etv" name="_btn_add_etv_0"><i class="batch" data-icon=""></i>   Anzeige hinzufügen</button>
+</div>
+</div>
+
+<!-- endRendering() --></div></div></form>
+<script type="text/javascript">
+
+    // Remove submit by pressing ENTER
+    var KEY_CODE_ENTER = 13;
+    $('#form_master').on('keyup keypress', function(e) {
+        // Filter ENTER key
+        var code = e.keyCode || e.which;
+        if(code === KEY_CODE_ENTER) {
+            // Ignore behaviour
+            e.preventDefault();
+            return false;
+        }
+    });
+
+
+    function updateAllEvents() {
+            }
+</script>
+<script type="text/javascript">
+
+    $('#form_id_tls_mandatory_cb').change(function(){
+        if(!$(this).prop('checked'))
+        {
+            var box = bootbox.dialog({
+                message: 'Wenn Sie die Option TLS ausschalten, können 
+sensible Daten im Netzwerk durch unberechtigte Dritte mitgelesen 
+werden.',
+                title: '<div class="bulb">Achtung</div>',
+                closeButton: true,
+                buttons: {
+                    success: {
+                        label: 'Schließen',
+                        className: 'btn_danger'
+                    }
+                }
+            });
+
+            box.bind('shown.bs.modal', function(){
+               box.find('.btn:last').focus();
+            });
+        }
+
+    });
+</script>
+
+            <div class="scroll-to-top" style="display: block;"></div>
+
+            <div id="loaderWrapper" style="height:500px; display: none">
+
+                <!--[if (gt IE 9)]><!--><div id="loader"></div><!--<![endif]-->
+
+                <div id="loaderText" class="loaderText">
+                    <span style="font-size: 42pt;" id="time">00:00</span>
+                    <br><span id="caption_boot"></span>
+                    <br><br><br><br><br><br><br><br>
+                    <br><span style="color:darkgray">Diese Seite wird automatisch aktualisiert, ein erneutes Laden ist nicht notwendig.</span>
+                </div>
+
+            </div>
+
+            <footer class="footer">
+                © 2018 T-Systems International GmbH. <span id="elapsed_session">Die verbleibende Sitzungszeit beträgt 59 Minuten und 08 Sekunden</span>
+            </footer>
+        </div>
+
+<script type="text/javascript">
+    //-------------------------------------
+    // Enums
+    //-------------------------------------
+    var SystemState = {
+	Boot: 0,
+	RunNormal: 1,
+	RunConfiguration: 2,
+	Shutdown: 4
+    };
+
+    //-------------------------------------
+    // Globals
+    //-------------------------------------
+    var SubmitPending = false;
+    var RestartStartTime = new Date();
+
+    //-------------------------------------
+    //  Eventhandler
+    //-------------------------------------
+    $(document).on("click", "a", function()
+    {
+        SubmitPending = true;
+    });
+
+    //-------------------------------------
+    // Showing Restart
+    //-------------------------------------
+
+    // Shows the restart content
+    function showRestart()
+    {
+        if(!SubmitPending)
+        {
+            $.ajax({
+                type: 'POST',
+                timeout: 1000,
+                url: '/api/system/check.php',
+                data: { sid: '8c8394e4-5739-4be7-a7b1-8c6c8223f1d4' },
+                success: function(result)
+                {
+                    if(result['success'])
+                    {
+                        switch(result['content']){
+                            case SystemState.RunNormal:
+                            case SystemState.RunConfiguration:
+                                // Boot, RunNormal, RunConfiguration  ->
+ ignore
+                                break;
+
+                            default:
+                                gotoRestartMode();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        // No result
+                        gotoRestartMode();
+                    }
+
+                },
+                error: function()
+                {
+                    gotoRestartMode();
+                }
+            });
+        }
+    }
+
+    function gotoRestartMode()
+    {
+        // Hide static content
+        $('.header').hide();
+        $('.alert').hide();
+        $('.breadcrumb').hide();
+        $('.footer').hide();
+        $('.content').hide();
+
+        // Hide form(s)
+        $('form').hide();
+
+        // Show circle
+        $('#loaderWrapper').show();
+
+        // Update cicle
+        RestartStartTime = new Date();
+        getRestartState();
+    }
+
+    // Refreshes the state of the konnektor for restart
+    function checkRuntimeState()
+    {
+        $.ajax({
+            type: 'POST',
+            timeout: 6000,
+            url: '/api/system/check.php',
+            data: { sid: '8c8394e4-5739-4be7-a7b1-8c6c8223f1d4' },
+            success: function(result)
+            {
+                if(result['success'])
+                {
+                    switch(result['content'])
+                    {
+                        case SystemState.Boot:
+                        case SystemState.Shutdown:
+                            // Boot, or shutdown -> show circle
+                            showRestart();
+                            break;
+
+                        case SystemState.RunNormal:
+                        case SystemState.RunConfiguration:
+                            // RunNormal, RunConfiguration  -> all ok 
+and check again
+                            setTimeout(checkRuntimeState, 3000);
+                            break;
+
+                        default:
+                            // Something else occured
+                            showRestart();
+                            break;
+                    }
+                }
+                else
+                {
+                    // Something else occured
+                    showRestart();
+                }
+            },
+            error: function()
+            {
+                showRestart();
+            }
+        });
+    }
+
+
+    // Refreshes the state of the konnektor for restart
+    function getRestartState()
+    {
+        $.ajax({
+            type: 'POST',
+            timeout: 6000,
+            url: '/api/system/check.php',
+            data: { sid: '8c8394e4-5739-4be7-a7b1-8c6c8223f1d4' },
+            success: function(result)
+            {
+                if(result['success'])
+                {
+                    switch(result['content']){
+                        case SystemState.Boot:
+                        case SystemState.RunNormal:
+                        case SystemState.RunConfiguration:
+                            // Boot, RunNormal, RunConfiguration  -> we 
+can't handle shutdowns here!
+                            reloadPage();
+                            break;
+
+                        case SystemState.Shutdown:
+                            // Shutdown
+                            $('#caption_boot').html("Der Konnektor ist 
+nicht verfügbar");
+                            break;
+
+                        default:
+                            $('#caption_boot').html("Unbekannter 
+Status!");
+                            break;
+                    }
+                }
+                else
+                {
+                    // No result
+                    $('#caption_boot').html("Fehler: " + 
+result['error']);
+                }
+
+                // Update time
+                updateRestartTime();
+
+                // Checking state gain
+                setTimeout(getRestartState, 1000);
+            },
+            error: function()
+            {
+                if(!SubmitPending)
+                {
+                    $('#caption_boot').html("Der Konnektor ist nicht 
+verfügbar");
+
+                    // Update time
+                    updateRestartTime();
+
+                    // Checking state again
+                    setTimeout(getRestartState, 1000);
+                }
+            }
+        });
+    }
+
+    // Updates the time on the screen
+    function updateRestartTime()
+    {
+        var now = new Date();
+        var waitTime = Math.round((now.getTime() - 
+RestartStartTime.getTime()) / 1000);
+        var waitMinute = Math.floor(waitTime / 60);
+        var waitSecond = waitTime % 60;
+        var pad="00";
+        var minute = pad.substring(0, pad.length - ("" + 
+waitMinute).length) + ("" + waitMinute);
+        var second = pad.substring(0, pad.length - ("" + 
+waitSecond).length) + ("" + waitSecond);
+        $('#time').html(minute + ":" + second);
+    }
+
+
+    if($(".checkbox").length)
+     {
+         $(".checkbox").bootstrapToggle({
+             size: "small",
+             on: "An",
+             off: "Aus"
+         });
+     }
+
+    $(document).ready(function() {
+
+        // make loader invisible
+        $('#loaderWrapper').hide();
+
+checkRuntimeState();
+        bootbox.setDefaults('locale', 'de');
+        var offset = 200;
+        var duration = 500;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > offset) {
+                $(".scroll-to-top").fadeIn(duration);
+            } else {
+                $(".scroll-to-top").fadeOut(duration);
+            }
+        });
+
+        $(".scroll-to-top").click(function(event) {
+            event.preventDefault();
+            jQuery("html, body").animate({scrollTop: 0}, duration);
+            return false;
+        });
+
+        $("form").on("submit", function()
+        {
+            SubmitPending = true;
+
+            
+                // Show a waiting load after delay
+                setTimeout(showWaitLoad, 2000);
+
+                // Disable all buttons
+                $(".button").each(function(){
+                    $(this).removeClass("buttondisabled");
+                    $(this).addClass("buttondisabled");
+                    var attr = $(this).attr("disabled");
+                    if(typeof attr !== typeof undefined && attr !== 
+false)
+                    {
+                        $(this).attr("disabled", disabled);
+                    }
+                });
+
+                $("input[type=button]").each(function(){
+                    $(this).attr("disabled", disabled);
+                });
+
+                        });
+     });
+
+                          var sessionPageTime = Date.now();
+                     showElapsedSessionTimeout();
+                     setInterval(showElapsedSessionTimeout, 1000);
+                     function showElapsedSessionTimeout()
+                     {
+                         var diff = Math.floor((Date.now() - 
+sessionPageTime) / 1000);
+                         diff = 3600 - diff;
+
+                         if(diff >= 0)
+                         {
+                             var hours = Math.floor(diff/3600);
+                             var minutes = Math.floor((diff - 
+(hours*3600))/60);
+                             var seconds = diff - (hours*3600) - 
+(minutes*60);
+
+                             $("#elapsed_session").html("Die 
+verbleibende Sitzungszeit beträgt " + ("0" + minutes).slice(-2) + " 
+Minuten und " + ("0" + seconds).slice(-2) + " Sekunden");
+                         }
+                         else
+                         {
+                             $("#elapsed_session").html("<b 
+style='color:red'>Die Sitzung ist abgelaufen!<b>");
+                         }
+                     }
+                 </script>
+
+
+
+</body></html>

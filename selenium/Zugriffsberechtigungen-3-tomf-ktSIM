@@ -1,0 +1,141 @@
+	Clientsysteme
+ivorisdent	CLNT-A
+C2		CLNT-B
+
+	Arbeitsplatz
+WP1	WP1
+WP2	WP2
+WP3	WP3
+
+	Mandant
+Mandant1	Mandant1	
+Mandant2	Mandant2
+
+SMB
+80276883110261200654
+80276883110261200655
+
+
+	WP1
+Zugeordnete Kartenterminals
+ca:4b:63:7a:00:01
+ca:4b:63:7a:00:02
+ca:4b:63:7a:00:03
+
+
+	WP2
+Zugeordnete Kartenterminals
+ca:4b:63:7a:00:02
+
+	WP3
+Zugeordnete Kartenterminals
+ca:4b:63:7a:00:03
+
+	
+	Mandant1
+Zugeordnete Kartenterminals
+ca:4b:63:7a:00:01
+ca:4b:63:7a:00:02
+
+Zugeordnete SMBs
+80276883110261200654
+80276883110261200655
+
+Zugeordnete Arbeitsplätze
+WP1
+WP2
+
+Zugeordnete Clientsysteme
+ivorisdent
+C2
+
+Arbeitsplätze zugeordneter Clientsysteme 
+ivorisdent	WP1
+ivorisdent	WP2
+
+
+	Mandant2
+Zugeordnete Kartenterminals
+ca:4b:63:7a:00:02
+
+Zugeordnete SMBs 
+80276883110261200655
+
+Zugeordnete Arbeitsplätze
+WP2
+
+Zugeordnete Clientsysteme
+ivorisdent
+
+Arbeitsplätze zugeordneter Clientsysteme
+ivorisdent	WP2
+
+
+*********************************************************************************************************************
+
+https://10.10.8.15:4433/config/accesscontrol/
+
+
+**Clientsysteme:
+
+name="_btn_cs_edit_0"	name="_btn_cs_delete_0"
+
+Clientsystem-ID:  id="form_id_accesscontrol_csid_text"
+Beschreibung:	id="form_id_cap_accesscontrol_csdescription_text"
+
+Clientsystem hinzufügen:	id="form_id_add_cs"
+ivorisdent  CLNT-A
+C2 CLNT-B
+
+**Arbeitsplätze:
+
+name="_btn_wp_delete_0"
+name="_btn_wp_delete_1"
+name="_btn_wp_delete_2"
+
+
+Arbeitsplatz-ID:  id="form_id_accesscontrol_wpid_text"
+Beschreibung:   id="form_id_accesscontrol_wpdescription_text"qQ
+
+Arbeitsplatz hinzufügen:  id="form_id_add_workplace"
+
+**Mandanten:
+
+name="_btn_mandant_delete_0"
+name="_btn_mandant_delete_1"
+
+Mandanten-ID:  id="form_id_accesscontrol_mandantid_text"
+Beschreibung:  id="form_id_accesscontrol_mandantdescription_text"
+
+Mandant hinzufügen:  id="form_id_add_mandant"
+
+
+**SMBs:
+
+ICCSN: 80276883110261200654 - HSM: Nein
+ICCSN: 80276883110261200655 - HSM: Nein
+*combobox
+
+name="_btn_smb_delete_0"
+name="_btn_smb_delete_1"
+
+verfügbare SMBs: id="form_id_accesscontrol_availablesmbs_option"
+
+   SMB hinzufügen:	id="form_id_add_smb"
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="submodule" content="workplace">
+        <title>Konnektor Administration</title>
+        <link type="text/css" rel="stylesheet" href="wp1_files/a.css">
+        <script type="text/javascript" src="wp1_files/a"></script>
+        <link rel="icon" href="https://10.10.8.15:4433/img/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+
+    <div class="wrapper">
+        <header class="header" style="text-align: left;">
+
+            <!-- Caption (left)-->
+            <span style="font-weight: bold; ">Konnektor</span><span style="color: lightgrey"> Administration</span>
+
+            <!-- Buttons (right) -->
+            
+                <span style="float: right; margin-top: -5px;">
+                    <form action="/" method="post">
+                        <span style="font-size: 12px; margin-top: -5px;">Angemeldet als <span class="fakelink" style="font-weight: bold">
+                                <a href="https://10.10.8.15:4433/config/user/pw/">Administrator</a></span>&nbsp;
+                            <span>
+                                <input value="Abmelden" name="_btn_logout" id="btnLogout" class="logoutButton" type="submit"><div class="exitButton batch" id="btn_restart" style="font-size: 11px !important; padding:10px; margin-left: 2px; font-weight: bold"></div>      </span>
+                        </span>
+                    </form>
+                </span>
+           <!-- Environment (left) -->
+            <br>
+            <span style="float:left; font-size: 12px;">
+                <span style="color: #555; font-weight: bold">Testumgebung</span>            </span>
+
+
+            <script type="text/javascript">
+                $("#btn_restart").click(function(event) {
+                    bootbox.dialog({
+                        title: "Beenden",
+                        message: "Möchten Sie den Konnektor neu 
+starten?<br/><br/>Bitte beachten Sie, dass mögliche 
+Kommunikationsverbindungen zum Konnektor getrennt werden und andere 
+Administratoren vom System abgemeldet werden. Nicht gespeicherte 
+Einstellungen gehen verloren.",
+                        closeButton: true,
+                        buttons: {
+                            cancel: {
+                                label: "Abbrechen",
+                                className: "btn_danger"
+                            },
+                            restart: {
+                                label: "<i class='batch' 
+data-icon='&#xF0B0;'></i> Neu starten",
+                                className: "button",
+                                callback: function(){
+                                    
+window.location.replace("/config/system/restart/");
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+
+        </header>
+<div class="alert alert-warning">In das  Sicherheitsprotokoll wurden neue Meldungen geschrieben.<div style="float: right; margin-top: -7px; margin-right: 5px" class="button" onclick="gotoProtocol()">Anzeigen</div></div>
+                    <script type="text/javascript">
+                        function gotoProtocol() {
+                            window.location.href="/config/protocol/?goto=security";
+                        }
+                        </script>
+                   <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="https://10.10.8.15:4433/" id="Hauptmenü"> Hauptmenü</a></li>
+<li class="breadcrumb-item"><a href="https://10.10.8.15:4433/config/accesscontrol/">Zugriffsberechtigungsdienst</a></li>
+<li class="breadcrumb-item"><a href="https://10.10.8.15:4433/config/accesscontrol/workplace/">Arbeitsplatzrelationen</a></li>
+</ol>
+<form accept-charset="UTF-8" id="form_master" action="" method="post" enctype="multipart/form-data" novalidate="" autocomplete="off">
+<input name="sid" value="8c8394e4-5739-4be7-a7b1-8c6c8223f1d4" type="hidden">
+<input name="_sender" value="form" type="hidden">
+<input name="_buttons[]" value="_btn_apply" type="hidden">
+
+<!-- begin group -->
+<div class="content">
+
+<!-- itemRender() -->
+<a name="_anchor_item_0"></a>
+<div class="panel panel-default" style="margin-bottom:25px;"><div class="panel-heading panel-heading-big">Ausgewählter Arbeitsplatz<span style="float:right; margin-top:17px;"><div class="content" id="form_id_cap_set_id_desc">
+<div class="caption"></div>
+<div class="value">
+<input name="_btn_set_id_desc_0_value" value="" type="hidden">
+<input name="_buttons[]" value="_btn_set_id_desc_0" type="hidden">
+<button type="submit" class="button" formaction=".#_anchor_item_0" id="form_id_set_id_desc" name="_btn_set_id_desc_0">  Übernehmen</button>
+</div>
+</div>
+</span>
+</div>
+<div class="panel-body" style="padding-top:20px;">
+
+<!-- end group -->
+</div>
+<div class="content" id="form_id_cap_workplace_wpid_text">
+<div class="caption">Arbeitsplatz-ID:</div>
+<div class="value">
+<input id="form_id_workplace_wpid_text" name="form_name_workplace_wpid_text" style="width:200px; " autocomplete="off" value="WP1" type="text"> 
+</div>
+</div>
+<div class="content" id="form_id_cap_workplace_wpdescription_text">
+<div class="caption">Beschreibung:</div>
+<div class="value">
+<input id="form_id_workplace_wpdescription_text" name="form_name_workplace_wpdescription_text" style="width:200px; " autocomplete="off" value="WP1" type="text"> 
+</div>
+</div>
+
+<!-- endRendering() --></div></div>
+<!-- begin group -->
+<div class="content">
+
+<!-- itemRender() -->
+<a name="_anchor_item_3"></a>
+<div class="panel panel-default" style="margin-bottom:25px;"><div class="panel-heading">Zugeordnete Kartenterminals
+</div>
+<div class="panel-body" style="padding-top:20px;">
+
+<!-- end group -->
+</div>
+<div class="content" id="form_id_cap_workplace_relatedcts_table">
+<div class="caption">Zuordnung:</div>
+<div class="value">
+<div class="wideList" id="form_id_workplace_relatedcts_table"><table width="100%"><tbody><tr style="background: #449fe4">
+<th style="width: 100px;text-align:left; padding: 3px;color: white;">
+Terminal-ID
+</th>
+<th style="width: 200px;text-align:left; padding: 3px;color: white;">
+Terminal-MAC
+</th>
+<th style="width: 200px;text-align:left; padding: 3px;color: white;">
+Terminal-Typ
+</th>
+<th style="padding:0px; margin:0px;width: 150px;font-weight: bold;text-align:left;">
+</th>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:100px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_ct_id_0">ca:4b:63:7a:00:03</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:200px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_ct_mac_0">ca:4b:63:7a:00:03</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:200px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_as_type_0">Lokal</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_workplace_relatedcts_table_as_delete_0" name="_btn_as_delete_0_value" value="384" type="hidden">
+<input name="_buttons[]" value="_btn_as_delete_0" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_3" name="_btn_as_delete_0" value="Löschen" type="submit"></td>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:100px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_ct_id_1">ca:4b:63:7a:00:01</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:200px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_ct_mac_1">ca:4b:63:7a:00:01</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:200px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_as_type_1">Lokal</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_workplace_relatedcts_table_as_delete_1" name="_btn_as_delete_1_value" value="440" type="hidden">
+<input name="_buttons[]" value="_btn_as_delete_1" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_3" name="_btn_as_delete_1" value="Löschen" type="submit"></td>
+</tr>
+<tr>
+<td style=" padding:2px; font-size:12px; height:12px; width:100px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_ct_id_2">ca:4b:63:7a:00:02</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:200px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_ct_mac_2">ca:4b:63:7a:00:02</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:200px;font-weight: bold;text-align:left;">
+<div id="_lbl_workplace_relatedcts_table_as_type_2">Lokal</div></td>
+<td style=" padding:2px; font-size:12px; height:12px; width:150px;font-weight: bold;text-align:left;">
+<input id="form_id_btn_workplace_relatedcts_table_as_delete_2" name="_btn_as_delete_2_value" value="441" type="hidden">
+<input name="_buttons[]" value="_btn_as_delete_2" type="hidden">
+<input style="width:100%" class="button" formaction=".#_anchor_item_3" name="_btn_as_delete_2" value="Löschen" type="submit"></td>
+</tr>
+</tbody></table></div></div>
+</div>
+<div class="content" id="form_id_cap_workplace_relatedct_option">
+<div class="caption">Kartenterminal:</div>
+<div class="value">
+<select id="form_id_workplace_relatedct_option" class="combobox" name="form_name_workplace_relatedct_option">
+<option value="ID: 02:42:0a:21:80:08 - HOSTNAME: CTA" selected="selected">ID: 02:42:0a:21:80:08 - HOSTNAME: CTA</option>
+<option value="ID: 02:42:0a:21:80:10 - HOSTNAME: CTC">ID: 02:42:0a:21:80:10 - HOSTNAME: CTC</option>
+<option value="ID: 02:42:0a:21:80:09 - HOSTNAME: CTB">ID: 02:42:0a:21:80:09 - HOSTNAME: CTB</option>
+</select>
+</div>
+<div id="workplace_relatedct_option_help" class="help">Kartenterminal, 
+das dem aktuell ausgewählten Arbeitsplatz neu zugeordnet wird. Sollte 
+dieses Feld nicht auswählbar sein, können keine weiteren Zuordnungen für
+ den Arbeitsplatz hinzugefügt werden.</div></div>
+<div class="content" id="form_id_cap_workplace_relationtype_option">
+<div class="caption">Zuordnungstyp:</div>
+<div class="value">
+<select id="form_id_workplace_relationtype_option" class="combobox" name="form_name_workplace_relationtype_option">
+<option value="Lokal" selected="selected">Lokal</option>
+<option value="Entfernt">Entfernt</option>
+</select>
+</div>
+<div id="workplace_relationtype_option_help" class="help">Typ der neuen Kartenterminal-Arbeitsplatzzuordnung.</div></div>
+<div class="content" id="form_id_cap_add_rel">
+<div class="caption"></div>
+<div class="value">
+<input name="_btn_add_rel_0_value" value="" type="hidden">
+<input name="_buttons[]" value="_btn_add_rel_0" type="hidden">
+<button type="submit" class="button" formaction=".#_anchor_item_3" id="form_id_add_rel" name="_btn_add_rel_0"><i class="batch" data-icon=""></i>   Zuordnung hinzufügen</button>
+</div>
+</div>
+
+<!-- endRendering() --></div></div></form>
+<script type="text/javascript">
+
+    // Remove submit by pressing ENTER
+    var KEY_CODE_ENTER = 13;
+    $('#form_master').on('keyup keypress', function(e) {
+        // Filter ENTER key
+        var code = e.keyCode || e.which;
+        if(code === KEY_CODE_ENTER) {
+            // Ignore behaviour
+            e.preventDefault();
+            return false;
+        }
+    });
+
+
+    function updateAllEvents() {
+            }
+</script>
+
+            <div class="scroll-to-top"></div>
+
+            <div id="loaderWrapper" style="height:500px; display: none">
+
+                <!--[if (gt IE 9)]><!--><div id="loader"></div><!--<![endif]-->
+
+                <div id="loaderText" class="loaderText">
+                    <span style="font-size: 42pt;" id="time">00:00</span>
+                    <br><span id="caption_boot"></span>
+                    <br><br><br><br><br><br><br><br>
+                    <br><span style="color:darkgray">Diese Seite wird automatisch aktualisiert, ein erneutes Laden ist nicht notwendig.</span>
+                </div>
+
+            </div>
+
+            <footer class="footer">
+                © 2018 T-Systems International GmbH. <span id="elapsed_session">Die verbleibende Sitzungszeit beträgt 59 Minuten und 46 Sekunden</span>
+            </footer>
+        </div>
+
+<script type="text/javascript">
+    //-------------------------------------
+    // Enums
+    //-------------------------------------
+    var SystemState = {
+	Boot: 0,
+	RunNormal: 1,
+	RunConfiguration: 2,
+	Shutdown: 4
+    };
+
+    //-------------------------------------
+    // Globals
+    //-------------------------------------
+    var SubmitPending = false;
+    var RestartStartTime = new Date();
+
+    //-------------------------------------
+    //  Eventhandler
+    //-------------------------------------
+    $(document).on("click", "a", function()
+    {
+        SubmitPending = true;
+    });
+
+    //-------------------------------------
+    // Showing Restart
+    //-------------------------------------
+
+    // Shows the restart content
+    function showRestart()
+    {
+        if(!SubmitPending)
+        {
+            $.ajax({
+                type: 'POST',
+                timeout: 1000,
+                url: '/api/system/check.php',
+                data: { sid: '8c8394e4-5739-4be7-a7b1-8c6c8223f1d4' },
+                success: function(result)
+                {
+                    if(result['success'])
+                    {
+                        switch(result['content']){
+                            case SystemState.RunNormal:
+                            case SystemState.RunConfiguration:
+                                // Boot, RunNormal, RunConfiguration  ->
+ ignore
+                                break;
+
+                            default:
+                                gotoRestartMode();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        // No result
+                        gotoRestartMode();
+                    }
+
+                },
+                error: function()
+                {
+                    gotoRestartMode();
+                }
+            });
+        }
+    }
+
+    function gotoRestartMode()
+    {
+        // Hide static content
+        $('.header').hide();
+        $('.alert').hide();
+        $('.breadcrumb').hide();
+        $('.footer').hide();
+        $('.content').hide();
+
+        // Hide form(s)
+        $('form').hide();
+
+        // Show circle
+        $('#loaderWrapper').show();
+
+        // Update cicle
+        RestartStartTime = new Date();
+        getRestartState();
+    }
+
+    // Refreshes the state of the konnektor for restart
+    function checkRuntimeState()
+    {
+        $.ajax({
+            type: 'POST',
+            timeout: 6000,
+            url: '/api/system/check.php',
+            data: { sid: '8c8394e4-5739-4be7-a7b1-8c6c8223f1d4' },
+            success: function(result)
+            {
+                if(result['success'])
+                {
+                    switch(result['content'])
+                    {
+                        case SystemState.Boot:
+                        case SystemState.Shutdown:
+                            // Boot, or shutdown -> show circle
+                            showRestart();
+                            break;
+
+                        case SystemState.RunNormal:
+                        case SystemState.RunConfiguration:
+                            // RunNormal, RunConfiguration  -> all ok 
+and check again
+                            setTimeout(checkRuntimeState, 3000);
+                            break;
+
+                        default:
+                            // Something else occured
+                            showRestart();
+                            break;
+                    }
+                }
+                else
+                {
+                    // Something else occured
+                    showRestart();
+                }
+            },
+            error: function()
+            {
+                showRestart();
+            }
+        });
+    }
+
+
+    // Refreshes the state of the konnektor for restart
+    function getRestartState()
+    {
+        $.ajax({
+            type: 'POST',
+            timeout: 6000,
+            url: '/api/system/check.php',
+            data: { sid: '8c8394e4-5739-4be7-a7b1-8c6c8223f1d4' },
+            success: function(result)
+            {
+                if(result['success'])
+                {
+                    switch(result['content']){
+                        case SystemState.Boot:
+                        case SystemState.RunNormal:
+                        case SystemState.RunConfiguration:
+                            // Boot, RunNormal, RunConfiguration  -> we 
+can't handle shutdowns here!
+                            reloadPage();
+                            break;
+
+                        case SystemState.Shutdown:
+                            // Shutdown
+                            $('#caption_boot').html("Der Konnektor ist 
+nicht verfügbar");
+                            break;
+
+                        default:
+                            $('#caption_boot').html("Unbekannter 
+Status!");
+                            break;
+                    }
+                }
+                else
+                {
+                    // No result
+                    $('#caption_boot').html("Fehler: " + 
+result['error']);
+                }
+
+                // Update time
+                updateRestartTime();
+
+                // Checking state gain
+                setTimeout(getRestartState, 1000);
+            },
+            error: function()
+            {
+                if(!SubmitPending)
+                {
+                    $('#caption_boot').html("Der Konnektor ist nicht 
+verfügbar");
+
+                    // Update time
+                    updateRestartTime();
+
+                    // Checking state again
+                    setTimeout(getRestartState, 1000);
+                }
+            }
+        });
+    }
+
+    // Updates the time on the screen
+    function updateRestartTime()
+    {
+        var now = new Date();
+        var waitTime = Math.round((now.getTime() - 
+RestartStartTime.getTime()) / 1000);
+        var waitMinute = Math.floor(waitTime / 60);
+        var waitSecond = waitTime % 60;
+        var pad="00";
+        var minute = pad.substring(0, pad.length - ("" + 
+waitMinute).length) + ("" + waitMinute);
+        var second = pad.substring(0, pad.length - ("" + 
+waitSecond).length) + ("" + waitSecond);
+        $('#time').html(minute + ":" + second);
+    }
+
+
+    if($(".checkbox").length)
+     {
+         $(".checkbox").bootstrapToggle({
+             size: "small",
+             on: "An",
+             off: "Aus"
+         });
+     }
+
+    $(document).ready(function() {
+
+        // make loader invisible
+        $('#loaderWrapper').hide();
+
+checkRuntimeState();
+        bootbox.setDefaults('locale', 'de');
+        var offset = 200;
+        var duration = 500;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > offset) {
+                $(".scroll-to-top").fadeIn(duration);
+            } else {
+                $(".scroll-to-top").fadeOut(duration);
+            }
+        });
+
+        $(".scroll-to-top").click(function(event) {
+            event.preventDefault();
+            jQuery("html, body").animate({scrollTop: 0}, duration);
+            return false;
+        });
+
+        $("form").on("submit", function()
+        {
+            SubmitPending = true;
+
+            
+                // Show a waiting load after delay
+                setTimeout(showWaitLoad, 2000);
+
+                // Disable all buttons
+                $(".button").each(function(){
+                    $(this).removeClass("buttondisabled");
+                    $(this).addClass("buttondisabled");
+                    var attr = $(this).attr("disabled");
+                    if(typeof attr !== typeof undefined && attr !== 
+false)
+                    {
+                        $(this).attr("disabled", disabled);
+                    }
+                });
+
+                $("input[type=button]").each(function(){
+                    $(this).attr("disabled", disabled);
+                });
+
+                        });
+     });
+
+                          var sessionPageTime = Date.now();
+                     showElapsedSessionTimeout();
+                     setInterval(showElapsedSessionTimeout, 1000);
+                     function showElapsedSessionTimeout()
+                     {
+                         var diff = Math.floor((Date.now() - 
+sessionPageTime) / 1000);
+                         diff = 3600 - diff;
+
+                         if(diff >= 0)
+                         {
+                             var hours = Math.floor(diff/3600);
+                             var minutes = Math.floor((diff - 
+(hours*3600))/60);
+                             var seconds = diff - (hours*3600) - 
+(minutes*60);
+
+                             $("#elapsed_session").html("Die 
+verbleibende Sitzungszeit beträgt " + ("0" + minutes).slice(-2) + " 
+Minuten und " + ("0" + seconds).slice(-2) + " Sekunden");
+                         }
+                         else
+                         {
+                             $("#elapsed_session").html("<b 
+style='color:red'>Die Sitzung ist abgelaufen!<b>");
+                         }
+                     }
+                 </script>
+
+
+
+</body></html>

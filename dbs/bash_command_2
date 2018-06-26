@@ -1,0 +1,62 @@
+r=$(sqlite3 your_db_path.db "select something from some_table where condition")
+$r
+
+
+max_id=$(sqlite3 protocol_security.db "select MAX(Id) from Protocol") 
+echo $max_id
+****
+max=$(sqlite3 protocol_security.db "SELECT Id, Timestamp, Severity, Type, Code, Message, TaskGuid  FROM Protocol WHERE Id > 2842")
+
+
+**********************
+new_entries=$(sqlite3 protocol_security_2.db "SELECT Id, Timestamp, Severity, Type, Code, Message, TaskGuid  FROM Protocol WHERE Id > 2843")
+
+**********************
+
+
+max_id=$(sqlite3 protocol_security.db "select MAX(Id) from Protocol") ; echo $max_id
+
+new_entries=$(sqlite3 protocol_security_2.db "SELECT Id, Timestamp, Severity, Type, Code, Message, TaskGuid  FROM Protocol WHERE Id > 2843") ; echo $new_entries
+
+
+new_entries=$(sqlite3 protocol_security_2.db "SELECT Id, Timestamp, Severity, Type, Code, Message, TaskGuid  FROM Protocol WHERE Id > $max_id") ; echo $new_entries
+
+****************************
+.headers on;.mode column;
+****************************
+new_entries=$(sqlite3 protocol_security_2.db ".mode column; SELECT Id, Timestamp, Severity, Type, Code, Message, TaskGuid  FROM Protocol WHERE Id > $max_id") ; echo $new_entries
+
+
+
+
+2843|1528121216995|3|1|4002|Code (Gematik,4002); Security; Fatal; Der Konnektor befindet sich in einem kritischen Betriebszustand; OPERATIONAL_STATE/EC_Time_Difference_Intolerable: Abweichung zwischen der lokalen Zeit und der per NTP empfangenen Zeit bei der Zeitsynchronisation größer als NTP_MAX_TIMEDIFFERENCE. Nach einer Korrektur oder Bestätigung der Systemzeit durch einen Administrator muss der Konnektor den Fehlerzustand zurücksetzen.; EventId=00:30:d6:16:62:9b:1528121216995; VNR=46969D9C6DBF4C6894713E1D63C53352|46969D9C6DBF4C6894713E1D63C53352 2844|1528115810626|3|1|8560|Event OPERATIONAL_STATE/EC_Time_Difference_Intolerable; Security; Fatal; Bedeutung=Abweichung zwischen der lokalen Zeit und der per NTP empfangenen Zeit bei der Zeitsynchronisation größer als NTP_MAX_TIMEDIFFERENCE. Nach einer Korrektur oder Bestätigung der Systemzeit durch einen Administrator muss der Konnektor den Fehlerzustand zurücksetzen.; NtpMaxAllowedTimedifference=3600; NtpTimedifference=N/A; Value=false; EventId=00:30:d6:16:62:9b:1528115810626; VNR=FBCCBD7C3C8547F88F3324B6415194C6|FBCCBD7C3C8547F88F3324B6415194C6 2845|1528115855664|0|1|10606|Code (NetMgr,10606); Security; Info; Dropped incoming IP packet; 32bytes, indev=Lan, 0.0.0.0->224.0.0.1; EventId=00:30:d6:16:62:9b:1528115855664; VNR=84A485B36C10451D850C1FF27586CF83|84A485B36C10451D850C1FF27586CF83 2846|1528115865577|2|1|1007|Code (Gematik,4127); Security; Error; Import der TSL-Datei fehlgeschlagen; Error-Trace: 04.06.2018 14:37:45.577+0200; Code (Gematik,1007); Security; Error; Vergleich der ID und SequenceNumber entspricht nicht der Vergleichsvariante 6a; Blocked TSL downgrade attempt: CurrentTSLSeqNumb=963 >= NewTSLSeqNumb=962; EventId=00:30:d6:16:62:9b:1528115865577; VNR=84A485B36C10451D850C1FF27586CF83|84A485B36C10451D850C1FF27586CF83
+
+
+------------------------------------------
+
+
+
+export LOCAL_PATH_TO_DB="/root/tmp/dbs2"
+
+sshpass -p 123456 scp -P 2222 root@10.10.8.15:/opt/secure/current/konn/data/protocol_security.db "$LOCAL_PATH_TO_DB"/protocol_security.db
+
+max_id=$(sqlite3 "$LOCAL_PATH_TO_DB"/protocol_security.db "select MAX(Id) from Protocol") ; echo $max_id
+
+sshpass -p 123456 scp -P 2222 root@10.10.8.15:/opt/secure/current/konn/data/protocol_security.db "$LOCAL_PATH_TO_DB"/protocol_security_2.db
+
+new_entries=$(sqlite3 "$LOCAL_PATH_TO_DB"/protocol_security_2.db ".mode column; SELECT Id, Timestamp, Severity, Type, Code, Message, TaskGuid  FROM Protocol WHERE Id > $max_id") ; echo $new_entries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

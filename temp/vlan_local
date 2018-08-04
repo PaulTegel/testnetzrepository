@@ -1,0 +1,10 @@
+Netzwerk-Zugriff vom Docker-Host auf konn-lan ermoeglichen:
+    ip link add mac0 link eth0 type macvlan mode bridge
+    ip link set dev mac0 up
+    ip addr add 192.168.2.100/24 dev mac0  |  dhclient -v -i mac0
+
+Netzwerk-Zugriff vom Docker-Host auf konn-lan entfernen:
+    ip addr del 192.168.2.100/24 dev mac0
+    ip link set dev mac0 down
+    ip link del mac0 link eth0 type macvlan mode bridge
+

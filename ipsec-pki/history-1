@@ -1,0 +1,125 @@
+    1  apt-get install mc
+    2  uname -a
+    3  #
+    4  dolphin &
+    5  dolphin &
+    6  nano /etc/apt/sources.list
+    7  apt-get install mc
+    8  apt-get update
+    9  apt-get install mc
+   10  nano /etc/apt/sources.list
+   11  apt-get update
+   12  apt-get install mc
+   13  mc
+   14  apt-get update
+   15  apt-get autoremove
+   16  apt-get upgrade
+   17  apt-get update
+   18  apt-get dist-upgrade
+   19  uname -a
+   20  gcc
+   21  g++
+   22  python
+   23  apt-get install visudo
+   24  sudo usermod -aG sudo paul
+   25  exit
+   26  pip install requests==2.14.2
+   27  pip freeze
+   28  python setup.py install
+   29  ll
+   30  ls -l
+   31  mc
+   32  type docker
+   33  cd ~/docker-arbeit/testnetz/
+   34  cd /home/paul/docker-arbeit/testnetz/
+   35  cd ..
+   36  ll
+   37  ls
+   38  cd testnetzrepository/
+   39  ls
+   40  cd docker-registry/
+   41  ls
+   42  docker-compose up
+   43  systemctl restart docker
+   44  docker-compose up
+   45  docker-compose down
+   46  docker-compose up
+   47  docker-compose down
+   48  nano /etc/hosts
+   49  nano /etc/docker/daemon.json 
+   50  cd ..
+   51  cd testnetzrepository/
+   52  ls
+   53  cd docker-registry/
+   54  ls
+   55  chmod +x helper.sh 
+   56  helper.sh
+   57  ./helper.sh
+   58  mc
+   59  nano /etc/ssh/sshd_config
+   60  ll
+   61  mc
+   62  docker rmi docker-registry:5000/testnetz/work-station.wp3
+   63  ls
+   64  cd docker-arbeit/
+   65  ls
+   66  cd testnetzrepository/
+   67  ls
+   68  cd docker-registry/
+   69  git status
+   70  git add helper_*
+   71  git status
+   72  git pull
+   73  git commit -m 'added helper_*'
+   74  git config --global user.email "paul@example.com"
+   75  git config --global user.name "paul"
+   76  git commit -m 'added helper_*'
+   77  git push
+   78  git push
+   79  git log
+   80  exit
+   81  apt-get install strongswan
+   82  apt-get update
+   83  apt-get install strongswan
+   84  sudo lsof /var/cache/apt/archives/lock
+   85  sudo lsof /var/cache/apt/archives/lock
+   86  lsof /var/cache/apt/archives/lock
+   87  apt-get install strongswan
+   88  lsof /var/lib/dpkg/lock
+   89  touch /var/cache/apt/archives/lock 
+   90  sudo dpkg --clear-avail 
+   91  apt-get install strongswan
+   92  cd /usr/local/etc/ipsec.d
+   93  ipsec
+   94  pwd
+   95  ll
+   96  lks
+   97  ls
+   98  cd docker-arbeit/
+   99  mkdir ipsec-pki
+  100  cd ipsec-pki/
+  101  ipsec pki --gen --type rsa --size 4096 --outform pem > private/strongswanKey.pem
+  102  mkdir private
+  103  ipsec pki --gen --type rsa --size 4096 --outform pem > private/strongswanKey.pem
+  104  openssl
+  105  apt-get install libssl-dev
+  106  apt-get install opensc
+  107  apt-get install  libgmp10
+  108  apt-get install  libgmp-dev
+  109  apt-get install libssl-dev
+  110  ipsec pki --gen --type rsa --size 4096 --outform pem > private/strongswanKey.pem
+  111  apt-get remove strongswan
+  112  apt search strongswan
+  113  apt-get install strongswan strongswan-ikev2 strongswan-pki 
+  114  ipsec pki --gen --type rsa --size 4096 --outform pem > private/strongswanKey.pem
+  115  ipsec pki --self --ca --lifetime 3650 --in private/strongswanKey.pem --type rsa --dn "C=CH, O=strongSwan, CN=Root CA" --outform pem > cacerts/strongswanCert.pem
+  116  mkdir cacerts
+  117  ipsec pki --self --ca --lifetime 3650 --in private/strongswanKey.pem --type rsa --dn "C=CH, O=strongSwan, CN=Root CA" --outform pem > cacerts/strongswanCert.pem
+  118  ipsec pki --gen --type rsa --size 2048 --outform pem > private/client1Key.pem
+  119  chmod 600 private/client1Key.pem
+  120  mkdir certs
+  121  ipsec pki --pub --in private/client1Key.pem --type rsa | ipsec pki --issue --lifetime 730 --cacert cacerts/strongswanCert.pem --cakey private/strongswanKey.pem --dn "C=CH, O=strongSwan, CN=device1" --san device1 --flag serverAuth --flag ikeIntermediate --outform pem > certs/client1Cert.pem
+  122  ipsec pki --gen --type rsa --size 2048 --outform pem > private/client2Key.pem
+  123  chmod 600 private/client2Key.pem
+  124  ipsec pki --pub --in private/client2Key.pem --type rsa | ipsec pki --issue --lifetime 730 --cacert cacerts/strongswanCert.pem --cakey private/strongswanKey.pem --dn "C=CH, O=strongSwan, CN=device2" --san device2 --flag serverAuth --flag ikeIntermediate --outform pem > certs/client2Cert.pem
+  125  history > history-1

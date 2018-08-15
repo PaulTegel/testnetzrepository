@@ -1,0 +1,1344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- start: showthread -->
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<title>New attack on WPA/WPA2 using PMKID</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Latest Threads (RSS 2.0)" href="https://hashcat.net/forum/syndication.php">
+<link rel="alternate" type="application/atom+xml" title="Latest Threads (Atom 1.0)" href="https://hashcat.net/forum/syndication.php?type=atom1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript" src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/jquery.js"></script>
+<script type="text/javascript" src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/jquery_002.js"></script>
+<script type="text/javascript" src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/general.js"></script>
+
+<link type="text/css" rel="stylesheet" href="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/global.css">
+<link type="text/css" rel="stylesheet" href="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star_ratings.css">
+<link type="text/css" rel="stylesheet" href="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/showthread.css">
+<link type="text/css" rel="stylesheet" href="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/css3.css">
+<link type="text/css" rel="stylesheet" href="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/latestposts.css">
+
+<script type="text/javascript">
+<!--
+	lang.unknown_error = "An unknown error has occurred.";
+
+	lang.select2_match = "One result is available, press enter to select it.";
+	lang.select2_matches = "{1} results are available, use up and down arrow keys to navigate.";
+	lang.select2_nomatches = "No matches found";
+	lang.select2_inputtooshort_single = "Please enter one or more character";
+	lang.select2_inputtooshort_plural = "Please enter {1} or more characters";
+	lang.select2_inputtoolong_single = "Please delete one character";
+	lang.select2_inputtoolong_plural = "Please delete {1} characters";
+	lang.select2_selectiontoobig_single = "You can only select one item";
+	lang.select2_selectiontoobig_plural = "You can only select {1} items";
+	lang.select2_loadmore = "Loading more results…";
+	lang.select2_searching = "Searching…";
+
+	var cookieDomain = "";
+	var cookiePath = "/forum/";
+	var cookiePrefix = "";
+	var cookieSecureFlag = "0";
+	var deleteevent_confirm = "Are you sure you want to delete this event?";
+	var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+	var loading_text = 'Loading. <br />Please Wait..';
+	var saving_changes = 'Saving changes..';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "96018d23fa0a634ca5c17c02a254c4a7";
+	var rootpath = "https://hashcat.net/forum";
+	var imagepath = "https://hashcat.net/forum/images";
+  	var yes_confirm = "Yes";
+	var no_confirm = "No";
+	var MyBBEditor = null;
+	var spinner_image = "https://hashcat.net/forum/images/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+	var modal_zindex = 9999;
+// -->
+</script>
+<!-- end: headerinclude -->
+<script type="text/javascript">
+<!--
+	var quickdelete_confirm = "Are you sure you want to delete this post?";
+	var quickrestore_confirm = "Are you sure you want to restore this post?";
+	var allowEditReason = "1";
+	lang.save_changes = "Save Changes";
+	lang.cancel_edit = "Cancel Edit";
+	lang.quick_edit_update_error = "There was an error editing your reply:";
+	lang.quick_reply_post_error = "There was an error posting your reply:";
+	lang.quick_delete_error = "There was an error deleting your reply:";
+	lang.quick_delete_success = "The post was deleted successfully.";
+	lang.quick_delete_thread_success = "The thread was deleted successfully.";
+	lang.quick_restore_error = "There was an error restoring your reply:";
+	lang.quick_restore_success = "The post was restored successfully.";
+	lang.editreason = "Edit Reason";
+// -->
+</script>
+<!-- jeditable (jquery) -->
+<script type="text/javascript" src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/report.js"></script>
+<script src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/jeditable.js"></script>
+<script type="text/javascript" src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/thread.js"></script>
+</head>
+<body>
+	<!-- start: header -->
+<div id="container">
+		<a name="top" id="top"></a>
+		<div id="header">
+			<div class="header">
+				<h1><a href="https://hashcat.net/"><span>hashcat</span><br> advanced password recovery</a></h1>
+				<hr>
+			</div>
+			<div class="navigation">
+				<ul>
+					<li><a href="https://hashcat.net/hashcat/" title="hashcat">hashcat</a></li>
+					<li class="open"><a href="https://hashcat.net/forum/" title="Hashcat Forums">Forums</a></li>
+                    <li><a href="https://hashcat.net/wiki/" title="Wiki">Wiki</a></li>
+                    <li><a href="https://hashcat.net/tools/" title="Tools">Tools</a></li>
+                    <li><a href="https://hashcat.net/events/" title="Events">Events</a></li>
+				</ul>
+			</div>
+			<div class="clear">
+			</div>			
+			<div id="logo">
+				<div class="wrapper">
+					<ul class="menu top_links">
+						
+						<!-- start: header_menu_search -->
+<li><a href="https://hashcat.net/forum/search.php" class="search">Search</a></li>
+<!-- end: header_menu_search -->
+						
+						
+						<li><a href="https://hashcat.net/forum/misc.php?action=help" class="help">Help</a></li>
+					</ul>
+				</div>
+			    <br>
+                <br>				
+			</div>
+			<div id="panel">
+				<div class="upper">
+					<div class="wrapper">
+						
+						<!-- start: header_welcomeblock_guest -->
+						<!-- Continuation of div(class="upper") as opened in the header template -->
+						<span class="welcome">Hello There, Guest! <a href="https://hashcat.net/forum/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true, zIndex: (typeof modal_zindex !== 'undefined' ? modal_zindex : 9999) }); return false;" class="login">Login</a> <a href="https://hashcat.net/forum/member.php?action=register" class="register">Register</a></span>
+					</div>
+				</div>
+				<div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://hashcat.net/forum/member.php">
+						<input name="action" value="do_login" type="hidden">
+						<input name="url" value="" type="hidden">
+						<input name="quick_login" value="1" type="hidden">
+						<input name="my_post_key" value="96018d23fa0a634ca5c17c02a254c4a7" type="hidden">
+						<table class="tborder" border="0" cellspacing="1" cellpadding="4" width="100%">
+							<tbody><tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<!-- start: header_welcomeblock_guest_login_modal -->
+<tr>
+	<td class="trow1" width="25%"><strong>Username/Email:</strong></td>
+	<td class="trow1"><input name="quick_username" id="quick_login_username" class="textbox initial_focus" type="text"></td>
+</tr>
+<tr>
+	<td class="trow2"><strong>Password:</strong></td>
+	<td class="trow2">
+		<input name="quick_password" id="quick_login_password" value="" class="textbox" type="password"> <a href="https://hashcat.net/forum/member.php?action=lostpw" class="lost_password">Lost Password?</a>
+	</td>
+</tr>
+<tr>
+	<td class="trow1">&nbsp;</td>
+	<td class="trow1 remember_me">
+		<input name="quick_remember" id="quick_login_remember" value="yes" class="checkbox" checked="checked" type="checkbox">
+		<label for="quick_login_remember">Remember me</label>
+	</td>
+</tr>
+<tr>
+	<td class="trow2" colspan="2">
+		<div align="center"><input name="submit" class="button" value="Login" type="submit"></div>
+	</td>
+</tr>
+<!-- end: header_welcomeblock_guest_login_modal -->
+						</tbody></table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+<!-- end: header_welcomeblock_guest -->
+					<!-- </div> in header_welcomeblock_member and header_welcomeblock_guest -->
+				<!-- </div> in header_welcomeblock_member and header_welcomeblock_guest -->
+			</div>
+		</div>
+		<div id="content">
+			<div class="wrapper">
+				
+								
+				
+				
+				
+				
+				
+				<!-- start: nav -->
+
+<div class="navigation">
+<!-- start: nav_bit -->
+<a href="https://hashcat.net/forum/index.php">hashcat Forum</a><!-- start: nav_sep -->
+›
+<!-- end: nav_sep -->
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<a href="https://hashcat.net/forum/forum-15.html">Misc</a><!-- start: nav_sep -->
+›
+<!-- end: nav_sep -->
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<a href="https://hashcat.net/forum/forum-25.html">User Contributions</a><!-- start: nav_dropdown -->
+ <img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/arrow_down.png" alt="v" title="" class="pagination_breadcrumb_link" id="breadcrumb_multipage"><!-- start: multipage_breadcrumb -->
+<div id="breadcrumb_multipage_popup" class="pagination pagination_breadcrumb" style="display: none;">
+<!-- start: multipage_page_link_current -->
+ <a href="https://hashcat.net/forum/forum-25.html" class="pagination_current">1</a>
+<!-- end: multipage_page_link_current --><!-- start: multipage_page -->
+<a href="https://hashcat.net/forum/forum-25-page-2.html" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="https://hashcat.net/forum/forum-25-page-3.html" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="https://hashcat.net/forum/forum-25-page-4.html" class="pagination_page">4</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="https://hashcat.net/forum/forum-25-page-5.html" class="pagination_page">5</a>
+<!-- end: multipage_page --><!-- start: multipage_end -->
+...  <a href="https://hashcat.net/forum/forum-25-page-9.html" class="pagination_last">9</a>
+<!-- end: multipage_end --><!-- start: multipage_nextpage -->
+<a href="https://hashcat.net/forum/forum-25-page-2.html" class="pagination_next">Next »</a>
+<!-- end: multipage_nextpage -->
+</div>
+<script type="text/javascript">
+// <!--
+	if(use_xmlhttprequest == "1")
+	{
+		$("#breadcrumb_multipage").popupMenu();
+	}
+// -->
+</script>
+<!-- end: multipage_breadcrumb -->
+<!-- end: nav_dropdown -->
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+<br><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/nav_bit.png" alt="">
+<!-- end: nav_sep_active --><!-- start: nav_bit_active -->
+<span class="active">New attack on WPA/WPA2 using PMKID</span>
+<!-- end: nav_bit_active -->
+</div>
+<!-- end: nav -->
+				<br>
+<!-- end: header -->
+	
+	
+	<div class="float_left">
+		<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (3):</span>
+<!-- start: multipage_page_current -->
+ <span class="pagination_current">1</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="https://hashcat.net/forum/thread-7717-page-2.html" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="https://hashcat.net/forum/thread-7717-page-3.html" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_nextpage -->
+<a href="https://hashcat.net/forum/thread-7717-page-2.html" class="pagination_next">Next »</a>
+<!-- end: multipage_nextpage -->
+</div>
+<!-- end: multipage -->
+	</div>
+	<div class="float_right">
+		
+	</div>
+	
+	<table class="tborder tfixed clear" border="0" cellspacing="1" cellpadding="4">
+		<tbody><tr>
+			<td class="thead">
+				<div class="float_right">
+					<span class="smalltext"><strong><a href="javascript:void(0)" id="thread_modes">Thread Modes</a></strong></span>
+				</div>
+				<div>
+					<strong>New attack on WPA/WPA2 using PMKID</strong>
+				</div>
+			</td>
+		</tr>
+<tr><td id="posts_container">
+	<div id="posts">
+		<!-- start: postbit -->
+
+<a name="pid41427" id="pid41427"></a>
+<div class="post " style="" id="post_41427">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-1.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/avatar_1.jpg" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-1.html"><span style="color: green;"><strong><em>atom</em></strong></span></a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Administrator<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 4,899<br>
+	Threads: 220<br>
+	Joined: Apr 2010
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41427.html#pid41427" title="New attack on WPA/WPA2 using PMKID">#1</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-04-2018, 06:50 PM <span class="post_edit" id="edited_by_41427"><!-- start: postbit_editedby -->
+<span class="edited_post">(This post was last modified: 08-05-2018, 02:16 PM by <a href="https://hashcat.net/forum/user-1.html">atom</a>.<!-- start: postbit_editedby_editreason -->
+ <em>Edit Reason: Fixed typo in subject</em>
+<!-- end: postbit_editedby_editreason -->)</span>
+<!-- end: postbit_editedby --></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41427">
+		In this writeup, I'll describe a new technique to crack WPA PSK (Pre-Shared Key) passwords.<br>
+<br>
+In order to make use of this new attack you need the following tools:<br>
+<ul class="mycode_list"><li><a href="https://github.com/ZerBea/hcxdumptool" target="_blank" rel="noopener" class="mycode_url">hcxdumptool v4.2.0 or higher</a><br>
+</li>
+<li><a href="https://github.com/ZerBea/hcxtools" target="_blank" rel="noopener" class="mycode_url">hcxtools v4.2.0 or higher</a><br>
+</li>
+<li><a href="https://github.com/hashcat/hashcat" target="_blank" rel="noopener" class="mycode_url">hashcat v4.2.0 or higher</a><br>
+</li>
+</ul>
+<br>
+This attack was discovered accidentally while looking for new ways to 
+attack the new WPA3 security standard. WPA3 will be much harder to 
+attack because of its modern key establishment protocol called 
+"Simultaneous Authentication of Equals" (SAE).<br>
+<br>
+The main difference from existing attacks is that in this attack, 
+capture of a full EAPOL 4-way handshake is not required. The new attack 
+is performed on the RSN IE (Robust Security Network Information Element)
+ of a single EAPOL frame.<br>
+<br>
+At this time, we do not know for which vendors or for how many routers 
+this technique will work, but we think it will work against all 
+802.11i/p/q/r networks with roaming functions enabled (most modern 
+routers).<br>
+<br>
+The main advantages of this attack are as follow:<br>
+<ul class="mycode_list"><li>No more regular users required - because the attacker directly communicates with the AP (aka "client-less" attack)<br>
+</li>
+<li>No more waiting for a complete 4-way handshake between the regular user and the AP<br>
+</li>
+<li>No more eventual retransmissions of EAPOL frames (which can lead to uncrackable results)<br>
+</li>
+<li>No more eventual invalid passwords sent by the regular user<br>
+</li>
+<li>No more lost EAPOL frames when the regular user or the AP is too far away from the attacker<br>
+</li>
+<li>No more fixing of nonce and replaycounter values required (resulting in slightly higher speeds)<br>
+</li>
+<li>No more special output format (pcap, hccapx, etc.) - final data will appear as regular hex encoded string<br>
+</li>
+</ul>
+<br>
+<hr class="mycode_hr">
+<br>
+Attack details:<br>
+<br>
+The RSN IE is an optional field that can be found in 802.11 management frames. One of the RSN capabilities is the PMKID.<br>
+<br>
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/wireshark_pmkid.png" alt="[Image: wireshark_pmkid.png]" class="mycode_img"><br>
+<br>
+The PMKID is computed by using HMAC-SHA1 where the key is the PMK and 
+the data part is the concatenation of a fixed string label "PMK Name", 
+the access point's MAC address and the station's MAC address.<br>
+<br>
+<div class="codeblock"><div class="title">Code:</div><div class="body" dir="ltr"><code>PMKID = HMAC-SHA1-128(PMK, "PMK Name" | MAC_AP | MAC_STA)</code></div></div><br>
+Since the PMK is the same as in a regular EAPOL 4-way handshake this is an ideal attacking vector.<br>
+<br>
+We receive all the data we need in the first EAPOL frame from the AP.<br>
+<br>
+<hr class="mycode_hr">
+<br>
+How to reproduce:<br>
+<br>
+1. Run hcxdumptool to request the PMKID from the AP and to dump the recieved frame to a file (in pcapng format).<br>
+<br>
+<div class="codeblock"><div class="title">Code:</div><div class="body" dir="ltr"><code>$ ./hcxdumptool -o test.pcapng -i wlp39s0f3u4u5 --enable_status</code></div></div><br>
+Output:<br>
+<br>
+<blockquote class="mycode_quote"><cite>Quote:</cite><span style="font-family: Courier;" class="mycode_font">start capturing (stop with ctrl+c)<br>
+INTERFACE:...............: wlp39s0f3u4u5<br>
+FILTERLIST...............: 0 entries<br>
+MAC CLIENT...............: 89acf0e761f4 (client)<br>
+MAC ACCESS POINT.........: 4604ba734d4e (start NIC)<br>
+EAPOL TIMEOUT............: 20000<br>
+DEAUTHENTICATIONINTERVALL: 10 beacons<br>
+GIVE UP DEAUTHENTICATIONS: 20 tries<br>
+REPLAYCOUNTER............: 62083<br>
+ANONCE...................: 9ddca61888470946305b27d413a28cf474f19ff64c71667e5c1aee144cd70a69</span></blockquote>
+<br>
+If an AP recieves our association request packet and supports sending PMKID we will see a message "FOUND PMKID" after a moment:<br>
+<br>
+<blockquote class="mycode_quote"><cite>Quote:</cite><span style="font-family: Courier;" class="mycode_font">[13:29:57 - 011] 89acf0e761f4 -&gt; 4604ba734d4e &lt;ESSID&gt; [ASSOCIATIONREQUEST, SEQUENCE 4]<br>
+[13:29:57 - 011] 4604ba734d4e -&gt; 89acf0e761f4 [ASSOCIATIONRESPONSE, SEQUENCE 1206]<br>
+[13:29:57 - 011] 4604ba734d4e -&gt; 89acf0e761f4 [FOUND PMKID]</span></blockquote>
+<br>
+Note: Based on the noise on the wifi channel it can take some time to 
+recieve the PMKID. We recommend running hcxdumptool up to 10 minutes 
+before aborting.<br>
+<br>
+2. Run hcxpcaptool to convert the captured data from pcapng format to a hash format accepted by hashcat.<br>
+<br>
+<div class="codeblock"><div class="title">Code:</div><div class="body" dir="ltr"><code>$ ./hcxpcaptool -z test.16800 test.pcapng</code></div></div><br>
+Output:<br>
+<br>
+<blockquote class="mycode_quote"><cite>Quote:</cite><span style="font-family: Courier;" class="mycode_font">start reading from test.pcapng<br>
+<br>
+summary:<br>
+--------<br>
+file name....................: test.pcapng<br>
+file type....................: pcapng 1.0<br>
+file hardware information....: x86_64<br>
+file os information..........: Linux 4.17.11-arch1<br>
+file application information.: hcxdumptool 4.2.0<br>
+network type.................: DLT_IEEE802_11_RADIO (127)<br>
+endianess....................: little endian<br>
+read errors..................: flawless<br>
+packets inside...............: 66<br>
+skipped packets..............: 0<br>
+packets with FCS.............: 0<br>
+beacons (with ESSID inside)..: 17<br>
+probe requests...............: 1<br>
+probe responses..............: 11<br>
+association requests.........: 5<br>
+association responses........: 5<br>
+authentications (OPEN SYSTEM): 13<br>
+authentications (BROADCOM)...: 1<br>
+EAPOL packets................: 14<br>
+EAPOL PMKIDs.................: 1<br>
+<br>
+1 PMKID(s) written to test.16800</span></blockquote>
+<br>
+The content of the written file will look like this:<br>
+<br>
+<blockquote class="mycode_quote"><cite>Quote:</cite><span style="font-family: Courier;" class="mycode_font">2582a8281bf9d4308d6f5731d0e61c61*4604ba734d4e*89acf0e761f4*ed487162465a774bfba60eb603a39f3a</span></blockquote>
+<br>
+The columns are the following (all hex encoded):<br>
+<ul class="mycode_list"><li>PMKID<br>
+</li>
+<li>MAC AP<br>
+</li>
+<li>MAC Station<br>
+</li>
+<li>ESSID<br>
+</li>
+</ul>
+<br>
+Note: While not required it is recommended to use options -E -I and -U 
+with hcxpcaptool. We can use these files to feed hashcat. They typically
+ produce good results.<br>
+<ul class="mycode_list"><li>-E retrieve possible passwords from WiFi-traffic (additional, this list will include ESSIDs)<br>
+</li>
+<li>-I retrieve identities from WiFi-traffic<br>
+</li>
+<li>-U retrieve usernames from WiFi-traffic<br>
+</li>
+</ul>
+<br>
+<div class="codeblock"><div class="title">Code:</div><div class="body" dir="ltr"><code>$ ./hcxpcaptool -E essidlist -I identitylist -U usernamelist -z test.16800 test.pcapng</code></div></div><br>
+3. Run hashcat to crack it.<br>
+<br>
+Basically we can attack this hash as any other hash type. The hash-mode that we need to use is 16800.<br>
+<br>
+<div class="codeblock"><div class="title">Code:</div><div class="body" dir="ltr"><code>$ ./hashcat -m 16800 test.16800 -a 3 -w 3 '?l?l?l?l?l?lt!'</code></div></div><br>
+Output:<br>
+<br>
+<blockquote class="mycode_quote"><cite>Quote:</cite><span style="font-family: Courier;" class="mycode_font">hashcat (v4.2.0) starting...<br>
+<br>
+OpenCL Platform #1: NVIDIA Corporation<br>
+======================================<br>
+* Device #1: GeForce GTX 1080, 2028/8112 MB allocatable, 20MCU<br>
+* Device #2: GeForce GTX 1080, 2029/8119 MB allocatable, 20MCU<br>
+* Device #3: GeForce GTX 1080, 2029/8119 MB allocatable, 20MCU<br>
+* Device #4: GeForce GTX 1080, 2029/8119 MB allocatable, 20MCU<br>
+<br>
+Hashes: 1 digests; 1 unique digests, 1 unique salts<br>
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates<br>
+<br>
+Applicable optimizers:<br>
+* Zero-Byte<br>
+* Single-Hash<br>
+* Single-Salt<br>
+* Brute-Force<br>
+* Slow-Hash-SIMD-LOOP<br>
+<br>
+Minimum password length supported by kernel: 8<br>
+Maximum password length supported by kernel: 63<br>
+<br>
+Watchdog: Temperature abort trigger set to 90c<br>
+<br>
+2582a8281bf9d4308d6f5731d0e61c61*4604ba734d4e*89acf0e761f4*ed487162465a774bfba60eb603a39f3a:hashcat!<br>
+<br>
+Session..........: hashcat<br>
+Status...........: Cracked<br>
+Hash.Type........: WPA-PMKID-PBKDF2<br>
+Hash.Target......: 2582a8281bf9d4308d6f5731d0e61c61*4604ba734d4e*89acf...a39f3a<br>
+Time.Started.....: Thu Jul 26 12:51:38 2018 (41 secs)<br>
+Time.Estimated...: Thu Jul 26 12:52:19 2018 (0 secs)<br>
+Guess.Mask.......: ?l?l?l?l?l?lt! [8]<br>
+Guess.Queue......: 1/1 (100.00%)<br>
+Speed.Dev.#1.....: &nbsp; 408.9 kH/s (103.86ms) @ Accel:64 Loops:128 Thr:1024 Vec:1<br>
+Speed.Dev.#2.....: &nbsp; 408.6 kH/s (104.90ms) @ Accel:64 Loops:128 Thr:1024 Vec:1<br>
+Speed.Dev.#3.....: &nbsp; 412.9 kH/s (102.50ms) @ Accel:64 Loops:128 Thr:1024 Vec:1<br>
+Speed.Dev.#4.....: &nbsp; 410.9 kH/s (104.66ms) @ Accel:64 Loops:128 Thr:1024 Vec:1<br>
+Speed.Dev.#*.....: &nbsp;1641.3 kH/s<br>
+Recovered........: 1/1 (100.00%) Digests, 1/1 (100.00%) Salts<br>
+Progress.........: 66846720/308915776 (21.64%)<br>
+Rejected.........: 0/66846720 (0.00%)<br>
+Restore.Point....: 0/11881376 (0.00%)<br>
+Candidates.#1....: hariert! -&gt; hhzkzet!<br>
+Candidates.#2....: hdtivst! -&gt; hzxkbnt!<br>
+Candidates.#3....: gnxpwet! -&gt; gwqivst!<br>
+Candidates.#4....: gxhcddt! -&gt; grjmrut!<br>
+HWMon.Dev.#1.....: Temp: 81c Fan: 54% Util: 75% Core:1771MHz Mem:4513MHz Bus:1<br>
+HWMon.Dev.#2.....: Temp: 81c Fan: 54% Util:100% Core:1607MHz Mem:4513MHz Bus:1<br>
+HWMon.Dev.#3.....: Temp: 81c Fan: 54% Util: 94% Core:1683MHz Mem:4513MHz Bus:1<br>
+HWMon.Dev.#4.....: Temp: 81c Fan: 54% Util: 93% Core:1620MHz Mem:4513MHz Bus:1<br>
+<br>
+Started: Thu Jul 26 12:51:30 2018<br>
+Stopped: Thu Jul 26 12:52:21 2018</span></blockquote>
+<br>
+There's also support for hash-mode 16801, which allows skipping the 
+computation of the PMK - which is the computation that makes cracking 
+WPA so slow. Pre-computing PMK can be useful in cases where you are on 
+site and you cannot transfer a hash to a remote cracking rig because of 
+an NDA. The goal is to run hashcat on your notebook which you can bring 
+to the site.<br>
+<br>
+The mode 16801 expects a list of pre-computed PMKs, as hex encoded 
+strings of length 64, as the input wordlist. To pre-compute the PMKs you
+ can use the hcxkeys tool. The hcxkeys tools require the ESSID, so you 
+need to ask for the ESSID from your client in advance.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41427">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_www -->
+<a href="http://hashcat.net/" target="_blank" rel="noopener" title="Visit this user's website" class="postbit_website"><span>Website</span></a>
+<!-- end: postbit_www --><!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=1" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41427" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41431" id="pid41431"></a>
+<div class="post " style="" id="post_41431">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-11042.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/default_avatar.png" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-11042.html">hash93</a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Junior Member<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 3<br>
+	Threads: 0<br>
+	Joined: Aug 2018
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41431.html#pid41431" title="RE: New attack on WPA/WPA using PMKID">#2</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-04-2018, 09:18 PM <span class="post_edit" id="edited_by_41431"><!-- start: postbit_editedby -->
+<span class="edited_post">(This post was last modified: 08-04-2018, 09:19 PM by <a href="https://hashcat.net/forum/user-11042.html">hash93</a>.)</span>
+<!-- end: postbit_editedby --></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41431">
+		Exciting!  Where are these routers located, businesses or homes?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41431">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=11042" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41431" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41435" id="pid41435"></a>
+<div class="post " style="" id="post_41435">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-7258.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/default_avatar.png" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-7258.html">BeanBagKing</a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Junior Member<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 11<br>
+	Threads: 4<br>
+	Joined: Nov 2015
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41435.html#pid41435" title="RE: New attack on WPA/WPA using PMKID">#3</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-05-2018, 12:54 AM <span class="post_edit" id="edited_by_41435"><!-- start: postbit_editedby -->
+<span class="edited_post">(This post was last modified: 08-05-2018, 04:06 AM by <a href="https://hashcat.net/forum/user-7258.html">BeanBagKing</a>.)</span>
+<!-- end: postbit_editedby --></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41435">
+		This looks amazing.<br>
+<br>
+When trying to target a specific AP (making sure I only hit mine, not my
+ neighbors), I'm trying to use --filtermode=2 and 
+--filterlist=filter.txt. filter.txt consists of a single line containing
+ my AP's address in the form "05D2BA2B8CD". This consistently returns 
+segmentation fault. Remove just the --filterlist and everything appears 
+to work fine, though I'm not sure how filtermode=2 works with no list, 
+but it runs.<br>
+<br>
+The exact line is:<br>
+root@notka1i:~/Desktop/PMKID# hcxdumptool -o test.pcapng -i wlan0 --enable_status --filtermode=2 --filterlist=filter.txt<br>
+<br>
+I've tried several variants (e.g. --filterlist ./filter.txt, full path, etc.) with the same results.<br>
+<br>
+Am I using these flags correctly? That is, both in the intended manner 
+(to target a specific AP) and not doing something stupid with the syntax
+ to create a segfault?<br>
+<br>
+Trying it out now against Ubiquity gear and it doesn't seem to work. I'm
+ not sure yet if this is my fault, or if Ubiquity isn't vulnerable, or 
+if my AP settings just don't allow this (not roaming). Working on 
+setting up a wireless lab next to try out a few older all-in-one 
+router/AP's.<br>
+<br>
+Edit: No issues capturing PMKID from an old Netgear WNR1000v3 I had laying around. Still not getting anything from the Ubiquity.<br>
+<br>
+Thanks again for the work you guys do!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41435">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=7258" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41435" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41436" id="pid41436"></a>
+<div class="post " style="" id="post_41436">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-9534.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/default_avatar.png" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-9534.html">ZerBea</a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Member<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 236<br>
+	Threads: 1<br>
+	Joined: Jun 2017
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41436.html#pid41436" title="RE: New attack on WPA/WPA using PMKID">#4</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-05-2018, 10:53 AM <span class="post_edit" id="edited_by_41436"><!-- start: postbit_editedby -->
+<span class="edited_post">(This post was last modified: 08-05-2018, 12:21 PM by <a href="https://hashcat.net/forum/user-9534.html">ZerBea</a>.)</span>
+<!-- end: postbit_editedby --></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41436">
+		Thanks for reporting this issue. I fixed it with the last commit.<br>
+We tried to use filterlist entries on the first outgoing broadcast 
+packet. Since there are no incomming packets at this moment, we run into
+ a seg fault.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41436">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=9534" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41436" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41446" id="pid41446"></a>
+<div class="post " style="" id="post_41446">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-6587.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/default_avatar.png" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-6587.html">soxrok2212</a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Member<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 132<br>
+	Threads: 4<br>
+	Joined: Jul 2015
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41446.html#pid41446" title="RE: New attack on WPA/WPA2 using PMKID">#5</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-05-2018, 07:21 PM <span class="post_edit" id="edited_by_41446"></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41446">
+		Great work and thank you to all those involved!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41446">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=6587" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41446" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41447" id="pid41447"></a>
+<div class="post " style="" id="post_41447">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-11053.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/avatar_11053.jpg" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-11053.html">kcdtv</a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Junior Member<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 1<br>
+	Threads: 0<br>
+	Joined: Aug 2018
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41447.html#pid41447" title="RE: New attack on WPA/WPA2 using PMKID">#6</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-05-2018, 11:41 PM <span class="post_edit" id="edited_by_41447"></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41447">
+		I just registered to congrats you for this excellent discovery and to 
+thank you for sharing it with the entire community in this "open source 
+&amp; full disclosure" spirit. I was pretty depressed to end my 
+vacacions, but now i am pretty exited to come back to dig into that. 
+&nbsp;<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/biggrin.gif" alt="Big Grin" title="Big Grin" class="smilie smilie_4">
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41447">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=11053" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41447" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41448" id="pid41448"></a>
+<div class="post " style="" id="post_41448">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-9534.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/default_avatar.png" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-9534.html">ZerBea</a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Member<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 236<br>
+	Threads: 1<br>
+	Joined: Jun 2017
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41448.html#pid41448" title="RE: New attack on WPA/WPA2 using PMKID">#7</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-06-2018, 07:15 AM <span class="post_edit" id="edited_by_41448"></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41448">
+		If you want to use hcxdumptool to caputure wlan traffic, please note 
+that your WiFi adapter must support this.  ‎Not all drivers support 
+this. This is a list of chipsets, known as working "out of the box" on 
+latest Linux kernels (&gt;= 4.14)<br>
+Supported and recommended cipsets:<br>
+USB ID 148f:7601 Ralink Technology, Corp. MT7601U Wireless Adapter<br>
+USB ID 148f:3070 Ralink Technology, Corp. RT2870/RT3070 Wireless Adapter<br>
+USB ID 148f:5370 Ralink Technology, Corp. RT5370 Wireless Adapter<br>
+USB ID 0bda:8187 Realtek Semiconductor Corp. RTL8187 Wireless Adapter<br>
+USB ID 0bda:8189 Realtek Semiconductor Corp. RTL8187B Wireless 802.11g 54Mbps Network Adapter<br>
+<br>
+To help other users to find a working adapter, please report your favourite adapters here:<br>
+TENDA W311U+ my favourite adapter<br>
+LOGILINK WL0151 my second favourite adapter<br>
+ALLNET ALL-WA0150N nice for portable operations<br>
+Alfa AWUS036H working, but too much power consumption<br>
+Alfa AWUS036NH working, but too much power consumption<br>
+<br>
+Please keep in mind:<br>
+Some VENDORs change the chipset, but keep the same product name. Make sure, that a supported chipset is inside!
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41448">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=9534" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41448" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41457" id="pid41457"></a>
+<div class="post " style="" id="post_41457">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-11056.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/default_avatar.png" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-11056.html">awdmesh</a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Junior Member<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 1<br>
+	Threads: 0<br>
+	Joined: Aug 2018
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41457.html#pid41457" title="RE: New attack on WPA/WPA2 using PMKID">#8</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-06-2018, 01:43 PM <span class="post_edit" id="edited_by_41457"><!-- start: postbit_editedby -->
+<span class="edited_post">(This post was last modified: 08-06-2018, 05:48 PM by <a href="https://hashcat.net/forum/user-11056.html">awdmesh</a>.)</span>
+<!-- end: postbit_editedby --></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41457">
+		Signed up just to say thanks as this will be a great tool/method for my lab exercises.<br>
+<br>
+Just some feedback - I messed around all day with a T2U Tp-link adapter 
+until I realized it wasn't working correctly. Once I booted up my laptop
+ with The-Distribution-Which-Does-Not-Handle-OpenCL-Well (Kali) and used
+ the internal NIC I was able to see the probes/responses etc. I was able
+ to get the PMKID from a Linksys E2500 v3 running TomatoUSB. Ran hashcat
+ against it and got the 12345678 password. I still have a Netgear 
+wnr834B running dd-wrt to test (can also test factory firmware) and a 
+newer Linksys EA8300 to test.<br>
+<br>
+Just curious - can you somehow run a word list against the PMKID?
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41457">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=11056" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41457" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41458" id="pid41458"></a>
+<div class="post " style="" id="post_41458">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-85.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/avatar_85.jpg" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-85.html"><span style="color: #CC00CC;"><strong>undeath</strong></span></a></span></strong> <!-- start: postbit_online -->
+<a href="https://hashcat.net/forum/online.php" title="Online"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_online.png" alt="Online" class="buddy_status" border="0"></a>
+<!-- end: postbit_online --><br>
+			<span class="smalltext">
+				Sneaky Bastard<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 1,433<br>
+	Threads: 11<br>
+	Joined: Jul 2010
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41458.html#pid41458" title="RE: New attack on WPA/WPA2 using PMKID">#9</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-06-2018, 01:47 PM <span class="post_edit" id="edited_by_41458"></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41458">
+		<blockquote class="mycode_quote"><cite><span> (08-06-2018, 01:43 PM)</span>awdmesh Wrote:  <a href="https://hashcat.net/forum/post-41457.html#pid41457" class="quick_jump"></a></cite>Just curious - can you somehow run a word list against the PMKID?</blockquote><br>
+hashcat usage for this hash mode is the same as for every other mode.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41458">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=85" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41458" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit --><!-- start: postbit -->
+
+<a name="pid41461" id="pid41461"></a>
+<div class="post " style="" id="post_41461">
+<div class="post_author">
+	<!-- start: postbit_avatar -->
+<div class="author_avatar"><a href="https://hashcat.net/forum/user-11060.html"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/default_avatar.png" alt="" width="70" height="70"></a></div>
+<!-- end: postbit_avatar -->
+	<div class="author_information">
+			<strong><span class="largetext"><a href="https://hashcat.net/forum/user-11060.html">lint</a></span></strong> <!-- start: postbit_offline -->
+<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/buddy_offline.png" title="Offline" alt="Offline" class="buddy_status">
+<!-- end: postbit_offline --><br>
+			<span class="smalltext">
+				Junior Member<br>
+				<img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><img src="New%20attack%20on%20WPA_WPA2%20using%20PMKID_files/star.png" alt="*" border="0"><br>
+				
+			</span>
+	</div>
+	<div class="author_statistics">
+		<!-- start: postbit_author_user -->
+
+	Posts: 1<br>
+	Threads: 0<br>
+	Joined: Aug 2018
+	
+<!-- end: postbit_author_user -->
+	</div>
+</div>
+<div class="post_content">
+	<div class="post_head">
+		<!-- start: postbit_posturl -->
+<div class="float_right" style="vertical-align: top">
+<strong><a href="https://hashcat.net/forum/thread-7717-post-41461.html#pid41461" title="RE: New attack on WPA/WPA2 using PMKID">#10</a></strong>
+
+</div>
+<!-- end: postbit_posturl -->
+		
+		<span class="post_date">08-06-2018, 06:09 PM <span class="post_edit" id="edited_by_41461"></span></span>
+		
+	</div>
+	<div class="post_body scaleimages" id="pid_41461">
+		From what it seems, this is going to be huge!<br>
+<br>
+The question I think a lot people will ask: Is this attack viable (future) on non-PSK networks?<br>
+<br>
+I tried at my own (radius/wpa-enterprise) network, just to check, and as expected it failed miserably.
+	</div>
+	
+	
+	<div class="post_meta" id="post_meta_41461">
+		
+		<div class="float_right">
+			
+		</div>
+	</div>
+	
+</div>
+<div class="post_controls">
+	<div class="postbit_buttons author_buttons float_left">
+		<!-- start: postbit_find -->
+<a href="https://hashcat.net/forum/search.php?action=finduser&amp;uid=11060" title="Find all posts by this user" class="postbit_find"><span>Find</span></a>
+<!-- end: postbit_find -->
+	</div>
+	<div class="postbit_buttons post_management_buttons float_right">
+		<!-- start: postbit_quote -->
+<a href="https://hashcat.net/forum/newreply.php?tid=7717&amp;replyto=41461" title="Quote this message in a reply" class="postbit_quote"><span>Reply</span></a>
+<!-- end: postbit_quote -->
+	</div>
+</div>
+</div>
+<!-- end: postbit -->
+	</div>
+</td></tr>
+		<tr>
+			<td class="tfoot">
+				<!-- start: showthread_search -->
+	<div class="float_right">
+		<form action="search.php" method="post">
+			<input name="action" value="thread" type="hidden">
+			<input name="tid" value="7717" type="hidden">
+			<input name="keywords" value="Enter Keywords" onfocus="if(this.value == 'Enter Keywords') { this.value = ''; }" onblur="if(this.value=='') { this.value='Enter Keywords'; }" class="textbox" size="25" type="text">
+			<input class="button" value="Search Thread" type="submit">
+		</form>
+	</div>
+<!-- end: showthread_search -->
+				<div>
+					<strong>« <a href="https://hashcat.net/forum/thread-7717-nextoldest.html">Next Oldest</a> | <a href="https://hashcat.net/forum/thread-7717-nextnewest.html">Next Newest</a> »</strong>
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	<div class="float_left">
+		<!-- start: multipage -->
+<div class="pagination">
+<span class="pages">Pages (3):</span>
+<!-- start: multipage_page_current -->
+ <span class="pagination_current">1</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a href="https://hashcat.net/forum/thread-7717-page-2.html" class="pagination_page">2</a>
+<!-- end: multipage_page --><!-- start: multipage_page -->
+<a href="https://hashcat.net/forum/thread-7717-page-3.html" class="pagination_page">3</a>
+<!-- end: multipage_page --><!-- start: multipage_nextpage -->
+<a href="https://hashcat.net/forum/thread-7717-page-2.html" class="pagination_next">Next »</a>
+<!-- end: multipage_nextpage -->
+</div>
+<!-- end: multipage -->
+	</div>
+	<div style="padding-top: 4px;" class="float_right">
+		
+	</div>
+	<br class="clear">
+	
+	
+	
+	<br>
+	<div class="float_left">
+		<ul class="thread_tools">
+			<li class="printable"><a href="https://hashcat.net/forum/printthread.php?tid=7717">View a Printable Version</a></li>
+			
+			
+			
+		</ul>
+	</div>
+
+	<div class="float_right" style="text-align: right;">
+		
+		
+	</div>
+	<br class="clear">
+	
+	<!-- start: footer -->
+
+	</div>
+</div>
+<div id="footer">
+	<div class="upper">
+		<div class="wrapper">
+			
+			
+			<ul class="menu bottom_links">
+				<!-- start: footer_contactus -->
+<li><a href="mailto:atom@hashcat.net">Contact Us</a></li>
+<!-- end: footer_contactus -->
+				<li><a href="https://hashcat.net/">hashcat Homepage</a></li>
+				<li><a href="#top">Return to Top</a></li>
+				<li><a href="https://hashcat.net/forum/archive/index.php?thread-7717.html">Lite (Archive) Mode</a></li>
+				<li><a href="https://hashcat.net/forum/misc.php?action=markread">Mark All Forums Read</a></li>
+				<li><a href="https://hashcat.net/forum/misc.php?action=syndication">RSS Syndication</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="lower">
+		<div class="wrapper">
+			<span id="current_time"><strong>Current time:</strong> 08-09-2018, 10:12 AM</span>
+			<span id="copyright">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Powered By <a href="https://mybb.com/" target="_blank" rel="noopener">MyBB</a>, © 2002-2018 <a href="https://mybb.com/" target="_blank" rel="noopener">MyBB Group</a>.
+				<!-- End powered by -->
+			</span>
+		</div>
+	</div>
+</div>
+<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- End task image code -->
+
+</div>
+<!-- end: footer -->
+	<div id="thread_modes_popup" class="popup_menu" style="display: none;"><div class="popup_item_container"><a href="https://hashcat.net/forum/showthread.php?mode=linear&amp;tid=7717&amp;pid=41427#pid41427" class="popup_item">Linear Mode</a></div><div class="popup_item_container"><a href="https://hashcat.net/forum/showthread.php?mode=threaded&amp;tid=7717&amp;pid=41427#pid41427" class="popup_item">Threaded Mode</a></div></div>
+	<script type="text/javascript">
+	// <!--
+		if(use_xmlhttprequest == "1")
+		{
+			$("#thread_modes").popupMenu();
+		}
+	// -->
+	</script>
+	<script type="text/javascript">
+		$(".author_avatar img").error(function () {
+			$(this).unbind("error").closest('.author_avatar').remove();
+		});
+	</script>
+
+
+</body></html>
+<!-- end: showthread -->

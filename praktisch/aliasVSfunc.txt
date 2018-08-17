@@ -1,0 +1,4 @@
+moi_func() {
+#    ~/sbin/bin/my_exec "$@"
+}
+export -f moi_func

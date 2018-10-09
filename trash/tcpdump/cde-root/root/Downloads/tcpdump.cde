@@ -1,0 +1,2 @@
+#!/bin/sh
+../../../cde-exec '-o' '1234' 'tcpdump' "$@"

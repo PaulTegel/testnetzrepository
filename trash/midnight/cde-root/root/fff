@@ -1,0 +1,1088 @@
+Sortierung...
+Volltextsuche...
+389-admin/stable 1.1.43-1+b1 amd64
+  389 Directory Administration Server
+
+adacgi3/stable 1.6-19.1 amd64
+  Ada-CGI-Schnittstelle
+
+apache2-utils/stable,stable,now 2.4.25-3+deb9u4 amd64  [installiert]
+  HTTP-Server Apache (Hilfsprogramme für Webserver)
+
+apcupsd-cgi/stable 3.14.14-0.3 amd64
+  APC UPS Power Management (web interface)
+
+apt-cacher/stable 1.7.13+deb9u1 all
+  Proxy zum Zwischenspeichern von Debian-/Ubuntu-Softwaredepots
+
+awstats/stable,stable,stable 7.6+dfsg-1+deb9u1 all
+  Ein mächtiges Analyse-Programm für Webserver-Logdateien
+
+backuppc/stable 3.3.1-4 amd64
+  Hochperformantes, unternehmenstaugliches System zur Sicherung von PCs
+
+bosixnet-webui/stable 1.8-1 amd64
+  Build Own IPv6 Network (server utilities)
+
+camping/stable 2.1.580-1.1 all
+  small Ruby web framework for Model-View-Controller type applications
+
+cgi-mapserver/stable 7.0.4-2 amd64
+  CGI-Programm für MapServer
+
+cgilib/stable 0.6-1 amd64
+  Einfache CGI-Bibliothek
+
+cgit/stable 1.1+git2.10.2-3 amd64
+  hyperfast web frontend for git repositories written in C
+
+chiark-scripts/stable 5.0.2 all
+  chiark system administration scripts
+
+chiark-utils-bin/stable 5.0.2 amd64
+  chiark system administration utilities
+
+code2html/stable 0.9.1-4.1 all
+  Syntax Highlighter
+
+cricket/stable 1.0.5-21+b1 amd64
+  Programm zur Sammlung/Anzeige von Zeitreihen
+
+cvsweb/stable 3:3.0.6-8 all
+  CGI-Weboberfläche für Ihr CVS-Depot
+
+dacs/stable 1.4.38a-2 amd64
+  Distributed Access Control System (DACS)
+
+djvuserve/stable 3.5.27.1-7 amd64
+  CGI-Programm zum direkten Entpacken von DjVu-Dateien
+
+dpkg-www/stable 2.56 all
+  Web-basierter Debianpaket-Browser
+
+duc/stable 1.4.3-2 amd64
+  high-performance disk usage analyzer
+
+duc-nox/stable 1.4.3-2 amd64
+  high-performance disk usage analyzer (without X support)
+
+dwww/stable 1.13.3+b1 amd64
+  Lese alle Online-Dokumentation mit einem Webbrowser
+
+emacs24-lucid/stable,stable,stable 24.5+1-11+deb9u1 amd64
+  Editor GNU Emacs (mit Unterstützung für eine Lucid-Benutzeroberfläche)
+
+emacs25-lucid/stable,stable,stable 25.1+1-4+deb9u1 amd64
+  GNU Emacs editor (with Lucid GUI support)
+
+erlang-cowboy/stable 2.0.0~pre.1+dfsg1-2 amd64
+  Cowboy is a small, fast and modular HTTP server written in Erlang
+
+erlang-cowboy-doc/stable 2.0.0~pre.1+dfsg1-2 all
+  Documentation files for erlang-cowboy
+
+erlang-cowboy-examples/stable 2.0.0~pre.1+dfsg1-2 all
+  Examples for erlang-cowboy
+
+fcgiwrap/stable 1.1.0-9 amd64
+  simple server to run CGI applications over FastCGI
+
+flowscan-cugrapher/stable 1.7-9 all
+  CGI interface for flowscan-cuflow
+
+fossil/stable 1:1.37-1 amd64
+  DSCM with built-in wiki, http interface and server, tickets database
+
+gambas3-gb-web/stable 3.9.1-3 all
+  Gambas CGI for web applications
+
+gatling/stable 0.13-6+b1 amd64
+  high performance web server and file server
+
+geneweb/stable 6.08+git20161106+dfsg-2 amd64
+  Programm für die Familienforschung mit Webschnittstelle
+
+geneweb-gui/stable 6.08+git20161106+dfsg-2 amd64
+  graphical user interface to Geneweb genealogy software
+
+gitweb/stable,stable,stable 1:2.11.0-3+deb9u2 all
+  Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Weboberfläche)
+
+gman/stable 0.9.3-5.2+b2 amd64
+  small man(1) front-end for X
+
+graphdefang/stable 2.79-2 amd64
+  grapher for MIMEDefang spam and virus logs
+
+gwsetup/stable 6.08+git20161106+dfsg-2 amd64
+  Programme zur Verwaltung von Geneweb-Datenbanken
+
+gwtp/stable 6.08+git20161106+dfsg-2 amd64
+  Web-Schnittstelle zum Zugriff auf Geneweb-Datenbanken
+
+haserl/stable 0.9.35-2+b1 amd64
+  CGI scripting program for embedded environments
+
+hashrat/stable 1.8.3+dfsg-2 amd64
+  hashing tool supporting several hashes and recursivity
+
+html2wml/stable 0.4.11+dfsg-1 all
+  Konvertiert HTML-Seiten zu WML (WAP) oder i-mode-Seiten
+
+icinga-cgi/stable 1.13.4-2 amd64
+  host and network monitoring system - CGI configuration
+
+icinga-cgi-bin/stable 1.13.4-2 amd64
+  host and network monitoring system - CGI scripts
+
+info2www/stable 1.2.2.9-24 all
+  info-Dateien mit einem WWW-Browser lesen
+
+ipcalc/stable 0.41-5 all
+  parameter calculator for IPv4 addresses
+
+iptotal/stable 0.3.3-13.1+b1 amd64
+  monitor for IP traffic, not requiring SNMP
+
+java2html/stable 0.9.2-5 amd64
+  Aufbereiten von Java und C++ Sourcen für das Web
+
+jigit/stable 1.20-2+b1 amd64
+  tools for working with jigdo files
+
+lemonldap-ng-fastcgi-server/stable 1.9.7-3 all
+  Lemonldap::NG FastCGI server
+
+libadminutil-data/stable 1.1.23-1 amd64
+  Utility library for 389ds administration -- data files
+
+libadminutil-dev/stable 1.1.23-1 amd64
+  Utility library for 389ds administration - development files
+
+libadminutil0/stable 1.1.23-1 amd64
+  Utility library for 389ds administration
+
+libanyevent-fcgi-perl/stable 0.04-1 all
+  Perl non-blocking FastCGI server
+
+libapache-asp-perl/stable 2.62-2 all
+  perl Apache::ASP - Active Server Pages for Apache with mod_perl
+
+libapache-session-perl/stable 1.93-2 all
+  Module um Benutzerdaten über HTTP-Anfragen aufzubewahren
+
+libapache2-mod-auth-tkt/stable 2.1.0+dfsg-1 amd64
+  lightweight single-sign-on authentication module for Apache
+
+libapache2-mod-fcgid/stable 1:2.3.9-1+b1 amd64
+  FastCGI-Schnittstellenmodul für Apache 2
+
+libapache2-mod-fcgid-dbg/stable 1:2.3.9-1+b1 amd64
+  debugging symbols for mod_fcgid
+
+libapache2-mod-mapcache/stable 1.4.1-3 amd64
+  tile caching server - Apache module
+
+libapache2-mod-netcgi-apache/stable 4.1.2-1+b2 amd64
+  OCaml application-level Internet libraries - netcgi2 Apache2 connector
+
+libapache2-mod-python/stable 3.3.1-11 amd64
+  Modul für Apache 2 zur Einbettung von Python
+
+libapache2-mod-python-doc/stable 3.3.1-11 all
+  Python-embedding module for Apache 2 - documentation
+
+libapache2-mod-scgi/stable 1.13-1.1 amd64
+  Implementierung des Protokolls SCGI als Apache-Modul
+
+libapache2-mod-wsgi/stable 4.5.11-1 amd64
+  WSGI-Adapter für Apache (Python-Modul)
+
+libapache2-mod-wsgi-py3/stable 4.5.11-1 amd64
+  Python 3 WSGI adapter module for Apache
+
+libapache2-mod-xforward/stable 0.6-1 amd64
+  Apache module implements redirection based on X-Forward response header
+
+libapache2-mod-xsendfile/stable 0.12-2 amd64
+  Versendet effizient große statische Dateien aus Webanwendungen
+
+libapache2-mpm-itk/stable 2.4.7-04-1 amd64
+  multiuser module for Apache
+
+libapache2-request-perl/stable 2.13-5+b1 amd64
+  Allgemeine Bibliothek für Apache-Anfragen - Perl-Module
+
+libappconfig-perl/stable 1.66-2 all
+  Perl-Module zur Behandlung von Konfigurationsdateien/Befehlszeilen
+
+libbio-asn1-entrezgene-perl/stable 1.720-1 all
+  parser for NCBI Entrez Gene and NCBI Sequence records
+
+libbusiness-onlinepayment-payflowpro-perl/stable 1.01-4 all
+  PayPal Payflow Pro backend for Business::OnlinePayment
+
+libcache-cache-perl/stable 1.08-2 all
+  Verwaltete Caches beständiger Informationen
+
+libcatalyst-controller-formbuilder-perl/stable 0.06-2 all
+  Catalyst FormBuilder base controller
+
+libcgi-ajax-perl/stable 0.707-1 all
+  Perl-specific system for writing Asynchronous web applications
+
+libcgi-application-basic-plugin-bundle-perl/stable 0.8 all
+  bundle of basic plugins for CGI::Application
+
+libcgi-application-dispatch-perl/stable 3.12-2 all
+  request dispatcher for CGI::Application
+
+libcgi-application-extra-plugin-bundle-perl/stable 0.6 all
+  bundle of extra CGI::Application plugins
+
+libcgi-application-perl/stable 4.50-4 all
+  framework for building reusable web-applications
+
+libcgi-application-plugin-actiondispatch-perl/stable 0.99-2 all
+  attribute extension for CGI::Application
+
+libcgi-application-plugin-anytemplate-perl/stable 0.18-2 all
+  Modul, das jegliches Schablonensystem in CGI::Application unterstützt
+
+libcgi-application-plugin-authentication-perl/stable 0.20-4 all
+  authentication framework for CGI::Application
+
+libcgi-application-plugin-authorization-perl/stable 0.07-5 all
+  authorization framework for CGI::Application
+
+libcgi-application-plugin-autorunmode-perl/stable 0.18-2 all
+  CGI::App plugin to automatically register runmodes
+
+libcgi-application-plugin-captcha-perl/stable 0.04-2 all
+  module providing CAPTCHA support in CGI::Application
+
+libcgi-application-plugin-config-simple-perl/stable 1.01-2 all
+  module providing Config::Simple support to CGI::Application
+
+libcgi-application-plugin-configauto-perl/stable 1.33-2 all
+  plugin that adds Config::Auto support to CGI::Application
+
+libcgi-application-plugin-dbh-perl/stable 4.04-2 all
+  plugin adding database support to CGI::Application
+
+libcgi-application-plugin-dbiprofile-perl/stable 0.07-2 all
+  plugin providing database profiling support
+
+libcgi-application-plugin-devpopup-perl/stable 1.08-1 all
+  debugging framework for CGI::Application
+
+libcgi-application-plugin-fillinform-perl/stable 1.15-2 all
+  plugin for CGI::Application to fill in forms
+
+libcgi-application-plugin-formstate-perl/stable 0.12-2 all
+  plugin to store form state without hidden fields
+
+libcgi-application-plugin-forward-perl/stable 1.06-2 all
+  plugin to allow one run mode pass control to another
+
+libcgi-application-plugin-json-perl/stable 1.02-3 all
+  plugin to facilitate manipulation of JSON headers
+
+libcgi-application-plugin-linkintegrity-perl/stable 0.06-3 all
+  plugin to make tamper-resisistent links in CGI::Application
+
+libcgi-application-plugin-logdispatch-perl/stable 1.02-2 all
+  plugin that adds Log::Dispatch support to CGI::Application
+
+libcgi-application-plugin-messagestack-perl/stable 0.34-3 all
+  message passing plugin for CGI::Application
+
+libcgi-application-plugin-protectcsrf-perl/stable 1.01-2 all
+  plugin to generate and verify anti-CSRF challenges
+
+libcgi-application-plugin-ratelimit-perl/stable 1.0-3 all
+  Perl module for limiting the runmode call rate per user
+
+libcgi-application-plugin-requiressl-perl/stable 0.04-2 all
+  plugin enforcing that certain run modes must be SSL secured
+
+libcgi-application-plugin-session-perl/stable 1.05-2 all
+  plugin that adds session support to CGI::Application
+
+libcgi-application-plugin-stream-perl/stable 2.12-1 all
+  plugin that adds file streaming support to CGI::Application
+
+libcgi-application-plugin-tt-perl/stable 1.05-4 all
+  plugin that adds Template Toolkit support to CGI::Application
+
+libcgi-application-plugin-validaterm-perl/stable 2.5-3 all
+  plugin for validating form data using Data::FormValidator
+
+libcgi-application-plugin-viewcode-perl/stable 1.02-4 all
+  set of debugging tools for CGI::Application
+
+libcgi-application-server-perl/stable 0.063-2 all
+  simple HTTP server for developing with CGI::Application
+
+libcgi-compile-perl/stable 0.21-1 all
+  module for compiling .cgi scripts to a code reference
+
+libcgi-compress-gzip-perl/stable 1.03-2 all
+  module to allow automatically compressed CGI output
+
+libcgi-cookie-splitter-perl/stable 0.05-2 all
+  module for splitting big cookies into smaller ones
+
+libcgi-emulate-psgi-perl/stable 0.22-1 all
+  PSGI adapter for CGI
+
+libcgi-expand-perl/stable 2.05-4 all
+  convert flat hash to nested data using TT2's dot convention
+
+libcgi-fast-perl/stable,now 1:2.12-1 all  [Installiert,automatisch]
+  CGI-Unterklasse für die Zusammenarbeit mit FCGI
+
+libcgi-formalware-perl/stable 1.16-2 all
+  Perl module for converting an XML file into a suite of CGI forms
+
+libcgi-formbuilder-perl/stable 3.10-1 all
+  Einfaches Erstellen und Bearbeiten von zustandsgesteuerten CGI-Formularen
+
+libcgi-formbuilder-source-yaml-perl/stable 1.0.8-4 all
+  module to initialize FormBuilder applications from YAML files
+
+libcgi-github-webhook-perl/stable 0.06-1 all
+  Easily write CGI-based GitHub webhooks in Perl
+
+libcgi-java/stable 0.8-1 amd64
+  CGI library for Java
+
+libcgi-pm-perl/stable,now 4.35-1 all  [Installiert,automatisch]
+  Modul für CGI-Anwendungen (Common Gateway Interface)
+
+libcgi-psgi-perl/stable 0.15-2 all
+  Adapt CGI.pm to the PSGI protocol
+
+libcgi-session-driver-chi-perl/stable 1.0.3-1 all
+  Treiber für CGI::Session, um CHI als Sitzungsspeicher zu verwenden
+
+libcgi-session-driver-memcached-perl/stable 0.04-1 all
+  Perl module to allow CGI sessions to be stored in memcache
+
+libcgi-session-expiresessions-perl/stable 1.13-2 all
+  automatic deletion of expired CGI sessions
+
+libcgi-session-perl/stable 4.48-3 all
+  Persistente Sitzungsdaten in CGI-Anwendungen
+
+libcgi-session-serialize-yaml-perl/stable 4.26-2 all
+  YAML and YAML::Syck support for CGI::Session's serializers
+
+libcgi-simple-perl/stable 1.115-2 all
+  simple CGI.pm compatible OO CGI interface
+
+libcgi-ssi-parser-perl/stable 0.01-1.2 all
+  von CGI-Skripten zum Parsen von SSI-Direktiven benutzt
+
+libcgi-ssi-perl/stable 0.92-5 all
+  Perl module to use SSI from CGI scripts
+
+libcgi-struct-xs-perl/stable 1.04-2+b2 amd64
+  Perl module to build structures from CGI data, XS version
+
+libcgi-test-perl/stable 1.111-1 all
+  CGI regression test framework
+
+libcgi-untaint-date-perl/stable 1.00-3 all
+  CGI::Untaint input handler for date validation
+
+libcgi-untaint-email-perl/stable 0.03-3 all
+  input handler for CGI::Untaint to validate an email address
+
+libcgi-untaint-perl/stable 1.26-6 all
+  module to process CGI input parameters
+
+libcgi-uploader-perl/stable 2.18-2 all
+  module for managing CGI uploads using an SQL database
+
+libcgi-xml-perl/stable 0.1-15 all
+  Perlmodul für die Wandlung von CGI-Variablen von/nach XML
+
+libcgi-xmlapplication-perl/stable 1.1.5-1 all
+  perl module for creating XML-DOM and OO based CGI scripts
+
+libcgi-xmlform-perl/stable 0.10-15 all
+  perl module for reading/generating formatted XML
+
+libcgic-dev/stable 2.05-3 amd64
+  C-Bibliothek zur Entwicklung von CGI-Anwendungen
+
+libcgic2/stable 2.05-3 amd64
+  C-Bibliothek zur Entwicklung von CGI-Anwendungen
+
+libcgicc-dev/stable 3.2.16-0.1 amd64
+  C++ class library for writing CGI applications (development files)
+
+libcgicc-doc/stable 3.2.16-0.1 all
+  C++ class library for writing CGI applications (documentation)
+
+libcgicc3/stable 3.2.16-0.1 amd64
+  C++ class library for writing CGI applications (library)
+
+libclass-dbi-fromcgi-perl/stable 1.00-4 all
+  Perl module to update Class::DBI data using CGI::Untaint
+
+libclass-default-perl/stable 1.51-3 all
+  Perl module to make static calls apply to a default instantiation
+
+libclass-pluggable-perl/stable 0.022-2 all
+  Simple pluggable class.
+
+libcookie-baker-perl/stable 0.07-1 all
+  simple cookie string generator and parser
+
+libcupscgi1/stable 2.2.1-8+deb9u1 amd64 [aktualisierbar von: 2.2.1-8]
+  Common UNIX Printing System(tm) - CGI-Bibliothek
+
+libcxxtools-dev/stable 2.2.1-2 amd64
+  Bibliothek von unverwandten aber nützlichen C++ Klassen
+
+libcxxtools9v5/stable 2.2.1-2 amd64
+  Bibliothek von unverwandten aber nützlichen C++ Klassen
+
+libdancer-perl/stable 1.3202+dfsg-1 all
+  effortless web application framework
+
+libdata-javascript-perl/stable 1.13-1 all
+  dump perl data structures into JavaScript code
+
+libdata-validate-struct-perl/stable 0.1-1 all
+  module to validate recursive hash structures
+
+libdbix-class-htmlwidget-perl/stable 0.16-4 all
+  DBIx::Class::HTMLWidget perl module
+
+libdbix-recordset-perl/stable 0.26-3 all
+  Perl-Erweiterung für DBI-Satzmengen
+
+libds-admin-serv0/stable 1.1.43-1+b1 amd64
+  Libraries for the 389 Directory Administration Server
+
+libembperl-perl/stable 2.5.0-10 amd64
+  system for building dynamic websites with Perl
+
+libfcgi-bin/stable 2.4.0-8.4+b1 amd64
+  FastCGI bridge from CGI
+
+libfcgi-dev/stable 2.4.0-8.4+b1 amd64
+  Header files of FastCGI
+
+libfcgi-perl/stable,now 0.78-2 amd64  [Installiert,automatisch]
+  Hilfsmodul für FastCGI
+
+libfcgi-procmanager-maxrequests-perl/stable 0.2-1 all
+  restrict max number of requests by each child
+
+libfcgi-procmanager-perl/stable 0.25-1 all
+  Perl module to help manage FastCGI applications
+
+libfcgi0ldbl/stable 2.4.0-8.4+b1 amd64
+  FastCGI-Laufzeitbibliothek
+
+libfpm-helper0/stable 4.2-2.1 amd64
+  ASP.NET backend for FastCGI Process Manager - helper lib
+
+libghc-cgi-dev/stable 3001.3.0.1-3+b1 amd64
+  Haskell-CGI-Bibliothek für GHC
+
+libghc-cgi-doc/stable 3001.3.0.1-3 all
+  Haskell CGI library for GHC; documentation
+
+libghc-cgi-prof/stable 3001.3.0.1-3+b1 amd64
+  Haskell CGI library for GHC; profiling libraries
+
+libghc-multipart-dev/stable 0.1.2-5+b1 amd64
+  HTTP multipart support
+
+libghc-multipart-doc/stable 0.1.2-5 all
+  HTTP multipart support; documentation
+
+libghc-multipart-prof/stable 0.1.2-5+b1 amd64
+  HTTP multipart support; profiling libraries
+
+libghc-wai-app-file-cgi-dev/stable 3.1.0-3+b2 amd64
+  file/CGI app of WAI
+
+libghc-wai-app-file-cgi-doc/stable 3.1.0-3 all
+  file/CGI app of WAI; documentation
+
+libghc-wai-app-file-cgi-prof/stable 3.1.0-3+b2 amd64
+  file/CGI app of WAI; profiling libraries
+
+libghc-wai-app-static-dev/stable 3.1.6.1-3+b2 amd64
+  Gerüst für typsichere RESTful-Webanwendungen
+
+libghc-wai-app-static-doc/stable 3.1.6.1-3 all
+  Gerüst für typsichere, RESTful-Webanwendungen; Dokumentation
+
+libghc-wai-app-static-prof/stable 3.1.6.1-3+b2 amd64
+  framework for type-safe, RESTful web applications; profiling libraries
+
+libghc-yesod-core-dev/stable 1.4.25-3+b2 amd64
+  Gerüst für typsichere RESTful-Webanwendungen
+
+libghc-yesod-core-doc/stable 1.4.25-3 all
+  Gerüst für typsichere, RESTful-Webanwendungen; Dokumentation
+
+libghc-yesod-core-prof/stable 1.4.25-3+b2 amd64
+  framework for type-safe, RESTful web applications; profiling libraries
+
+libghc-yesod-dev/stable 1.4.3-3+b2 amd64
+  Gerüst für typsichere RESTful-Webanwendungen
+
+libghc-yesod-doc/stable 1.4.3-3 all
+  Gerüst für typsichere, RESTful-Webanwendungen; Dokumentation
+
+libghc-yesod-form-dev/stable 1.4.8-1+b2 amd64
+  Gerüst für typsichere RESTful-Webanwendungen
+
+libghc-yesod-form-doc/stable 1.4.8-1 all
+  Gerüst für typsichere, RESTful-Webanwendungen; Dokumentation
+
+libghc-yesod-form-prof/stable 1.4.8-1+b2 amd64
+  framework for type-safe, RESTful web applications; profiling libraries
+
+libghc-yesod-persistent-dev/stable 1.4.0.6-3+b2 amd64
+  Gerüst für typsichere RESTful-Webanwendungen
+
+libghc-yesod-persistent-doc/stable 1.4.0.6-3 all
+  Gerüst für typsichere, RESTful-Webanwendungen; Dokumentation
+
+libghc-yesod-persistent-prof/stable 1.4.0.6-3+b2 amd64
+  framework for type-safe, RESTful web applications; profiling libraries
+
+libghc-yesod-prof/stable 1.4.3-3+b2 amd64
+  framework for type-safe, RESTful web applications; profiling libraries
+
+libghc-yesod-static-dev/stable 1.5.1.1-1 amd64
+  Static file serving subsite for Yesod Web Framework.
+
+libghc-yesod-static-doc/stable 1.5.1.1-1 all
+  Static file serving subsite for Yesod Web Framework; documentation
+
+libghc-yesod-static-prof/stable 1.5.1.1-1 amd64
+  Static file serving subsite for Yesod Web Framework; profiling libraries
+
+libhash-flatten-perl/stable 1.19-1 all
+  flatten/unflatten complex data hashes
+
+libhtml-mason-psgihandler-perl/stable 0.53-1 all
+  PSGI handler for HTML::Mason
+
+libhtml-table-perl/stable 2.08a-3 all
+  Perl-Modul zum Erstellen von HTML-Tabellen
+
+libhtml-template-compiled-perl/stable 1.003-1 all
+  Perl template system compiling HTML::Template files to Perl code
+
+libhtml-template-pro-perl/stable 0.9510-1+b4 amd64
+  Perl module to use HTML Templates from CGI scripts
+
+libhttp-lite-perl/stable 2.44-1 all
+  lightweight HTTP implementation for perl
+
+libhttp-request-ascgi-perl/stable 1.2-3 all
+  Modul zum Einrichten einer CGI-Umgebung von einem HTTP::Request
+
+libhttp-server-simple-mason-perl/stable 0.14-1 all
+  abstract baseclass for a standalone mason server
+
+libhttp-server-simple-perl/stable 0.51-1 all
+  Einfacher eigenständiger HTTP-Server
+
+libimage-magick-perl/stable,stable,now 8:6.9.7.4+dfsg-11+deb9u4 all  [Installiert,automatisch]
+  Perl-Schnittstelle zu den ImageMagick-Grafikroutinen
+
+libimage-magick-q16-perl/stable,stable,now 8:6.9.7.4+dfsg-11+deb9u4 amd64  [Installiert,automatisch]
+  Perl interface to the ImageMagick graphics routines -- Q16 version
+
+libimage-magick-q16hdri-perl/stable,stable 8:6.9.7.4+dfsg-11+deb9u4 amd64
+  Perl interface to the ImageMagick graphics routines -- Q16HDRI version
+
+libipc-run-safehandles-perl/stable 0.04-1 all
+  Use IPC::Run and IPC::Run3 safely
+
+libjavascript-rpc-perl/stable 0.10-1.3 all
+  Perl module to process Remote procedure calls from JavaScript
+
+liblog-tracemessages-perl/stable 1.4-3 all
+  Perl-Modul für Trace-Nachrichten in Perl-Code
+
+libmail-rfc822-address-perl/stable 0.4-1 all
+  Perl extension for validating email addresses
+
+libmapscript-java/stable 7.0.4-2 amd64
+  Java library for MapServer
+
+libmapscript-perl/stable 7.0.4-2 amd64
+  Perl MapServer module
+
+libmapserver-dbg/stable 7.0.4-2 amd64
+  Debugging symbols for libmapserver
+
+libmapserver-dev/stable 7.0.4-2 amd64
+  Shared library development files for MapServer
+
+libmapserver2/stable 7.0.4-2 amd64
+  Shared library for MapServer
+
+libmatthew-java-doc/stable 0.8-1 all
+  API documentation for the libmatthew-java libraries
+
+libmixin-extrafields-param-perl/stable 0.020-1 all
+  module to make classes provide a familiar "param" method
+
+libmodule-starter-plugin-cgiapp-perl/stable 0.44-1 all
+  Vorlagenbasierter Modulstarter für CGI-Anwendungen
+
+libmojo-server-fastcgi-perl/stable 0.41-1 all
+  Mojolicious FastCGI Server
+
+libmojolicious-plugin-cgi-perl/stable 0.36-1 all
+  Mojolicious plugin to run CGI scripts
+
+libmoosex-param-perl/stable 0.02-2 all
+  simple Moose role providing a standard param method
+
+libnet-httpserver-perl/stable 1.1.1-2 all
+  extensible HTTP server framework for Perl
+
+libnet-xmpp-perl/stable 1.05-1 all
+  XMPP Perl library
+
+libnethttpd-ocaml-dev/stable 4.1.2-1+b2 amd64
+  OCaml application-level Internet libraries - HTTP daemon development libraries
+
+libnetsds-kannel-perl/stable 1.300-6 all
+  Service Delivery Suite framework - Kannel SMS gateway API
+
+libnetsds-perl/stable 1.301-3 all
+  Service Delivery Suite framework
+
+libnginx-mod-http-cache-purge/stable,stable,stable 1.10.3-1+deb9u1 amd64
+  Inhalt von Nginx-Caches löschen
+
+libnmz7/stable 2.0.21-20+b1 amd64
+  full text search engine - shared library
+
+libnmz7-dev/stable 2.0.21-20+b1 amd64
+  full text search engine - header files and static libraries
+
+libocamlnet-gtk2-ocaml-dev/stable 4.1.2-1+b2 amd64
+  OCaml application-level Internet libraries - GTK2 development libraries
+
+libocamlnet-ocaml/stable 4.1.2-1+b2 amd64
+  OCaml application-level Internet libraries - core runtime libraries
+
+libocamlnet-ocaml-bin/stable 4.1.2-1+b2 amd64
+  OCaml application-level Internet libraries - binaries
+
+libocamlnet-ocaml-dev/stable 4.1.2-1+b2 amd64
+  OCaml application-level Internet libraries - core development libraries
+
+libocamlnet-ocaml-doc/stable 4.1.2-1 all
+  OCaml application-level Internet libraries - documentation and examples
+
+libocamlnet-ssl-ocaml/stable 4.1.2-1+b2 amd64
+  OCaml application-level Internet libraries - SSL runtime libraries
+
+libocamlnet-ssl-ocaml-dev/stable 4.1.2-1+b2 amd64
+  OCaml application-level Internet libraries - SSL development libraries
+
+libplack-handler-anyevent-fcgi-perl/stable 0.01-1 all
+  asynchronous FCGI handler for PSGI using AnyEvent::FCGI
+
+librest-application-perl/stable 0.992-3 all
+  framework for building RESTful web-applications
+
+librsl-dev/stable 1.43-1.1 amd64
+  Development files for RSL
+
+librsl-doc/stable 1.43-1.1 all
+  HTML documentation for RSL
+
+librsl1/stable 1.43-1.1 amd64
+  TRMM Radar Software Library
+
+librudecgi-dev/stable 5.0.0-1.1+b2 amd64
+  C++ parser library for CGI applications - development libraries
+
+librudecgi5/stable 5.0.0-1.1+b2 amd64
+  C++ parser library for CGI applications - runtime
+
+libshp-dev/stable 1.4.0-1 amd64
+  Library for reading and writing ESRI Shapefiles - development files
+
+libshp2/stable 1.4.0-1 amd64
+  Library for reading and writing ESRI Shapefiles
+
+libtemplate-alloy-perl/stable 1.020-1 all
+  TT2/3, HT, HTE, Tmpl, and Velocity Engine
+
+libtemplates-parser-doc/stable 11.10-4 all
+  Ada library to parse files and replace variables (documentation)
+
+libtemplates-parser11.10.1/stable 11.10-4 amd64
+  Ada library to parse files and replace variables (runtime)
+
+libtemplates-parser11.10.1-dev/stable 11.10-4 amd64
+  Ada library to parse files and replace variables
+
+libtest-www-mechanize-cgiapp-perl/stable 0.05-3 all
+  Test CGI::Application apps using WWW::Mechanize
+
+libtext-header-perl/stable 1.03+pristine-1 all
+  RFC 822/2068 header and unheader functions
+
+libtitanium-perl/stable 1.04-4 all
+  strong, lightweight web application framework for Perl
+
+liburweb-cgi0/stable 20170105+dfsg-2 amd64
+  urweb CGI backend
+
+liburweb-fastcgi0/stable 20170105+dfsg-2 amd64
+  urweb FastCGI backend
+
+libvalidate-net-perl/stable 0.6-2 all
+  Perl module for validating Net:: related strings
+
+libwebinject-perl/stable 1.92-1 all
+  Perl Module for testing web services
+
+libwiki-toolkit-formatter-usemod-perl/stable 0.25-1 all
+  UseModWiki-style formatting for CGI::Wiki
+
+libwt-dev/stable 3.3.6+dfsg-1.1 amd64
+  C++ library and application server for web applications [development]
+
+libwt40/stable 3.3.6+dfsg-1.1 amd64
+  C++ library and application server for web applications [runtime]
+
+libwtfcgi-dev/stable 3.3.6+dfsg-1.1 amd64
+  FastCGI connector library for Wt [development]
+
+libwtfcgi40/stable 3.3.6+dfsg-1.1 amd64
+  FastCGI connector library for Wt [runtime]
+
+libwww-csrf-perl/stable 1.00-1 all
+  Perl module to generate and check tokens to protect against CSRF attacks
+
+libxml-writer-simple-perl/stable 0.12-1 all
+  simple API to create XML files
+
+lightsquid/stable 1.8-4 all
+  Lite and fast log analizer for squid proxy
+
+lighttpd/stable 1.4.45-1 amd64
+  Schneller Webserver mit geringem Speicherverbrauch
+
+lizardfs-cgi/stable 3.10.4+dfsg-4 all
+  LizardFS - CGI monitor
+
+lizardfs-cgiserv/stable 3.10.4+dfsg-4 amd64
+  simple CGI-capable HTTP server to run LizardFS CGI monitor
+
+lua-cgi/stable 5.2~alpha2-1 all
+  CGI library for the Lua language
+
+lua-wsapi/stable 1.6.1-1 all
+  Web server API abstraction layer for the Lua language
+
+lua-wsapi-fcgi/stable 1.6.1-1 amd64
+  Web server API fastcgi backend
+
+lua-wsapi-fcgi-dev/stable 1.6.1-1 amd64
+  wsapi fastcgi development files for the Lua language
+
+mailto/stable 1.3.2-3+b2 amd64
+  Mail-Schnittstelle für Web-Formulare
+
+man2html/stable 1.6g-9 amd64
+  Stöbern Sie mit Ihrem Webbrowser in den Handbuchseiten
+
+man2html-base/stable 1.6g-9 amd64
+  Konvertiert Handbuchseiten ins HTML-Format
+
+mapcache-cgi/stable 1.4.1-3 amd64
+  tile caching server - CGI binary
+
+mapserver-bin/stable 7.0.4-2 amd64
+  Hilfsprogramme für MapServer
+
+mapserver-doc/stable 7.0.4-2 all
+  Dokumentation für MapServer
+
+mathtex/stable 1.03-1+b2 amd64
+  Generate image from LaTeX command
+
+mighttpd2/stable 3.3.0-3 amd64
+  classical web server on WAI/warp
+
+mini-httpd/stable 1.23-1.2 amd64
+  Small HTTP server
+
+mmm-mode/stable 0.5.4-2 all
+  Mehrfacher »Major Mode« für Emacs
+
+mono-fastcgi-server/stable 4.2-2.1 all
+  ASP.NET backend for FastCGI webservers - default version
+
+mono-fastcgi-server4/stable 4.2-2.1 all
+  ASP.NET 4.0 backend for FastCGI webservers
+
+mono-fpm-server/stable 4.2-2.1 all
+  ASP.NET backend for FastCGI Process Manager
+
+multiwatch/stable 1.0.0-rc1+really1.0.0-1+b1 amd64
+  Forks and watches multiple instances of a program
+
+nagios-plugins-contrib/stable 21.20170222 amd64
+  Plugins for nagios compatible monitoring systems
+
+namazu2/stable 2.0.21-20+b1 amd64
+  Volltext-Suchmaschine - Binärprogramm und CGI-Skript
+
+namazu2-common/stable 2.0.21-20 all
+  Volltext-Suchmaschine - Dokumentation
+
+namazu2-index-tools/stable 2.0.21-20 all
+  Volltext-Suchmaschine - Werkzeuge fürs Arbeiten mit Indizes
+
+nginx-extras/stable,stable,stable 1.10.3-1+deb9u1 amd64
+  nginx web/proxy server (extended version)
+
+nginx-full/stable,stable,stable 1.10.3-1+deb9u1 amd64
+  Web-/Proxy-Server nginx (Standardversion)
+
+nginx-light/stable,stable,stable 1.10.3-1+deb9u1 amd64
+  nginx web/proxy server (basic version)
+
+nut-cgi/stable 2.7.4-5 amd64
+  USV-Werkzeuge für das Netzwerk - Weboberfläche
+
+parser3-cgi/stable 3.4.4-1+b1 amd64
+  Parser 3, in HTML eingebettete Skriptsprache (CGI-Programm)
+
+perlmagick/stable,stable 8:6.9.7.4+dfsg-11+deb9u4 all
+  Perl interface to ImageMagick -- dummy package
+
+php-cgi/stable 1:7.0+49 all
+  server-side, HTML-embedded scripting language (CGI binary) (default)
+
+php-fpm/stable 1:7.0+49 all
+  server-side, HTML-embedded scripting language (FPM-CGI binary) (default)
+
+php7.0-cgi/stable,stable,stable 7.0.27-0+deb9u1 amd64
+  server-side, HTML-embedded scripting language (CGI binary)
+
+php7.0-fpm/stable,stable,stable 7.0.27-0+deb9u1 amd64
+  Serverseitige, in HTML eingebettete Skriptsprache (FPM-CGI-Binärprogramm)
+
+phpwebcounter/stable 1.0-5 all
+  simple and light web hit counter
+
+pyblosxom/stable 1.5.3-2 all
+  In Python geschriebenes, genügsames, dateibasiertes Weblog-System
+
+pyca/stable 20031119-0 all
+  Certification Authority written in Python
+
+python-dhm/stable 0.6-4 all
+  collection of Python utilities / helper
+
+python-fcgi/stable 19980130-1 all
+  Simple FastCGI module for Python
+
+python-flup/stable 1.0.2-5 all
+  Implements Python Web Server Gateway Interface (WSGI)
+
+python-htmlgen/stable 2.2.2-12.3 all
+  Python-Bibliothek für die Generierung von HTML
+
+python-mapscript/stable 7.0.4-2 amd64
+  Python library for MapServer
+
+python-paste/stable 2.0.3+dfsg-4 all
+  tools for using a Web Server Gateway Interface stack - Python 2.x
+
+python-paste-doc/stable 2.0.3+dfsg-4 all
+  tools for using a Web Server Gateway Interface stack - documentation
+
+python-pyorbit/stable,now 2.24.0-7.2 amd64  [Installiert,automatisch]
+  Die Python Sprachanbindung für die ORBit2 CORBA Implementation
+
+python-pyorbit-dev/stable 2.24.0-7.2 all
+  PyORBit: development files
+
+python-pysal/stable 1.13.0-4 all
+  Python Spatial Analysis Library - Python 2
+
+python-scgi/stable 1.13-1.1 amd64
+  Server-side implementation of the SCGI protocol
+
+python-templayer/stable 1.5.1-3 all
+  layered template library for Python
+
+python-urwid/stable 1.3.1-2+b1 amd64
+  curses-basierte Python-2-Bibliothek für Oberflächen/Widgets
+
+python3-paste/stable 2.0.3+dfsg-4 all
+  tools for using a Web Server Gateway Interface stack - Python 3.x
+
+python3-pysal/stable 1.13.0-4 all
+  Python Spatial Analysis Library - Python 3
+
+python3-urwid/stable 1.3.1-2+b1 amd64
+  curses-basierte Python-3-Bibliothek für Oberflächen/Widgets
+
+qdbm-cgi/stable 1.8.78-6.1 amd64
+  CGI-Befehle für die Datenbank QDBM
+
+rancid-cgi/stable 3.6.2-2 all
+  looking glass CGI based on rancid tools
+
+rt4-fcgi/stable 4.4.1-3+deb9u3 all
+  External FastCGI support for request-tracker4
+
+ruby-escape-utils/stable 1.1.0-1+b2 amd64
+  Faster string escaping routines for your web apps
+
+ruby-fcgi/stable 0.9.2.1-2+b1 amd64
+  FastCGI-Bibliothek für Ruby
+
+ruby-grack/stable 2.0.2-2 all
+  Git Smart HTTP Server Rack implementation in Ruby/Rack
+
+ruby-mapscript/stable 7.0.4-2 amd64
+  MapServer library for Ruby
+
+ruby-turbolinks/stable 2.5.3-3 all
+  following links in your Rails web application faster
+
+sbox-dtc/stable 1.11.7-1+b2 amd64
+  CGI chroot wrapper script for safer hosting environment
+
+shapelib/stable 1.4.0-1 amd64
+  Library for reading and writing ESRI Shapefiles - tools
+
+shibboleth-sp2-utils/stable,stable,stable 2.6.0+dfsg1-4+deb9u1 amd64
+  Federated web single sign-on system (daemon and utilities)
+
+sipwitch-cgi/stable 1.9.15-3+b1 amd64
+  secure peer-to-peer SIP VoIP server - CGI XML-RPC interface
+
+smokeping/stable 2.6.11-3 all
+  System zur Protokollierung und grafischen Darstellung von Latenzzeiten
+
+snoopy/stable 2.3.1-2 amd64
+  execve() wrapper and logger
+
+snort/stable 2.9.7.0-5 amd64
+  Flexibles Netzwerk-IDS (Intrusion Detection System)
+
+snort-common/stable 2.9.7.0-5 all
+  Flexibles Netzwerk-IDS (Intrusion Detection System) - gemeinsame Dateien
+
+snort-common-libraries/stable 2.9.7.0-5 amd64
+  Flexibles Netzwerk-IDS (Intrusion Detection System) - Bibliotheken
+
+snort-doc/stable 2.9.7.0-5 all
+  Flexibles Netzwerk-IDS (Intrusion Detection System) - Dokumentation
+
+snort-rules-default/stable 2.9.7.0-5 all
+  Flexibles Netzwerk-IDS (Intrusion Detection System) - Regelsatz
+
+spawn-fcgi/stable 1.6.4-1+b1 amd64
+  Generator für FastCGI-Prozesse
+
+squid-cgi/stable,stable,stable 3.5.23-5+deb9u1 amd64
+  Vollausgestatteter Proxycache (HTTP-Proxy) - CGI-Kontrollanwendung
+
+stx2any/stable 1.56-2.1 all
+  Converter from structured plain text to other formats
+
+tcllib/stable 1.18-dfsg-3 all
+  Standard Tcl Library
+
+tdiary-core/stable 5.0.2-1 all
+  Communication-friendly weblog system
+
+tdiary-theme/stable 5.0.2-2 all
+  Themes of tDiary to change the design
+
+ticgit/stable 1.0.2.17-2 all
+  ticketing system built on Git
+
+ticgitweb/stable 1.0.2.17-2 all
+  web interface to ticgit
+
+tilecache/stable 2.11+ds-2 all
+  Web map tile caching system
+
+tilestache/stable 1.51.5-1 all
+  map tiles caching system
+
+torrus-common/stable 2.09-1 all
+  Universal front-end for Round-Robin Databases (common files)
+
+uprecords-cgi/stable 1:0.4.0+git20150923.6b22106-1.1 all
+  utility to track high uptimes - CGI script
+
+uwsgi-core/stable,stable 2.0.14+20161117-3+deb9u2 amd64
+  fast, self-healing application container server (core)
+
+viewvc/stable 1.1.26-1 all
+  web interface for CVS and/or Subversion repositories
+
+viewvc-query/stable 1.1.26-1 all
+  utility to query CVS and Subversion commit database
+
+w3c-linkchecker/stable 4.81-9 all
+  tool to verify the links in a web page are still valid
+
+w3c-markup-validator/stable 1.3+dfsg-3 all
+  W3C-Syntaxprüfung
+
+w3cam/stable 0.7.2-6.2+b3 amd64
+  ein einfaches CGI zum Holen von Bildern von video4linux-Geräten
+
+webauth-weblogin/stable 4.7.0-4 all
+  zentraler Login-Server für die WebAuth-Authentifizierung
+
+webfs/stable 1.21+ds1-12 amd64
+  Leichtgewichtiger HTTP-Server für statische Inhalte
+
+weborf/stable 0.13.4-3 amd64
+  Fast and small webserver meant to be run without root privileges
+
+weborf-daemon/stable 0.13.4-3 all
+  init script for weborf
+
+wims/stable 1:4.13c~dfsg1-2 amd64
+  server for educational content: courses, exercises, and exams
+
+wpp/stable 2.13.1.35-4 all
+  The Web Preprocessor - a Perl script to preprocess HTML files
+
+xapian-omega/stable 1.4.3-3 amd64
+  CGI-Suchmaske und Indizierprogramme, verwenden Xapian
+
+xavante/stable 2.3.0-1 all
+  Lua HTTP 1.1 Web server
+
+xmltv-util/stable 0.5.69-1 all
+  Hilfsprogramme zum XMLTV-Dateiformat für TV-Listen
+
+zonecheck-cgi/stable 3.0.5-3 all
+  DNS configuration checker (web interface)
+

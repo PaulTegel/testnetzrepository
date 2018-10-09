@@ -1,0 +1,1000 @@
+  211  sudo apt remove docker.io
+  212  curl-sSL https://get.docker.com > /tmp/install.sh
+  213  apt-get install curl-sSl
+  214  sudo apt-get install curl-sSl
+  215  sudo apt install curl-sSl
+  216  curl -sSL https://get.docker.com > /tmp/install.sh
+  217  cat /tmp/install.sh 
+  218  chmod +x /tmp/install.sh 
+  219  /tmp/install.sh 
+  220  docker status
+  221  docker version
+  222  sudo usermod -aG docker
+  223  usermod -aG docker
+  224  sudo service docker restart
+  225  docker version
+  226  service docker restart
+  227  docker version
+  228  sudo docker daemon
+  229  sudo dockerd
+  230  docker version
+  231  service docker restart
+  232  docker version
+  233  cd /var/run/docker.sock
+  234  cat /var/run/docker.sock
+  235  ls /var/run/
+  236  ls -l
+  237  ls -a
+  238  ls -ls
+  239  cd /var/run/
+  240  ls
+  241  ls -ls
+  242  chmod 775 docker.sock 
+  243  sudo chmod 775 docker.sock 
+  244  ls -ls
+  245  service docker restart
+  246  docker version
+  247  sudo usermod -a -G docker $USER
+  248  docker version
+  249  service docker restart
+  250  docker version
+  251  sudo usermod -a -G docker lilli
+  252  docker version
+  253  service docker restart
+  254  docker version
+  255  ls
+  256  cd image/
+  257  ls
+  258  cd aufs/
+  259  ls
+  260  cd imagedb/
+  261  ls
+  262  cd content/
+  263  ls
+  264  cd ..
+  265  ls
+  266  cd volumes/
+  267  ls
+  268  cd ..
+  269  ls
+  270  ls -ls
+  271  ./nuke-graph-directory.sh 
+  272  ls -ls
+  273  exit
+  274  sudo ls
+  275  cd image
+  276  sudo -s
+  277  exit
+  278  docker images
+  279  find cowsayimage
+  280  locale 
+  281  docker ps
+  282  docker inspect sharp_knuth 
+  283  docker inspect sharp_knuth | grep IPAddress
+  284  docker diff sharp_knuth
+  285  docker logs sharp_knuth 
+  286  docker ps
+  287  docker ps -a
+  288  docker rm sharp_knuth 
+  289  docker ps -a
+  290  ls
+  291  docker version
+  292  docker run debian echo "Hallo Welt"
+  293  docker run -i -t debian /bin/bash
+  294  docker run -h CONTAINER -i -t debian /bin/bash
+  295  docker ps
+  296  docker run -it -name cowsay -hostname cowsay debian bash
+  297  docker run -i -t -name cowsay -hostname cowsay debian bash
+  298  docker run -it -name cowsay -hostname cowsay debian bash
+  299  docker run -it -name cowsay —hostname cowsay debian bash
+  300  docker rm -v $(docker ps -aq -f status=exited)
+  301  docker run -it -name cowsay —hostname cowsay debian bash
+  302  docker run --help
+  303  docker run -it  —hostname cowsay debian bash
+  304  docker run -it-name cowsay  —hostname cowsay debian /bin/bash
+  305  docker run -it -name cowsay  —hostname cowsay debian /bin/bash
+  306  docker run debian echo "Hallo Welt"
+  307  docker run -it -name cowsay  —hostname cowsay debian
+  308  history
+  309  259
+  310  docker run -h CONTAINER -i -t debian /bin/bash
+  311  docker run -it -n cowsay  —h cowsay debian bash
+  312  docker run -it —h cowsay debian bash
+  313  docker run -it —h cowsay debian
+  314  docker run -h cowsay -i -t debian /bin/bash
+  315  docker commit cowsay test/cowsayimage
+  316  docker commit dreamy_edison test/cowsayimage
+  317  docker run test/cowsayimage /usr/games/cowsay “Muh”
+  318  ls
+  319  cd /test
+  320  find test
+  321  cd..
+  322  cd ..
+  323  ls
+  324  cd ..
+  325  ls
+  326  find test
+  327  find test*
+  328  locate find
+  329  locate test
+  330  locate cowsay
+  331  cd /usr/share/bash-completion/completions/cowsay
+  332  cd /usr/share/bash-completion/completions/
+  333  ls
+  334  locate test/cowsayimage
+  335  locate cowsayimage
+  336  locate cowsay
+  337  docker run test/cowsayimage /usr/games/cowsay “Muh”
+  338  cd ..
+  339  ls
+  340  locate docker
+  341  docker build -t test/ntp-dockerfile .
+  342  docker run -i -t test/ntp-dockerfile /bin/bash
+  343  exit
+  344  docker ps
+  345  docker images
+  346  docker run debian
+  347  docker run -h debian
+  348  docker run -h CONTAINER -i -t debian /bin/bash
+  349  exit
+  350  ls
+  351  tar cfv ocsp-file-set.tar ocsp-test-timeout/ ocsp-test-mms/ ocsp-test/ ocsp/
+  352  docker build -t test/named-dockerfile .
+  353  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  354  docker build -t test/named-dockerfile .
+  355  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  356  docker build -t test/named-dockerfile .
+  357  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  358  docker build -t test/named-dockerfile .
+  359  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  360  docker build -t test/named-dockerfile .
+  361  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  362  docker build -t test/named-dockerfile .
+  363  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  364  docker build -t test/named-dockerfile .
+  365  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  366  docker build -t test/named-dockerfile .
+  367  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  368  docker build -t test/named-dockerfile .
+  369  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  370  docker build -t test/ntp-dockerfile .
+  371  docker run -h CONTAINER -i -t debian /bin/bash
+  372  docker build -t test/ntp-dockerfile .
+  373  docker run -h CONTAINER -i -t debian /bin/bash
+  374  docker build -t test/ntp-dockerfile .
+  375  wget https://www.openssl.org/source/openssl-1.1.0e.tar.gz
+  376  ls
+  377  cd ..
+  378  ls
+  379  cd tmp-docker/
+  380  ls
+  381  docker build -t test/tmp-dockerfile .
+  382  docker run -h CONTAINER -i -t debian /bin/bash
+  383  docker build -t test/tmp-dockerfile .
+  384  docker run -h CONTAINER -i -t debian /bin/bash
+  385  docker run -h exp -i -t debian /bin/bash
+  386  docker build -t test/tmp-dockerfile .
+  387  docker run -h exp -i -t test/tmp-dockfile /bin/bash
+  388  docker run -h exp -i -t debian /bin/bash
+  389  docker build -t test/tmp-dockerfile .
+  390  docker run -h experiment --cap-add=NET_ADMIN -i -t test/tmp-dockerfile /bin/bash
+  391  docker build -t test/tmp-dockerfile .
+  392  docker run -h experiment --cap-add=NET_ADMIN -i -t test/tmp-dockerfile /bin/bash
+  393  docker build -t test/tmp-dockerfile .
+  394  docker run -h experiment --cap-add=NET_ADMIN -i -t test/tmp-dockerfile /bin/bash
+  395  docker build -t test/tmp-dockerfile .
+  396  docker run -h experiment --cap-add=NET_ADMIN -i -t test/tmp-dockerfile /bin/bash
+  397  docker build -t test/tmp-dockerfile .
+  398  tar -cf bind-set.tar bind/ opendnssec/ resolv.conf 
+  399  docker build -t test/java-dockerfile .
+  400  docker run -h withjava --cap-add=NET_ADMIN -i -t test/java-dockerfile /bin/bash
+  401  docker build -t test/java-dockerfile .
+  402  docker run -h withjava --cap-add=NET_ADMIN -i -t test/java-dockerfile /bin/bash
+  403  docker build -t test/java-dockerfile .
+  404  docker run -h withjava --cap-add=NET_ADMIN -i -t test/java-dockerfile /bin/bash
+  405  docker version
+  406  pwd
+  407  history>history-1mai17.txt
+  408  nano history-1mai17.txt 
+  409  docker build -t test/named-dockerfile .
+  410  docker run -h namedserver --cap-add=NET_ADMIN -i -t test/named-dockerfile /bin/bash
+  411  ifconfig
+  412  exit
+  413  ifconfig
+  414  docker run -h namedserver --cap-add=NET_ADMIN -p 8080:80  -i -t test/named-dockerfile /bin/bash
+  415  docker build -t test/named-dockerfile .
+  416  docker run -h namedserver --cap-add=NET_ADMIN -p 8080:80  -i -t test/named-dockerfile /bin/bash
+  417  docker build -t test/named-dockerfile .
+  418  docker run -h namedserver --cap-add=NET_ADMIN -p 8080:80  -i -t test/named-dockerfile /bin/bash
+  419  docker build -t test/named-dockerfile .
+  420  docker run -h namedserver --cap-add=NET_ADMIN -p 8080:80  -i -t test/named-dockerfile /bin/bash
+  421  docker build -t test/named-dockerfile .
+  422  docker run -h namedserver --cap-add=NET_ADMIN -p 8080:80  -i -t test/named-dockerfile /bin/bash
+  423  docker build -t test/named-dockerfile .
+  424  docker run -h namedserver --cap-add=NET_ADMIN -p 8080:80  -i -t test/named-dockerfile /bin/bash
+  425  top
+  426  exit
+  427  docker-compose --version
+  428  ./docker-compose-Linux-x86_64 --version
+  429  ./docker-compose-Linux-x86_64 build
+  430  ls
+  431  docker-compose-Linux-x86_64
+  432  ./docker-compose-Linux-x86_64
+  433  chmod 755 docker-compose-Linux-x86_64 
+  434  ./docker-compose-Linux-x86_64
+  435  ls
+  436  curl -L https://github.com/docker/compose/releases/download/1.9.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  437  cd /usr/local/bin/docker-compose
+  438  mkdir /usr/local/bin/docker-compose
+  439  sudo mkdir /usr/local/bin/docker-compose
+  440  curl -L https://github.com/docker/compose/releases/download/1.9.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  441  rm /usr/local/bin/docker-compose
+  442  rm -r /usr/local/bin/docker-compose
+  443  sudo rm -r /usr/local/bin/docker-compose
+  444  sudo curl -L https://github.com/docker/compose/releases/download/1.9.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  445  sudo curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  446  docker-compose up -build
+  447  docker-compose up --build
+  448  docker-compose up --build testnetz_router-inet
+  449  exit
+  450  git pull origin master
+  451  docker status
+  452  git status
+  453  git pull origin master
+  454  git status
+  455  exit
+  456  python setup.py install
+  457  sudo python setup.py install
+  458  clear
+  459  ifconfig 
+  460  pwd
+  461  docker-compose
+  462  docker-compose up
+  463  ll
+  464  cat .env
+  465  nano .env 
+  466  chmod 777 .env
+  467  docker-compose up
+  468  docker-compose down
+  469  docker-compose up
+  470  ifconfig 
+  471  docker-compose
+  472  docker-compose up --build
+  473  systemctl docker restart
+  474  sudo service docker start
+  475  sudo service docker stop
+  476  sudo service docker start
+  477  docker-compose up --build
+  478  docker pull
+  479  docker pull base-image:latest
+  480  docker pull 46.189.76.146:5000
+  481  docker pull docker-registry
+  482  cd ..
+  483  ll
+  484  ll -
+  485  ll
+  486  cd-
+  487  cd ..
+  488  ls
+  489  cd etc/
+  490  ll
+  491  sudo nano hosts
+  492  ping ftp1.openlimit.com
+  493  cd /etc/sysconfig/
+  494  ll
+  495  cd docker/
+  496  ll
+  497  docker images
+  498  docker ps
+  499  docker-compose up --build
+  500  docker-compose up --build
+  501  docker images
+  502  docker system prune
+  503  docker images
+  504  docker-compose up --build
+  505  docker-compose up
+  506  docker-compose up testnetz_ocsp-ti.java_1
+  507  docker-compose up --build ocsp-ti.java
+  508  ping docker-registry
+  509  cd /etc/
+  510  cd docker/
+  511  ll
+  512  nano daemon.json
+  513  sudo nano daemon.json
+  514  nano daemon.json
+  515  sudo service docker stop
+  516  sudo service docker start
+  517  sudo /etc/init.d/docker restart
+  518  docker login 46.189.76.146:5000
+  519  docker pull base-image
+  520  docker pull /testnetz/base-image
+  521  docker pull 46.189.76.146:5000/testnetz/base-image
+  522  docker pull docker-registry:5000/testnetz/base-image
+  523  docker-compose login 46.189.76.146:5000
+  524  docker-compose config
+  525  docker build  .
+  526  ping docker-registry
+  527  docker build  .
+  528  htop
+  529  apt install htop
+  530  sudo apt install htop
+  531  htop
+  532  docker compose up
+  533  docker-compose up
+  534  docker-compose up --build ksr-ti.java
+  535  ping docker-registry
+  536  ll
+  537  ls
+  538  de docker-arbeit/
+  539  cd docker-arbeit/
+  540  cd testnetz/
+  541  ls
+  542  vim docker-compose.yml 
+  543  git pull origin master
+  544  git stache
+  545  git stage
+  546  git rm remoteserver/
+  547  git rm -r remoteserver/
+  548  git rm -r-f remoteserver/
+  549  git rm -r -f remoteserver/
+  550  git rm -r -f ti-konzentrator/
+  551  git pull origin master
+  552  git rm docker-compose.yml 
+  553  git rm -f docker-compose.yml 
+  554  git pull origin master
+  555  git status
+  556  git pull origin master
+  557  git pull
+  558  git fetch --all
+  559  git reset --hard origin/master
+  560  git pull origin master
+  561  git checkout
+  562  git config --global credential.helper 'cache --timeout=36000'
+  563  ll
+  564  vim docker-compose.yml 
+  565  sudo apt install vim
+  566  vim docker-compose.yml 
+  567  docker-compose --build
+  568  docker-compose up --build -d
+  569  docker-compose up --build
+  570  docker-compose up
+  571  docker-compose down
+  572  docker-compose up --build
+  573  systemctl restart docker
+  574  docker-compose up --build
+  575  vim docker-compose.yml 
+  576  ifconfig
+  577  ifconfig
+  578  sudo vim FRITZ-032 
+  579  ls
+  580  exit
+  581  ifconfig
+  582  ifconfig | grep 85.
+  583  ip --help
+  584  docker down
+  585  docker-compose down
+  586  pwd
+  587  ll
+  588  ls
+  589  apt-get remove libvirt
+  590  sudo apt-get remove libvirt
+  591  aptitude
+  592  sudo apt-get remove virsh
+  593  sudo apt-get purge libvirt* kvm qemu*
+  594  sudo apt autoremove
+  595  sudo apt-get purge libvirt* kvm qemu*
+  596  ifconfig
+  597  ifdown lxcbr0
+  598  ifdown lxcbr0:
+  599  ifdown virbr0 
+  600  ifconfig -a
+  601  ifdown virbr0-nic
+  602  ifconfig virbr0-nic
+  603  ifdown virbr0-nic
+  604  cd testnetz/
+  605  docker-compose down
+  606  ifconfig
+  607  systemctl restart docker
+  608  docker system prune
+  609  ifconfig
+  610  systemctl restart NetworkManage.service
+  611  systemctl restart NetworkManager.service
+  612  service libvirtd stop
+  613  pwd
+  614  ifconfig
+  615  cd /home/lilli/docker-arbeit/docker-compose
+  616  ls
+  617  docker-compose 
+  618  cd ..
+  619  clear
+  620  docker network ls
+  621  docker network create 
+  622  cd testnetz/
+  623  docker network create konn-sis
+  624  docker network ls
+  625  docker network create testnetz_konn-sis
+  626  docker network ls
+  627  docker network prune
+  628  clear
+  629  ifconfig 
+  630  docker-compose 
+  631  ./docker-compose 
+  632  pwd
+  633  ifconfig
+  634  sudo apt-get remove --purge virtualbox 
+  635  sudo rm ~/"VirtualBox VMs" -Rf
+  636  sudo rm ~/.config/VirtualBox/ -Rf
+  637  ifconfig
+  638  virsh
+  639  systemstl restart docker
+  640  systemctl restart docker
+  641  system docker prune
+  642  systemctl docker prune
+  643  system docker prune
+  644  ifconfig
+  645  ip a
+  646  docker-compose --build
+  647  docker-compose up --build -d
+  648  docker-compose up --build
+  649  /home/lilli/docker-arbeit/docker-compose up --build -d
+  650  ./home/lilli/docker-arbeit/docker-compose up --build -d
+  651  ./home/lilli/docker-arbeit/docker-compose up --build -d .
+  652  ./home/lilli/docker-arbeit/docker-compose
+  653  sudo apt-get install --reinstall python-pkg-resources
+  654  ./home/lilli/docker-arbeit/docker-compose
+  655  ./home/lilli/docker-arbeit/docker-compose/docker-compose
+  656  ../../docker-compose/docker-compose
+  657  ../docker-compose/docker-compose
+  658  ../docker-compose/docker-compose up --build
+  659  docker-compose up --build
+  660  ../docker-compose/docker-compose up --build
+  661  ../docker-compose/docker-compose down
+  662  ../docker-compose/docker-compose up --build -d
+  663  ping docker-registry
+  664  ping docker-registry:5000
+  665  ../docker-compose/docker-compose up --build -d
+  666  ../docker-compose/docker-compose up
+  667  git pull origin master
+  668  ../docker-compose/docker-compose up --build -d
+  669  ../docker-compose/docker-compose up
+  670  ../docker-compose/docker-compose up --build -d
+  671  ../docker-compose/docker-compose up --build -d  sis-konzentrator.strongswan
+  672  ../docker-compose/docker-compose up --build -d testnetz_sis-konzentrator.strongswan
+  673  clear
+  674  ../docker-compose/docker-compose up --build -d
+  675  ../docker-compose/docker-compose down
+  676  ../docker-compose/docker-compose up --build -d
+  677  pwd
+  678  docker-compose
+  679  docker-compose-2 
+  680  docker-compose up --build
+  681  ../../docker-compose up --build
+  682  ../docker-compose up --build
+  683  ../docker-compose/docker-compose up --build
+  684  ../docker-compose/docker-compose up --build ksr-ti.java
+  685  ../docker-compose/docker-compose up --build -d
+  686  git pull origin master
+  687  git fetch origin
+  688  git reset --hard origin/master
+  689  git pull origin master
+  690  ansible-playbook -i inventory base-image.yml
+  691  ls
+  692  ll
+  693  sudo apt install ansible
+  694  ansible-playbook -i inventory base-image.yml
+  695  ansible-playbook -i inventory site.yml
+  696  ansible-playbook -i localhost_inventory client-docker.yml
+  697  sudo ansible-playbook -i localhost_inventory client-docker.yml
+  698  ls
+  699  ll
+  700  ifconfig
+  701  ip a
+  702  ip route show | grep 'default'
+  703  ip a
+  704  ip a s
+  705  docker-compose up
+  706  docker-compose-2 up
+  707  docker-compose-2 down
+  708  ip a
+  709  pwd
+  710  ll
+  711  ls
+  712  cd docker-arbeit/
+  713  docker-compose-2 up
+  714  ll
+  715  cd testnetz/
+  716  docker-compose-2 up
+  717  ll
+  718  chmod +x obProzessLauft-2.sh 
+  719  ./obProzessLauft-2.sh 
+  720  chmod +x start-komponenten.sh 
+  721  ./obProzessLauft-2.sh 
+  722  cd testnetz/
+  723  ./obProzessLauft-2.sh 
+  724  docer-compose-2 up &
+  725  docer-compose-2 down
+  726  docker-compose-2 up &
+  727  cd ..
+  728  ll
+  729  ls
+  730  cd docker-arbeit/
+  731  obProzessLauft-2.sh &
+  732  exit
+  733  chmod +x start-komponenten.sh 
+  734  . ~/.bashrc.
+  735  . ~/.bashrc
+  736  start-komponenten.sh 
+  737  docker-compose-2 
+  738  obProzessLauft-2.sh 
+  739  obProzessLauft-2.sh &
+  740  x-terminal-emulator -e obProzessLauft-2.sh 
+  741  x-terminal-emulator -e start-komponenten.sh 
+  742  x-terminal-emulator -e start-komponenten.sh &
+  743  bash/sh
+  744  apt install sh
+  745  sudo apt install sh
+  746  obProzessLauft-2.sh 
+  747  ./start-komponenten.sh 
+  748  ./start-komponenten.sh >uu
+  749  ./start-komponenten.sh >/dev/null
+  750  ./start-komponenten.sh >/dev/null 2>&1 &
+  751  chmod +x stop-komponenten.sh 
+  752  ./stop-komponenten.sh 
+  753  ./obProzessLauft-2.sh 
+  754  docker-compose-2 down
+  755  ./obProzessLauft-2.sh 
+  756  docker-compose-2 down
+  757  ./obProzessLauft-2.sh 
+  758  docker-compose-2 down
+  759  ./obProzessLauft-2.sh 
+  760  docker-compose-2 down
+  761  ./obProzessLauft-2.sh 
+  762  docker-compose-2 down
+  763  systemctl restart docker
+  764  docker-compose-2 down
+  765  ./obProzessLauft-2.sh 
+  766  docker-compose-2 down
+  767  ./obProzessLauft-2.sh 
+  768  docker-compose-2 down
+  769  ./obProzessLauft-2.sh 
+  770  docker-compose-2 down
+  771  systemctl restart docker
+  772  docker-compose-2 down
+  773  ./obProzessLauft-2.sh 
+  774  docker-compose-2 down
+  775  ./obProzessLauft-2.sh 
+  776  docker-compose-2 down
+  777  ./obProzessLauft-2.sh 
+  778  chmod +x obProzessLauft-2.sh 
+  779  chmod +x start-komponenten.sh 
+  780  chmod +x stop-komponenten.sh 
+  781  ./obProzessLauft-2.sh 
+  782  docker-compose-2 down
+  783  ./obProzessLauft-2.sh 
+  784  docker-compose-2 down
+  785  docker-compose-2 down
+  786  docker-compose-2 up > /dev/null 2>&1
+  787  clear
+  788  docker-compose-2 up > /dev/null 2>&1
+  789  docker-compose-2 up > /dev/null 2>&1; echo ende
+  790  ./obProzessLauft-2
+  791  ./obProzessLauft-2.sh 
+  792  docker down
+  793  docker-compose-2 down
+  794  ./obProzessLauft-2.sh 
+  795  ./lauft3.sh
+  796  cd /var/crash/
+  797  ll
+  798  ls
+  799  vim _sbin_auplink.0.crash 
+  800  sudo vim _sbin_auplink.0.crash 
+  801  xterm
+  802  xterm &
+  803  chmod +x start-komponenten.sh 
+  804  ./lauft3.sh 
+  805  xterm -e start-komponenten.sh &
+  806  ps
+  807  ps aux
+  808  ps | grep 6880
+  809  xterm -e start-komponenten.sh &
+  810  ps | grep 6890
+  811  cd testnetz/
+  812  clear
+  813  ls
+  814  docker ps
+  815  cd testnetz/
+  816  clear
+  817  chmod +x lauf.sh 
+  818  ./lauf.sh 
+  819  pwd
+  820  docker-compose-2 /home/lilli/docker-arbeit/testnetz
+  821  docker-compose-2 up /home/lilli/docker-arbeit/testnetz
+  822  touch go.sh
+  823  vim go.sh 
+  824  chmod +x go.sh 
+  825  ./go.sh 
+  826  ./lauf.sh 
+  827  pwd
+  828  ./lauf.sh 
+  829  clear
+  830  ./lauf.sh 
+  831  clear
+  832  ./lauf.sh 
+  833  docker-compose up
+  834  docker-compose-2 up
+  835  ./lauf.sh 
+  836  exit
+  837  kill -9 12215
+  838  kill -9 15285
+  839  kill -9 17855
+  840  kill -9 19057
+  841  man trap
+  842  trap
+  843  kill 24936
+  844  kill -TERM 26300
+  845  cat start_komponenten_So\ 28.\ Mai\ 13_08_36\ CEST\ 2017.log | grep error
+  846  ./lauf.sh 
+  847  clear
+  848  ./lauf.sh 
+  849  aktuelle_zeit=date
+  850  echo $aktuelle_zeit
+  851  aktuelle_zeit = date
+  852  let aktuelle_zeit = date
+  853  aktuelle_zeit=date
+  854  aktuelle_zeit=$date
+  855  echo $aktuelle_zeit 
+  856  aktuelle_zeit = $date
+  857  aktuelle_zeit = $(date)
+  858  datum=$(date +%Y_%m_%d)
+  859  echo $datum
+  860  datum=$(date)
+  861  echo $datum
+  862  tail -f result.txt 
+  863  clear
+  864  tail -f result.txt 
+  865  vim docker-compose.yml 
+  866  tail -f result.txt 
+  867  time
+  868  date
+  869  tail -f result.txt 
+  870  date begin
+  871  date;echo begin
+  872  echo \n
+  873  echo "\n"
+  874  echo '\n'
+  875  echo '\r\n'
+  876  echo "\r\n"
+  877  \n
+  878  '\n'
+  879  cat start_komponenten_So 28. Mai 10:34:20 CEST 2017.log | grep error
+  880  cat 'start_komponenten_So 28. Mai 10:34:20 CEST 2017.log' | grep error
+  881  vim "stop_komponenten_So 28. Mai 15:36:34 CEST 2017.log"
+  882  ls
+  883  touch rc.local
+  884  docker-compose-2 up --build -d
+  885  docker-compose-2 up
+  886  docker-compose-2 down
+  887  docker-compose-2 up
+  888  docker-compose-2 up --build
+  889  pa aux
+  890  ps aux
+  891  docker-compose-2 up
+  892  docker-compose-2 down
+  893  docker-compose-2 up --build
+  894  docker exec -ti testnetz_ti-konzentrator.strongswan_1 bin/bash
+  895  docker-compose ps
+  896  docker-compose-2 ps
+  897  docker-compose-2 up
+  898  docker-compose-2 up testnetz_ti-konzentrator.strongswan
+  899  docker-compose-2 up testnetz_ti-konzentrator.strongswan_1
+  900  docker ps
+  901  docker-compose-2 up --build testnetz_ti-konzentrator.strongswan_1
+  902  docker-compose-2 up --build ti-konzentrator.strongswan
+  903  docker-compose-2 up --build ti-konzentrator.strongswan /bin/bash
+  904  docker-compose-2 up --build ti-konzentrator.strongswan
+  905  cd base-image-konzentrator/
+  906  ./build.sh 
+  907  ip a
+  908  ping 192.168.3.254
+  909  ping 10.60.5.11
+  910  ping 192.168.3.254
+  911  halt
+  912  docker ps
+  913  docker exec -ti testnetz_router.dnsmasq_1 /bin/bash
+  914  docker ps
+  915  docker-compose-2 up router.dnsmasq
+  916  docker-compose-2 down router.dnsmasq
+  917  docker-compose-2 down 
+  918  docker-compose-2 up router.dnsmasq
+  919  docker-compose-2 down 
+  920  docker-compose-2 up router.dnsmasq
+  921  docker-compose-2 down 
+  922  docker-compose-2 up router.dnsmasq
+  923  docker-compose-2 down 
+  924  docker-compose-2 up router.dnsmasq
+  925  apt install vlc
+  926  sudo apt install vlc
+  927  vlc
+  928  vlc &
+  929  docker-compose
+  930  docker-compose-2 version
+  931  ansible --version
+  932  docker --version
+  933  docker-compose --version
+  934  ansible --version
+  935  touch info.txt
+  936  ifup eth0
+  937  sudo ifup eth0
+  938  sudo ifup eth1
+  939  sudo ip link set eth0 up
+  940  sudo ip link set eth0 down ; sudo ip link set eth0 up
+  941  ip a
+  942  sudo /etc/init.d/networking restart
+  943  ip a
+  944  sudo /etc/init.d/networking restart
+  945  sudo su
+  946  touch docker-pid
+  947  chmod +x docker-pid 
+  948  touch docker-ip
+  949  chmod +x docker-ip
+  950  pwd
+  951  . ~/.bashrc
+  952  cd ..
+  953  docker-pid
+  954  docker-ip web
+  955  docker ps
+  956  docker images
+  957  docker-ip 85d13a003d86
+  958  docker system prune
+  959  cd testnetz/
+  960  docker-compose up
+  961  docker-compose-2 up
+  962  ifconfig
+  963  docer inspect network konn-wan
+  964  docker inspect network konn-wan
+  965  docker network inspect konn-wan
+  966  docker network inspect testnetz_konn-wan
+  967  docker networks ls
+  968  docker network ls
+  969  docker ps
+  970  ping 192.168.3.254
+  971  docker network ls
+  972  ip a
+  973  ifconfig
+  974  docker exec -ti testnetz_router.dnsmasq_1 /bin/bash
+  975  ip link set netns $(docker-pid testnetz_ti-konzentrator.dnsmasq_1) enp3s0
+  976  sudo ip link set netns $(docker-pid testnetz_ti-konzentrator.dnsmasq_1) enp3s0
+  977  ping 192.168.3.199
+  978  sudo ip link set netns $(docker-pid testnetz_router.dnsmasq_1) lxcbr0
+  979  ip link set netns $(docker-pid testnetz_router.dnsmasq_1) lxcbr0
+  980  sudo ip link set netns $(docker-pid testnetz_router.dnsmasq_1) lxcbr0
+  981  sudo ip link set netns $(docker-pid testnetz_router.dnsmasq_1) lxcbr0:
+  982  sudo ip link set netns $(docker-pid testnetz_router.dnsmasq_1) lxcbr0:0
+  983  docker-ip docker-pid testnetz_router.dnsmasq_1
+  984  docker-ip docker-pid $(testnetz_router.dnsmasq_1)
+  985  docker-ip $(testnetz_router.dnsmasq_1)
+  986  docker-ip testnetz_router.dnsmasq_1
+  987  docker-ip c8292e30e514
+  988  ip set promisc on dev lxcbr0
+  989  ifconfig lxcbr0 promisc
+  990  sudo ifconfig lxcbr0 promisc
+  991  sudo ifconfig enp3s0 promisc
+  992  docker-compose-2 up --build -d
+  993  docker-compose-2 down
+  994  docker-compose-2 up --build -d
+  995  docker-compose-2 up
+  996  docker-compose-2 down
+  997  docker-compose-2 up -d
+  998  docker-compose-2 down
+  999  ip addr show eth0
+ 1000  ifconfig
+ 1001  sudo ifup eth0
+ 1002  sudo apt install ethtool
+ 1003  sudo ethtool eth0
+ 1004  auto eth0
+ 1005  sudo ethtool eth0
+ 1006  ifconfig eth0
+ 1007  sudo ifconfig eth0
+ 1008  ifconfig auto eth0
+ 1009  ifconfig eth0
+ 1010  vim /var/log/dpkg.log
+ 1011  uname -r
+ 1012  docker network  create  -d macvlan    --subnet=192.168.0.0/16     --ip-range=192.168.2.0/24 -o macvlan_mode=bridge     -o parent=eth2.70 macvlan70
+ 1013  ifup eth2
+ 1014  make
+ 1015  ll
+ 1016  dhtest 
+ 1017  dhtest
+ 1018  dtest
+ 1019  apt search dhtest
+ 1020  dhcping
+ 1021  sudo apt install dhcping
+ 1022  dhcping
+ 1023  sudo dhcping
+ 1024  man dhcping
+ 1025  docker-compose up
+ 1026  docker-compose-2 up
+ 1027  docker-compose-2 down
+ 1028  exit
+ 1029  docker exec -ti testnetz_ti-konzentrator.strongswan_1 bin/bash
+ 1030  exit
+ 1031  ipcalc
+ 1032  sudo apt install ipcalc
+ 1033  sudo apt-get install ipcalc
+ 1034  ipcalc 172.25.0.17
+ 1035  exit
+ 1036  sync
+ 1037  ip a
+ 1038  ifconfig
+ 1039  history > history.log
+ 1040  docker version
+ 1041  nano ~/.bashrc
+ 1042  docker-compose-2 up
+ 1043  ifconfig 
+ 1044  iptables -L -nat
+ 1045  iptables  -nat
+ 1046  iptables 
+ 1047  iptables -h
+ 1048  iptables -t nat -L
+ 1049  sudo iptables -t nat -L
+ 1050  docker exec -ti testnetz_router.nat_1 testnetz_router.nat_1 bin/bash
+ 1051  docker exec -ti testnetz_router.nat_1 bin/bash
+ 1052  sudo docker exec -ti testnetz_router.nat_1 bin/bash
+ 1053  cd testnetz/
+ 1054  docker-compose
+ 1055  docker-compose-2
+ 1056  docker-compose-2 up --build router.nat
+ 1057  docker-compose-2 down
+ 1058  10.33.128.2
+ 1059  ping 10.33.128.2
+ 1060  ping -c1 10.33.128.2
+ 1061  ping -c1 10.60.5.10
+ 1062  ping -c1 10.33.128.2
+ 1063  ping -c1 10.60.5.10
+ 1064  ping -c1 10.33.128.2
+ 1065  ping -c100 10.33.128.2
+ 1066  ping -c1 10.60.5.10
+ 1067  ansible-playbook -i localhost_inventory client-docker.yml
+ 1068  su
+ 1069  sudo ansible-playbook -i localhost_inventory client-docker.yml
+ 1070  ansible -version
+ 1071  ansible --version
+ 1072  cat /etc/ansible/ansible.cfg
+ 1073  [B
+ 1074  ansible --version
+ 1075  ssh root@10.60.5.10
+ 1076  exit
+ 1077  ssh root@10.60.5.4
+ 1078  exit
+ 1079  docker-compose down
+ 1080  docker-compose-2 down
+ 1081  ssh root@10.60.5.11
+ 1082  docker ps
+ 1083  ll
+ 1084  docker-compose-2 up
+ 1085  cd base-image
+ 1086  ./build.sh 
+ 1087  ip a
+ 1088  docker images
+ 1089  docker rmi -f $(docker images -q)
+ 1090  pwd
+ 1091  exit
+ 1092  cd base-image
+ 1093  sudo ./build.sh 
+ 1094  cd ..
+ 1095  cd base-image-konzentrator/
+ 1096  sudo ./build.sh 
+ 1097  cd ..
+ 1098  docker-compose-2 up
+ 1099  sudo docker-compose-2 up
+ 1100  docker-compose-2 up
+ 1101  docker-compose-2 down
+ 1102  docker-compose-2 -f docker-compose-FHI.yml down
+ 1103  docker-compose-2 -f docker-compose-FHI.yml up
+ 1104  ip a
+ 1105  exit
+ 1106  docker-compose-2
+ 1107  docker-compose-2 down
+ 1108  cd ..
+ 1109  git clone https://paul@ftp1.openlimit.com/poc/testnetz.git
+ 1110  docker ps
+ 1111  docker network ls
+ 1112  docker system prune
+ 1113  docker network ls
+ 1114  ip a
+ 1115  ps x
+ 1116  ps x | grep Bilder
+ 1117  su root
+ 1118  sudo
+ 1119  sudo su
+ 1120  exit
+ 1121  reboot
+ 1122  ll
+ 1123  exit
+ 1124  ping 10.10.8.15
+ 1125  sudo su
+ 1126  exit
+ 1127  docker-compose-2 -f docker-compose-FHI.yml up
+ 1128  sudo /home/lilli/docker-arbeit/docker-compose/docker-compose-2 -f docker-compose-FHI.yml up
+ 1129  docker-compose-2 -f docker-compose-FHI.yml up
+ 1130  docker-compose-2 -f docker-compose-FHI.yml down
+ 1131  touch .env
+ 1132  ip a
+ 1133  docker-compose-2 -f docker-compose-FHI.yml down
+ 1134  sudo /home/lilli/docker-arbeit/docker-compose/docker-compose-2 -f docker-compose-FHI.yml down
+ 1135  docker ps
+ 1136  cd ..
+ 1137  type docker-compose-2
+ 1138  ping 10.33.128.76
+ 1139  ping 10.33.128.101
+ 1140  ping -c2  10.33.128.117
+ 1141  docker-compose-2 -f docker-compose-FHI.yml up
+ 1142  docker-compose-2 -f docker-compose-FHI.yml down
+ 1143  halt
+ 1144  docker network ls
+ 1145  brctl
+ 1146  brctl addbr br-em1
+ 1147  sudo brctl addbr br-em1
+ 1148  ip link set br-em1 up
+ 1149  sudo ip link set br-em1 up
+ 1150  ip addr show em1
+ 1151  ip addr show br-em1
+ 1152  ip addr add 10.33.128.76/24 dev br-em1
+ 1153  sudo ip addr add 10.33.128.76/24 dev br-em1
+ 1154  ip addr show br-em1
+ 1155  ip link add web-int type veth peer name web-ext
+ 1156  sudo ip link add web-int type veth peer name web-ext
+ 1157  brctl addif br-em1 web-ext
+ 1158  sudo brctl addif br-em1 web-ext
+ 1159  ip link set netns $(784c56172882) dev web-int
+ 1160  ip link set netns $(784c56172882 web) dev web-int
+ 1161  ip link set netns $784c56172882 dev web-int
+ 1162  ip link set netns 784c56172882 dev web-int
+ 1163  ip link set netns $(docker-pid testnetz_work-station.wp1_1) dev web-int
+ 1164  sudo ip link set netns $(docker-pid testnetz_work-station.wp1_1) dev web-int
+ 1165  docker-pid testnetz_work-station.wp1_1
+ 1166  nsenter -t 5769 -n ip addr add 10.33.128.117/24 dev web-int
+ 1167  sudo nsenter -t 5769 -n ip addr add 10.33.128.117/24 dev web-int
+ 1168  nsenter -t $(docker-pid testnetz_work-station.wp1_1) -n ip route del default
+ 1169  sudo nsenter -t $(docker-pid testnetz_work-station.wp1_1) -n ip route del default
+ 1170  sudo nsenter -t $(docker-pid testnetz_work-station.wp1_1) -n ip route add default via 10.33.128.1 dev web-int
+ 1171  sudo nsenter -t $(docker-pid testnetz_work-station.wp1_1) -n ip route add default via 10.33.128.2 dev web-int
+ 1172  sudo nsenter -t $(docker-pid testnetz_work-station.wp1_1) -n ip route add default via 10.33.128.199 dev web-int
+ 1173  ip a
+ 1174  ifconfig | grep veth1pl5769
+ 1175  ip a | grep veth1pl5769
+ 1176  dockr ps
+ 1177  docker ps
+ 1178  docker images
+ 1179  ll
+ 1180  ssh root@10.60.5.89
+ 1181  docker -ti testnetz_work-station.wp1_1 /bin/bash
+ 1182  docker exec -ti testnetz_work-station.wp1_1 /bin/bash
+ 1183  pipework eth2 784c56172882 dhclient
+ 1184  ll
+ 1185  pwd
+ 1186  cd docker-arbeit/testnetz
+ 1187  cd base-image
+ 1188  ll
+ 1189  cd bin/
+ 1190  ll
+ 1191  pipework eth2 784c56172882 dhclient
+ 1192  pipework eth0 784c56172882 dhclient
+ 1193  pipework eth1 784c56172882 dhclient
+ 1194  pipework dummy $CONTAINERID 192.168.21.101/24@192.168.21.1
+ 1195  pipework dummy 784c56172882  10.33.128.0/24@10.33.128.111
+ 1196  sudo pipework dummy 784c56172882  10.33.128.0/24@10.33.128.111
+ 1197  sudo ./pipework dummy 784c56172882  10.33.128.0/24@10.33.128.111
+ 1198  sudo su
+ 1199  docker ps
+ 1200  ifconfig 
+ 1201  ip addr show em1
+ 1202  ./build.sh 
+ 1203  cd ..
+ 1204  cd base-image-konzentrator/
+ 1205  ./build.sh 
+ 1206  cd ..
+ 1207  mkdir
+ 1208  mkdir dummy
+ 1209  cd dummy/
+ 1210  history>h.txt

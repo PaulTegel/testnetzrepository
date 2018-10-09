@@ -1,0 +1,199 @@
+
+
+1. Arbeitsplatz-Rechner mit "Debian 8 ("jessie") OS" installieren
+
+   -> per Installations-CD oder per Stick
+
+
+2. Ggf. fehlende Packages nachinstallieren via Package-Referenzliste.
+   Die Referenzliste 'package-selections.txt' wurde am "Docker-GeroMatura-
+   Arbeitsplatz" erstellt.
+
+   -> dselect installieren: 
+      (sudo) apt-get install dselect
+
+   Package-Referenzliste 'package-selections' auf Zielrechner etwa nach /tmp 
+   kopieren; dann
+
+   -> (sudo) dpkg --set-selections < /tmp/package-selections.txt 
+   -> (sudo) apt-get -y update
+   -> (sudo) apt-get dselect-upgrade
+
+
+
+3. Kompiliertes docker-compose Binary auf Zielrechner bringen:
+   Archiv "dist.tar.gz" etwa nach /root kopieren und auspacken.
+
+   -> gzip -d dist.tar.gz && tar -xvf dist.tar 
+
+      -> /root/dist/docker-compose/docker-compose Binary/Executable 
+
+   (-> /root/.bashrc:
+       -> alias docker-compose='/root/dist/docker-compose/docker-compose'
+          alias dc='/root/dist/docker-compose/docker-compose'
+   )
+
+4. git-Repository(ies) von openLimit klonen
+
+   -> cd /root
+   -> git clone https://ftp1.openlimit.com/poc/testnetz
+      
+   Für's Repository-Handling sind folgende User angelegt:
+
+	Gero Matura - gero/12345678
+	Nikolay Tcholtchev - niko/12345678
+	Faruk Catal - faruk/12345678
+	Mehdi Fatapor - mehdi/12345678
+	Reza Aledawud - reza/12345678
+	Wojtek Konitzer - wojtek/12345678
+	Herbert Leass - herbert/12345678
+	Robin Güttler - robin/12345678
+	ReneRichter - rene/12345678
+	Helmut Rödiger - helmut/12345678
+
+    Passwort ist beim Login zu ändern.
+
+     -> /root/testnetz-Directory-Baum wurde in die lokale Umgebung kopiert.
+
+    Im Browser findet sich unter https://ftp1.openlimit.com/poc eine Übersicht der 
+    vorhandenen Repositories; 'ansible' u. 'compose' müssen entsprechend dem 
+    beschriebenen Ablauf nicht zwingend auf den eigenen Zielrechner geklont werden.
+
+
+   4.1 Eigene, angepasste (Base-)Images bauen:
+
+      -> Aufruf von: /root/testnetz/base-image/build.sh 
+      -> Aufruf von: /root/testnetz/base-image-konzentrator/build.sh
+
+      -> docker images 
+         zeigt die bisherigen Images an; diese werden im weiteren Setup per
+         docker-compose --build referenziert und benutzt.
+
+   4.2 Container u. Netzwerke erstellen
+ 
+      In /root/testnetz/ liegt auch das "fhi"-spezifische 
+     docker-compose -f 'docker-compose-FHI.yml' (File zum Bauen der Test-Infrastruktur) up. 
+
+
+      Anlegen des Include-Files in /root/testnetz/.env; 
+      .env wird von ~-FHI.yml benutzt: 
+
+      -> cd /root/testnetz && touch .env
+      Der Inhalt von '.env' ist spezfisch anzupassen, z.B.
+ 
+      KONN_WAN_INTERFACE=enx803f5d090088 oder (eth1); USB-Schnittstelle-Interface
+      KONN_LAN_INTERFACE=eth0
+
+
+      Alle docker-Container u. Netzwerk-Interfaces bauen und starten:
+      -> docker-compose -f docker-compose-FHI.yml up --build
+
+   4.3 Ubuntu Maschinen
+
+       Docker läuft als Systemdienst mit root-Rechten, und auch der Client braucht
+       privilegierte Rechte. Treten Sie der Gruppe „docker“ mit dem Kommando
+
+       sudo usermod -a -G docker Benutzername 
+
+       bei, damit Sie den Docker-Client ohne sudo aufrufen können. Danach starten 
+       Sie Linux neu, damit der Docker-Dienst läuft und die Gruppenmitgliedschaft gültig wird. 
+
+!! Hier endet der gewöhnliche Ablauf zum Setup der Docker-Testumgebung.
+
+
+      // alle docker Container stoppen & networks interfaces entfernen
+      -> docker-compose -f docker-compose-FHI.yml down
+
+      // alle docker container starten (networks-interfaces werden bei bedarf angelegt)
+      -> docker-compose -f docker-compose-FHI.yml up
+
+      // ect. bzgl. einzelne Container:
+      -> docker-compose -f docker-compose-FHI.yml stop router.dnsmasq
+      -> docker-compose -f docker-compose-FHI.yml up --build -d router.dnsmasq
+      -> docker-compose -f docker-compose-FHI.yml up router.dnsmasq
+
+    
+   4.3 docker-Neustart und weitere docker Commands
+
+       Bei Problemen: Ggf. Neustart von docker
+       -> systemctl restart docker
+
+       -> docker ps
+          zeigt eine Übersicht aller Container und deren internen Ids und Bezeichner
+
+       -> docker images
+          zeigt eine Übersicht aller benutzten Images
+
+       -> docker exec -ti testnetz_ti-konzentrator.strongswan_1 /bin/bash
+          Attached eine Shell in Container ti-konzentrator.strongswan
+
+       -> docker exec -ti testnetz_ti-konzentrator.strongswan_1 ipsec stop
+          Stop (u. automatischer Restart) von ipsec strongswan.
+
+       -> docker network ls
+          Anzeigen vorhandener Netzwerke
+
+       -> docker rmi ContainerID
+          Image mit ContainerID löschen
+
+       -> docker rmi -f $(docker images -q)
+          Alle Images löschen
+
+       -> docker-compose -f docker-compose-FHI.yml up --build -d router.dnsmasq
+
+// Container erstellen und starten
+       -> docker-compose -f docker-compose-FHI.yml up router.dnsmasq
+
+
+       -> Copying files from host to Docker container and from Docker contaiter to host
+
+          #from host to Docker container (router.nat)
+          docker cp 123.log  testnetz_router.nat_1:/home/123.log
+
+          #from Docker contaiter to host
+          docker cp  testnetz_router.nat_1:/home/123.log 123.log
+
+       -> docker system prune -a
+          This will remove:
+          - all stopped containers
+	  - all volumes not used by at least one container
+          - all networks not used by at least one container
+          - all images without at least one container associated to them
+
+
+  4.4  Cleanup und Recovery 
+
+       // alle Images löschen, alles neu bauen und starten
+       (systemctl restart docker)
+       cd ~/testnetz
+       docker rmi $(docker images -q)
+       cd ~/testnetz/base-image &&  ./build.sh
+       cd ~/testnetz/base-image-konzentrator && ./build.sh
+       cd ~/testnetz && docker-compose -f docker-compose-FHI.yml up --build
+
+       // 
+
+  4.5  Management-Interface
+
+	     router.dnsmasq: 	10.60.5.11
+		 router.nat:	10.60.5.10
+         trust-anchor.httpd: 	10.60.5.7
+       remoteserver.manager:	10.60.5.8
+                ntp-ti.ntpd:	10.60.5.68
+               ocsp-ti.java:	10.60.5.71
+    ti-konzentrator.dnsmasq: 	10.60.5.33
+ ti-konzentrator.strongswan:	10.60.5.3
+   sis-konzentrator.dnsmasq: 	10.60.5.34
+sis-konzentrator.strongswan:	10.60.5.4
+	      vsdm-ti.httpd:	10.60.5.120
+	        ksr-ti.java:	10.60.5.70
+               dns-ti.bind9:	10.60.5.69
+           dns-public.bind9:	10.60.5.5
+               crl-ti.httpd:	10.60.5.32
+          register-ti.httpd:	10.60.5.31
+           work-station.wp3:	10.60.5.91
+           work-station.wp2:	10.60.5.90
+           work-station.wp1:	10.60.5.89
+
+
+

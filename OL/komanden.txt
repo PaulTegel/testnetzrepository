@@ -1,0 +1,253 @@
+#/root/Documents/Test-Ausfuehrung
+
+
+sudo apt-get install openjdk-8-jdk openjdk-8-demo openjdk-8-doc openjdk-8-jre-headless openjdk-8-source
+
+
+fakeroot make-jpkg jdk-8u131-linux-x64.tar.gz
+vi /etc/sudoers 
+visudo
+
+
+The Debian package has been created in the current directory.
+You can install the package as root with:
+
+    dpkg -i oracle-java8-jdk_8u131_amd64.deb
+
+
+
+
+paul@CampusX:~$ sudo dpkg -i oracle-java8-jdk_8u131_amd64.deb
+
+
+
+
+**********************************
+
+root@CampusX:~# cd workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./propertyHousekeeping.sh
+
+~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/HelperScripts
+
+
+root@CampusX:~# cd workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./propertyHousekeeping.sh 
+arp -s 10.10.8.15 00:30:d6:16:62:9b
+start housekeeping
+Aktualisiere Properties
+Start computing
+[Fatal Error] :-1:-1: Premature end of file.
+FAILED: Es ist ein Fehler aufgetreten:
+++++++++++++++++++
+Bitte Testablauf kontrollieren
+++++++++++++++++++
+finished housekeeping
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung#
+
+
+**************************
+
+
+Owo1!Raw1
+Owo1!Raw1
+
+
+
+
+iptables -t nat -L
+
+route del -net 192.168.2.211 gw 10.33.128.230 netmask 255.255.255.255 dev eth0
+
+Jira:  Weiss@Fraunhofer
+
+
+
+
+
+
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./Ausfuehrungssessions/MAI_2017/PAUL/PAKET21/startAutomatedRunPlans.sh
+
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./startTestCases.sh TIP1_A_4542_01
+
+
+****************************************
+
+modprobe 8021q
+vconfig add eth0 10
+
+ifconfig eth0.10 10.33.128.57 netmask 255.255.255.0 up
+ifconfig eth0.10 10.33.128.57/24 up
+
+
+****************
+
+auto eth0.10
+iface eth0.10 inet static
+ address 10.33.128.57
+ netmask 255.255.255.0
+
+******************************************
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+
++++++++++++++++++++++
+
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung# ./startTestCases.sh TIP1_A_5411_01
+
+root@CampusX:~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_4_1_r18720_CampusX_MEHDI_PAKET1_2017_07_06# 
+
+
+
+
+
+***********
+container's IP address from the host
+
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+****************
+Linux Kernel update
+
+Status – Welcher Kernel ist installiert?
+uname -r
+/etc/apt/sources.list
+deb http://http.debian.net/debian jessie-backports main
+deb http://ftp.de.debian.org/debian/ jessie-backports main contrib non-free
+apt-get update
+
+apt-cache search -t jessie-backports linux-image
+------>>>>>linux-image-4.9.0-0.bpo.3-amd64
+ die passenden Header installieren
+apt-get install linux-image-4.9.0-0.bpo.3-amd64 linux-headers-4.9.0-0.bpo.3-amd64
+
+***************
+from/to Konnektor
+scp -P 2222  root@10.10.8.15:/tmp/remoteClient1_crt.pem .
+scp -P 2222  root@10.10.8.15:/tmp/remoteClient1.pem .
+
+scp -P 2222 remoteClient1.pem  root@10.10.8.15:/tmp/
+scp -P 2222 remoteClient1_crt.pem  root@10.10.8.15:/tmp/
+
+/opt/secure/current/konn/conf
+
+
+scp -P 2222 remoteClient1.pem  root@10.10.8.15:/opt/secure/current/konn/conf/
+scp -P 2222 remoteClient1_crt.pem  root@10.10.8.15:/opt/secure/current/konn/conf/
+
+***********
+sshpass -p '123456' ssh root@10.60.5.68 "date -u +%s> ../tmp/dateNTP&&exit"
+
+sshpass -p "123456" scp -p  root@10.60.5.68:/tmp/dateNTP ../tmp
+sshpass -p "123456" scp -p  root@10.60.5.68:/tmp/dateNTP ./tmp
+
+************************
+	
+		CETP
+
+Aktiviere CETP Empfänger
+Führe Konnektor Neustart aus
+Warte bis zu 30 Minuten auf CETP Nachricht...
+Warte maximal 1800 Sekunden auf Events ................................................................
+Keine Events empfangen nach 1800 Sekunden.
+
+************************
+
+
+
+*****************************************
+Message from syslogd@CampusX at Jul 25 23:15:22 ...
+ kernel:[731025.731274] unregister_netdevice: waiting for lo to become free. Usage count = 1
+
+Message from syslogd@CampusX at Jul 25 23:15:32 ...
+ kernel:[731035.811197] unregister_netdevice: waiting for lo to become free. Usage count = 1
+
+*****************************************
+
+systemctl restart NetworkManager.service
+*************************
+
+
+
+
+read -p "Press any key..."
+
+Warte ne Weile, damit der Konnektor alle Folgeaktivitäten abschliessen kann ...
+
+
+***********************************************
+
+
+git reset --hard ac911477bdfc805e5feb227ec9b893274225fde5
+
+git push --force
+remote: GitLab: You are not allowed to force push code to a protected branch on this project.
+
+
+***********************************************
+TIP1_A_4810_13
+
+LokAdmin	'Lokaler-Administrator'	 #K0nnekt0rLok	#K0nnekt0rLok1
+
+RemAdmin	'Remote-Administrator'	 #K0nnekt0rRem	#K0nnekt0rRem1
+
+SupAdmin	'Super-Administrator'	 #K0nnekt0rSup	#K0nnekt0rSup1
+
+
+
+myadmin		#K0nnekt0rn	#K0nnekt0rn1
+
+
+
+
+************************************************************
+
+
+
+Git uses a username and the email address to associate commits with you identity
+
+Setting your username in Git
+git config --global user.name "Max Mustermann"
+
+Setting your commit email address in Git
+git config --global user.email "email@mail.com"
+
+****
+
+abfragen
+git config --global user.name
+git config --global user.email
+
+************************************************************
+Konnektor
+
+/usr/sbin/tcpdump
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10652	8/14/17, 4:35 PM	1	g.matura	"Netzwerk-Route auf WP2 und WP3 hinzufügen" hinzugefügt
+
+"Netzwerk-Route auf sis-konzentrator.strongswan und router.nat hinzufügen" hinzugefügt
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+user@KONN-66:~$ arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.10.8.15               ether   00:30:d6:15:9f:4c   CM                    eth0
+fw49.olintern.net        ether   00:a0:57:29:ba:f4   C                     eth4
+FILE.olintern.net        ether   00:30:05:fe:84:96   C                     eth4
+user@KONN-66:~$ 
+user@KONN-66:~$ 

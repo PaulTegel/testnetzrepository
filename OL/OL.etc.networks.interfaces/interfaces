@@ -1,0 +1,46 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+
+# The primary LAN interface
+#allow-hotplug eth2
+#iface eth2 inet dhcp
+
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+        address 192.163.2.1
+        netmask 255.255.255.255
+
+# konn-wan
+auto eth1
+iface eth1 inet static
+        address 192.170.3.100
+        netmask 255.255.255.255
+
+# konn-lan
+auto eth2
+iface eth2 inet static
+        address 192.168.3.100
+        netmask 255.255.255.0
+
+# The Konnektor management/control network interface
+auto eth3
+iface eth3 inet static
+#        address 10.33.128.1
+#        address 10.217.9.1
+        address 192.168.2.1
+        netmask 255.255.255.0
+
+auto eth3:0
+iface eth3:0 inet static
+	address 10.10.8.6
+	netmask 255.255.255.0
+#	post-up arp -s 10.10.8.15 00:30:d6:16:62:9b
+
+auto eth4
+iface eth4 inet static
+#        address 10.33.128.1
+#        address 10.217.9.1
+        address 192.168.49.223
+        netmask 255.255.255.0

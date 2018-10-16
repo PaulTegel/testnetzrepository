@@ -1,0 +1,15 @@
+user@KONN-66:~$ ping -c1 fw49.olintern.net
+PING fw49.olintern.net (192.168.49.1) 56(84) bytes of data.
+64 bytes from fw49.olintern.net (192.168.49.1): icmp_seq=1 ttl=60 time=1.58 ms
+
+--- fw49.olintern.net ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1.584/1.584/1.584/0.000 ms
+user@KONN-66:~$ 
+user@KONN-66:~$ ping -c1 FILE.olintern.net
+PING FILE.olintern.net (192.168.49.102) 56(84) bytes of data.
+64 bytes from FILE.olintern.net (192.168.49.102): icmp_seq=1 ttl=64 time=0.853 ms
+
+--- FILE.olintern.net ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.853/0.853/0.853/0.000 ms

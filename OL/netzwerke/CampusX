@@ -1,0 +1,66 @@
+root@CampusX:~# arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+k                        ether   00:30:d6:16:62:9b   CM                    enx0050b6182d42
+10.60.5.120              ether   02:42:0a:3c:05:78   C                     br-dc9ee55e68e0
+10.60.5.121              ether   02:42:0a:3c:05:79   C                     br-dc9ee55e68e0
+gateway                  ether   f4:f2:6d:c3:3a:36   C                     eth0
+dns-sis                  ether   02:42:0a:3c:05:23   C                     br-dc9ee55e68e0
+
+
+
+
+default via 10.33.128.1 dev eth0 
+1.2.3.0/24 dev br-b25ed5e388ef  proto kernel  scope link  src 1.2.3.199 
+10.0.0.0/22 dev br-7335dbc16a90  proto kernel  scope link  src 10.0.0.1 
+10.10.0.0/16 dev br-8f3f2c666674  proto kernel  scope link  src 10.10.0.1 
+10.10.8.0/24 dev enx0050b6182d42  proto kernel  scope link  src 10.10.8.6 
+10.33.128.0/24 dev eth0  proto kernel  scope link  src 10.33.128.100 
+10.60.5.0/24 dev br-dc9ee55e68e0  proto kernel  scope link  src 10.60.5.1 
+10.250.0.0/16 dev docker0  proto kernel  scope link  src 10.250.0.1 
+11.222.0.0/24 dev br-7661b5bdbd49  proto kernel  scope link  src 11.222.0.1 
+172.25.0.0/28 dev br-5b2a05fe388f  proto kernel  scope link  src 172.25.0.14 
+172.25.0.16/28 dev br-515c3cda2699  proto kernel  scope link  src 172.25.0.30 
+172.28.0.0/26 dev br-e79dcfe8e863  proto kernel  scope link  src 172.28.0.1 
+172.30.0.0/26 dev br-3af6f80afd17  proto kernel  scope link  src 172.30.0.1 
+192.168.3.0/24 dev enx803f5d091950  proto kernel  scope link  src 192.168.3.100 
+
+
+
+root@CampusX:~# ip a s enx803f5d091950
+3: enx803f5d091950: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 80:3f:5d:09:19:50 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.3.100/24 brd 192.168.3.255 scope global enx803f5d091950
+       valid_lft forever preferred_lft forever
+    inet6 fe80::823f:5dff:fe09:1950/64 scope link 
+       valid_lft forever preferred_lft forever
+root@CampusX:~# 
+
+root@CampusX:~# ip a s enx0050b6182d42
+4: enx0050b6182d42: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:50:b6:18:2d:42 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.8.6/24 brd 10.10.8.255 scope global enx0050b6182d42
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:b6ff:fe18:2d42/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+
+root@CampusX:~# ip a s eth0
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 70:5a:0f:47:28:eb brd ff:ff:ff:ff:ff:ff
+    inet 10.33.128.100/24 brd 10.33.128.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fd8e:f491:871c:0:725a:fff:fe47:28eb/64 scope global mngtmpaddr dynamic 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::725a:fff:fe47:28eb/64 scope link 
+       valid_lft forever preferred_lft forever
+
+*************************************************************************************************************************
+
+ifdown eth0
+dhclient -v eth0
+
+
+ifconfig enx0050b6182d42:0 10.10.8.6/24 up
+sudo arp -s 10.10.8.15 00:30:d6:16:62:9b
+

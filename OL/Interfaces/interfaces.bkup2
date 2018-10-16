@@ -1,0 +1,40 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+#
+# NOTE: This is an *atomated* generated config file, please do *not* edit by hand!
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary LAN interface
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+# The Konnektor management/control network interface
+auto eth0:0
+iface eth0:0 inet static
+	address 10.10.8.6
+	netmask 255.255.255.0
+	post-up arp -s 10.10.8.15 00:30:d6:16:62:9b
+
+# konn-lan
+auto enx803f5d091950
+iface enx803f5d091950 inet static
+	address 192.168.3.100
+	netmask 255.255.255.0
+
+
+#local-net
+auto enx0050b6182d42
+iface enx0050b6182d42 inet static
+	address 10.33.128.250
+	netmask 255.255.255.0
+#       hwaddress ether 80:50:b6:18:2d:42
+
+
+#eth0.1234
+#auto eth0:1234
+#iface eth0:1234 inet static
+#	address 172.24.0.77
+#	netmask 255.252.0.0
+

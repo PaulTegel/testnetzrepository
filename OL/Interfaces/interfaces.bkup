@@ -1,0 +1,36 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+
+auto eth0
+iface eth0 inet dhcp
+     post-up arp -s 10.10.8.15 00:30:d6:16:62:9b
+#    address 192.168.2.100
+#    netmask 255.255.255.0
+
+
+#konn-wan
+#auto enx803f5d090088
+#iface enx803f5d090088 inet static
+#    address 192.168.3.100
+#    netmask 255.255.255.0
+
+#konn-lan
+auto enx803f5d091950
+iface enx803f5d091950 inet static
+    #address 10.33.128.103
+    address 192.168.2.100
+    netmask 255.255.255.0
+
+#auto enx803f5d091950
+#iface enx803f5d091950 inet static
+#    address 192.168.2.100
+#    netmask 255.255.255.0
+
+# ip link add link eth0 name enx803f5d091950 type vlan

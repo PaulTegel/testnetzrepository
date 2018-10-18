@@ -1,0 +1,500 @@
+    3  scp -P 2222 root@10.10.8.15:~/KonnLog.tar.gz /temp/konn_web_problem/KonnLog.tar.gz
+    4  pwd
+    5  konn
+    6  ip a s eth0
+    7  ifconfig  eth0:0
+    8  ifdown eth0:0
+    9  ifup eth0:0
+   10  konn
+   11  arp -s 10.10.8.15 00:30:df:16:bf:65
+   12  ping 10.10.8.15
+   13  arp
+   14  arp -d 10.33.128.4 ether   00:30:d6:16:62:9b eth0
+   15  arp -d 00:30:d6:16:62:9b eth0
+   16  arp -d 00:30:d6:16:62:9b
+   17  arp
+   18  man arp
+   19  arp
+   20  arp -d 10.33.128.4
+   21  arp
+   22  ping 10.10.8.15
+   23  arp -s 10.10.8.15 00:30:df:16:bf:65
+   24  ping 10.10.8.15
+   25  ip a s eth0
+   26  arp
+   27  ip a
+   28  arp
+   29  nano ~/.bashrc
+   30  konn
+   31  dig @10.33.128.4 www.iana.org +dnssec TXT
+   32  dig @10.33.128.4 $_ntp._udp.vpn-zugd.telematik-test SRV  +dnssec
+   33  dig @10.33.128.4 _ntp._udp.vpn-zugd.telematik-test SRV  +dnssec
+   34  mc
+   35  ll
+   36  mc
+   37  pwd
+   38  startTestCases.sh TIP1_A_4611_01
+   39  pwd
+   40  startTestCases.sh GS_A_4547_12
+   41  konn
+   42  docker ps
+   43  docker ps | grep ntp
+   44  docker exec -ti testnetz_ntp-ti.ntpd_1 /bin/bash
+   45  konn
+   46  mc
+   47  ping 10.60.5.68
+   48  ps aux
+   49  ps aux | grep java
+   50  date %s
+   51  date +%s
+   52  sichere_protokolle 
+   53  mv /etc/cron.daily/SichereProtokolle.sh /etc/cron.daily/SichereProtokolle
+   54  sichere_protokolle 
+   55  ping 10.10.8.15
+   56  konn
+   57  konn_reboot 
+   58  konn
+   59  ping 10.10.8.15
+   60  curl https://10.10.8.15:4433/
+   61  curl https://10.10.8.15:4433/ -k
+   62  ip a s eth0
+   63  konn
+   64  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/INIT_BOOT_HASH_USE.*$/INIT_BOOT_HASH_USE = false/" /opt/konn/conf/konnektor.init.ini'
+   65  sshpass -p123456 ssh -p2222 root@10.10.8.15 "/sbin/reboot"
+   66  konn
+   67  ping 10.10.8.15
+   68  konn_reboot 
+   69  ipa s eth0
+   70  ip a s eth0
+   71  konn
+   72  konn
+   73  cd testnetzrepository/
+   74  git pull
+   75  mc
+   76  pwd
+   77  cd trash/
+   78  ll
+   79  scp -P 2222 tcpdump/  root@10.10.8.15:/tmp
+   80  scp -P 2222 -r tcpdump/  root@10.10.8.15:/tmp
+   81  mc
+   82  ping 172.24.0.65
+   83  docker exec -ti testnetz_ntp-ti.ntpd_1 /bin/bash
+   84  PWD
+   85  pwd
+   86  cd temp/Protokollierung/
+   87  ll
+   88  cd get_passed_failed_list/
+   89  ll
+   90  loop_fehler_list_folder
+   91  cd workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/
+   92  pwd
+   93  startTestCases.sh TIP1_A_4790_01
+   94  startTestCases.sh TIP1_A_4552_01
+   95  startTestCases.sh TIP1_A_4600_02
+   96  startTestCases.sh TIP1_A_4609_01
+   97  sichere_protokolle 
+   98  startTestCases.sh TIP1_A_4794_01
+   99  startTestCases.sh TIP1_A_4788_03
+  100  startTestCases.sh GS_A_4751_18
+  101  startTestCases.sh GS_A_3833_01
+  102  run1 ; run_schatten
+  103  startTestCases.sh TIP1_A_4602_04 TIP1_A_4602_06 TIP1_A_4602_09 TIP1_A_4602_10 TIP1_A_4602_11 TIP1_A_4602_12 
+  104  startTestCases.sh TIP1_A_4509_08
+  105  startTestCases.sh TIP1_A_4510_04
+  106  startTestCases.sh TIP1_A_4510_05
+  107  startTestCases.sh GS_A_5336_01
+  108  startTestCases.sh TIP1_A_4508_03
+  109  mc
+  110  grep -r "Verdict für den Gesamt-Testfall: PASSED" .
+  111  pwd
+  112  cd ..
+  113  [<0;14;26M
+  114  [<0;4;3M
+  115  pwd
+  116  mc
+  117  konn
+  118  cd temp
+  119  mkdir konn_web_problem
+  120  cd konn_web_problem
+  121  scp -P 2222 root@10.10.8.15:~/KonnLog.tar.gz .
+  122  mc
+  123  konn_reboot 
+  124  ntp
+  125  fhi_ctsim_start 
+  126  source ~/.bashrc
+  127  fhi_ctsim_start 
+  128  pwd
+  129  git pull
+  130  cd trash/
+  131  ll
+  132  mc
+  133  pwd
+  134  ll
+  135  scp -P2222 -r tcpdump_2 root@10.10.8.15:/tmp
+  136  konn
+  137  ll
+  138  tar cvf midnight.tar
+  139  tar xvf midnight.tar
+  140  ll
+  141  scp -P2222 -r midnight root@10.10.8.15:/tmp
+  142  konn
+  143  mc
+  144  ping 10.10.8.15
+  145  konn
+  146  ntpdate -d -s 10.33.128.4
+  147  konn
+  148  ntpdate -d -s 10.33.128.235
+  149  docker ps
+  150  chmod 755 ./konnektor-installer_1.4.sh
+  151  ./konnektor-installer_1.4.sh -i initialRollout.tar.gz -k BOOTX64.EFI.test
+  152  pwd
+  153  cd ..
+  154  ls
+  155  cd ..
+  156  ls
+  157  cd Konnektor_1_5_0_Build_207/DoIt
+  158  ls
+  159  chmod 755 ./konnektor-installer_1.4.sh
+  160  ./konnektor-installer_1.4.sh -i initialRollout.tar.gz
+  161  sshpass -p 123456 scp -P 2222 tslsigner-ca.cer root@10.10.8.15:/opt/secure/current/konn/pki/certs/trusted/x509/tsl/tslsigner/signerCA.cer
+  162  sshpass -p 123456 ssh -p 2222 root@10.10.8.15 "rm /opt/secure/current/konn/pki/certs/trusted/x509/tsl/tslsigner/GEM.*"
+  163  sshpass -p 123456 ssh -p 2222 root@10.10.8.15 "/sbin/reboot"
+  164  docker ps
+  165  pwd
+  166  cd
+  167  cd root
+  168  ls
+  169  cd workspace.docker_branch/
+  170  ls
+  171  cd TestSuite-Konnektor-T-Systems/
+  172  LS
+  173  ls
+  174  cd TestFallSteuerung/
+  175  ls
+  176  ./HelperScripts/start_Docker_TestEnvironment.sh 
+  177  fhi_ctsim_start 
+  178  accesscontrol
+  179  pwd
+  180  ls
+  181  ip a s eth0
+  182  cd ~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung
+  183  ./propertyHousekeeping.sh
+  184  arp -s 10.10.8.15 00:30:d6:16:bf:65
+  185  ./propertyHousekeeping.sh
+  186  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/INIT_BOOT_HASH_USE.*$/INIT_BOOT_HASH_USE = false/" /opt/konn/conf/konnektor.init.ini'
+  187  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/DEVLOG_LEVEL_GLOBAL.*$/DEVLOG_LEVEL_GLOBAL = trace/" /opt/secure/current/konn/conf/konnektor.ak.ini'
+  188  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/DEVLOG_LEVEL_GLOBAL.*$/DEVLOG_LEVEL_GLOBAL = trace/" /opt/secure/current/konn/conf/konnektor.nk.ini'
+  189  sshpass -p123456 ssh -p2222 root@10.10.8.15 "/sbin/reboot"
+  190  ls
+  191  pwd
+  192  startTestCases.sh GS_A_3935_01
+  193  pwd
+  194  startTestCases.sh GS_A_3935_01
+  195  startTestCases.sh TIP1_A_4524_11
+  196  ./propertyHousekeeping.sh
+  197  startTestCases.sh TIP1_A_4524_11
+  198  pwd
+  199  ls
+  200  run_reg ; run_schatten ; run1
+  201  ip a s eth0
+  202  accesscontrol
+  203  pwd
+  204  fhi_ctsim_start 
+  205  ./HelperScripts/stop_Docker_TestEnvironment.sh 
+  206  ./HelperScripts/start_Docker_TestEnvironment.sh 
+  207  pwd
+  208  ./HelperScripts/stop_Docker_TestEnvironment.sh 
+  209  google-chrome
+  210  google-chrome --no-sandbox &
+  211  konn
+  212  version="1_5_0_b207" ; ls | grep TIP | sed -e "p;s/TIP/'$version'_TIP/" | xargs -n2 mv
+  213  mc
+  214  docker ps
+  215  docker ps | grep router.nat
+  216  docker pause c858eaf4c23d
+  217  docker
+  218  docker unpause c858eaf4c23d
+  219  docker ps
+  220  konn
+  221  konn_reboot 
+  222  ip a show
+  223  ip a show eth0
+  224  sudo arp -s 10.10.8.15 xx:xx:xx:xx:xx:xx
+  225  sudo arp -s 10.10.8.15 00:30:d6:16:62:9b
+  226  konn_reboot 
+  227  chmod 755 ./konnektor-installer_1.4.sh
+  228  pwd
+  229  echo "jdhf
+  230  cd testnetzrepository/
+  231  git pull
+  232  update-alternatives --config editor
+  233  update-alternatives
+  234  update-alternatives --list
+  235  update-alternatives --all
+  236  update-alternatives --config editor
+  237  chmod 755 ./konnektor-installer_1.4.sh
+  238  ./konnektor-installer_1.4.sh -i initialRollout.tar.gz 
+  239  sshpass -p 123456 scp -P 2222 tslsigner-ca.cer root@10.10.8.15:/opt/secure/current/konn/pki/certs/trusted/x509/tsl/tslsigner/signerCA.cer
+  240  sshpass -p 123456 ssh -p 2222 root@10.10.8.15 "rm /opt/secure/current/konn/pki/certs/trusted/x509/tsl/tslsigner/GEM.*"
+  241  sshpass -p 123456 ssh -p 2222 root@10.10.8.15 "/sbin/reboot"
+  242  docker ps
+  243  alias
+  244  ct_connect
+  245  cd ~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung
+  246  ./propertyHousekeeping.sh
+  247  arp -s 10.10.8.15 00:30:d6:16:62:9b
+  248  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/INIT_BOOT_HASH_USE.*$/INIT_BOOT_HASH_USE = false/" /opt/konn/conf/konnektor.init.ini'
+  249  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/DEVLOG_LEVEL_GLOBAL.*$/DEVLOG_LEVEL_GLOBAL = trace/" /opt/secure/current/konn/conf/konnektor.ak.ini'
+  250  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/DEVLOG_LEVEL_GLOBAL.*$/DEVLOG_LEVEL_GLOBAL = trace/" /opt/secure/current/konn/conf/konnektor.nk.ini'
+  251  sshpass -p123456 ssh -p2222 root@10.10.8.15 "/sbin/reboot"
+  252  cd ~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung
+  253  ./propertyHousekeeping.sh
+  254  startTestCases.sh GS_A_3935_01
+  255  hostname
+  256  konn
+  257  ping 10.10.8.15
+  258  konn
+  259  echo $KONNEKTOR_TS_CLASS_PATH
+  260  konn_reboot 
+  261  ping konnektor.lan
+  262  ping jira.konnektor.lan
+  263  ping jira.konnektor.lan -c2
+  264  update-alternatives --config editor
+  265  alias 
+  266  docker ps | router
+  267  docker ps | grep router
+  268  docker exec -ti c858eaf4c23d /bin/bash
+  269  tcpdump -i any vvv
+  270  tcpdump -i any 
+  271  docker exec -ti c858eaf4c23d /bin/bash
+  272  cd workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/
+  273  ll
+  274  ls
+  275  run1 ; run_schatten 
+  276  ll
+  277  ll | grep tickets
+  278  mkdir 1_5_0_b207_tickets
+  279  pwd
+  280  ll
+  281  grep -r 4510_06 *
+  282  grep -r 4510_06.txt 
+  283  gedit EXECUTION_1_5_0_b208_CampusX_PAUL_PAKET1_2018_09_28/TIP1_A_4510_06.txt &
+  284  ./get_passed_list
+  285  get_passed_list_param PASSED
+  286  pwd
+  287  mc
+  288  quit
+  289  exit
+  290  cd workspace
+  291  ping heise.de -c3
+  292  ping heise.de -c1
+  293  ping 8.8.8.8 -c1
+  294  ll | grep png
+  295  ll | grep jpg
+  296  pwd
+  297  cd ..
+  298  ll | grep jpg
+  299  ll | grep png
+  300  docker ps
+  301  docker exec -ti c67c3518f5c9 /bin/bash
+  302  ssh -p123456 root@10.60.5.71
+  303  ssh root@10.60.5.71
+  304  cd workspace.docker_branch/
+  305  ll
+  306  cd TestSuite-Konnektor-T-Systems/
+  307  ll
+  308  cd doc
+  309  PWD
+  310  pwd
+  311  docker-compose 
+  312  docker ps
+  313  docker exec -ti 64152452ca5f /bin/bash
+  314  docker exec -ti 64152452ca5f /ping
+  315  docker exec -ti 64152452ca5f ping
+  316  docker ps
+  317  docker exec -ti 4ecfece4efde /bin/bash
+  318  docker ps
+  319  pwd
+  320  ./konnektor-installer_1.4.sh -i initialRollout.tar.gz 
+  321  konn
+  322  sshpass -p 123456 scp -P 2222 tslsigner-ca.cer root@10.10.8.15:/opt/secure/current/konn/pki/certs/trusted/x509/tsl/tslsigner/signerCA.cer
+  323  sshpass -p 123456 ssh -p 2222 root@10.10.8.15 "rm /opt/secure/current/konn/pki/certs/trusted/x509/tsl/tslsigner/GEM.*"
+  324  sshpass -p 123456 ssh -p 2222 root@10.10.8.15 "/sbin/reboot"
+  325  cd ~/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung
+  326  pwd
+  327  ./propertyHousekeeping.sh
+  328  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/INIT_BOOT_HASH_USE.*$/INIT_BOOT_HASH_USE = false/" /opt/konn/conf/konnektor.init.ini'
+  329  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/DEVLOG_LEVEL_GLOBAL.*$/DEVLOG_LEVEL_GLOBAL = trace/" /opt/secure/current/konn/conf/konnektor.ak.ini'
+  330  sshpass -p123456 ssh -p2222 root@10.10.8.15 'sed -i "s/DEVLOG_LEVEL_GLOBAL.*$/DEVLOG_LEVEL_GLOBAL = trace/" /opt/secure/current/konn/conf/konnektor.nk.ini'
+  331  sshpass -p123456 ssh -p2222 root@10.10.8.15 "/sbin/reboot"
+  332  pwd
+  333  startTestCases.sh GS_A_3935_01
+  334  startTestCases.sh TIP1_A_4524_11
+  335  ll
+  336  git clone git@gitlab-s.konnektor.lan:KonnTest/mms-test.git
+  337  mc
+  338  docker exec -ti  5d36a4028e90 /bin/bash
+  339  docker exec -ti  1c5fe6f4d23a /bin/bash
+  340  docker ps
+  341  docker exec -ti 2736add202ff /bin/bash
+  342  docker exec -ti 97926f73b719  /bin/bash
+  343  docker exec -ti 0881331b6a5f  /bin/bash
+  344  docker exec -ti 97926f73b719 /bin/bash
+  345  mc
+  346  sshpass -p123456 ssh root@10.60.5.90
+  347  sshpass -p123456 ssh root@10.60.5.90 "pwd"
+  348  watch
+  349  watch -n3 "sshpass -p123456 ssh root@10.60.5.90 \"pwd\""
+  350  watch -n3 "sshpass -p123456 ssh root@10.60.5.90 \"ping -c1 localhost\""
+  351  watch -n3 "ping -c1 google.de"
+  352  service docker status
+  353  docker images
+  354  hostname
+  355  alias 
+  356  accesscontrol_clear
+  357  git status
+  358  git pull
+  359  git add *
+  360  git commit -m 'OL'
+  361  git push
+  362  git status
+  363  pip
+  364  pip freeze
+  365  git status
+  366  git add *
+  367  git commit -m 'OL Vorbereitung'
+  368  git push
+  369  git status
+  370  git add *
+  371  git commit -m 'python pip'
+  372  git push
+  373  git status 
+  374  git add *
+  375  git commit -m 'network'
+  376  git push
+  377  mc
+  378  ping 10.60.5.120
+  379  ssh root@10.60.5.120
+  380  docker attach 5f5b3d506824  
+  381  docker 
+  382  docker exec 5f5b3d506824  
+  383  docker exec -ti 5f5b3d506824 ping 8.8.8.8
+  384  docker exec 3d96e673b386 ping 8.8.8.8
+  385  docker exec 3d96e673b386 ping
+  386  docker exec 3d96e673b386 /bin/bash
+  387  docker exec -ti 3d96e673b386 /bin/bash
+  388  cd tmp
+  389  ll
+  390  mkdir ipA
+  391  cd ipA/
+  392  ip a > ip-a.txt
+  393  ll
+  394  cat ip-a.txt | grep "11\.222\.0" |awk '{print $NF}'
+  395  fhi_ctsim_start stop
+  396  docker ps
+  397  ip a s eth0
+  398  sync
+  399  scp ct-sim.tar fhi-kt-sim@10.33.128.189:/home/fhi-kt-sim
+  400  scp ct-sim.tar fhi-kt-sim@10.33.128.189:/
+  401  scp ct-sim.tar fhi-kt-sim@10.33.128.189:/home/fhi-kt-sim
+  402  accesscontrol
+  403  gedit /etc/network/interfaces
+  404  ping -c1 10.33 128.189
+  405  ping -c1 10.33.128.189
+  406  ip a s eth0
+  407  ipcalc
+  408  apt search ipcalc
+  409  sipcalc 
+  410  sipcalc 10.60.6.200/32
+  411  sipcalc 10.60.6.200/24
+  412  sipcalc 10.60.5.1/24
+  413  ping 10.60.5.200
+  414  docker ps
+  415  fhi_ctsim_start stop
+  416  docker ps
+  417  ping 10.60.5.200
+  418  ping fcca4163d019        ctsim:latest                                                "/sbin/my_init"          43 minutes ago      Up 43 minutes                             cts3
+  419  2bc9b227daa4        ctsim:latest                                                "/sbin/my_init"          43 minutes ago      Up 43 minutes                             cts1
+  420  c6d5be9e9d4c        ctsim:latest                                                "/sbin/my_init"          43 minutes ago      Up 43 minutes                             cts2
+  421  ping 10.33.128.189
+  422  cd ~/.ssh
+  423  ll
+  424  nano config
+  425  date %s
+  426  date -%s
+  427  date +%s
+  428  sync
+  429  ping 10.33.128.15
+  430  sync
+  431  git status
+  432  git status
+  433  git pull
+  434  git checkout -- .env
+  435  git pull
+  436  cd ~
+  437  ip a
+  438  ip a | grep 10.60.5.200
+  439  ip a | grep 10.60.5
+  440  git status
+  441  git add *
+  442  git commit -m 'added Web.tar'
+  443  git push
+  444  git pull
+  445  git status
+  446  git add *
+  447  git status
+  448  git commit -m 'minor change'
+  449  git push
+  450  git status
+  451  git add *
+  452  git commit -m 'added steuerungConfig'
+  453  git push
+  454  pwd
+  455  cd temp
+  456  ll
+  457  ip a s | grep docker0
+  458  ip a s eth0
+  459  ping 10.0.2.15 -c3
+  460  ping 10.33.128.189 
+  461  ip address show
+  462  ip address s
+  463  ip a s | grep enx[B
+  464  ip a s
+  465  docker system prune
+  466  ip a s
+  467  docker network prune
+  468  ip a
+  469  docker ps
+  470  docker network ls
+  471  docker system prune -f
+  472  docker network prune -f
+  473  ifconfig
+  474  tcpdump -i eth0
+  475  mc
+  476  mc
+  477  ll
+  478  grep -r eth2 
+  479  grep -r eth2 *
+  480  ip a s
+  481  ifdown enx803f5d091950
+  482  ip a
+  483  ifdown enx803f5d091950
+  484  ip a
+  485  mc
+  486  google
+  487  google-chrome
+  488  google-chrome --no-sandbox
+  489  docker exec -ti 97926f73b719 /bin/bash
+  490  docker ps
+  491  fhi_ctsim_start 
+  492  alias
+  493  ct_connect
+  494  accesscontrol
+  495  alias
+  496  pwd
+  497  sync
+  498  ls
+  499  tar cvf fhi.ova fhi_ubuntu.ovf fhi_ubuntu-disk002.vmdk
+  500  cd testnetzrepository/OL/
+  501  history>history_2Interfaces
+  502  history>history_2Interfaces_2

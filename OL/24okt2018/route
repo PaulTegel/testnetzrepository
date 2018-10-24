@@ -1,0 +1,54 @@
+root@CampusX:~# arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+cts1.lan                 ether   08:00:27:d8:26:a9   C                     eth0
+k                        ether   00:30:d6:16:62:9b   CM                    enx0050b6182d42
+gateway                  ether   f4:f2:6d:c3:3a:36   C                     eth0
+dns-sis                  ether   02:42:0a:3c:05:23   C                     br-099ffa882b14
+root@CampusX:~# 
+
+*******************************
+
+
+root@CampusX:~# ip r s
+default via 10.33.128.1 dev eth0 
+1.2.3.0/24 dev br-463460d76156  proto kernel  scope link  src 1.2.3.199 
+10.0.0.0/22 dev br-1ac884a4f9ae  proto kernel  scope link  src 10.0.0.1 
+10.10.0.0/16 dev br-3452d0aa18d7  proto kernel  scope link  src 10.10.0.1 
+10.10.8.0/24 dev enx0050b6182d42  proto kernel  scope link  src 10.10.8.6 
+10.10.8.0/24 dev eth0  proto kernel  scope link  src 10.10.8.6 
+10.33.128.0/24 dev eth0  proto kernel  scope link  src 10.33.128.100 
+10.60.5.0/24 dev br-099ffa882b14  proto kernel  scope link  src 10.60.5.1 
+10.250.0.0/16 dev docker0  proto kernel  scope link  src 10.250.0.1 
+11.222.0.0/24 dev br-67d289ba590c  proto kernel  scope link  src 11.222.0.1 
+172.25.0.0/28 dev br-ca9197febb38  proto kernel  scope link  src 172.25.0.14 
+172.25.0.16/28 dev br-3f7c4e737ce6  proto kernel  scope link  src 172.25.0.30 
+172.28.0.0/26 dev br-217c836c3553  proto kernel  scope link  src 172.28.0.1 
+172.30.0.0/26 dev br-e4ec8e5bcd35  proto kernel  scope link  src 172.30.0.1 
+192.168.2.0/24 dev enx0050b6182d42  proto kernel  scope link  src 192.168.2.250 
+192.168.3.0/24 dev enx803f5d091950  proto kernel  scope link  src 192.168.3.100 
+root@CampusX:~# 
+
+*********************************
+
+
+root@CampusX:~# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.33.128.1     0.0.0.0         UG    0      0        0 eth0
+1.2.3.0         0.0.0.0         255.255.255.0   U     0      0        0 br-463460d76156
+10.0.0.0        0.0.0.0         255.255.252.0   U     0      0        0 br-1ac884a4f9ae
+10.10.0.0       0.0.0.0         255.255.0.0     U     0      0        0 br-3452d0aa18d7
+10.10.8.0       0.0.0.0         255.255.255.0   U     0      0        0 enx0050b6182d42
+10.10.8.0       0.0.0.0         255.255.255.0   U     0      0        0 eth0
+10.33.128.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+10.60.5.0       0.0.0.0         255.255.255.0   U     0      0        0 br-099ffa882b14
+10.250.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
+11.222.0.0      0.0.0.0         255.255.255.0   U     0      0        0 br-67d289ba590c
+172.25.0.0      0.0.0.0         255.255.255.240 U     0      0        0 br-ca9197febb38
+172.25.0.16     0.0.0.0         255.255.255.240 U     0      0        0 br-3f7c4e737ce6
+172.28.0.0      0.0.0.0         255.255.255.192 U     0      0        0 br-217c836c3553
+172.30.0.0      0.0.0.0         255.255.255.192 U     0      0        0 br-e4ec8e5bcd35
+192.168.2.0     0.0.0.0         255.255.255.0   U     0      0        0 enx0050b6182d42
+192.168.3.0     0.0.0.0         255.255.255.0   U     0      0        0 enx803f5d091950
+root@CampusX:~# 
+

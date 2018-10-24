@@ -1,0 +1,27 @@
+propertyHousekeeping.sh
+
+	echo $LOCALHOST_PASSWORD | sudo -S ifconfig eth0 add $LOCAL_SERVICE_IP netmask 255.255.255.0 up
+
+*****************************************************************************************************
+init-konnektor-management-connection.sh
+
+	ifconfig eth0 add $LOCAL_SERVICE_IP netmask 255.255.255.0 up
+	arp -s 10.10.8.15 $KONNEKTOR_LAN_MAC
+	sshpass -p$KONNEKTOR_PASSWORD ssh -p 2222 root@10.10.8.15 "echo \"Konnektor Verbindung erfolgreich!\""
+
+*****************************************************************************************************
+update.sh
+
+echo $LOCALHOST_PASSWORD | sudo -S ifconfig eth0 add $LOCAL_SERVICE_IP netmask 255.255.255.0 up
+
+*****************************************************************************************************
+
+
+*****************************************************************************************************
+
+
+*****************************************************************************************************
+
+
+*****************************************************************************************************
+sudo route add default gw 192.168.1.254 eth0

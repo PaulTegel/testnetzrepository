@@ -1,0 +1,61 @@
+#!/bin/bash
+
+###rm /root/tmp/tempo.rel
+
+# declare an array called files, that contains 3 values
+#files=( ":Basiskonfigurationscheck fehlerhaft abgeschlossen!" "not found" "Exception" )
+
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b96_CampusX_PAUL_PAKET7_2018_08_24
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b96_CampusX_PAUL_PAKET_REG_2018_08_28
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b96_CampusX_PAUL_PAKET1_2018_08_24
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b114_CampusX
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b114_CampusX_PAUL_PAKET_SCHATTEN_2018_09_03
+
+folder[0]=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX
+folder[1]=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX_PAUL_PAKET1_2018_09_07
+folder[2]=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX_PAUL_PAKET1_2018_09_08
+folder[3]=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX_PAUL_PAKET_REG_2018_09_07
+folder[4]=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX_PAUL_PAKET_SCHATTEN_2018_09_08
+#folder[5]=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/
+#folder=/root/Music/TeamReview/export/EVT1
+#folder="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/TestFaelle"
+
+echo ""
+echo "gesucht wird in $folder"
+echo ""
+files[0]="Basiskonfigurationscheck fehlerhaft abgeschlossen"
+files[1]="not found"
+files[2]="Exception"
+files[3]="Basiskonfigurationscheck"
+files[4]="null"
+###files[5]="Der Konfigurationsdienst und der Konnektor (KSR-Client) MÜSSEN ausschließlich ?SOAP über http?, Version 1.1 für ihre Kommunikation verwenden"
+#files[4]="Basiskonfigurationscheck fehlerhaft"
+#files[6]="matches"
+
+echo "-----------"
+
+for i in "${files[@]}"
+do
+	echo "$i"
+	grep -r "$i" $folder  > /root/tmp/temporell.tmp
+
+	while read p; do
+	#  echo "${p: -69}" | grep '\.txt' | sed "s/$param1//" >> /root/tmp/27_09_2018.rel
+##	echo "${p: -70}" | grep '\.txt' | sed "s/$i//" >> /root/tmp/tempo.rel
+	#done < "$entries"
+
+	echo "${p: -70}" | grep '\.txt' | sed "s/matches//" | sed "s/$i//" | sed "s/\.txt//" | cut -d '/' -f 2 | cut -d ':' -f 1
+###	echo "${p: -250}" | grep '\.txt' | sed "s/matches//" | sed "s/$i//" | sed "s/\.txt//"
+
+	done < /root/tmp/temporell.tmp
+	echo "***********************************************************************"
+done
+
+##	cat /root/tmp/tempo.rel | sed "s/\.txt//" | sort -u | cut -d '/' -f 2 | cut -d ':' -f 1
+
+
+
+
+
+

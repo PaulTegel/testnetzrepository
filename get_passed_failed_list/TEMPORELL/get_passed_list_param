@@ -1,0 +1,85 @@
+#!/bin/bash
+
+index=1
+passed=0
+failed=0
+
+if [ "$1" = "PASSED" ]
+then
+	while read p; do
+	  index=$(( $index + 1 ))
+	  value=${p}
+	  grep -r "Verdict für den Gesamt-Testfall: PASSED" | grep ".txt" | cut -d '/' -f 2 | grep "$value" &>/dev/null
+	  if [ $? -ne 0 ];then
+             echo "" &>/dev/null
+	  else
+	     echo "$index   $value   PASSED"
+	     passed=$(( $passed + 1 ))
+	  fi
+	done < tf_list
+fi
+
+if [ "$1" = "FAILED" ]
+then
+	while read p; do
+	  index=$(( $index + 1 ))
+	  value=${p}
+	  grep -r "Verdict für den Gesamt-Testfall: PASSED" | grep ".txt" | cut -d '/' -f 2 | grep "$value" &>/dev/null
+	  if [ $? -ne 0 ];then
+	     echo "$index   $value   FAILED"
+	     failed=$(( $failed + 1 ))
+	  fi
+	done < tf_list
+fi
+
+
+if [ "$1" = "" ]
+then
+	while read p; do
+	  index=$(( $index + 1 ))
+	  value=${p}
+	  grep -r "Verdict für den Gesamt-Testfall: PASSED" | grep ".txt" | cut -d '/' -f 2 | grep "$value" &>/dev/null
+	  if [ $? -ne 0 ];then
+	     echo "$index   $value   FAILED"
+	     failed=$(( $failed + 1 ))
+	  else
+	     echo "$index   $value   PASSED"
+	     passed=$(( $passed + 1 ))
+	  fi
+	done < tf_list
+fi
+
+echo ""
+echo ""
+if [ "$1" = "PASSED" ];then
+	echo "PASSED:  $passed"
+fi
+echo ""
+if [ "$1" = "FAILED" ];then
+	echo "FAILED:  $failed"
+fi
+if [ "$1" = "" ];then
+	echo "PASSED:  $passed"
+	echo "FAILED:  $failed"
+fi
+echo ""
+echo ""
+echo ""
+echo ""
+
+if [ "$1" = "PASSED" -o "$1" = "FAILED" -o "$1" = "" ];then
+	echo "Eingabe $1  ist richtig" &>/dev/null
+else
+	echo "Eingabe $1  ist FALSCH"
+fi
+
+echo "$1"
+
+
+
+
+
+
+
+
+

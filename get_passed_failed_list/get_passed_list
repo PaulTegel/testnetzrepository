@@ -1,0 +1,72 @@
+#!/bin/bash
+
+folder="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/"
+
+index=1
+passed=0
+failed=0
+
+filename=$(date)".log"
+
+#version="1_5_0"
+source /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/testSteuerungsConfig.sh
+echo ""
+echo $EXECUTION_MODUS
+echo ""
+#EXECUTION_MODUS=EXECUTION_1_5_0_b96
+#echo ""
+#echo $EXECUTION_MODUS
+
+
+while read p; do
+  index=$(( $index + 1 ))
+  #echo "${p}"
+  value=${p}
+  #echo "$value"
+  grep -r "Verdict für den Gesamt-Testfall: PASSED" "$folder" | grep $EXECUTION_MODUS | grep ".txt" | cut -d '/' -f 8 | grep "$value" &>/dev/null
+  if [ $? -ne 0 ];then
+     echo "$index   $value   FAILED"
+     failed=$(( $failed + 1 ))
+     if [ "$1" = "log" ]
+     then
+       echo "$index   $value   FAILED">>"$filename"
+     fi
+  else
+     echo "$index   $value   PASSED"
+     passed=$(( $passed + 1 ))
+     if [ "$1" = "log" ]
+      then
+        echo "$index   $value   PASSED">>"$filename"
+      fi
+     fi
+
+#  grep -r "Verdict für den Gesamt-Testfall: PASSED" | grep "${p}" #| grep ".txt" | cut -d '/' -f 2 
+done < tf_list
+
+echo ""
+echo ""
+echo "PASSED:  $passed"
+echo ""
+echo "FAILED:  $failed"
+echo ""
+echo ""
+echo ""
+echo ""
+echo "$1"
+echo "$2"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

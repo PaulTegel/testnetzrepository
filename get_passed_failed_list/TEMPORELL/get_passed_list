@@ -1,0 +1,79 @@
+#!/bin/bash
+
+#set -x
+
+#param1=":Basiskonfigurationscheck fehlerhaft abgeschlossen!"
+#fehler="Basiskonfigurationscheck fehlerhaft abgeschlossen"
+#grep -r "$fehler" * > 27_09_2018
+#grep -r "Basiskonfigurationscheck fehlerhaft abgeschlossen" * > 27_09_2018.txt
+
+#sleep 5
+
+#while read p; do
+#  echo "${p: -69}" | grep '\.txt' | sed "s/$param1//"
+#done <27_09_2018.txt
+
+
+#if [ $? -ne 0 ];then
+#   echo "FAILED"
+#else
+#   echo "PASSED"
+#fi
+#grep -r "Verdict für den Gesamt-Testfall: PASSED" | grep ".txt" | cut -d '/' -f 2 | grep TIP1_A_4509_04
+#  Verdict für den Gesamt-Testfall: PASSED
+
+#fehler="Basiskonfigurationscheck fehlerhaft abgeschlossen"
+#grep -r "$fehler" * > 27_09_2018
+
+#index=$(( $index + 1 ))
+
+#find / -type f -exec grep -H 'Verdict für den Gesamt-Testfall: PASSED' {} \;
+
+index=0
+passed=0
+failed=0
+
+while read p; do
+  index=$(( $index + 1 ))
+  #echo "${p}"
+  value=${p}
+  #echo "$value"
+  grep -r "Verdict für den Gesamt-Testfall: PASSED" | grep ".txt" | cut -d '/' -f 2 | grep "$value" &>/dev/null
+  if [ $? -ne 0 ];then
+     echo "$index   $value   FAILED"
+     failed=$(( $failed + 1 ))
+  else
+     echo "$index   $value   PASSED"
+     passed=$(( $passed + 1 ))
+  fi
+
+#  grep -r "Verdict für den Gesamt-Testfall: PASSED" | grep "${p}" #| grep ".txt" | cut -d '/' -f 2 
+done < tf_list
+
+echo ""
+echo ""
+echo "PASSED:  $passed"
+echo ""
+echo "FAILED:  $failed"
+echo ""
+echo ""
+echo ""
+echo ""
+echo "$1"
+echo "$2"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

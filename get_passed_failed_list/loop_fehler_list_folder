@@ -1,0 +1,73 @@
+#!/bin/bash
+
+###rm /root/tmp/tempo.rel
+
+# declare an array called files, that contains 3 values
+#files=( ":Basiskonfigurationscheck fehlerhaft abgeschlossen!" "not found" "Exception" )
+
+source /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/testSteuerungsConfig.sh
+
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b96_CampusX_PAUL_PAKET7_2018_08_24
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b96_CampusX_PAUL_PAKET_REG_2018_08_28
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b96_CampusX_PAUL_PAKET1_2018_08_24
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b114_CampusX
+folder=/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b114_CampusX_PAUL_PAKET_SCHATTEN_2018_09_03
+
+folder[0]="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX"
+folder[1]="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX_PAUL_PAKET1_2018_09_07"
+folder[2]="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX_PAUL_PAKET1_2018_09_08"
+folder[3]="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX_PAUL_PAKET_REG_2018_09_07"
+folder[4]="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/EXECUTION_1_5_0_b151_CampusX_PAUL_PAKET_SCHATTEN_2018_09_08"
+#folder[5]="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/
+#folder=/root/Music/TeamReview/export/EVT1
+#folder="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/TestFaelle"
+
+echo ""
+echo "gesucht wird in $folder"
+echo ""
+files[0]="Basiskonfigurationscheck fehlerhaft abgeschlossen"
+files[1]="not found"
+files[2]="Exception"
+files[3]="null"
+files[4]="syntax error"
+files[5]="unexpected end of file"
+files[6]="unexpected EOF"
+files[7]="Card terminal A not connected"
+files[8]="Card terminal B not connected"
+files[9]="TerminationTime"
+files[10]="database is locked"
+#files[11]="Error"
+
+#files[3]="Basiskonfigurationscheck"
+
+###files[5]="Der Konfigurationsdienst und der Konnektor (KSR-Client) MÜSSEN ausschließlich ?SOAP über http?, Version 1.1 für ihre Kommunikation verwenden"
+#files[4]="Basiskonfigurationscheck fehlerhaft"
+#files[6]="matches"
+
+echo "-----------"
+
+
+#for j in "${folder[@]}"
+
+for j in $(ls -d /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/*  | grep $EXECUTION_MODUS)
+do
+	echo "$j"
+	for i in "${files[@]}"
+	do
+		echo "$i"
+		grep -r "$i" "$j"  > /root/tmp/temporell.tmp
+
+		while read p; do
+
+		echo "${p: -70}" | grep '\.txt' | sed "s/matches//" | sed "s/$i//" | sed "s/\.txt//" | cut -d '/' -f 2 | cut -d ':' -f 1
+
+		done < /root/tmp/temporell.tmp
+		echo "***********************************************************************"
+	done
+done
+
+
+
+
+

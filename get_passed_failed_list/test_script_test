@@ -1,0 +1,45 @@
+#!/bin/bash
+
+value=$(sshpass -p123456 ssh -p2222 root@10.10.8.15 'ls /opt/secure/current/extern/bin/ | grep sqlite3') &>/dev/null
+
+#if [ $? -ne 0 ];then
+#     echo "nicht vorhanden"
+#else
+#     echo "sqlite3 ist auf dem Konnektor vorhanden"
+#fi
+
+if [ ! -z "$value" ]
+then
+echo "sqlite3 ist auf dem Konnektor vorhanden"
+else
+echo "nicht vorhanden"
+fi
+
+
+
+
+if [ ! -z "$sqlite3_Konnektor" ]
+then
+echo "sqlite3 ist auf dem Konnektor vorhanden"
+else
+echo "nicht vorhanden"
+fi
+
+
+
+
+# echo "Konnektortime:$(sshpass -p123456 ssh -p2222 root@10.10.8.15 "date +%s")" ; echo "Host_time    :$(date +%s)"
+# num1=$(sshpass -p123456 ssh -p2222 root@10.10.8.15 "date +%s") ; num2=$(date +%s) ; delta=$(($num1 - $num2)) ; echo $delta
+
+
+
+
+###  <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>   gleich  Ablaufdatum der Zertifikats: 22.09.2019 01:59:59+0200
+
+
+str="dhggrbfjgzrmh
+
+echo $str
+
+
+

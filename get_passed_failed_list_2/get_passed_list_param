@@ -1,0 +1,100 @@
+#!/bin/bash
+
+#folder="/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/"
+folder="/root/Musik/Protokollierung/"
+
+index=1
+passed=0
+failed=0
+
+
+###source /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/testSteuerungsConfig.sh
+EXECUTION_MODUS=EXECUTION_1_5_0_b209_OpenLimit
+
+PWD_BKUP=$(pwd)
+cd $folder
+pwd
+
+#tests=$(grep -r "Verdict für den Gesamt-Testfall: PASSED" "$folder" | grep $EXECUTION_MODUS | grep "\.txt" | cut -d '/' -f 6)
+tests=$(grep -r "Verdict für den Gesamt-Testfall: PASSED" . | grep $EXECUTION_MODUS | grep "\.txt" | cut -d '/' -f 3)
+#echo $tests
+cd $PWD_BKUP
+echo $tests>tests.txt
+
+
+
+
+
+version=$(cat tests.txt | cut -d ' ' -f 3 | grep -oh "._._._b[0-9]*")
+filename=$(date)_v_$version"_$1.log"
+
+if [ "$1" = "PASSED" ]
+then
+	while read p; do
+	  index=$(( $index + 1 ))
+	  value=${p}
+	  cat tests.txt | grep "$value" &>/dev/null
+	  if [ $? -ne 0 ];then
+             #echo "" &>/dev/null
+             :
+	  else
+             echo -e "$index\t$value\t PASSED"
+	     echo -e "$index\t$value\t PASSED">>"$filename"
+	     passed=$(( $passed + 1 ))
+	  fi
+	done < tf_list
+fi
+
+if [ "$1" = "FAILED" ]
+then
+	while read p; do
+	  index=$(( $index + 1 ))
+	  value=${p}
+	  cat tests.txt | grep "$value" &>/dev/null
+	  if [ $? -ne 0 ];then
+	     echo "$index   $value   FAILED">>"$filename"
+	     failed=$(( $failed + 1 ))
+	  fi
+	done < tf_list
+fi
+
+
+if [ "$1" = "" ]
+then
+	while read p; do
+	  index=$(( $index + 1 ))
+	  value=${p}
+	  cat tests.txt | grep "$value" &>/dev/null
+	  if [ $? -ne 0 ];then
+	     echo "$index   $value   FAILED">>"$filename"
+	     failed=$(( $failed + 1 ))
+	  else
+	     echo "$index   $value   PASSED">>"$filename"
+	     passed=$(( $passed + 1 ))
+	  fi
+	done < tf_list
+fi
+
+echo ""
+
+if [ "$1" = "PASSED" ];then
+	echo "PASSED:  $passed"
+fi
+echo ""
+if [ "$1" = "FAILED" ];then
+	echo "FAILED:  $failed"
+fi
+if [ "$1" = "" ];then
+	echo "PASSED:  $passed"
+	echo "FAILED:  $failed"
+fi
+echo ""
+
+if [ "$1" = "PASSED" -o "$1" = "FAILED" -o "$1" = "" ];then
+	echo "Eingabe $1  ist richtig" &>/dev/null
+else
+	echo "Eingabe $1  ist FALSCH"
+fi
+
+#echo "$1"
+

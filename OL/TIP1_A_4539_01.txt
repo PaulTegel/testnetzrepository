@@ -1,0 +1,1698 @@
+Script fuer Testfall "TIP1-A_4539-01 Robuster Kartenterminaldienst"
+********************************************************
+Description:
+
+Dieser Testfall prüft:
+
+1. Erkennen eines gesteckten HBA
+
+2. Aufruf der Operation ReadCardCertificate mit Kommunikationsverlust zum HBA (Ziehen der Karte)
+
+3. gematik-SOAP-Fault
+
+4. Anpassung der CM_CARD_LIST-Objekte
+
+5. Erkennen des erneut gesteckten HBA
+
+6. Aufruf der Operation ReadCardCertificate mit erfolgreichem Ergebnis
+
+
+Anmerkung: Dieser Testfall zeigt, dass der Konnektor nach dem Ziehen einer Karte während einer Kartenaktion weiterhin störungsfrei mit dem Kartenterminal, dem belegten Slot oder auch der gezogenen (und erneut gesteckten) Karte kommuniziert.
+
+********************************************************
+Vorbedingung
+------------------------------------------------------------------
+Description:
+Basiskonfiguration [LDD/WDE 2].
+
+Expected:
+
+
+Actual:
+Basiskonfiguration "LDD/WDE 2" wird gestartet ...
+
+Checking Basiskonfiguration on the Konnektor
+* Checking User configuration
+++++++++++++++++++
+Der Benutzer 'RemAdmin' kann nicht mit der Rolle 'Remote-Administrator' angelegt werden: Die Rolle 'Remote-Administrator' ist im Konnektor nicht vorhanden.
+++++++++++++++++++
+
+admin (Administrator)
+localadmin (localadmin)
+localadminokr (localadminokr)
+OK
+
+* Checking LAN interface configuration
+LAN Interface DHCP: false
+OK
+
+* Checking NK Szenario configuration
+ANLW_WAN_ADAPTER_MODUS: true
+OK
+
+* Checking Internet Mode
+OK
+
+* Checking WAN interface configuration
+WAN Interface DHCP: true
+Öffne VPN Verbindung zu TI
+Verbindung zu TI aufgebaut
+Öffne VPN Verbindung zu SIS
+Verbindung zu SIS aufgebaut
+OK
+
+* Checking Kartenterminals (KT)
+OK
+
+* Checking Karten
+
+eGKB, ICCSN: 80276883119861412710
+HBA_B, ICCSN: 80276883110261300535
+SMCB2, ICCSN: 80276883110261200656
+SMCKT2, ICCSN: 80276883110261100367
+eGKC, ICCSN: 80276883119861412789
+HBA_C, ICCSN: 80276883110261300536
+SMCB3, ICCSN: 80276883110261200655
+SMCKT3, ICCSN: 80276883110261100368
+eGKA, ICCSN: 80276883119861412788
+HBA_A, ICCSN: 80276883110261300534
+SMCB1, ICCSN: 80276883110261200667
+SMCKT1, ICCSN: 80276883110261100366
+Alle Karten der Konfiguration vorhanden
+OK
+
+* Checking KT <-> Karte gesteckt
+
+EGK <=> 02:42:0a:21:80:09
+EGK <=> 02:42:0a:21:80:08
+SMC-B <=> 02:42:0a:21:80:08
+OK
+
+* Checking ClientSysteme
+
+2 Clientsystems:
+ivorisdent, CLNT-A, admin, 123456
+C2, CLNT-B, admin, 123456
+OK
+
+* Checking ClientSystem Authentication
+
+TLS Mandatory: false, Auth Mandatory: true, eAuthMode: Username, DVD Open: true
+OK
+
+* Checking Arbeitsplätze (WP)
+
+WP1: WP1
+WP2: WP2
+OK
+
+* Checking Mandanten
+
+M1: Mandant1
+OK
+
+* Checking KT<->Arbeitsplatz
+
+OK
+
+* Checking Mandant <-> Arbeitsplatz
+
+Mandant1
+Mandant2
+OK
+
+* Checking Mandant <-> Clientsystem
+
+OK
+
+* Checking Mandant <-> card terminals
+
+OK
+
+* Checking Mandant <-> (Clientsystem, Workplace)
+
+OK
+
+Basiskonfigurationscheck erfolgreich abgeschlossen.
+
+
+Die eingesetzten Zertifikate werden ausgegeben ...
+----------------------------------------------------
+
+##########################################################################################
+Zertifikate und Schlüssel auf dem Konnektor:
+##########################################################################################
+
+---------------------------------- t-systems_test.der ----------------------------------------------
+issuer= /C=DE/O=gematik GmbH NOT-VALID/OU=Komponenten-CA der Telematikinfrastruktur/CN=GEM.KOMP-CA3 TEST-ONLY
+subject= /C=DE/O=T-Systems International GmbH TEST-ONLY - NOT-VALID/CN=80276883534000000004-20140904
+notBefore=Sep  4 15:54:13 2014 GMT
+notAfter=Sep  3 15:54:13 2019 GMT
+----------------------------------------------------------------------------------------------------
+
+---------------------------------- vpn_konn_cert.der -----------------------------------------------
+issuer= /C=DE/O=achelos/CN=Test CA
+subject= /C=DE/O=achelos/CN=konnektor.test
+notBefore=Dec 11 11:48:20 2013 GMT
+notAfter=Dec 10 11:48:20 2016 GMT
+----------------------------------------------------------------------------------------------------
+
+---------------------------------- vpn_testCAcert.der ----------------------------------------------
+issuer= /C=DE/O=achelos/CN=Test CA
+subject= /C=DE/O=achelos/CN=Test CA
+notBefore=Dec 11 11:40:50 2013 GMT
+notAfter=Dec 10 11:40:50 2016 GMT
+----------------------------------------------------------------------------------------------------
+
+----------------------------------- telematik-test Trust Anchor ------------------------------------
+; autotrust trust anchor file
+;;id: telematik-test. 1
+;;last_queried: 1449843962 ;;Fri Dec 11 15:26:02 2015
+;;last_success: 1449843962 ;;Fri Dec 11 15:26:02 2015
+;;next_probe_time: 1449847522 ;;Fri Dec 11 16:25:22 2015
+;;query_failed: 0
+;;query_interval: 3600
+;;retry_time: 3600
+telematik-test.	60	IN	DNSKEY	257 3 8 AwEAAbk9l+XEIEV1e9cIo0nuMWo5pra4uJYJhE3259cKjL8gIiHg3i9/7qJcCEPE/2saAJwUOgRUF7Sh+K5o1NMisu0re6Ydq7Ln5kSEBJp8dr340lrsVjp0X8zlqdokJfr9ZlC8Yu9t/mGQazOW7B0qbHwPZEgN1yzH2zyCV4ZiGIXrscETCyD4Xx4YzgMCJ7gGm2m7pMcSGTyfrdBOeQ6ZdrIsj2Pi5UonW4sk2U6kmbakTO4kTKWL1usec8xGBHSf8UdPqaOz4rkhzbOdSb1BIjjdKV06op8E0og099HpGTKprpNyABuVbuaBXiSt4SHSIY7SGluwppxkiA0PXKtS/hc= ;{id = 931 (ksk), size = 2048b} ;;state=2 [  VALID  ] ;;count=0 ;;lastchange=1435591202 ;;Mon Jun 29 17:20:02 2015
+telematik-test.	60	IN	DNSKEY	257 3 8 AwEAAclD5+o+jimWgWnkV/TPuzoYJLyW4Nrg4d/Fdgj7bZL4MjZtBvCimlEyCv/vvroOxo51AJ515yfyKgO3clGJwYgWp2qfQrOx/Z9L1rell2v6lGNG4ptEhEWT2c0NBj1K1z8Y8Ws0RFqOjqC225vDhRSMCR6Sbvy9jkh1YL52VitBlDQBZ3PkHujlru5GCHtFMs203Qz34UGLZFC4+Jjr2JfkfjuoxwXRtVKZDQKoCZ5A45C/ZcsWQDTSareKjiLOK/lp3M+cABe6DxI6Mxa22sThggJ7G6vAKTXbj6D6zMzLI1t0t1L9aIJ3LiKfTg0Ne2f41FkPCrr6+JAaHJiHKbc= ;{id = 54281 (ksk), size = 2048b} ;;state=2 [  VALID  ] ;;count=0 ;;lastchange=1447704648 ;;Mon Nov 16 21:10:48 2015
+----------------------------------------------------------------------------------------------------
+
+----------------------------------- IANA Trust Anchor ----------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<TrustAnchor id="AD42165F-3B1A-4778-8F42-D34A1D41FD93" source="http://data.iana.org/root-anchors/root-anchors.xml">
+<Zone>.</Zone>
+<KeyDigest id="Kjqmt7v" validFrom="2010-07-15T00:00:00+00:00">
+<KeyTag>19036</KeyTag>
+<Algorithm>8</Algorithm>
+<DigestType>2</DigestType>
+<Digest>49AAC11D7B6F6446702E54A1607371607A1A41855200FD2CE1CDDE32F24E8FB5</Digest>
+</KeyDigest>
+</TrustAnchor>
+----------------------------------------------------------------------------------------------------
+
+##########################################################################################
+
+
+##########################################################################################
+Zertifikate auf dem CRL-TI:
+##########################################################################################
+
+---------------------------------- vpnzugd-ca.crt --------------------------------------------------
+issuer= /C=DE/O=gematik GmbH/OU=Zentrale Root CA der Telematikinfrastruktur (FHI Test)/CN=GEM.RCA.FHI
+subject= /C=DE/O=gematik GmbH/OU=VPNzugD-CA der Telematikinfrastruktur/CN=FHI.VPNZUGD-CA
+notBefore=May 16 08:28:42 2018 GMT
+notAfter=Dec 31 23:59:59 2030 GMT
+----------------------------------------------------------------------------------------------------
+
+##########################################################################################
+
+
+##########################################################################################
+Zertifikate auf dem TI-Konzentrator:
+##########################################################################################
+
+---------------------------------- konzentrator1.crt -----------------------------------------------
+issuer= /C=DE/O=gematik GmbH/OU=VPNzugD-CA der Telematikinfrastruktur/CN=FHI.VPNZUGD-CA
+subject= /C=DE/O=gematik GmbH/OU=VPN-Zugangsdienst/CN=konzentrator.test
+notBefore=May 17 15:18:56 2018 GMT
+notAfter=Dec 31 23:59:59 2030 GMT
+----------------------------------------------------------------------------------------------------
+
+##########################################################################################
+
+
+##########################################################################################
+Zertifikate auf dem SIS-Konzentrator:
+##########################################################################################
+
+---------------------------------- sis-konzentrator1.crt -------------------------------------------
+issuer= /C=DE/O=gematik GmbH/OU=VPNzugD-CA der Telematikinfrastruktur/CN=FHI.VPNZUGD-CA
+subject= /C=DE/O=gematik GmbH/OU=VPN-Zugangsdienst/CN=sis-konzentrator.test
+notBefore=May 18 07:48:43 2018 GMT
+notAfter=Dec 31 23:59:59 2030 GMT
+----------------------------------------------------------------------------------------------------
+
+##########################################################################################
+
+
+##########################################################################################
+Zertifikate auf dem Intermediär:
+##########################################################################################
+
+---------------------------------- cert.pem --------------------------------------------------------
+issuer= /C=DE/O=gematik GmbH/OU=Komponenten-CA der Telematik Infrastruktur/CN=FHI.KOMP-CA100
+subject= /C=DE/O=gematik GmbH/OU=Intermed VSDM/CN=intermed.vsdm.telematik-test
+notBefore=May 23 13:04:04 2018 GMT
+notAfter=Dec 31 23:59:59 2030 GMT
+----------------------------------------------------------------------------------------------------
+
+---------------------------------- tsi-smcb-ca-cert.pem  -------------------------------------------
+issuer= /CN=GEM.RCA1 TEST-ONLY/OU=Zentrale Root-CA der Telematikinfrastruktur/O=gematik GmbH NOT-VALID/C=DE
+subject= /C=DE/O=T-Systems International GmbH - G2 Los 3 NOT-VALID/OU=Institution des Gesundheitswesens-CA der Telematikinfrastruktur/CN=TSYSI.SMCB-CA1 TEST-ONLY
+notBefore=May 20 10:05:03 2014 GMT
+notAfter=May 18 10:05:03 2022 GMT
+----------------------------------------------------------------------------------------------------
+
+##########################################################################################
+
+
+##########################################################################################
+Zertifikate auf dem KSR:
+##########################################################################################
+
+---------------------------------- ksr_server.der --------------------------------------------------
+issuer= /C=DE/O=gematik GmbH/OU=Komponenten-CA der Telematik Infrastruktur/CN=FHI.KOMP-CA100
+subject= /C=DE/O=gematik GmbH/OU=KSRF der Telematikinfrastruktur/CN=ksrf-test.telematik-test
+notBefore=Jun 27 12:45:36 2018 GMT
+notAfter=Dec 31 23:59:59 2030 GMT
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore /home/user/testnetz/ksr-ti/java/KSRSimulation/config/ksrserver.jks -destkeystore /home/user/testnetz/ksr-ti/java/KSRSimulation/config/ksrserver.jks -deststoretype pkcs12".
+----------------------------------------------------------------------------------------------------
+
+---------------------------------- bestandsnetz_server.der -----------------------------------------
+issuer= /C=DE/O=gematik GmbH/OU=Komponenten-CA der Telematik Infrastruktur/CN=FHI.KOMP-CA100
+subject= /C=DE/O=gematik GmbH/OU=KSRC der Telematikinfrastruktur/CN=ksrc-test.telematik-test
+notBefore=Jun 27 12:45:31 2018 GMT
+notAfter=Dec 31 23:59:59 2030 GMT
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore /home/user/testnetz/ksr-ti/java/KSRSimulation/config/ksrserver.jks -destkeystore /home/user/testnetz/ksr-ti/java/KSRSimulation/config/ksrserver.jks -deststoretype pkcs12".
+----------------------------------------------------------------------------------------------------
+
+##########################################################################################
+
+----------------------------------------------------
+
+JUnit version 4.12
+.
+Als Vorbedingung muss zusätzlich sichergestellt werden, dass sich in Slot 2 von [KT A] kein HBA befindet ...
+Entferne [HBA 1] ...
+valueCTSIM: FHI
+: removeCard  aus dem slot: 2
+
+PASSED
+
+
+Time: 0.823
+
+OK (1 test)
+
+------------------------------------------------------------------
+Step 1
+------------------------------------------------------------------
+Description:
+Aktiviere ("stecke") [HBA 1] in Slot 2 von [KT A], wobei [KT A] ein entsprechendes Slot-Ereignis an den Konnektor sendet (vgl. [SICCT121] 6.1.4.4).
+
+Expected:
+Kein Ergebnis erwartet.
+
+Actual:
+JUnit version 4.12
+.
+Aktiviere [HBA 1] in Slot 2 von [KT A], wobei [KT A] ein entsprechendes Slot-Ereignis an den Konnektor sendet ...
+valueCTSIM: FHI
+: insertCard HBA-1 in den slot: 2 --- 10s warten auf Konnektor
+
+PASSED
+
+
+Time: 10.885
+
+OK (1 test)
+
+------------------------------------------------------------------
+Step 2
+------------------------------------------------------------------
+Description:
+Rufe von [WP1] die Operation GetCards mit korrektem Context ohne Parameter mandant-wide auf.
+
+Expected:
+[WP1] empfängt eine GetCardsResponse, die in Cards (unter anderem) [HBA 1] enthält (vgl. ICCSN).
+
+Actual:
+JUnit version 4.12
+.
+Die Operation GetCards (EventService) wird mit gültigem Context ohne optionalen Parameter mandant-wide von [WP1] aus aufgerufen ...
+Anfrage an den Konnektor
+++++++++++++++++++
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v2="http://ws.gematik.de/conn/ConnectorContext/v2.0" xmlns:v21="http://ws.gematik.de/conn/CardServiceCommon/v2.0" xmlns:v5="http://ws.gematik.de/conn/ConnectorCommon/v5.0" xmlns:v7="http://ws.gematik.de/conn/EventService/v7.2">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v7:GetCards>
+         <v2:Context>
+            <v5:MandantId>Mandant1</v5:MandantId>
+            <v5:ClientSystemId>ivorisdent</v5:ClientSystemId>
+            <v5:WorkplaceId>WP1</v5:WorkplaceId>
+         </v2:Context>
+      </v7:GetCards>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+++++++++++++++++++
+
+Validating SOAP Schemata...
+Response Code:200
+Antwort vom Konnektor
+++++++++++++++++++
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:kauthws="http://ws.gematik.de/conn/AuthSignatureService/WSDL/v7.4"
+  xmlns:kc="http://ws.gematik.de/conn/CardService/v8.1"
+  xmlns:kcom="http://ws.gematik.de/conn/ConnectorCommon/v5.0"
+  xmlns:kcore="urn:oasis:names:tc:dss:1.0:core:schema"
+  xmlns:kcrt="http://ws.gematik.de/conn/CertificateService/v6.0"
+  xmlns:kcrtc="http://ws.gematik.de/conn/CertificateServiceCommon/v2.0"
+  xmlns:kcrtws="http://ws.gematik.de/conn/CertificateService/WSDL/v6.0"
+  xmlns:kcry="http://ws.gematik.de/conn/EncryptionService/v6.1"
+  xmlns:kcryws="http://ws.gematik.de/conn/EncryptionService/WSDL/v6.1"
+  xmlns:kcsc="http://ws.gematik.de/conn/CardServiceCommon/v2.0"
+  xmlns:kct="http://ws.gematik.de/conn/CardTerminalService/v1.1"
+  xmlns:kcti="http://ws.gematik.de/conn/CardTerminalInfo/v8.0"
+  xmlns:kctws="http://ws.gematik.de/conn/CardTerminalService/WSDL/v1.1"
+  xmlns:kctxt="http://ws.gematik.de/conn/ConnectorContext/v2.0"
+  xmlns:kcws="http://ws.gematik.de/conn/CardService/WSDL/v8.1"
+  xmlns:kds="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:kenc="http://www.w3.org/2001/04/xmlenc#"
+  xmlns:kerr="http://ws.gematik.de/tel/error/v2.0"
+  xmlns:kets1="http://uri.etsi.org/01903/v1.3.2#"
+  xmlns:kets2="http://uri.etsi.org/02231/v2#"
+  xmlns:kevt="http://ws.gematik.de/conn/EventService/v7.2"
+  xmlns:kevws="http://ws.gematik.de/conn/EventService/WSDL/v7.2"
+  xmlns:kkvk="http://ws.gematik.de/conn/vsds/KvkService/v4.0"
+  xmlns:kpi="http://ws.gematik.de/int/version/ProductInformation/v1.1"
+  xmlns:ksaml1="urn:oasis:names:tc:SAML:1.0:assertion"
+  xmlns:ksaml2="urn:oasis:names:tc:SAML:2.0:assertion"
+  xmlns:ksig="http://ws.gematik.de/conn/SignatureService/v7.4"
+  xmlns:ksigp="urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#"
+  xmlns:ksigws="http://ws.gematik.de/conn/SignatureService/WSDL/v7.4"
+  xmlns:kvrep="urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#"
+  xmlns:kvsd="http://ws.gematik.de/conn/vsds/VSDService/v5.2"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <kevt:GetCardsResponse>
+      <kcom:Status>
+        <kcom:Result>OK</kcom:Result>
+      </kcom:Status>
+      <kc:Cards>
+        <kc:Card>
+          <kcom:CardHandle>4</kcom:CardHandle>
+          <kcsc:CardType>EGK</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:DataStructureVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:DataStructureVersion>
+            <kc:LoggingVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:LoggingVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883119861412710</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>1</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:34Z</kc:InsertTime>
+          <kc:CardHolderName>Dr. Heider SzczypanskxC3xADj TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2030-11-05Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>7</kcom:CardHandle>
+          <kcsc:CardType>HBA</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261300535</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>2</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:35Z</kc:InsertTime>
+          <kc:CardHolderName>Theo Muster00534TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>10</kcom:CardHandle>
+          <kcsc:CardType>SMC-B</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261200656</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>3</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:36Z</kc:InsertTime>
+          <kc:CardHolderName>Musterpraxis00656TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>13</kcom:CardHandle>
+          <kcsc:CardType>SMC-KT</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+            <kc:KeyInfoVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:KeyInfoVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261100367</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>4</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:37Z</kc:InsertTime>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>3</kcom:CardHandle>
+          <kcsc:CardType>EGK</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:DataStructureVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:DataStructureVersion>
+            <kc:LoggingVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:LoggingVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883119861412788</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>1</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:34Z</kc:InsertTime>
+          <kc:CardHolderName>Dr. Heider Szczypanskíj TEST-ONLY</kc:CardHolderName>
+          <kc:Kvnr>X110207659</kc:Kvnr>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>16</kcom:CardHandle>
+          <kcsc:CardType>HBA</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261300534</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>2</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:55:09Z</kc:InsertTime>
+          <kc:CardHolderName>Theo Muster00534TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>9</kcom:CardHandle>
+          <kcsc:CardType>SMC-B</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion/>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261200667</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>3</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:36Z</kc:InsertTime>
+          <kc:CardHolderName>Musterpraxis00667TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>12</kcom:CardHandle>
+          <kcsc:CardType>SMC-KT</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+            <kc:KeyInfoVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:KeyInfoVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261100366</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>4</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:37Z</kc:InsertTime>
+        </kc:Card>
+      </kc:Cards>
+    </kevt:GetCardsResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+++++++++++++++++++
+
+GetCardsResponse:
+[HBA 1].CardHandle ist enthalten.
+Merke [HBA 1].CardHandle als CH_HBA1 = 16
+
+PASSED
+
+
+Time: 0.956
+
+OK (1 test)
+
+------------------------------------------------------------------
+Step 3
+------------------------------------------------------------------
+Description:
+Rufe von [WP1] die Operation ReadCardCertificate (CertificateService) mit gültigem Context und folgenden Parametern auf:
+
+- CardHandle = [HBA 1]
+
+- CertRefList = C.QES
+
+Expected:
+[HBA 1] empfängt ein Read Binary-Kommando zum Lesen von MF/DF.QES/EF.C.HP.QES.R2048.
+
+Actual:
+Dieser Schritt wird im nachfolgenden Schritt mit abgedeckt.
+
+------------------------------------------------------------------
+Step 4
+------------------------------------------------------------------
+Description:
+Deaktiviere [HBA 1] vor dem Antworten auf die Leseanfrage, sende von [KT A] das entsprechende SICCT-Slot-Ereignis und warte Kommunikationstimeout ab.
+
+Expected:
+[WP1] empfängt einen gematik-SOAP-Fault.
+
+Actual:
+JUnit version 4.12
+.
+Manipuliere [HBA 1], sodass keine Antwort auf Kommando 'ReadBinary' gesendet wird ...
+
+Response erfolgreich manipuliert.
+
+
+CH_HBA1 = 16
+
+Die Operation ReadCardCertificate (CertificateService) wird mit gültigem Context und CardHandle = CH_HBA, CertRefList = "C.QES" von [WP1] aus aufgerufen ...
+Anfrage an den Konnektor
+++++++++++++++++++
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v2="http://ws.gematik.de/conn/ConnectorContext/v2.0" xmlns:v5="http://ws.gematik.de/conn/ConnectorCommon/v5.0" xmlns:v6="http://ws.gematik.de/conn/CertificateService/v6.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v6:ReadCardCertificate>
+         <v5:CardHandle>16</v5:CardHandle>
+         <v2:Context>
+            <v5:MandantId>Mandant1</v5:MandantId>
+            <v5:ClientSystemId>ivorisdent</v5:ClientSystemId>
+            <v5:WorkplaceId>WP1</v5:WorkplaceId>
+            <v5:UserId>USER</v5:UserId>
+         </v2:Context>
+         <v6:CertRefList>
+            <v6:CertRef>C.QES</v6:CertRef>
+         </v6:CertRefList>
+      </v6:ReadCardCertificate>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+++++++++++++++++++
+
+Validating SOAP Schemata...
+Response Code:500
+Antwort vom Konnektor
+++++++++++++++++++
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENC="http://www.w3.org/*/soap-encoding"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kerr="http://ws.gematik.de/tel/error/v2.0">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <SOAP-ENV:Fault>
+      <faultcode>SOAP-ENV:Server</faultcode>
+      <faultstring>Timeout beim Kartenzugriff aufgetreten</faultstring>
+      <detail>
+        <kerr:Error>
+          <kerr:MessageID>2c5e-0ffe</kerr:MessageID>
+          <kerr:Timestamp>2018-11-14T15:55:33</kerr:Timestamp>
+          <kerr:Trace>
+            <kerr:EventID>00:30:d6:15:9f:4c:1542207333148</kerr:EventID>
+            <kerr:Instance>Konnektor-Lokal</kerr:Instance>
+            <kerr:LogReference/>
+            <kerr:CompType>Konnektor</kerr:CompType>
+            <kerr:Code>11358</kerr:Code>
+            <kerr:Severity>Error</kerr:Severity>
+            <kerr:ErrorType>Technical</kerr:ErrorType>
+            <kerr:ErrorText>Die Antwort von der Karte im Slot '2' des Terminals '02:42:0a:21:80:08' in der Funktion 'readBinary' existiert nicht.</kerr:ErrorText>
+          </kerr:Trace>
+          <kerr:Trace>
+            <kerr:EventID>00:30:d6:15:9f:4c:1542207333148</kerr:EventID>
+            <kerr:Instance>Konnektor-Lokal</kerr:Instance>
+            <kerr:LogReference/>
+            <kerr:CompType>Konnektor</kerr:CompType>
+            <kerr:Code>4094</kerr:Code>
+            <kerr:Severity>Error</kerr:Severity>
+            <kerr:ErrorType>Technical</kerr:ErrorType>
+            <kerr:ErrorText>Timeout beim Kartenzugriff aufgetreten</kerr:ErrorText>
+          </kerr:Trace>
+        </kerr:Error>
+      </detail>
+    </SOAP-ENV:Fault>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+++++++++++++++++++
+
+Prüfe [HBA 1] auf Empfang von Kommando 'ReadBinary' zum Lesen von MF/DF.QES/EF.C.HP.QES.R2048 ...
+
+
+***************************************************************
+Kommando 'ReadBinary' zum Lesen von MF/DF.QES/EF.C.HP.QES.R2048 wurde empfangen
+***************************************************************
+
+Entferne [HBA 1] ...
+valueCTSIM: FHI
+: removeCard  aus dem slot: 2
+
+ReadCardCertificateResponse:
+Validating SOAP Schemata...
+gematik-SOAP-Fault empfangen.
+
+Entferne alle Manipulationen von [KT A] ...
+valueCTSIM: FHI
+
+PASSED
+
+
+Time: 11.953
+
+OK (1 test)
+
+------------------------------------------------------------------
+Step 5
+------------------------------------------------------------------
+Description:
+Rufe von [WP1] die Operation GetCards mit korrektem Context ohne Parameter mandant-wide auf.
+
+Expected:
+[WP1] empfängt eine GetCardsResponse, die in Cards nicht [HBA 1] enthält (vgl. ICCSN).
+
+Actual:
+JUnit version 4.12
+.
+Die Operation GetCards (EventService) wird mit gültigem Context ohne optionalen Parameter mandant-wide von [WP1] aus aufgerufen ...
+Anfrage an den Konnektor
+++++++++++++++++++
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v2="http://ws.gematik.de/conn/ConnectorContext/v2.0" xmlns:v21="http://ws.gematik.de/conn/CardServiceCommon/v2.0" xmlns:v5="http://ws.gematik.de/conn/ConnectorCommon/v5.0" xmlns:v7="http://ws.gematik.de/conn/EventService/v7.2">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v7:GetCards>
+         <v2:Context>
+            <v5:MandantId>Mandant1</v5:MandantId>
+            <v5:ClientSystemId>ivorisdent</v5:ClientSystemId>
+            <v5:WorkplaceId>WP1</v5:WorkplaceId>
+         </v2:Context>
+      </v7:GetCards>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+++++++++++++++++++
+
+Validating SOAP Schemata...
+Response Code:200
+Antwort vom Konnektor
+++++++++++++++++++
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:kauthws="http://ws.gematik.de/conn/AuthSignatureService/WSDL/v7.4"
+  xmlns:kc="http://ws.gematik.de/conn/CardService/v8.1"
+  xmlns:kcom="http://ws.gematik.de/conn/ConnectorCommon/v5.0"
+  xmlns:kcore="urn:oasis:names:tc:dss:1.0:core:schema"
+  xmlns:kcrt="http://ws.gematik.de/conn/CertificateService/v6.0"
+  xmlns:kcrtc="http://ws.gematik.de/conn/CertificateServiceCommon/v2.0"
+  xmlns:kcrtws="http://ws.gematik.de/conn/CertificateService/WSDL/v6.0"
+  xmlns:kcry="http://ws.gematik.de/conn/EncryptionService/v6.1"
+  xmlns:kcryws="http://ws.gematik.de/conn/EncryptionService/WSDL/v6.1"
+  xmlns:kcsc="http://ws.gematik.de/conn/CardServiceCommon/v2.0"
+  xmlns:kct="http://ws.gematik.de/conn/CardTerminalService/v1.1"
+  xmlns:kcti="http://ws.gematik.de/conn/CardTerminalInfo/v8.0"
+  xmlns:kctws="http://ws.gematik.de/conn/CardTerminalService/WSDL/v1.1"
+  xmlns:kctxt="http://ws.gematik.de/conn/ConnectorContext/v2.0"
+  xmlns:kcws="http://ws.gematik.de/conn/CardService/WSDL/v8.1"
+  xmlns:kds="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:kenc="http://www.w3.org/2001/04/xmlenc#"
+  xmlns:kerr="http://ws.gematik.de/tel/error/v2.0"
+  xmlns:kets1="http://uri.etsi.org/01903/v1.3.2#"
+  xmlns:kets2="http://uri.etsi.org/02231/v2#"
+  xmlns:kevt="http://ws.gematik.de/conn/EventService/v7.2"
+  xmlns:kevws="http://ws.gematik.de/conn/EventService/WSDL/v7.2"
+  xmlns:kkvk="http://ws.gematik.de/conn/vsds/KvkService/v4.0"
+  xmlns:kpi="http://ws.gematik.de/int/version/ProductInformation/v1.1"
+  xmlns:ksaml1="urn:oasis:names:tc:SAML:1.0:assertion"
+  xmlns:ksaml2="urn:oasis:names:tc:SAML:2.0:assertion"
+  xmlns:ksig="http://ws.gematik.de/conn/SignatureService/v7.4"
+  xmlns:ksigp="urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#"
+  xmlns:ksigws="http://ws.gematik.de/conn/SignatureService/WSDL/v7.4"
+  xmlns:kvrep="urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#"
+  xmlns:kvsd="http://ws.gematik.de/conn/vsds/VSDService/v5.2"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <kevt:GetCardsResponse>
+      <kcom:Status>
+        <kcom:Result>OK</kcom:Result>
+      </kcom:Status>
+      <kc:Cards>
+        <kc:Card>
+          <kcom:CardHandle>4</kcom:CardHandle>
+          <kcsc:CardType>EGK</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:DataStructureVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:DataStructureVersion>
+            <kc:LoggingVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:LoggingVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883119861412710</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>1</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:34Z</kc:InsertTime>
+          <kc:CardHolderName>Dr. Heider SzczypanskxC3xADj TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2030-11-05Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>7</kcom:CardHandle>
+          <kcsc:CardType>HBA</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261300535</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>2</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:35Z</kc:InsertTime>
+          <kc:CardHolderName>Theo Muster00534TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>10</kcom:CardHandle>
+          <kcsc:CardType>SMC-B</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261200656</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>3</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:36Z</kc:InsertTime>
+          <kc:CardHolderName>Musterpraxis00656TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>13</kcom:CardHandle>
+          <kcsc:CardType>SMC-KT</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+            <kc:KeyInfoVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:KeyInfoVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261100367</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>4</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:37Z</kc:InsertTime>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>3</kcom:CardHandle>
+          <kcsc:CardType>EGK</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:DataStructureVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:DataStructureVersion>
+            <kc:LoggingVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:LoggingVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883119861412788</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>1</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:34Z</kc:InsertTime>
+          <kc:CardHolderName>Dr. Heider Szczypanskíj TEST-ONLY</kc:CardHolderName>
+          <kc:Kvnr>X110207659</kc:Kvnr>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>9</kcom:CardHandle>
+          <kcsc:CardType>SMC-B</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion/>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261200667</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>3</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:36Z</kc:InsertTime>
+          <kc:CardHolderName>Musterpraxis00667TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>12</kcom:CardHandle>
+          <kcsc:CardType>SMC-KT</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+            <kc:KeyInfoVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:KeyInfoVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261100366</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>4</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:37Z</kc:InsertTime>
+        </kc:Card>
+      </kc:Cards>
+    </kevt:GetCardsResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+++++++++++++++++++
+
+GetCardsResponse:
+[HBA 1].CardHandle ist nicht enthalten.
+
+PASSED
+
+
+Time: 0.89
+
+OK (1 test)
+
+------------------------------------------------------------------
+Step 6
+------------------------------------------------------------------
+Description:
+Aktiviere [HBA 1] in Slot 2 von [KT A], wobei [KT A] ein entsprechendes Slot-Ereignis an den Konnektor sendet (vgl. [SICCT121] 6.1.4.4).
+
+Expected:
+Kein Ergebnis erwartet.
+
+Actual:
+JUnit version 4.12
+.
+Aktiviere [HBA 1] in Slot 2 von [KT A], wobei [KT A] ein entsprechendes Slot-Ereignis an den Konnektor sendet ...
+valueCTSIM: FHI
+: insertCard HBA-1 in den slot: 2 --- 10s warten auf Konnektor
+
+PASSED
+
+
+Time: 10.829
+
+OK (1 test)
+
+------------------------------------------------------------------
+Step 7
+------------------------------------------------------------------
+Description:
+Rufe von [WP1] die Operation GetCards mit korrektem Context ohne Parameter mandant-wide auf.
+
+Expected:
+[WP1] empfängt eine GetCardsResponse, die in Cards (unter anderem) [HBA 1] enthält (vgl. ICCSN).
+
+Actual:
+JUnit version 4.12
+.
+Die Operation GetCards (EventService) wird mit gültigem Context ohne optionalen Parameter mandant-wide von [WP1] aus aufgerufen ...
+Anfrage an den Konnektor
+++++++++++++++++++
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v2="http://ws.gematik.de/conn/ConnectorContext/v2.0" xmlns:v21="http://ws.gematik.de/conn/CardServiceCommon/v2.0" xmlns:v5="http://ws.gematik.de/conn/ConnectorCommon/v5.0" xmlns:v7="http://ws.gematik.de/conn/EventService/v7.2">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v7:GetCards>
+         <v2:Context>
+            <v5:MandantId>Mandant1</v5:MandantId>
+            <v5:ClientSystemId>ivorisdent</v5:ClientSystemId>
+            <v5:WorkplaceId>WP1</v5:WorkplaceId>
+         </v2:Context>
+      </v7:GetCards>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+++++++++++++++++++
+
+Validating SOAP Schemata...
+Response Code:200
+Antwort vom Konnektor
+++++++++++++++++++
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:kauthws="http://ws.gematik.de/conn/AuthSignatureService/WSDL/v7.4"
+  xmlns:kc="http://ws.gematik.de/conn/CardService/v8.1"
+  xmlns:kcom="http://ws.gematik.de/conn/ConnectorCommon/v5.0"
+  xmlns:kcore="urn:oasis:names:tc:dss:1.0:core:schema"
+  xmlns:kcrt="http://ws.gematik.de/conn/CertificateService/v6.0"
+  xmlns:kcrtc="http://ws.gematik.de/conn/CertificateServiceCommon/v2.0"
+  xmlns:kcrtws="http://ws.gematik.de/conn/CertificateService/WSDL/v6.0"
+  xmlns:kcry="http://ws.gematik.de/conn/EncryptionService/v6.1"
+  xmlns:kcryws="http://ws.gematik.de/conn/EncryptionService/WSDL/v6.1"
+  xmlns:kcsc="http://ws.gematik.de/conn/CardServiceCommon/v2.0"
+  xmlns:kct="http://ws.gematik.de/conn/CardTerminalService/v1.1"
+  xmlns:kcti="http://ws.gematik.de/conn/CardTerminalInfo/v8.0"
+  xmlns:kctws="http://ws.gematik.de/conn/CardTerminalService/WSDL/v1.1"
+  xmlns:kctxt="http://ws.gematik.de/conn/ConnectorContext/v2.0"
+  xmlns:kcws="http://ws.gematik.de/conn/CardService/WSDL/v8.1"
+  xmlns:kds="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:kenc="http://www.w3.org/2001/04/xmlenc#"
+  xmlns:kerr="http://ws.gematik.de/tel/error/v2.0"
+  xmlns:kets1="http://uri.etsi.org/01903/v1.3.2#"
+  xmlns:kets2="http://uri.etsi.org/02231/v2#"
+  xmlns:kevt="http://ws.gematik.de/conn/EventService/v7.2"
+  xmlns:kevws="http://ws.gematik.de/conn/EventService/WSDL/v7.2"
+  xmlns:kkvk="http://ws.gematik.de/conn/vsds/KvkService/v4.0"
+  xmlns:kpi="http://ws.gematik.de/int/version/ProductInformation/v1.1"
+  xmlns:ksaml1="urn:oasis:names:tc:SAML:1.0:assertion"
+  xmlns:ksaml2="urn:oasis:names:tc:SAML:2.0:assertion"
+  xmlns:ksig="http://ws.gematik.de/conn/SignatureService/v7.4"
+  xmlns:ksigp="urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#"
+  xmlns:ksigws="http://ws.gematik.de/conn/SignatureService/WSDL/v7.4"
+  xmlns:kvrep="urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#"
+  xmlns:kvsd="http://ws.gematik.de/conn/vsds/VSDService/v5.2"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <kevt:GetCardsResponse>
+      <kcom:Status>
+        <kcom:Result>OK</kcom:Result>
+      </kcom:Status>
+      <kc:Cards>
+        <kc:Card>
+          <kcom:CardHandle>4</kcom:CardHandle>
+          <kcsc:CardType>EGK</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:DataStructureVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:DataStructureVersion>
+            <kc:LoggingVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:LoggingVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883119861412710</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>1</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:34Z</kc:InsertTime>
+          <kc:CardHolderName>Dr. Heider SzczypanskxC3xADj TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2030-11-05Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>7</kcom:CardHandle>
+          <kcsc:CardType>HBA</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261300535</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>2</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:35Z</kc:InsertTime>
+          <kc:CardHolderName>Theo Muster00534TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>10</kcom:CardHandle>
+          <kcsc:CardType>SMC-B</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261200656</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>3</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:36Z</kc:InsertTime>
+          <kc:CardHolderName>Musterpraxis00656TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>13</kcom:CardHandle>
+          <kcsc:CardType>SMC-KT</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+            <kc:KeyInfoVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:KeyInfoVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261100367</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:09</kcsc:CtId>
+          <kcsc:SlotId>4</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:37Z</kc:InsertTime>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>3</kcom:CardHandle>
+          <kcsc:CardType>EGK</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:DataStructureVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:DataStructureVersion>
+            <kc:LoggingVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:LoggingVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883119861412788</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>1</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:34Z</kc:InsertTime>
+          <kc:CardHolderName>Dr. Heider Szczypanskíj TEST-ONLY</kc:CardHolderName>
+          <kc:Kvnr>X110207659</kc:Kvnr>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>17</kcom:CardHandle>
+          <kcsc:CardType>HBA</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261300534</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>2</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:55:36Z</kc:InsertTime>
+          <kc:CardHolderName>Theo Muster00534TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>9</kcom:CardHandle>
+          <kcsc:CardType>SMC-B</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion/>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261200667</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>3</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:36Z</kc:InsertTime>
+          <kc:CardHolderName>Musterpraxis00667TEST-ONLY</kc:CardHolderName>
+          <kc:CertificateExpirationDate>2019-09-21Z</kc:CertificateExpirationDate>
+        </kc:Card>
+        <kc:Card>
+          <kcom:CardHandle>12</kcom:CardHandle>
+          <kcsc:CardType>SMC-KT</kcsc:CardType>
+          <kc:CardVersion>
+            <kc:COSVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:COSVersion>
+            <kc:ObjectSystemVersion>
+              <kc:Major>4</kc:Major>
+              <kc:Minor>1</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ObjectSystemVersion>
+            <kc:ATRVersion>
+              <kc:Major>2</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:ATRVersion>
+            <kc:GDOVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:GDOVersion>
+            <kc:KeyInfoVersion>
+              <kc:Major>1</kc:Major>
+              <kc:Minor>0</kc:Minor>
+              <kc:Revision>0</kc:Revision>
+            </kc:KeyInfoVersion>
+          </kc:CardVersion>
+          <kcsc:Iccsn>80276883110261100366</kcsc:Iccsn>
+          <kcsc:CtId>02:42:0a:21:80:08</kcsc:CtId>
+          <kcsc:SlotId>4</kcsc:SlotId>
+          <kc:InsertTime>2018-11-14T14:41:37Z</kc:InsertTime>
+        </kc:Card>
+      </kc:Cards>
+    </kevt:GetCardsResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+++++++++++++++++++
+
+GetCardsResponse:
+[HBA 1].CardHandle ist enthalten.
+Merke [HBA 1].CardHandle als CH_HBA1 = 17
+
+PASSED
+
+
+Time: 1.055
+
+OK (1 test)
+
+------------------------------------------------------------------
+Step 8
+------------------------------------------------------------------
+Description:
+Rufe von [WP1] die Operation ReadCardCertificate (CertificateService) mit gültigem Context und folgenden Parametern auf:
+- CardHandle = [HBA 1]
+
+- CertRefList = C.QES
+
+Expected:
+[WP1] empfängt eine ReadCardCertificateResponse mit:
+
+- Status.Result = OK
+
+Actual:
+JUnit version 4.12
+.
+CH_HBA1 = 17
+
+Die Operation ReadCardCertificate (CertificateService) wird mit gültigem Context und CardHandle = CH_HBA, CertRefList = "C.QES" von [WP1] aus aufgerufen ...
+Anfrage an den Konnektor
+++++++++++++++++++
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v2="http://ws.gematik.de/conn/ConnectorContext/v2.0" xmlns:v5="http://ws.gematik.de/conn/ConnectorCommon/v5.0" xmlns:v6="http://ws.gematik.de/conn/CertificateService/v6.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v6:ReadCardCertificate>
+         <v5:CardHandle>17</v5:CardHandle>
+         <v2:Context>
+            <v5:MandantId>Mandant1</v5:MandantId>
+            <v5:ClientSystemId>ivorisdent</v5:ClientSystemId>
+            <v5:WorkplaceId>WP1</v5:WorkplaceId>
+            <v5:UserId>USER</v5:UserId>
+         </v2:Context>
+         <v6:CertRefList>
+            <v6:CertRef>C.QES</v6:CertRef>
+         </v6:CertRefList>
+      </v6:ReadCardCertificate>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+++++++++++++++++++
+
+Validating SOAP Schemata...
+Response Code:200
+Antwort vom Konnektor
+++++++++++++++++++
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:kauthws="http://ws.gematik.de/conn/AuthSignatureService/WSDL/v7.4"
+  xmlns:kc="http://ws.gematik.de/conn/CardService/v8.1"
+  xmlns:kcom="http://ws.gematik.de/conn/ConnectorCommon/v5.0"
+  xmlns:kcore="urn:oasis:names:tc:dss:1.0:core:schema"
+  xmlns:kcrt="http://ws.gematik.de/conn/CertificateService/v6.0"
+  xmlns:kcrtc="http://ws.gematik.de/conn/CertificateServiceCommon/v2.0"
+  xmlns:kcrtws="http://ws.gematik.de/conn/CertificateService/WSDL/v6.0"
+  xmlns:kcry="http://ws.gematik.de/conn/EncryptionService/v6.1"
+  xmlns:kcryws="http://ws.gematik.de/conn/EncryptionService/WSDL/v6.1"
+  xmlns:kcsc="http://ws.gematik.de/conn/CardServiceCommon/v2.0"
+  xmlns:kct="http://ws.gematik.de/conn/CardTerminalService/v1.1"
+  xmlns:kcti="http://ws.gematik.de/conn/CardTerminalInfo/v8.0"
+  xmlns:kctws="http://ws.gematik.de/conn/CardTerminalService/WSDL/v1.1"
+  xmlns:kctxt="http://ws.gematik.de/conn/ConnectorContext/v2.0"
+  xmlns:kcws="http://ws.gematik.de/conn/CardService/WSDL/v8.1"
+  xmlns:kds="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:kenc="http://www.w3.org/2001/04/xmlenc#"
+  xmlns:kerr="http://ws.gematik.de/tel/error/v2.0"
+  xmlns:kets1="http://uri.etsi.org/01903/v1.3.2#"
+  xmlns:kets2="http://uri.etsi.org/02231/v2#"
+  xmlns:kevt="http://ws.gematik.de/conn/EventService/v7.2"
+  xmlns:kevws="http://ws.gematik.de/conn/EventService/WSDL/v7.2"
+  xmlns:kkvk="http://ws.gematik.de/conn/vsds/KvkService/v4.0"
+  xmlns:kpi="http://ws.gematik.de/int/version/ProductInformation/v1.1"
+  xmlns:ksaml1="urn:oasis:names:tc:SAML:1.0:assertion"
+  xmlns:ksaml2="urn:oasis:names:tc:SAML:2.0:assertion"
+  xmlns:ksig="http://ws.gematik.de/conn/SignatureService/v7.4"
+  xmlns:ksigp="urn:oasis:names:tc:dss-x:1.0:profiles:SignaturePolicy:schema#"
+  xmlns:ksigws="http://ws.gematik.de/conn/SignatureService/WSDL/v7.4"
+  xmlns:kvrep="urn:oasis:names:tc:dss-x:1.0:profiles:verificationreport:schema#"
+  xmlns:kvsd="http://ws.gematik.de/conn/vsds/VSDService/v5.2"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <kcrt:ReadCardCertificateResponse>
+      <kcom:Status>
+        <kcom:Result>OK</kcom:Result>
+      </kcom:Status>
+      <kcrtc:X509DataInfoList>
+        <kcrtc:X509DataInfo>
+          <kcrtc:CertRef>C.QES</kcrtc:CertRef>
+          <kcrtc:X509Data>
+            <kcrtc:X509IssuerSerial>
+              <kcrtc:X509IssuerName>C=DE, O=T-Systems International GmbH NOT-VALID, OU=HBA-qCA - TI der Gesundheitskarte mit Anbieterakkreditierung, CN=TSYSI.HBA-qCA1:PN TEST-ONLY</kcrtc:X509IssuerName>
+              <kcrtc:X509SerialNumber>DD</kcrtc:X509SerialNumber>
+            </kcrtc:X509IssuerSerial>
+            <kcrtc:X509SubjectName>C=DE, GN=Theo, SN=Muster00534, serialNumber=80276883110261300534, CN=Theo Muster00534TEST-ONLY</kcrtc:X509SubjectName>
+            <kcrtc:X509Certificate>MIIFMzCCBBugAwIBAgICAN0wDQYJKoZIhvcNAQELBQAwgasxCzAJBgNVBAYTAkRFMS8wLQYDVQQKDCZULVN5c3RlbXMgSW50ZXJuYXRpb25hbCBHbWJIIE5PVC1WQUxJRDFFMEMGA1UECww8SEJBLXFDQSAtIFRJIGRlciBHZXN1bmRoZWl0c2thcnRlIG1pdCBBbmJpZXRlcmFra3JlZGl0aWVydW5nMSQwIgYDVQQDDBtUU1lTSS5IQkEtcUNBMTpQTiBURVNULU9OTFkwHhcNMTQwOTIyMDAwMDAwWhcNMTkwOTIxMjM1OTU5WjBvMQswCQYDVQQGEwJERTFgMAsGA1UEKgwEVGhlbzASBgNVBAQMC011c3RlcjAwNTM0MBsGA1UEBRMUODAyNzY4ODMxMTAyNjEzMDA1MzQwIAYDVQQDDBlUaGVvIE11c3RlcjAwNTM0VEVTVC1PTkxZMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvf8M11s5di7fIDLBiDThU1a7lL1TLcaeC+a2c0ZRLEmJYiHqHfx1LA/YooRhG2Nda+tmr/hi8LzXaObVX5HlDmDMpLvMT2c9JTo22ZZ61mV6SEhWKRwa6Db+cIfePve4asy0KOGhsH83qwgkDQqTJvT2l2h7mQBSjhJW2fgzOmvPVqvV9RgNfT3DGhYUtV208rQk8ktP9+nWXjtDdkeeR5AVAL0l/Cb0dvtnJ76CB0NUvG62mQZnAsjNJAnnLs/ZI/ZN0YuNzKa0z/YPPXcit59P8oA5ZoZwlBtEdmFTE2t00UZh+UxZhYypeTahFwlbNlq0c27OoniQeJTuaObY0wIDAQABo4IBmjCCAZYwHwYDVR0jBBgwFoAU6ES5r2panVDe/ZL1ZwC05cWtyiEwHQYDVR0OBBYEFB2duJMBcqxd0mZk3vS2nZ9Gkm+tMA4GA1UdDwEB/wQEAwIGQDB6BgNVHSAEczBxME0GCCqCFABMBIERMEEwPwYIKwYBBQUHAgEWM2h0dHA6Ly93d3cuZS1hcnp0YXVzd2Vpcy5kZS9wb2xpY2llcy9FRV9wb2xpY3kuaHRtbDAJBgcqghQATARIMAcGBSskCAEBMAwGCisGAQQBgs0zAQEwDAYDVR0TAQH/BAIwADA/BgUrJAgDAwQ2MDSkDzANMQswCQYDVQQGEwJERTAhMB8wHTAbMA4MDMOEcnp0aW4vQXJ6dDAJBgcqghQATAQeMBsGCSsGAQQBwG0DBQQOMAwGCisGAQQBwG0DBQEwQgYIKwYBBQUHAQEENjA0MDIGCCsGAQUFBzABhiZodHRwOi8vcW9jc3AuaGJhLnRlc3QudGVsZXNlYy5kZS9vY3NwcjAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMA0GCSqGSIb3DQEBCwUAA4IBAQC997pz6iE9AVaRTAYSDcxV/uB3QBkItX8+rhUK2Qtr5rYdAuEUGWtyKLrMsW1ytVt7DfrvErs/13+sUWgK1r6Yff4sQUT3UGZ12PvfOYPuAiTw0W26UvPk/hn4KMkAUyiLOpesWAFt8mdeKblGaIhIUN9rjUOkuV86KqpLb5C4js4cKiPXHD0ZZRX/v3HLBymvXJUf0rv32PWQTQNUd3E0Hl8v0tTjitE7cqAQnLg9dpQpn9pESl5Q9ALa36z5dfA44qHaJzCnLQQCH1fQyEaemRu/UvChIFPrQK4Cs260TzFStqbg6HcJpX24nRn+Flu8W9n704G8RESH1JrMM8FP</kcrtc:X509Certificate>
+          </kcrtc:X509Data>
+        </kcrtc:X509DataInfo>
+      </kcrtc:X509DataInfoList>
+    </kcrt:ReadCardCertificateResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+++++++++++++++++++
+
+ReadCardCertificateResponse:
+Validating SOAP Schemata...
+Status.Result ist OK.
+
+PASSED
+
+
+Time: 0.925
+
+OK (1 test)
+
+------------------------------------------------------------------
+Nachbedingung
+------------------------------------------------------------------
+Description:
+Basiskonfiguration [LDD/WDE 2] ist erreicht.
+
+Expected:
+
+
+Actual:
+------------------------------------------------------------------
+StartTime: 14.11.2018 15:54:54.956+0100
+Duration in seconds: 55
+
+
+
+Verdict für den Gesamt-Testfall: PASSED
+

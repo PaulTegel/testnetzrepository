@@ -1,0 +1,12 @@
+Waiting for mongo:27017...
+Tue Feb  5 19:03:58 UTC 2019 retrying to connect to mongo:27017 (2/5)
+Tue Feb  5 19:03:59 UTC 2019 retrying to connect to mongo:27017 (3/5)
+Tue Feb  5 19:04:00 UTC 2019 retrying to connect to mongo:27017 (4/5)
+Tue Feb  5 19:04:01 UTC 2019 retrying to connect to mongo:27017 (5/5)
+Welcome to mongo-express
+------------------------
+
+
+Mongo Express server listening at http://0.0.0.0:8081
+Database connected
+Admin Database connected

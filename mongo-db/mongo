@@ -1,0 +1,101 @@
+about to fork child process, waiting until server is ready for connections.
+forked process: 23
+2019-02-05T19:03:57.183+0000 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-02-05T19:03:57.192+0000 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-02-05T19:03:57.204+0000 I CONTROL  [initandlisten] MongoDB starting : pid=23 port=27017 dbpath=/data/db 64-bit host=65c833f0fd06
+2019-02-05T19:03:57.205+0000 I CONTROL  [initandlisten] db version v4.0.5
+2019-02-05T19:03:57.205+0000 I CONTROL  [initandlisten] git version: 3739429dd92b92d1b0ab120911a23d50bf03c412
+2019-02-05T19:03:57.205+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2019-02-05T19:03:57.205+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-02-05T19:03:57.205+0000 I CONTROL  [initandlisten] modules: none
+2019-02-05T19:03:57.206+0000 I CONTROL  [initandlisten] build environment:
+2019-02-05T19:03:57.206+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2019-02-05T19:03:57.206+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2019-02-05T19:03:57.206+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-02-05T19:03:57.206+0000 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", port: 27017, ssl: { mode: "disabled" } }, processManagement: { fork: true, pidFilePath: "/tmp/docker-entrypoint-temp-mongod.pid" }, systemLog: { destination: "file", logAppend: true, path: "/proc/1/fd/1" } }
+2019-02-05T19:03:57.208+0000 I STORAGE  [initandlisten] 
+2019-02-05T19:03:57.208+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2019-02-05T19:03:57.208+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2019-02-05T19:03:57.209+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1465M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-02-05T19:03:57.847+0000 I STORAGE  [initandlisten] WiredTiger message [1549393437:847076][23:0x7f9a8b2d6a40], txn-recover: Set global recovery timestamp: 0
+2019-02-05T19:03:57.856+0000 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-02-05T19:03:57.873+0000 I CONTROL  [initandlisten] 
+2019-02-05T19:03:57.873+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-02-05T19:03:57.873+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-02-05T19:03:57.873+0000 I CONTROL  [initandlisten] 
+2019-02-05T19:03:57.874+0000 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: 854c96d8-34aa-4130-8537-12f557a6306a
+2019-02-05T19:03:57.897+0000 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 4.0
+2019-02-05T19:03:57.922+0000 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: ed2f84b6-ee3a-4e11-973b-5a69e90413cb
+2019-02-05T19:03:57.942+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2019-02-05T19:03:57.944+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+child process started successfully, parent exiting
+2019-02-05T19:03:57.945+0000 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: de507046-7f4a-40ea-be92-2562268cfe6c
+2019-02-05T19:03:57.983+0000 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", ns: "config.system.sessions", expireAfterSeconds: 1800 }
+2019-02-05T19:03:57.983+0000 I INDEX    [LogicalSessionCacheRefresh] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-02-05T19:03:57.985+0000 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
+2019-02-05T19:03:58.078+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:41812 #1 (1 connection now open)
+2019-02-05T19:03:58.080+0000 I NETWORK  [conn1] received client metadata from 127.0.0.1:41812 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "4.0.5" }, os: { type: "Linux", name: "Ubuntu", architecture: "x86_64", version: "16.04" } }
+2019-02-05T19:03:58.083+0000 I NETWORK  [conn1] end connection 127.0.0.1:41812 (0 connections now open)
+2019-02-05T19:03:58.186+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:41814 #2 (1 connection now open)
+2019-02-05T19:03:58.186+0000 I NETWORK  [conn2] received client metadata from 127.0.0.1:41814 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "4.0.5" }, os: { type: "Linux", name: "Ubuntu", architecture: "x86_64", version: "16.04" } }
+2019-02-05T19:03:58.256+0000 I STORAGE  [conn2] createCollection: admin.system.users with generated UUID: a4c4c8b4-8b23-40a1-8c96-3ed4da076c24
+Successfully added user: {
+	"user" : "root",
+	"roles" : [
+		{
+			"role" : "root",
+			"db" : "admin"
+		}
+	]
+}
+2019-02-05T19:03:58.289+0000 E -        [main] Error saving history file: FileOpenFailed: Unable to open() file /home/mongodb/.dbshell: Unknown error
+2019-02-05T19:03:58.295+0000 I NETWORK  [conn2] end connection 127.0.0.1:41814 (0 connections now open)
+
+/usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+
+2019-02-05T19:03:58.323+0000 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-02-05T19:03:58.328+0000 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+killing process with pid: 23
+2019-02-05T19:03:58.340+0000 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2019-02-05T19:03:58.341+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-02-05T19:03:58.341+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2019-02-05T19:03:58.341+0000 I CONTROL  [signalProcessingThread] Shutting down free monitoring
+2019-02-05T19:03:58.341+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-02-05T19:03:58.342+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-02-05T19:03:58.402+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-02-05T19:03:58.402+0000 I CONTROL  [signalProcessingThread] now exiting
+2019-02-05T19:03:58.402+0000 I CONTROL  [signalProcessingThread] shutting down with code:0
+
+MongoDB init process complete; ready for start up.
+
+2019-02-05T19:03:59.392+0000 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-02-05T19:03:59.396+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=65c833f0fd06
+2019-02-05T19:03:59.397+0000 I CONTROL  [initandlisten] db version v4.0.5
+2019-02-05T19:03:59.397+0000 I CONTROL  [initandlisten] git version: 3739429dd92b92d1b0ab120911a23d50bf03c412
+2019-02-05T19:03:59.398+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2019-02-05T19:03:59.398+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-02-05T19:03:59.398+0000 I CONTROL  [initandlisten] modules: none
+2019-02-05T19:03:59.399+0000 I CONTROL  [initandlisten] build environment:
+2019-02-05T19:03:59.399+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2019-02-05T19:03:59.399+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2019-02-05T19:03:59.400+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-02-05T19:03:59.400+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true }, security: { authorization: "enabled" } }
+2019-02-05T19:03:59.400+0000 I STORAGE  [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-02-05T19:03:59.401+0000 I STORAGE  [initandlisten] 
+2019-02-05T19:03:59.401+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2019-02-05T19:03:59.401+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2019-02-05T19:03:59.402+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1465M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-02-05T19:04:00.374+0000 I STORAGE  [initandlisten] WiredTiger message [1549393440:374108][1:0x7f5d9fc50a40], txn-recover: Main recovery loop: starting at 1/28416 to 2/256
+2019-02-05T19:04:00.465+0000 I STORAGE  [initandlisten] WiredTiger message [1549393440:465492][1:0x7f5d9fc50a40], txn-recover: Recovering log 1 through 2
+2019-02-05T19:04:00.517+0000 I STORAGE  [initandlisten] WiredTiger message [1549393440:517487][1:0x7f5d9fc50a40], txn-recover: Recovering log 2 through 2
+2019-02-05T19:04:00.567+0000 I STORAGE  [initandlisten] WiredTiger message [1549393440:567372][1:0x7f5d9fc50a40], txn-recover: Set global recovery timestamp: 0
+2019-02-05T19:04:00.581+0000 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-02-05T19:04:00.653+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2019-02-05T19:04:00.654+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-02-05T19:04:01.208+0000 I NETWORK  [listener] connection accepted from 172.17.0.3:48994 #1 (1 connection now open)
+2019-02-05T19:04:01.209+0000 I NETWORK  [conn1] end connection 172.17.0.3:48994 (0 connections now open)
+2019-02-05T19:04:01.886+0000 I NETWORK  [listener] connection accepted from 172.17.0.3:48996 #2 (1 connection now open)
+2019-02-05T19:04:01.918+0000 I NETWORK  [conn2] received client metadata from 172.17.0.3:48996 conn2: { driver: { name: "nodejs", version: "2.2.24" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.9.0-6-amd64" }, platform: "Node.js v8.15.0, LE, mongodb-core: 2.1.8" }
+2019-02-05T19:04:02.087+0000 I ACCESS   [conn2] Successfully authenticated as principal root on admin
+2019-02-05T19:04:02.097+0000 I NETWORK  [listener] connection accepted from 172.17.0.3:48998 #3 (2 connections now open)
+2019-02-05T19:04:02.195+0000 I ACCESS   [conn3] Successfully authenticated as principal root on admin

@@ -1,0 +1,302 @@
+# new properties
+# Legend:
+##Groups -> #---GROUPNAME
+##Computed -> #KEYNAME
+#Computed will be overritten regularly, '=' are excluded
+#to prevent unintentional setting of these keys and followup confusion, why they are not used
+#Computed entries will always override static and local entries
+##Static -> KEYNAME=VALUE
+#Static entries from the .example masterfile will always override manual entries in the local properties file
+##Local -> KEYNAME=
+#Local values are intended to be inserted in the generated local properties file, located in TestRunConfiguration
+#These will be used unless we find a way to compute these values
+
+#--NETWORK
+network.housenet.subnet=10.33.128.0/24
+network.housenet.ip=10.33.128.0
+network.housenet.mask=255.255.255.0
+network.internet.subnet=11.222.0.0/24
+network.konnet.subnet=10.10.8.0/24
+network.sisnet.subnet=172.16.0.0/14
+network.remotemgm.subnet=172.16.0.0/14
+network.tinet.subnet=172.24.0.0/14
+network.ti.zentral.subnet=172.24.0.0/14
+network.ti.dezentral.subnet=172.20.0.0/14
+network.ti.offene.fd.subnet=172.30.0.0/16
+network.ti.gesicherte.fd.subnet=172.28.0.0/16
+network.tinet.domainname=telematik-test
+network.controlnet.subnet=10.60.5.0/24
+network.wannet.subnet=192.168.3.0/24
+network.wannet.ip=192.168.3.0
+network.wannet.mask=255.255.255.0
+network.intranet.subnet=10.33.122.0/24
+network.intranet.mask=255.255.255.0
+network.controlnet.crl.ip=10.60.5.32
+network.controlnet.tsl.ip=10.60.5.64
+#network.intranet.gateway.ip=
+network.intranet.testnet.ip=10.33.100.0
+network.intranet.testnet.mask=255.255.255.0
+
+# LEKTR
+network.housenet.router.ip=10.33.128.1
+network.housenet.dns.domain=lan
+network.housenet.dns.authority.fqdn=OpenWrt.lan
+network.housenet.dns.authority.ip=10.33.128.1
+network.housenet.dnsrequest.testhost.fqdn=
+network.housenet.dnsrequest.testhost.ip=
+
+# LOCAL
+network.housenet.iagrouter.parallel.ip=
+network.housenet.dhcp.ip=
+
+# BESTANDSNETZ
+bestandsnetze.test.ipaddr=10.0.1.0
+bestandsnetze.test.id=dns-bestd-net.test
+
+
+#--KONNEKTOR NETWORK
+network.konnet.konnektor.ip=10.10.8.15
+network.konnet.thrift.port=9091
+# LOCAL 10.10.8.x
+#network.konnet.localhost.ip=
+# LOCAL 10.33.128.x
+#network.housenet.konnektor.ip=
+#network.housenet.konnektor.mac=
+#network.housenet.localhost.ip=
+#network.housenet.localhost.mac=
+#network.wannet.konnektor.ip=192.168.3.59
+
+
+
+#--NETWORK WANSIM
+network.tinet.ocsp.ip=172.24.0.193
+network.tinet.dns.ip=172.24.0.1
+network.tinet.ntp.ip=172.24.0.65
+network.tinet.ti.ip=172.24.1.193
+network.tinet.intermed.ip=172.24.1.65
+network.tinet.ksr.ip=172.24.1.1
+network.ti.gesicherte.fd.host.ip=172.28.0.10
+network.ti.offene.fd.host.ip=172.30.0.10
+network.internet.dns.ip=11.222.0.4
+network.internet.sis.ip=11.222.0.3
+network.internet.ti.ip=11.222.0.40
+network.internet.router.ip=11.222.0.7
+network.internet.remotemgmt.ip=10.60.5.8
+network.internet.remotemgmt.port=11111
+network.controlnet.ti.ip=10.60.5.3
+network.controlnet.remotemgmt.ip=10.60.5.8
+network.controlnet.remotemgmt.port=11111
+network.controlnet.intermed.ip=10.60.5.67
+network.controlnet.ufs.ip=10.60.5.120
+network.controlnet.ntp.ip=10.60.5.68
+network.controlnet.dns.ip=10.60.5.69
+network.controlnet.ocsp.ip=10.60.5.71
+network.controlnet.ksr.ip=10.60.5.70
+network.controlnet.ksr.port=5555
+network.controlnet.sis.ip=10.60.5.4
+network.controlnet.dnspublic.ip=10.60.5.5
+network.sisnet.sis.ip=1.2.3.1
+network.sisnet.dns.ip=1.2.3.4
+network.sisnet.remotemgmt.ip=10.10.10.2
+network.sisnet.remotemgmt.port=10000
+network.controlnet.register.ip=10.60.5.31
+
+network.wannet.iagrouter.inreihe.ip=192.168.3.1
+network.wannet.konnektor.test.ip=192.168.3.100
+network.wannet.konnektor.test.subnet=255.255.255.128
+network.konnet.konnektor.alternative.ip=10.10.10.10
+network.konnet.konnektor.alternative.subnet=255.255.255.192
+network.wannet.konnektor.alternative.ip=192.168.2.59
+network.wannet.konnektor.alternative.subnet=255.255.255.0
+
+# IP-Adresse für LAN, die mit SISNET überlappt
+net.sis.overlapping.ip.for.lan=172.16.0.2
+# IP-Adresse für WAN, die mit LAN (HOUSENET) überlappt
+anlw.lan.network.segment.overlapping.ip.for.wan=10.33.128.3
+
+#???
+# IP-Adresse für LAN, die mit TI_DEZENTRAL überlappt
+#net.ti.dezentral.overlapping.ip.for.lan=10.50.1.200
+
+#???
+# IP-Adresse für LAN, die mit TI_ZENTRAL überlappt
+#net.ti.zentral.overlapping.ip.for.lan=10.50.1.201
+
+#???
+# IP-Adresse für LAN, die mit TI_OFFENE_FD überlappt
+#net.ti.offene.fd.overlapping.ip.for.lan=10.50.1.130
+
+#???
+# IP-Adresse für LAN, die mit TI_GESICHERTE_FD überlappt
+#net.ti.gesicherte.fd.overlapping.ip.for.lan=10.50.1.130
+
+# testhost
+net.ti.offene.fd.host=172.30.0.10
+net.ti.gesicherte.fd.host=172.28.0.10
+
+# The list of IPs to check when dns.querying
+dns.ip.list.to.check=172.24.0.1
+dns.ti.servers=172.24.0.1
+
+# The PTR-DNS response for the DNS test cases --> should be matching the  DNS_PTR_TEST_ENTRY from the testSteuerungsConfig.sh
+## We only put the begining of the string as to gain robustness w.r.t. to changing domains
+expected.ptr.response=intermed.vsdm
+
+#--CARDS
+#most are autogenerated for all possible card types egk-a, b, c, hba-a, etc...
+#	CERTEXP("expiryDate"), HOLDERNAME("cardholdername"), KVNR("kvnr"), SLOT("slot"), CARDTYPE("cardtype"), PROVIDER("provider");
+#card.[cardid].[property]
+
+# specific card properties
+#card.kvk.a.base64=
+#card.kvk.b.base64=
+#card.kvk.c.base64=
+# default-provider: 999567890
+card.egk.a.provider=
+card.egk.b.provider=
+card.egk.c.provider=
+card.egk.a.vsdstatus=0
+card.egk.a.vsdversion=5.2.0
+card.egk.b.vsdstatus=0
+card.egk.b.vsdversion=5.2.0
+card.egk.c.vsdstatus=0
+card.egk.c.vsdversion=5.2.0
+#card.egk.a.ef.pd=
+#card.egk.a.ef.vd=
+#card.egk.a.ef.gvd=
+
+#--TERMINALS
+#most are autogenerated for the terminals KT-A, B, etc.
+#HOSTNAME("hostname"), ID("terminalID"), IP("ip"), TCP_PORT("tcpPort"), MAC("mac");
+terminal.default.tcpport=4742
+
+#--CETP
+#Please note: PORT information are used by shorttime CETPSubscriptionGateway
+#longtime CetpServer currently uses hardcoded ports 3000 (internal usage), 3100 (WP1), 3200 (WP2), 3300 (WP3)
+#INITIAL Port from which further ports will be dynamically iterated, workplcaces will be grouped in 100-packages 2000+(WP1), 2100+(WP2), etc.
+cetp.server.port.initial=2000
+cetp.server.timeout.default=30000
+
+
+#--ARBEITSUMGEBUNG
+clientsystem.clientsystem.1.name=ivorisdent
+clientsystem.clientsystem.1.description=CLNT-A
+clientsystem.clientsystem.2.name=C2
+clientsystem.clientsystem.2.description=CLNT-B
+workplace.wp1.name=WP1
+workplace.wp1.description=Arbeitsplatz 1
+workplace.wp2.name=WP2
+workplace.wp2.description=Arbeitsplatz 2
+workplace.wp3.name=WP3
+workplace.wp3.description=Arbeitsplatz 3
+mandant.mandant1.name=Mandant1
+mandant.mandant1.vsdmkey=
+mandant.mandant2.name=Mandant2
+mandant.mandant2.vsdmkey=
+
+#--ACCOUNTS
+user.clientsystem.a.username=admin
+user.clientsystem.a.password=123456
+user.admin.username=admin
+user.admin.password=123456a!
+user.factorydefault.username=admin
+user.factorydefault.password=konnektor
+user.localadmin.username=localadmin
+user.localadmin.password=#lK0nnekt0r
+user.localadminokr.username=localadminokr
+user.localadminokr.password=#lK0nnekt0rokr
+user.remoteadmin.username=RemAdmin
+user.remoteadmin.password=#rK0nnekt0r
+user.konnektor.root.username=root
+user.konnektor.root.password=123456
+user.primaersystembenutzer.username=arzt1
+user.primaersystembenutzer.password=ab+123
+
+#--INTERNAL
+#enforces a recomputation of all properties, even if no filechange indicates a demand
+#this will spam each step with soap logs, until someone adds overloads for siltent soap
+internal.properties.compute.always=
+internal.debug=
+
+#--SERVICES
+#konnektor.service.cardservice.endpoint.tls=
+#konnektor.service.cardservice.endpoint=
+#konnektor.service.cardservice.wsdl=
+#konnektor.service.cardterminalservice.endpoint.tls=
+#konnektor.service.cardterminalservice.endpoint=
+#konnektor.service.cardterminalservice.wsdl=
+#konnektor.service.certificateservice.endpoint.tls=
+#konnektor.service.certificateservice.endpoint=
+#konnektor.service.certificateservice.wsdl=
+#konnektor.service.dienstverzeichnis.tls=
+#konnektor.service.dienstverzeichnis=
+#konnektor.service.encryptionservice.endpoint.tls=
+#konnektor.service.encryptionservice.endpoint=
+#konnektor.service.encryptionservice.wsdl=
+#konnektor.service.eventservice.endpoint.tls=
+#konnektor.service.eventservice.endpoint=
+#konnektor.service.eventservice.wsdl=
+#konnektor.service.kvkservice.endpoint.tls=
+#konnektor.service.kvkservice.endpoint=
+#konnektor.service.kvkservice.wsdl=
+#konnektor.service.signatureservice.endpoint.tls=
+#konnektor.service.signatureservice.endpoint=
+#konnektor.service.signatureservice.wsdl=
+#konnektor.service.vsdservice.endpoint.tls=
+#konnektor.service.vsdservice.endpoint=
+#konnektor.service.vsdservice.wsdl=
+
+#--SONSTIGE
+vpn.lan.wan.timeout.default=180000
+konnektor.protocol.entriescount.default=20
+konnektor.productinformation=
+konnektor.thrift.port=9091
+konnektor.logsearch.timetolerance=
+konnektor.dns.connection.delay.time=10000
+# LOCAL (CardSim_IP=10.33.128.100)
+#virtualcardkit.ipaddr=			
+
+# Path and prefix to the files for storing exceptions
+path.exceptionslog.file=../tmp/exceptionsHandlingFile
+# Path to temporary files
+path.temp.dir=../tmp
+path.vsdm.mockup.filename=vsdm_service.py
+path.vsdm.mockup.dir=../VSDM_MockUp
+path.test.shell.config=/home/test/workspace/TestSuite-Konnektor-T-Systems/testSteuerungsConfig.sh 
+
+# The client group names for DHCP
+dhcp.clientgroup.1.name=CG1
+dhcp.clientgroup.2.name=CG2
+
+# values for routing tests
+dhcp.testroute.nexthop=10.33.128.4
+dhcp.testroute.ipaddress=10.33.128.5
+dhcp.testroute.subnet=255.255.255.252
+dhcp.domainname.extremelong=12345689qwertzuiopasdfghjklyxcvbnmXXXXXXXXXXXXXXXXXXXXXXXXXXXX.12345689QWERTZUIOPASDFGHJKLYXCVBNMXXXXXXXXXXXXXXXXXXXXXXXXXXXX.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.XXXXXXXXXXXXX-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#-- values for LAN/WAN Parameter reset
+
+# The variable is used to denote whether all KonnektorManagement calls should be issued over the 10.10.8.15 IP address
+#flag.use.service.ip.for.konnektor.management.calls=
+
+#-- VPN Steuerung
+vpn.connecting.checkattempts=
+vpn.connecting.numberofpolls=
+
+#--WEB-ADRESSEN
+konnektor.webaddress=
+webaddress.trustanchor.iana=http\://data.iana.org/root-anchors/root-anchors.xml
+webaddress.trustanchor.own=http\://11.222.0.8/root-anchors.xml
+
+de.gematik.ipaddress=158.181.50.96
+
+# old properties for backwards compatibility, will be removed over time, once acording adapter is implemented
+#DSN2_DhcpTest_NetworkAddress=10.33.128.5
+
+# DHCP Server Network 2 (DSN2)
+dhcp.server.network.2.ipaddr=10.33.129.0/24
+
+TestBestandsnetzId=dns-bestd-net.test
+
+#--RMS
+rms.url=https\://server.domain.com

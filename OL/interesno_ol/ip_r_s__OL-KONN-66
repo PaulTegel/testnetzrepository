@@ -1,0 +1,17 @@
+default via 10.33.128.1 dev eth0 
+1.2.3.0/24 dev br-8fe493d24e14 proto kernel scope link src 1.2.3.199 
+10.0.0.0/22 dev br-7a1d42205d9b proto kernel scope link src 10.0.0.1 
+10.10.8.0/24 dev eth0 proto kernel scope link src 10.10.8.6 
+10.33.128.0/24 dev eth0 proto kernel scope link src 10.33.128.100 
+10.33.128.2 dev br-c57dce0e84b4 scope link 
+10.33.128.3 dev br-c57dce0e84b4 scope link 
+10.33.128.210 dev br-c57dce0e84b4 scope link 
+10.33.128.221 dev br-c57dce0e84b4 scope link 
+10.60.5.0/24 dev br-516b138fcd03 proto kernel scope link src 10.60.5.1 
+10.250.0.0/16 dev docker0 proto kernel scope link src 10.250.0.1 linkdown 
+11.222.0.0/24 dev br-bf4c9cb8d496 proto kernel scope link src 11.222.0.1 
+169.254.0.0/16 dev eth0 scope link metric 1000 
+172.25.0.0/28 dev br-b944eee7b99d proto kernel scope link src 172.25.0.14 
+172.25.0.16/28 dev br-211416c56de6 proto kernel scope link src 172.25.0.30 
+172.28.0.0/26 dev br-2112deefbfa8 proto kernel scope link src 172.28.0.1 
+172.30.0.0/26 dev br-74c5b4c59e04 proto kernel scope link src 172.30.0.1 

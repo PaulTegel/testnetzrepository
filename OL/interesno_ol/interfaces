@@ -1,0 +1,36 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+#
+# NOTE: This is an *atomated* generated config file, please do *not* edit by hand!
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The intranet (LAN) network interface
+# The "konn-lan" network interface
+# (PCI-Express-Card NIC -> tg3.ko)
+auto eth0
+iface eth0 inet manual
+	up /sbin/dhclient $IFACE
+	down /sbin/dhclient -r $IFACE
+
+# The Konnektor management/control network interface
+# (PCI-Express-Card NIC -> tg3.ko)
+auto eth0:0
+iface eth0:0 inet static
+	address 10.10.8.6
+	netmask 24
+
+# The "local-net" network interface
+# (Onboard NIC -> e1000e.ko)
+auto eth1
+iface eth1 inet manual
+	up ip link set dev $IFACE up
+	down ip link set dev $IFACE down
+
+# The "konn-wan" network interface
+# (USB-Ethernet NIC -> smsc75xx.ko)
+auto eth2
+iface eth2 inet manual
+	up ip link set dev $IFACE up
+	down ip link set dev $IFACE down

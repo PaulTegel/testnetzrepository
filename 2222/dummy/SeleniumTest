@@ -1,0 +1,39 @@
+
+
+
+   /guava-25.0-jre.jar:\
+   ~/workspaceNeon/Web/lib/gson-2.8.2.jar:\
+
+   ~/workspaceNeon/Web/lib/client-combined-3.141.59.jar:\
+
+   ~/workspaceNeon/Web/lib/byte-buddy-1.8.15.jar:\
+   ~/workspaceNeon/Web/lib/commons-codec-1.10.jar:\
+   ~/workspaceNeon/Web/lib/commons-exec-1.3.jar:\
+   ~/workspaceNeon/Web/lib/commons-logging-1.2.jar:\
+   ~/workspaceNeon/Web/lib/httpclient-4.5.3.jar:\
+   ~/workspaceNeon/Web/lib/httpcore-4.4.6.jar:\
+
+   ~/workspaceNeon/Web/lib/okhttp-3.11.0.jar:\
+
+   ~/workspaceNeon/Web/lib/okio-1.14.0.jar:\
+
+
+/home/test/workspaceNeon/Web/lib
+
+java -cp $KONNEKTOR_TS_CLASS_PATH  org.junit.runner.JUnitCore konnektor.testsuite._01_Paket1._01_02_Anwendungskonnektor._01_02_06_Kartenterminaldienst._01_02_06_Kartenterminaldienst.TIP1_A_4552_01.Step7
+
+
+java -cp ~/workspaceNeon/Web/lib/commons-exec-1.3.jar:/home/test/workspaceNeon/Web/lib/client-combined-3.141.59.jar:/home/test/workspaceNeon/Web/lib/okhttp-3.11.0.jar:/home/test/workspaceNeon/Web/lib/okio-1.14.1.jar:/home/test/workspaceNeon/Web/lib/guava-25.0-jre.jar:/home/test/workspaceNeon/Web/lib/gson-2.8.2.jar:/home/test/workspaceNeon/Web/lib/byte-buddy-1.8.15.jar:/home/test/workspaceNeon/Web/lib/commons-codec-1.10.jar:/home/test/workspaceNeon/Web/lib/commons-logging-1.2.jar:/home/test/workspaceNeon/Web/lib/httpclient-4.5.3.jar:/home/test/workspaceNeon/Web/lib/httpcore-4.4.6.jar:.: SeleniumTest
+
+
+*************************************************************************************************************
+
+#compilieren
+javac -cp ~/workspaceNeon/Web/lib/commons-exec-1.3.jar:/home/test/workspaceNeon/Web/lib/client-combined-3.141.59.jar:/home/test/workspaceNeon/Web/lib/okhttp-3.11.0.jar:/home/test/workspaceNeon/Web/lib/okio-1.14.1.jar:/home/test/workspaceNeon/Web/lib/guava-25.0-jre.jar:/home/test/workspaceNeon/Web/lib/gson-2.8.2.jar:/home/test/workspaceNeon/Web/lib/byte-buddy-1.8.15.jar:/home/test/workspaceNeon/Web/lib/commons-codec-1.10.jar:/home/test/workspaceNeon/Web/lib/commons-logging-1.2.jar:/home/test/workspaceNeon/Web/lib/httpclient-4.5.3.jar:/home/test/workspaceNeon/Web/lib/httpcore-4.4.6.jar:.: ./SeleniumTest.java
+
+#ausfuehren
+java -cp ~/workspaceNeon/Web/lib/commons-exec-1.3.jar:/home/test/workspaceNeon/Web/lib/client-combined-3.141.59.jar:/home/test/workspaceNeon/Web/lib/okhttp-3.11.0.jar:/home/test/workspaceNeon/Web/lib/okio-1.14.1.jar:/home/test/workspaceNeon/Web/lib/guava-25.0-jre.jar:/home/test/workspaceNeon/Web/lib/gson-2.8.2.jar:/home/test/workspaceNeon/Web/lib/byte-buddy-1.8.15.jar:/home/test/workspaceNeon/Web/lib/commons-codec-1.10.jar:/home/test/workspaceNeon/Web/lib/commons-logging-1.2.jar:/home/test/workspaceNeon/Web/lib/httpclient-4.5.3.jar:/home/test/workspaceNeon/Web/lib/httpcore-4.4.6.jar:.: SeleniumTest
+
+
+
+

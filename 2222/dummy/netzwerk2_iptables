@@ -1,0 +1,91 @@
+test@netzwerk2:~$  sudo iptables -L -n -v
+[sudo] password for test: 
+Chain INPUT (policy ACCEPT 390K packets, 36M bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+ 173K   23M DOCKER-USER  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+ 173K   23M DOCKER-ISOLATION-STAGE-1  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  *      br-26aa5fe1dd2c  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 DOCKER     all  --  *      br-26aa5fe1dd2c  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-26aa5fe1dd2c !br-26aa5fe1dd2c  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-26aa5fe1dd2c br-26aa5fe1dd2c  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  *      br-5f68849630a9  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 DOCKER     all  --  *      br-5f68849630a9  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-5f68849630a9 !br-5f68849630a9  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-5f68849630a9 br-5f68849630a9  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  *      br-2c6536c8dbff  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 DOCKER     all  --  *      br-2c6536c8dbff  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-2c6536c8dbff !br-2c6536c8dbff  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-2c6536c8dbff br-2c6536c8dbff  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  *      br-0daf607aab3e  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 DOCKER     all  --  *      br-0daf607aab3e  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-0daf607aab3e !br-0daf607aab3e  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-0daf607aab3e br-0daf607aab3e  0.0.0.0/0            0.0.0.0/0           
+91480   10M ACCEPT     all  --  *      br-6398c9f755e5  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+50360 3142K DOCKER     all  --  *      br-6398c9f755e5  0.0.0.0/0            0.0.0.0/0           
+   81  5824 ACCEPT     all  --  br-6398c9f755e5 !br-6398c9f755e5  0.0.0.0/0            0.0.0.0/0           
+50360 3142K ACCEPT     all  --  br-6398c9f755e5 br-6398c9f755e5  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  *      br-fe336fb57ba4  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 DOCKER     all  --  *      br-fe336fb57ba4  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-fe336fb57ba4 !br-fe336fb57ba4  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-fe336fb57ba4 br-fe336fb57ba4  0.0.0.0/0            0.0.0.0/0           
+   89 34832 ACCEPT     all  --  *      br-9c0f1c9c6e71  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+   40  2542 DOCKER     all  --  *      br-9c0f1c9c6e71  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-9c0f1c9c6e71 !br-9c0f1c9c6e71  0.0.0.0/0            0.0.0.0/0           
+   40  2542 ACCEPT     all  --  br-9c0f1c9c6e71 br-9c0f1c9c6e71  0.0.0.0/0            0.0.0.0/0           
+    8  1312 ACCEPT     all  --  *      br-6d2a010f4c5b  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 DOCKER     all  --  *      br-6d2a010f4c5b  0.0.0.0/0            0.0.0.0/0           
+   16  1424 ACCEPT     all  --  br-6d2a010f4c5b !br-6d2a010f4c5b  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-6d2a010f4c5b br-6d2a010f4c5b  0.0.0.0/0            0.0.0.0/0           
+26236 7442K ACCEPT     all  --  *      br-8a6931a2740c  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+ 2420  181K DOCKER     all  --  *      br-8a6931a2740c  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  br-8a6931a2740c !br-8a6931a2740c  0.0.0.0/0            0.0.0.0/0           
+ 2420  181K ACCEPT     all  --  br-8a6931a2740c br-8a6931a2740c  0.0.0.0/0            0.0.0.0/0           
+  929 1209K ACCEPT     tcp  --  eth0   eth0    10.10.8.15           10.33.120.0/24       tcp spt:4433
+ 1283  283K ACCEPT     tcp  --  eth0   eth0    10.33.120.0/24       10.10.8.15           tcp dpt:4433
+    0     0 ACCEPT     all  --  *      docker0  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 DOCKER     all  --  *      docker0  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  docker0 !docker0  0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     all  --  docker0 docker0  0.0.0.0/0            0.0.0.0/0           
+
+Chain OUTPUT (policy ACCEPT 262K packets, 1014M bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain DOCKER (10 references)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain DOCKER-ISOLATION-STAGE-1 (1 references)
+ pkts bytes target     prot opt in     out     source               destination         
+    0     0 DOCKER-ISOLATION-STAGE-2  all  --  br-26aa5fe1dd2c !br-26aa5fe1dd2c  0.0.0.0/0            0.0.0.0/0           
+    0     0 DOCKER-ISOLATION-STAGE-2  all  --  br-5f68849630a9 !br-5f68849630a9  0.0.0.0/0            0.0.0.0/0           
+    0     0 DOCKER-ISOLATION-STAGE-2  all  --  br-2c6536c8dbff !br-2c6536c8dbff  0.0.0.0/0            0.0.0.0/0           
+    0     0 DOCKER-ISOLATION-STAGE-2  all  --  br-0daf607aab3e !br-0daf607aab3e  0.0.0.0/0            0.0.0.0/0           
+   81  5824 DOCKER-ISOLATION-STAGE-2  all  --  br-6398c9f755e5 !br-6398c9f755e5  0.0.0.0/0            0.0.0.0/0           
+    0     0 DOCKER-ISOLATION-STAGE-2  all  --  br-fe336fb57ba4 !br-fe336fb57ba4  0.0.0.0/0            0.0.0.0/0           
+    0     0 DOCKER-ISOLATION-STAGE-2  all  --  br-9c0f1c9c6e71 !br-9c0f1c9c6e71  0.0.0.0/0            0.0.0.0/0           
+   66  3894 DOCKER-ISOLATION-STAGE-2  all  --  br-6d2a010f4c5b !br-6d2a010f4c5b  0.0.0.0/0            0.0.0.0/0           
+    0     0 DOCKER-ISOLATION-STAGE-2  all  --  br-8a6931a2740c !br-8a6931a2740c  0.0.0.0/0            0.0.0.0/0           
+    0     0 DOCKER-ISOLATION-STAGE-2  all  --  docker0 !docker0  0.0.0.0/0            0.0.0.0/0           
+ 173K   23M RETURN     all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain DOCKER-ISOLATION-STAGE-2 (10 references)
+ pkts bytes target     prot opt in     out     source               destination         
+    0     0 DROP       all  --  *      br-26aa5fe1dd2c  0.0.0.0/0            0.0.0.0/0           
+    0     0 DROP       all  --  *      br-5f68849630a9  0.0.0.0/0            0.0.0.0/0           
+    0     0 DROP       all  --  *      br-2c6536c8dbff  0.0.0.0/0            0.0.0.0/0           
+    0     0 DROP       all  --  *      br-0daf607aab3e  0.0.0.0/0            0.0.0.0/0           
+    0     0 DROP       all  --  *      br-6398c9f755e5  0.0.0.0/0            0.0.0.0/0           
+    0     0 DROP       all  --  *      br-fe336fb57ba4  0.0.0.0/0            0.0.0.0/0           
+    0     0 DROP       all  --  *      br-9c0f1c9c6e71  0.0.0.0/0            0.0.0.0/0           
+    0     0 DROP       all  --  *      br-6d2a010f4c5b  0.0.0.0/0            0.0.0.0/0           
+   50  2470 DROP       all  --  *      br-8a6931a2740c  0.0.0.0/0            0.0.0.0/0           
+    0     0 DROP       all  --  *      docker0  0.0.0.0/0            0.0.0.0/0           
+   97  7248 RETURN     all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+
+Chain DOCKER-USER (1 references)
+ pkts bytes target     prot opt in     out     source               destination         
+ 173K   23M RETURN     all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+test@netzwerk2:~$ 
+

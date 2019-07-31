@@ -1,0 +1,1278 @@
+/dev/sdb5 on /media/test/0668f02a-8e93-4e64-a276-4659c40df135 type ext4 (rw,nosuid,nodev,relatime,data=ordered,uhelper=udisks2)
+
+sshpass -p123456 ssh -p 2222 root@10.10.8.15 "/sbin/reboot
+
+ip xfrm state
+
+
+Owo1!Raw1
+
+
+Ingrano2019!
+Ingrano2019!
+Ingrano2019!
+
+keytool -import -v -file 80276883120000011211-20161015 -keystore /root/tmp/http.jks -storepass 123456
+Owo1!Raw1
+
+fgjEFTH34TZH
+
+fgjEFTH34TZH
+
+
+SFKJZRwevwerznh2q35
+SFKJZRwevwerznh2q35
+
+SFKJZRwevwerznh2q35
+
+dig mail.konnektor.lan @172.31.0.55
+
+openssl crl -inform DER -text -noout -in komp-ca.crl
+
+
+> /dev/null 2>&1
+> /dev/null 2>&1
+
+
+///any
+832 284 559
+832 284 559
+***
+961442335
+961442335
+***
+548 123 074
+548 123 074
+***
+Cn\5n)!i_)FYk!V-
+Cn\5n)!i_)FYk!V-
+
+
+
+curl --cacert cert.pem -k https://10.10.8.15:4433/
+#K0nnekt0r
+curl --cacert cert.pem -k -u admin:#K0nnekt0r https://10.10.8.15:4433/config/certificate/
+curl --cacert cert.pem -k --basic -u admin:#K0nnekt0r https://10.10.8.15:4433/
+
+
+
+Owo1!Raw1
+
+
+sudo pip install --upgrade docker-compose
+pip
+/usr/local/lib/python2.7/dist-packages
+
+759252508
+
+
+sudo apt-get purge teamviewer; sudo apt-get purge teamviewer:i386; sudo dpkg --add-architecture i386; sudo apt-get update; sudo apt-get install libasound2:i386 libfontconfig1:i386 libfreetype6:i386 libjpeg62:i386 libpng12-0:i386 libsm6:i386 libxrandr2:i386 libxrender1:i386 libxtst6:i386 libxinerama1:i386; wget --continue 'http://download.teamviewer.com/download/teamviewer_i386.deb'; sudo dpkg -i teamviewer_i386.deb; sudo apt-get install -f 
+
+
+sshpass -p 123456 scp -P 2222 rms.crt root@1.2.3.77:/etc/nginx/certs/rms.crt
+sshpass -p 123456 scp -P 2222 rms.key root@1.2.3.77:/etc/nginx/certs/rms.key
+
+
+
+openssl crl -inform DER -text -noout -in "komp-ca(5).crl"
+*****************
+
+update-alternatives --config java
+
+
+sshpass -p 123456 scp -P 2222 rms.crt root@1.2.3.77:/etc/nginx/certs/rms.crt
+sshpass -p 123456 scp -P 2222 rms.key root@1.2.3.77:/etc/nginx/certs/rms.key
+
+
+keytool -import -v -file serverdomaincom.crt -keystore /root/tmp/http.jks -storepass 123456
+
+openssl pkcs12 -info -in /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/src/konnektor/testsuite/_01_Paket1/_01_01_Uebergreifende_Festlegungen/_01_01_01_Uebergreifende_Tests/TIP1_A_4516_03/konnektor.testsuite._01_Paket1._01_01_Uebergreifende_Festlegungen._01_01_01_Uebergreifende_Tests.TIP1_A_4516_03.Step4.pfx
+
+******************************************
+
+
+openssl pkcs12  -in certificate.pfx -out cer.pem -nodes
+
+openssl pkcs12 -in certificate.pfx -out cer.pem -nodes
+
+openssl pkcs12 -export -out certificate_2.pfx -inkey privateKey.key -in certificate.crt
+
+********
+
+change password on an .pfx certificate
+
+Export you current certificate to a passwordless pem type:
+openssl pkcs12 -in mycert.pfx -out tmpmycert.pem -nodes
+
+Convert the passwordless pem to a new pfx file with password:
+openssl pkcs12 -export -out mycert2.pfx -in tmpmycert.pem
+
+*******************************************************************
+
+
+openssl x509 -inform DER -in rms.cer -out rms.pem
+
+
+*******************************************************************
+TIP1-A_4746-01 VPN_SIS_INNER_IP
+
+*********************************************
+sshpass -p '123456' ssh -p2222 root@k "echo $(date)"
+************
+Utils.INSTANCE.abortTestcase();
+*****************
+
+ *********************************** *
+ * HINWEIS AUS DER TESTAUTOMATISIERUNG *
+ * Konnektorfehler, siehe ORSFT-7722
+ * Der Name der Operation ist "TUC_KON_037 \"Zertifikat prüfen\""
+ * und nicht "CheckCertificate"
+ * *********************************** 
+
+***********************************************************************
+Fehler lag im Testfall, nicht im Konnektor
+***********************************************************************
+watch -n1 'sshpass -p123456 ssh -p2222 root@k "echo $(date -u)"'
+
+***********************************************************************
+
+Betriebszustände werden beim Reboot zurückgesetzt. Daher kann nach dem Reboot das Zurücksetzen nicht protokolliert werden. Siehe dazu TIP1-A_4509 Betriebszustand erfassen. 
+
+************************************************************
+
+LogUtils.logKonnektorBug("ORSKONCC-12511");
+
+***************************************************************
+grep -r 'Basiskonfigurationscheck fehlerhaft abgeschlossen' *
+
+cat 1234 | sort | uniq > 333
+
+sort -u
+
+grep -r 'malformed' *
+
+
+egrep  "5 sec warten, um das Schreiben eines Protokoll Records|Duration in seconds" *
+
+**********************
+ein String ab dem Wort STOP bis zum Ende abschneiden.
+
+echo $STRING | sed -e s/STOP.*$//
+**************
+grep -r 'SMC-KT_3' * | grep .txt  > 1234
+
+#count
+grep -c 'word' /path/to/file
+
+***************************************************************
+
+shutdown -h now
+halt
+systemctl poweroff
+
+***************************************************************
+watch -n1 "timeout 1 sshpass -p123456 ssh -p2222 root@10.10.8.15 /opt/secure/current/extern/bin/ipsec status"
+*****
+watch -n1 'sshpass -p123456 ssh -p2222 root@k "echo $(date -u)"'
+sshpass -p '123456' ssh root@10.60.5.3 "ipsec start"
+sshpass -p '123456' ssh -p 2222 root@k "/sbin/reboot"
+sshpass -p '123456' ssh root@10.60.5.3 "ipsec statusall"
+
+watch -n1 sshpass -p123456 ssh root@ntp "date"
+watch -n1 sshpass -p123456 ssh -p2222 root@k date
+****************************************************************
+ 
+ls | grep .txt | grep -v JIRA | wc -l
+grep -r "1.5.1 - Build: 19" * | wc -l
+
+****************************************************************
+HelperScripts/REPORT_KONN_ERR "ORSKONCC-10329" "TIP1-A_4509-04 EC_TSL_Expiring"
+
+LogUtils.logKonnektorBug("ORSFT-7792");
+LogUtils.logTextblock("Seit der Konnektorversion 1.4.0 r17111 fährt der Konnektor beim Neustart nicht mehr hoch");
+
+************
+
+Anmerkung: Fehler ist nicht immer reproduzierbar.
+
+****************************************************************
+Im Zusammenhang des EVT2 wurde das verhalten bei der Produktversion 1.4.3 - Build: 67 - Revision: 95d523a:2.0.0 erneut festgestellt. Neue Logfiles sind beigefügt.
+Zu beachten ist das im EVT2 keine Grauschalter genutzt werden und daher es nicht möglich ist das Loglevel auf trace zu stellen. Defaultwert ist info.
+
+Automatisierter Nachtest mit Konnektor Version 1.4.4 - Build: 128 - Revision:   ist erfolgreich (siehe "TIP1_A_xxxx_xx.txt" im Anhang).
+
+Nachtest mit Telekom-Konnektor EBK (TKONEBK) in der Produktversion 2.0.0 - Build: 408 - Revision: a404235178:2.2.4 ist erfolgreich (siehe "2.0.0_b408_TIP1-A_4509-04.txt" im Anhang).
+
+Nachtest Version: Produktversion 1.4.8 - Build: 99 schlägt fehl. neue Logs sind angehangen.
+
+Anmerkung: Fehler ist nicht immer reproduzierbar.
+Beschreibung wurde um Information zur Reproduzierbarkeit ergänzt.
+
+Fehler liegt (lag) in der Testerwartung, Spec Ticket erstellt KONNPT-101 
+
+Zusammenfassung: [...] beim neu Start des Konnektors durch "reset" Knopf wurde Protokoll Datenbank beschädigt:
+[...]
+
+Nachtest Version: Produktversion 1.4.8 - Build: 121 schlägt fehl. neue Logs sind angehangen.
+
+Nachtest Version: Produktversion 1.4.8 - Build: 121 ist . neue Logs sind angehangen.
+Nachtest Version: Produktversion 1.4.8 - Build: 121 ist erfolgreich. neue Logs sind angehangen
+
+
+Nachtest Version: Produktversion 1.4.9 - Build: 2 schlägt fehl. neue Logs sind angehangen
+Nachtest Version: Produktversion 1.4.9 - Build: 2 ist erfolgreich. neue Logs sind angehangen
+
+
+Nachtest Version: Telekom-Konnektor EBK (TKONEBK) in der Produktversion 1.5.2 - Build: 20   schlägt fehl. neue Logs sind angehangen
+
+
+Der Fehler tritt mit Version "Telekom-Konnektor EBK (TKONEBK) in der Produktversion 1.5.0 - Build: 62 - Revision: 36dd2ab29e:2.2.4" weiterhin auf.
+
+Aktuelle Logs wurden angehangen.
+
+**
+DEVLOG_LEVEL_GLOBAL = trace
+Nachtest Version: Telekom-Konnektor EBK (TKONEBK) in der Produktversion 1.5.2 - Build: 20 - Revision: ad9b6350b1:2.2.5 
+Die Logs wurden angehangen.
+
+**
+
+* Es wird ein NTP-Synchronisationsfehler herbeigeführt.
+* Der erwartete Fehlereintrag ist im Konnektorprotokoll nicht sichtbar.
+TIP1-A_4795-02: Im Protokoll fehlt ein erwartete Eintrag zu synchronisierungs Fehler
+TIP1-A_4795-02: Im Systemprotokoll fehlt ein erwarteter 4177 Eintrag zu NTP-Synchronisationsfehler	---	besser
+
+
+**************
+_2_0_0_b424_
+
+Telekom-Konnektor EBK (TKONEBK) in der Produktversion 2.0.0 - Build: 424 - Revision: 36cfb4aa34:2.2.4
+Nachtest Version: Produktversion 2.0.0 - Build: 424 schlägt fehl. neue Logs sind angehangen
+Nachtest Version: Produktversion 2.0.0 - Build: 424 ist erfolgreich. neue Logs sind angehangen
+
+**************
+Telekom-Konnektor EBK (TKONEBK) in der Produktversion 1.4.10 - Build: 43 - Revision: b758d1fa54:2.2.4
+1.4.19b43
+Nachtest Version: Produktversion 1.4.10 - Build: 43 schlägt fehl. neue Logs sind angehangen
+Nachtest Version: Produktversion 1.4.10 - Build: 43 ist erfolgreich. neue Logs sind angehangen
+
+**************
+Das Ticket wurde im Produkttest aufgenommen und kann somit auch nur in diesem geschlossen werden. Daher öffne ich es wieder.
+****************************************************************
+
+/usr/share/X11/xorg.conf.d/10-evdev.conf
+Restart X11	systemctl restart lightdm.service
+
+Section "InputClass"
+        Identifier "evdev pointer catchall"
+        MatchIsPointer "on"
+        MatchDevicePath "/dev/input/event*"
+*        Option "ButtonMapping" "1 2 3 5 4 6 7 8"
+        Driver "evdev"
+EndSection
+
+Reverse Mouse Scroll Direction
+****************************************************************
+Nach erfolgreicher Anmeldung vermerkt der Konnektor das angemeldete
+Topic unter dem SubscriptionID.
+
+Der Konnektor muss die Anmeldungen so lange als gültig behandeln, bis
+entweder das Clientsystem diese explizit abmeldet oder der Konnektor das
+Clientsystem als nicht mehr erreichbar erkennt (siehe nächsten Punkt) oder
+der Konnektor neu gestartet oder ausgeschaltet wird oder die
+TerminationTime kleiner als die Systemzeit ist.
+
+Der Konnektor muss die Anmeldung aus seiner Verwaltung entfernen („Auto-
+Unsubscribe“), wenn EVT_MAX_TRY Verbindungsaufbauversuche oder
+zählbare Zustellungsversuche (z.B. durch Zählung beim Absenden der
+Zustellversuche) in Folge fehlgeschlagen sind. Wenn die Ereignissenke
+Zustellungen grundsätzlich nicht beantwortet, so sind nur die
+Verbindungsaufbauversuche zu zählen.
+***********
+TIP1-A_4613 Initialisierung Subscriptions -Liste beim Bootup
+Der Konnektor MUSS beim Bootup mit einer leeren Liste an Subscriptions starten.
+
+
+********************************************************************************
+
+Automatisierter Nachtest mit Konnektor Version 1.4.4 - Build: 128 - Revision: 88d1a66, API 1.4, Gruppen-Version 2 ist erfolgreich (siehe "TIP1_A_4612_02.txt" im Anhang).
+*****************
+Nachtest mit Konnektor Version 1.4.6 - Build: 204 - Revision: 17489b5b2 ist erfolgreich (siehe "TIP1_A_4524_13.txt" im Anhang).
+*****************
+Es werden die im Anhang beschrieben KSR Testmittel benötigt, anderenfalls ist die Testausführung der genannten Testfälle nicht möglich.
+******************
+Testaktionen: Abweichungen in Schritt 4 und Schritt 7
+
+******************
+
+#echo "************************************************"
+#echo "Kommentar aus der Testautomatisierung:"
+#echo "Es handelt sich um einen Testfallspezifikationsfehler JIRA-TICKET ORSKONCC-428
+#echo ""
+#echo "Die Änderung der Zeit über die Management-Schnittstelle kann aber kein"
+#echo "OPERATIONAL_STATE/EC_TIME_DIFFERENCE_INTOLERABLE hervorrufen."
+#echo "************************************************"
+
+************************************************************************************
+
+
+******************************************************************
+Kommentar aus der Testautomatisierung:
+Es handelt sich um einen Konnektorfehler JIRA-TICKET  KONN-13789
+
+Unterschiedliche GUI-Aktionen führen zu unerwarteten Neustarts des Konnektors
+******************************************************************
+
+
+************************************************************************************
+
+echo "@@@@@@@@@@@@@@@@@@@@@"
+date
+echo "@@@@@@@@@@@@@@@@@@@@@"
+
+echo "host: `date`"
+echo "konnektor: `sshpass -p123456 ssh -p2222 root@10.10.8.15 "date"`"
+
+
+echo "@@@@@@@@@@@@@@@@@@@@@"
+echo "Step 1"
+echo "host: `date`"
+echo "konnektor: `sshpass -p123456 ssh -p2222 root@10.10.8.15 "date"`"
+echo "@@@@@@@@@@@@@@@@@@@@@"
+
+
+******************************************
+sshpass -p123456 ssh root@k -p2222
+
+vim /opt/konn/conf/konnektor.init.ini
+vim /opt/secure/current/konn/conf/konnektor.ak.ini
+vim /opt/secure/current/konn/conf/konnektor.nk.ini
+
+******************************************
+    
+Konnektor Protokolle holen
+
+sshpass -p 123456 ssh -p 2222 root@10.10.8.15 "tar -cvf /tmp/KonnLog.tar /tmp/konn/log"
+sshpass -p 123456 ssh -p 2222 root@10.10.8.15 "gzip /tmp/KonnLog.tar"
+
+sshpass -p 123456 scp -P 2222 root@10.10.8.15:~/tmp/KonnLog.tar.gz .
+sshpass -p 123456 scp -P 2222 root@10.10.8.15:/tmp/KonnLog.tar.gz .
+
+*******************************************
+
+Für das Exceptionhandling sollte die LogUtils.logException(Throwable e) genutzt werden, dort werden KonnektorExceptions "richtig" verarbeitet
+
+*******************************************
+EC_TSL_Expiring
+
+Steht der Ablauf der TSL innerhalb von 7 Tagen an, MUSS der Konnektor den
+Betriebszustand EC_TSL_Expiring annehmen.
+Mit Ablauf der Gültigkeit der TSL MUSS der Konnektor den Betriebszustand
+EC_TSL_Out_Of_Date_Within_Grace_Period annehmen.
+Mit Ablauf der Graceperiod der TSL MUSS der Konnektor den kritischen
+Betriebszustand EC_TSL_Out_Of_Date_Beyond_Grace_Period annehmen.
+*********************************************************************************************
+4508_03		nachbed.
+4718_01		vorbed.
+4789_02		vorb., nachbed.
+GS 4832_01	vorb
+GS 5336_01	vorb.
+4600_06		nachb.
+4567_13		nachb.
+GS 4957_01 	vorb.
+4512_01		vorb. 
+GS 4891_01	vorb.
+*******************************************************************************************
+./root/.mozilla/firefox/pdb962yz.default/formhistory.sqlite
+
+sqlitebrowser /root/.mozilla/firefox/pdb962yz.default/formhistory.sqlite
+
+sqlite3 protocol_security.db "pragma integrity_check"
+
+
+sshpass -p123456 ssh -p2222 root@10.10.8.15 '/opt/secure/current/extern/bin/sqlite3 /opt/secure/current/konn/data/state_master.db "UPDATE Periodicjob SET Pause=\"5\" WHERE Name=\"Check for active critical states\""'
+
+
+sshpass -p123456 ssh -p2222 root@10.10.8.15 '/opt/secure/current/extern/bin/sqlite3 /opt/secure/current/konn/data/state_master.db "UPDATE Periodicjob SET Pause=\"1536161019\" WHERE Name=\"Check for active critical states\""'
+
+*******************************************************************************************
+watch 'dmesg | tail -n30'
+watch 'cat /var/log/syslog | tail -n20'
+***************
+
+/root/tmp/listen
+java -jar mergeListen.jar
+************************************************************
+for FILE in `find R640* -name \*.jpg -exec file {} \+ | sed -ne '/RIFF/s/:[[:space:]]*RIFF.*//p'`; do mv "$FILE" "${FILE%.jpg}.riff" && convert "${FILE%.jpg}.riff" "$FILE" ; done
+
+*************
+
+https://gitlab.fokus.fraunhofer.de/FHI/eGK/wikis/Eventuelle%20Installationsfehler
+
+https://gitlab.fokus.fraunhofer.de/FHI/eGK/wikis/TOMF-FAQ
+
+***************
+
+/usr/bin/java -jar /opt/card-term-sim-webserver-2.3.1.jar --spring.profiles.active=ctsfworker
+
+***************
+
+http://192.168.50.237/tsi_konn_testsuite/branches/Konnektor_1_4_7_245/docker_branch
+
+http://192.168.50.237/tsi_konn_testsuite/branches/docker_branch
+
+***************
+
+ps aux | grep java | grep tomf-master | wc -l
+
+*****************************
+
+docker network create   --driver=macvlan   --subnet=10.33.128.0/24   --ip-range=10.33.128.128/25   konnektor_lan
+
+************************************************************************************
+
+/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung
+./propertyHousekeeping.sh
+./HelperScripts/start_TOMF_TestEnvironment.sh
+./HelperScripts/start_Docker_TestEnvironment.sh
+
+sshpass -p123456 ssh root@k -p2222
+
+http://192.168.50.237/tsi_konn_testsuite/branches/docker_branch
+
+*************************************************************************************
+
+ifconfig OldName down
+ip link set OldName name NewName
+ifconfig NewName up 
+
+*************************************************************************************
+
+sshpass -p 123456 scp -P 2222 -r root@10.10.8.15:/opt/secure/current/konn/data/* .
+/root/temp/konnektor_db
+
+./opt/secure/current/konn/
+sshpass -p 123456 scp -P 2222 -r root@10.10.8.15:/opt/secure/current/konn/* .
+
+*******************
+
+sshpass -p 123456 scp -P 2222 root@10.10.8.15:/opt/secure/current/konn/data/protocol_system.db /root/temp/Konnektor_db_select/protocol_system_a.db
+sshpass -p 123456 scp -P 2222 root@10.10.8.15:/opt/secure/current/konn/data/protocol_system.db /root/temp/Konnektor_db_select/protocol_system_a_ende.db
+****
+protocol_security.db
+****
+sshpass -p 123456 scp -P 2222 root@10.10.8.15:/opt/secure/current/konn/data/protocol_security.db /root/temp/Konnektor_db_select/protocol_security_a.db
+sshpass -p 123456 scp -P 2222 root@10.10.8.15:/opt/secure/current/konn/data/protocol_security.db /root/temp/Konnektor_db_select/protocol_security_a_ende.db
+
+
+
+**************************************************************************************
+sshpass -p123456 ssh root@10.10.8.15 -p 2222 "/opt/secure/current/extern/bin/iptables -F FLT_USER"
+
+***********************************************************************************************************
+
+docker load -i master.0.7.2.tar
+
+docker load -i master.0.7.2.tar
+
+docker tag 9caab8a54570 docker-registry:50000/tomf/master:0.7.2
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+cd /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung
+
+./Ausfuehrungssessions/MAI_2017/PAUL/PAKET1/startAutomatedRunPlans.sh
+./startTestCases.sh GS_A_3942_01
+
+%%%%§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+
+echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list
+apt-get update
+
+apt-cache search openjdk
+
+apt-get install -t jessie-backports openjdk-8-jdk
+
+*********
+
+  mvn package
+  mvn exec:java -Dexec.mainClass="org.test.experimente.App"
+
+********************************************************************************
+
+ifconfig peth0 down
+ip link set peth0 name eth0
+ifconfig eth0 up 
++++
+alt: enx803f5d091950
+new: eth1
+---------------------------
+
+ifconfig enx803f5d091950 down
+ip link set enx803f5d091950 name eth1
+ifconfig eth1 up 
+
+---
+
+ifconfig eth1 down
+ip link set eth1 name enx803f5d091950
+ifconfig enx803f5d091950 up 
+
+***********************************************************************************
+
+tail -n 30 -f /var/log/syslog
+
+***********************************************************************************
+
+
+git branch strongswan5.6.2
+
+git checkout strongswan5.6.2
+
+---
+git push
+fatal: The current branch strongswan5.6.2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin strongswan5.6.2
+---
+
+git push --set-upstream origin strongswan5.6.2
+
+---
+
+git reset --soft HEAD~1
+git reset --soft HEAD^
+---
+remote: To create a merge request for strongswan5.6.2, visit:
+remote:   https://ftp1.openlimit.com/poc/testnetz/merge_requests/new?merge_request%5Bsource_branch%5D=strongswan5.6.2
+remote:
+To https://paul@ftp1.openlimit.com/poc/testnetz.git/
+ * [new branch]      strongswan5.6.2 -> strongswan5.6.2
+Branch strongswan5.6.2 set up to track remote branch strongswan5.6.2 from origin.
+---
+
+
+diff -Naur strongswan-5.6.2/src/libstrongswan/credentials/credential_manager.c strongswan-5.6.2_patched/src/libstrongswan/credentials/credential_manager.c> strongswan222.patch
+
+
+*********
+
+git branch -f origin/dns-ti-zonefile
+
+git pull origin dns-ti-zonefile
+
+*******************
+	merge MyBranch into master
+git checkout master
+git pull origin master
+git merge MyBranch
+git push origin master
+
+*****************************************************************************************
+
+java -Dtomf.master.startup.docker.image.pull=false -Dtomf.master.startup.cloud.config.git.uri="/root/tmp/tomf/tomf-0.7.2/localconfig" -jar /root/tmp/tomf/tomf-0.7.2/lib/tomf-cli-0.7.2-exec.jar shell
+
+
+0.7.2  ---  Step 1 from TIP1_4607_06
+
+*******
+git pull && git checkout release/0.10.1
+
+git pull origin release/0.11.2
+*****************************************************************************************
+
+Es wird im Sinne der Testbeschreibung davon ausgegangen, dass WP1 gemeint ist.
+*****************************************************************************************
+SMC-B nicht freigeschaltet
+-------
+System.out.print("Block [SMC-B 1]...");
+		
+		if(CardSimulationUtil.INSTANCE.blockCard(CARD.SMC_B_A)){
+			System.out.println("OK");
+		}else {
+			System.out.println("FAILED");
+		}
+
+*****************************************************************************************
+sysctl net.netfilter.nf_conntrack_count
+*****************************************************************************************
+
+echo "Step 1"
+echo "------------------------------------------------------------------"
+echo "Description:"
+echo ""
+echo ""
+echo "Expected:"
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo "Actual:"
+echo ""
+java -cp $KONNEKTOR_TS_CLASS_PATH org.junit.runner.JUnitCore konnektor.testsuite._01_Paket1._01_02_Anwendungskonnektor._01_02_01_Systeminformationsdienst._01_02_01_Systeminformationsdienst.TIP1_A_4607_01.Step1
+echo ""
+echo "------------------------------------------------------------------"
+
+
+*******************************************************************************************
+
+cd /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung ; 
+
+cd /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung ; ./Ausfuehrungssessions/MAI_2017/PAUL/PAKET1/startAutomatedRunPlans.sh ; ./Ausfuehrungssessions/MAI_2017/HERB/PAKET1/startAutomatedRunPlans.sh ; ./Ausfuehrungssessions/MAI_2017/GERO/PAKET1/startAutomatedRunPlans.sh ; ./Ausfuehrungssessions/MAI_2017/MEHDI/PAKET1/startAutomatedRunPlans.sh
+
+********************************************************************************************
+
+TIP1-A_4745 Eingeschränkte Nutzung von „Ping“
+********************************************************************************************
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04#step-3-—-setting-up-an-nginx-container
+
+https://www.heiterbiswolkig.eu/?p=222
+********************************************************************************************
+
+apt-cache madison docker-ce
+
+root@CampusX :-) > apt-cache madison docker-ce
+ docker-ce | 18.03.1~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 18.03.0~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.12.1~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.12.0~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.09.1~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.09.0~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.06.2~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.06.1~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.06.0~ce-0~debian | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.03.2~ce-0~debian-jessie | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.03.1~ce-0~debian-jessie | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+ docker-ce | 17.03.0~ce-0~debian-jessie | https://download.docker.com/linux/debian/ jessie/stable amd64 Packages
+
+apt-get install docker-ce=<VERSION>
+
+*********************************************************************************************
+
+create centralti
+start centralti centralti
+
+
+
+docker network connect --ip 10.33.128.145 konnektor_lan beebf75cd36c
+docker-compose -f docker-compose-FHI-tomf-my.yml up  router.nat
+
+********
+docker image pull portainer/portainer
+docker container run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+
+*********************************************************************************************
+
+46.189.76.146
+
+46.189.76.151
+
+*********************************************************************************************
+
+Ist LOG_LEVEL_SYSLOG = Info
+
+echo "Geprueft wird: Ist LOG_LEVEL_SYSLOG = Info"
+expected_loglevel='info'
+konnektor_nk_ini=$(sshpass -p123456 ssh -p2222 root@10.10.8.15 "less /opt/secure/current/konn/conf/konnektor.nk.ini | grep DEVLOG_LEVEL_GLOBAL")
+konnektor_ak_ini=$(sshpass -p123456 ssh -p2222 root@10.10.8.15 "less /opt/secure/current/konn/conf/konnektor.ak.ini | grep DEVLOG_LEVEL_GLOBAL")
+
+if [[ $konnektor_nk_ini = *$expected_loglevel* ]]; then
+  echo "PASSED"
+fi
+
+if [[ $konnektor_ak_ini = *$expected_loglevel* ]]; then
+  echo "PASSED"
+fi
+
+*********************************************************************************************
+
+	
+	/**
+	 * This method replaces the denoted Konnektor database (DB) file within 
+	 * /opt/secure/current/konn/data at the konnektor site.
+	 * After replacement, the konnektor will be rebooted.
+	 * 
+	 * For TC specific purposes, respective DB files are stored in SVN repository
+	 * .../TestFallSteuerung/Testdaten/Konn_DB: e.g.
+	 * 
+	 * - protocol_security.db_emptySecurityEvents      DB with emptied Security Event logs
+	 * - state_master.db_checkForUpdates_5             DB with modified time'check update'periodic job
+	 * - ...
+	 * 
+	 * @param String db_name         the DB name that shall be replaced
+	 * @return boolean               true in case successful replacement and restart
+	 *                               false in case failed operation
+	 */
+	public boolean exchangeKonnektorDB(String db_name) {
+		
+		boolean retStatus = false;
+		
+		String pathFileName = "./TestDaten/Konn_DB/" + db_name;
+		File file = new File(pathFileName);
+		if (file.exists() && file.canRead()) {
+			String remPath = "/opt/secure/current/konn/data/" + db_name.substring(0, db_name.indexOf(".")) + ".db";
+			String localPath = pathFileName;
+			VmUtils.copyFileToVM(GlobalDataNeo.getSingleton().getProperty("network.konnet.konnektor.ip"),
+					             GlobalDataNeo.getSingleton().getProperty("user.konnektor.root.password"),
+                                 "root", remPath, localPath);		           
+			retStatus = restartAndWait();	
+		}
+		return retStatus;
+	}
+
+*********************************************************************************************
+
+    autoheal:
+        restart: always
+        image: willfarrell/autoheal
+        environment:
+          - AUTOHEAL_CONTAINER_LABEL=all
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+        networks:
+            management:
+                ipv4_address: 10.60.5.93
+
+*********************************************************************************************
+
+try {
+			Subscribe s = new Subscribe(SoapContext.M1_CLNTA_WP1, CetpWorkplace.WP1, "CARD");
+			SubscribeResponse sr = s.send();
+			if (sr.isOK()) {
+				System.out.println("Subscribe erfolgreich");
+			} else {
+				System.err.println("Subscribe fehlgeschlagen.");
+				Utils.INSTANCE.abortTestcase();
+			}
+			passed = true;
+		} catch (Exception e) {
+			LogUtils.logException(e, true);
+		}
+
+*********************************************************************************************
+
+
+
+
+
+		StringBuilder cmdOutput = new StringBuilder();
+		int erfolg = Utils.INSTANCE.execCmd("sshpass -p123456 ssh -p2222 root@10.10.8.15 \"date +%s\"", cmdOutput);
+		
+		try {
+			time = Long.parseLong(cmdOutput.toString());
+			ret = true;
+
+		} catch (Exception e) {
+			ret = false;
+		}
+		
+		
+		if (ret) {
+			// Convert current konnektor time to date and prints it.
+			Date currentKonnektorDate = new Date(time * 1000);
+			System.out.println("Das aktuelle Systemdatum des Konnektors lautet: " + currentKonnektorDate.toString());
+
+			Long SDT1 = Long.parseLong(utils.loadDataFromPreviousStep("SDT1"));
+
+			System.out.println("Setze Systemdatum des Konnektors über die Managementschnittstelle auf SDT1:");
+			System.out.println("SDT1 = " + (new Date(SDT1 * 1000)).toString());
+
+			ret = kmf.setKonnektorTime(SDT1);
+
+		}
+
+*********************************************
+
+
+			long i1 = Long.parseLong(SDT1);
+			
+			StringBuilder cmdOutput = new StringBuilder();
+			int erfolg = Utils.INSTANCE.execCmd("sshpass -p123456 ssh -p2222 root@10.10.8.15 \"date -s @" + i1 + "\"", cmdOutput);
+			
+			cmdOutput = new StringBuilder();
+			Utils.INSTANCE.execCmd("sshpass -p123456 ssh -p2222 root@10.10.8.15 \"date -s @" + i1 + "\"", cmdOutput);
+			
+			System.out.println("erfolg: " + erfolg);
+			System.out.println("cmdOutput: " + cmdOutput);
+
+			if(erfolg==0) {
+				passed=true;
+			}
+
+
+*********************************************************************************************
+
+getNTPSetting() ersetzt durch getNTPParameters()
+
+*********************************************************************************************
+
+	@Test
+	public void test() throws Exception {
+
+//		String pfx = "../tmp/Clientsystem_ivorisdent_AuthCredentials.pfx";
+		
+		String pfx = "TestDaten/Certificates/TIP1_A_4517_01/Clientsystem_ivorisdent_AuthCredentials.pfx";
+		
+//		String pfx = Paths.get("TestDaten/Certificates/TIP1_A_4517_01/Clientsystem_ivorisdent_AuthCredentials.pfx")
+//				.toAbsolutePath().toString();
+
+		KonnektorManagementFunctions.getInstance().importClientsystemCertificate(
+				SoapGateway.CLIENTSYSTEM.CLIENTSYSTEM_1.getName(), "Clientsystem_ivorisdent_AuthCredentials.der");
+
+		CetpServer cs = new CetpServer();
+		// String pfx = Paths.get("../tmp/Clientsystem_ivorisdent_AuthCredentials.pfx")
+		// .toAbsolutePath().toString();
+
+		System.out.println("3. pfx = " + pfx);
+
+		cs.setAlternativeKeystorePassword("", pfx);
+		// String pfx = Paths.get("TestDaten/Certificates/TIP1_A_4517_02/Clientsystem_ivorisdent_AuthCredentials.pfx")
+		// .toAbsolutePath().toString();
+		// cs.setAlternativeKeystorePassword("", pfx);
+
+		try {
+
+			cs.open(CetpWorkplace.WP1, true);
+
+			System.out.println("Stecke [eGK A] in [KT A] ...");
+
+			new Thread(() -> {
+				Utils.INSTANCE.sleepCurrentThread(2 * 1000);
+				CardTerminalSimulation cardTerminal = CardTerminalSimulation.get(KT.KT_A);
+				cardTerminal.insertCard(CARD.EGK_A, CARD.EGK_A.getSlot());
+
+			}).start();
+
+			
+			
+			List<CetpEvent> wp1Events = cs.waitForEvents(CetpWorkplace.WP1, 60);
+			
+			if(wp1Events.size() > 0){
+			for(CetpEvent event : wp1Events){
+				System.out.println("=================> Empfangenes Event: " + event.toString());
+			}
+			}
+			
+			assertFalse("WP1 hat keine Events erhalten.", wp1Events.isEmpty());
+			// assertTrue("WP1 hat das Event \"CARD/INSERTED\" nicht empfangen!",
+			// wp1Events.get(0).equals("CARD/INSERTED"));
+
+			String sid1 = Utils.getInstance().loadDataFromPreviousStep(Step2.SID1);
+			String expectedTopic = "CARD/INSERTED";
+			String expectedType = "Operation";
+			String expectedSeverity = "Info";
+
+			for (CetpEvent event : wp1Events) {
+
+				if (event.getTopic().equals(expectedTopic)) {
+
+					assertTrue("Unerwartete Subscription ID ", event.getSubscriptionID().equals(sid1));
+
+					assertTrue("Unerwarteter Type", event.getType().equals(expectedType));
+					assertTrue("Unerwartete Severity", event.getSeverity().equals(expectedSeverity));
+
+					Map<String, String> params = event.getParameters();
+					assertTrue("Event parameter auf WP1 entsprechen nicht [EGK A]!",
+							Utils.INSTANCE.isCardMatch(CARD.EGK_A, params));
+
+					assertTrue("Empfangenes Event CARD/INSERTED ist nicht schemakonform!",
+							Utils.INSTANCE.isSchemaConform(event.toString()));
+
+					passed = true;
+
+					System.out
+							.println("Das Event \"CARD/INSERTED\" wurde erfolgreich empfangen und ist schemakonform.");
+					break;
+				}
+			}
+
+		} catch (Exception | AssertionError e) {
+			e.printStackTrace();
+			LogUtils.logException(e);
+		} finally {
+			cs.close();
+		}
+
+	}
+
+
+
+********************************************************************************************
+
+			if(!passed) {
+				LogUtils.logKonnektorBug("ORSKONCC-15055");
+			}
+
+********************************************************************************************
+
+find . -name 'TIP1_A_4510_03.sh' -exec bash -n {} \;
+
+********************************************************************************************
+
+Nachbedingung
+------------------------------------------------------------------
+Setze über die Managementschnittstelle ANLW_INTERNET_MODUS = SIS.
+
+JUnit version 4.12
+.ANLW_INTERNET_MODUS SIS wird gesetzt...
+Warte auf: LAN/WAN Einstellungen setzen ()
+Warte auf Abschluss aller Prozesse .............................................................++++++++++++++++++
+Vorgang dauert über 5 Minuten. TIMEOUT!
+++++++++++++++++++
+
+********************************************************************************************
+http://192.168.50.237/tsi_konn_testsuite/TestSuite-Konnektor-T-Systems
+
+
+46.189.76.151
+
+http://192.168.50.151/tsi_konn_testsuite/TestSuite-Konnektor-T-Systems
+
+auth.konnektor.lan/svn/
+
+http://auth.konnektor.lan/svn/tsi_konn_testsuite/TestSuite-Konnektor-T-Systems
+
+http://192.168.50.151/auth.konnektor.lan/svn/tsi_konn_testsuite/TestSuite-Konnektor-T-Systems
+
+http://192.168.50.151/svn/tsi_konn_testsuite/TestSuite-Konnektor-T-Systems
+
+********************************************************************************************
+
+systemd-resolve --status
+
+********************************************************************************************
+
+mvn clean integration-test -Dconfig.env=local
+
+********************************************************************************************
+/root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung
+********************************************************************************************
+http://localhost:15142/
+********************************************************************************************
+fgjEFTH34TZH
+
+fgjEFTH34TZH
+********************************************************************************************
+ Fehlermeldung
+4180	Gematik	DNS: Es ist ein Fehler bei der Namensauflösung aufgetreten. Kontext: Die FQDN _regserver._tcp.test konnte nicht aufgelöst werden.
+4180	Gematik	DNS: Es ist ein Fehler bei der Namensauflösung aufgetreten. Kontext: init unbound context ← Vertrauensanker DNS-Schlüssel-Datei nicht vorhanden bzw. nicht lesbar. ********************************************************************************************
+sudoedit /etc/services
+********************************************************************************************
+awk '{print $0 "*****"> "file" NR}' RS='***\\|'  1
+
+awk '{print $0 "*****"> "file" NR}' RS='***\\**'  1
+
+********************************************************************************************
+********************************************************************************************
+********************************************************************************************
+********************************************************************************************
+********************************************************************************************
+********************************************************************************************
+********************************************************************************************
+********************************************************************************************
+********************************************************************************************
+********************************************************************************************
+
+zip -e archive.zip file1 file2
+
+********************************************************************************************
+
+**file load**
+
+tcpdump -r Protokollierung/$EXECUTION_MODUS/TIP1_A_4359_01_konnWanInterface.pcap > Protokollierung/$EXECUTION_MODUS/TIP1_A_4359_01_konnWanInterface.txt
+
+
+cp Protokollierung/$EXECUTION_MODUS/TIP1_A_4359_01_konnWanInterface.txt ../tmp/TIP1_A_4359_01_konnWanInterface.txt
+
+
+/** Path to the TXT file with the traffic to SIS and VPN. */
+private final static String TIP1_A_4359_01_konnWanInterface_txt = "../tmp/TIP1_A_4359_01_konnWanInterface.txt";
+
+String TIP1_A_4359_01_konnWanInterface_txt_Str =  new Utils().readWholeFile(TIP1_A_4359_01_konnWanInterface_txt);
+********************************************************************************************
+
+tcpdump -A -s 0 'tcp port 8080 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+********************************************************************************************
+
+
+cd /etc/resolvconf/resolv.conf.d
+sudo cp -p head head.orig  #backup copy, always do this
+sudo nano head
+
+The top of the file is a scary warning. The file /etc/resolv.conf is autogenerated from the contents of this file; the warning is there so it will get put in /etc/resolv.conf when /etc/resolv.conf is generated. To the end of the file, add
+
+nameserver <ip_of_nameserver>
+********************************************************************************************
+lsattr /etc/resolv.conf
+chattr -a /etc/resolv.conf
+********************************************************************************************
+root@CampusX :-) > chattr -i /etc/resolv.conf
+root@CampusX :-) > dpkg --configure resolvconf
+Setting up resolvconf (1.76.1) ...
+Processing triggers for resolvconf (1.76.1) ...
+root@CampusX :-) > 
+********************************************************************************************
+
+Netzwerk-Zugriff vom Docker-Host auf konn-lan ermoeglichen:
+    ip link add mac0 link eth0 type macvlan mode bridge
+    ip link set dev mac0 up
+    ip addr add 192.168.2.100/24 dev mac0  |  dhclient -v -i mac0
+
+Netzwerk-Zugriff vom Docker-Host auf konn-lan entfernen:
+    ip addr del 192.168.2.100/24 dev mac0
+    ip link set dev mac0 down
+    ip link del mac0 link eth0 type macvlan mode bridge
+
+********************************************************************************************
+********************************************************************************************
+getNTPSetting() ersetzt durch getNTPParameters()
+
+getNTPTimeZone
+
+sed -n '1p;$p' 
+********************************************************************************************
+
+VSDMMockupService.getVSDMLog()  liefert: return getLocalVSDMTmpDir() + File.separator + VSDMConfigGenerator.LOG_FILE_NAME;
+
+
+********************************************************************************************
+Gero's TF
+TIP1_A_4602_04  TIP1_A_4602_06  TIP1_A_4602_09  TIP1_A_4602_10  TIP1_A_4602_11  TIP1_A_4602_12
+
+
+
+
+*******************
+date +%s
+
+sshpass -p123456 ssh -p2222 root@10.10.8.15 \"date +%s\""
+
+sshpass -p123456 ssh -p2222 root@10.10.8.15 \"date -s @" + i1 + "\"
+
+1530783867000
+1530783867
+
+sshpass -p123456 ssh -p2222 root@10.10.8.15 "date -s @1530790546"
+sshpass -p123456 ssh -p2222 root@10.10.8.15 "date -s @1533272063"
+
+
+info="date +%s" ; sshpass -p123456 ssh -p2222 root@10.10.8.15 "date -s @$info"
+info=$(date +%s) ; echo $info ; sshpass -p123456 ssh -p2222 root@10.10.8.15 "date -s @$info" ; 
+
+delta:
+num1=$(sshpass -p123456 ssh -p2222 root@10.10.8.15 "date +%s") ; num2=$(date +%s) ; delta=$(($num1 - $num2)) ; echo $delta
+*******************
+
+url = http://p.weiss@gitlab-tm.konnektor.lan/s.ulrich/ftp1-Docker-Migration.git
+url = git@gitlab-tm.konnektor.lan:s.ulrich/ftp1-Docker-Migration.git
+
+******************************
+git clone git@gitlab-tm.konnektor.lan:KonnTest/test-integration.git
+**************************************************************************
+
+tsl
+
+XAdESSigner.jar -c=configuration.txt
+
+**************************************************************************
+/etc/dhcp/dhclient.conf
+
+supersede domain-name "konnektor.lan";
+supersede domain-search "konnektor.lan";
+supersede domain-name-servers 172.31.0.55;
+
+
+***************************************************************************
+
+Es existiert keine Anforderung in den Spezifikationen, die ein Speichern (Persistieren) der Betriebszustände über den Bootvorgang hinweg fordert. Viellmehr kann der Konnektor sein gesamtes Gedächnis verlieren (aus Anwendersicht auch sinnvoll). Nur die Konfigurationswerte sollen laut Spezifikation persistent gehalten werden (TIP1-A_4813). Es ist gefordert, dass alle Betriebszustände beim Bootup neu evaluiert werden (eben aus dem zuvor genannten Grunde), was der Konnektor auch macht. Da aber die Zustandswerte vor dem Bootup nicht vorhanden sind, kann auch kein Protokoll-Eintrag mit Value=false erfolgen. Es gibt auch keine Stelle die dieses fordert.
+
+Das im Testfall erwartete Verhalten ist nicht durch die Spezifikation gedeckt. Der Konnektor-Reboot kann nicht herangezogen werden, um die Wartefrist von 24h zu verkürzen.
+
+*******************************************
+
+An extern:
+
+Aus der Beschreibung ist nicht ganz klar, um welche Abweichung in Schritt 8 es sich handelt. Falls es nur (mehr) darum geht, dass im Schritt 8 nicht das Ereignis OPERATIONAL_STATE/EC_TSL_Expiring (mit Value=false) kommt:
+
+Es existiert keine Anforderung in den Spezifikationen, die ein Speichern (Persistieren) der Betriebszustände über den Bootvorgang hinweg fordert. Vielmehr kann der Konnektor sein gesamtes Gedächtnis verlieren (aus Anwendersicht auch sinnvoll). Nur die Konfigurationswerte sollen laut Spezifikation persistent gehalten werden (TIP1-A_4813). Es ist gefordert, dass alle Betriebszustände beim Bootup neu evaluiert werden (eben aus dem zuvor genannten Grunde), was der Konnektor auch macht. Da aber die Zustandswerte vor dem Bootup nicht vorhanden sind, kann auch kein Protokoll-Eintrag mit Value=false erfolgen. Es gibt auch keine Stelle die dieses fordert.
+
+Das im Testfall erwartete Verhalten, ist nicht durch die Spezifikation gedeckt. Der Konnektor-Reboot kann nicht herangezogen werden, um die Wartefrist von 24h zu verkürzen.
+
+****************************************************************************
+ export export CT_SIM=FHI ;  export KT_A_MANAGEMENT_IP="10.60.5.200" ; export KT_B_MANAGEMENT_IP="10.60.5.201" ; export KT_C_MANAGEMENT_IP="10.60.5.202" ; java  -cp $java_classen:. TestClass
+
+**************************************************************
+
+  Szenariogrundriss: Rufe die Webseite mit verschiedenen Logindaten und unterschiedlichen URLs auf                            
+# src/test/resources/feature/web/TIP1_A_4808_1.feature:12
+    Angenommen Ich starte einen Browser
+    Und ich rufe die URL <URL> auf
+    Dann erfolgt ein Wechsel zur Seite <Site>
+    Wenn ich den Benutzernamen <Benutzername> und das Passwort <Passwort> eingebe
+    Und ich btnLogin klicke
+    Dann erfolgt ein Wechsel zur Seite <SiteNachLogin>
+    Und es erscheint ein Fehler Popup mit folgendem Code <PopUpErrorCode> und Text <PopUpErrorMessage> Kontext:<Benutzername>
+
+
+*******************************************************************************************************************************
+TC Spec
+--------------
+TIP1-A_4569-10
+--------------
+
+In Vorbedingung wird PIN-Status von [eGK B] auf "gesperrt" gesetzt.
+
+Anschließend wird die Pin erfolgreich entsperrt. Auf ein jetzt folgendes "Liefere PIN-Status" wird die Antwort "gesperrt" gefordert (Step 6). Diese Forderung ist nicht richtig, weill vorher die Pin erfolgreich entsperrt wurde.
+************************************************************************************************************************************
+
+root@CampusX :-) > systemctl daemon-reload
+root@CampusX :-) > systemctl enable almhpqc_connector.service
+Created symlink /etc/systemd/system/multi-user.target.wants/almhpqc_connector.service → /etc/systemd/system/almhpqc_connector.service.
+************************************************************************************************************************************
+EC_TSL_Expiring
+mein Konnektor hat den Betriebszustand EC_TSL_Expiring angenommen, da der Ablauf der TSL innerhalb von 7 Tagen ansteht.
+
+************************************************************************************************************************************
+
+find . -type f -newermt "2018-09-05 11:10:22"
+
+find . -type f -newermt "2018-09-10 11:20:22"
+
+*************************************************************************************************************************************
+startTestCaseDateTime
+*************************************************************************************************************************************
+
+debian eno1 rename to eth0
+
+sudo nano /etc/default/grub
+Look for “GRUB_CMDLINE_LINUX” and add the following”net.ifnames=0 biosdevname=0“.
+From:
+GRUB_CMDLINE_LINUX=""
+To:
+GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
+Generate a new grub file using the “grub-mkconfig” command.
+************************************************************************************************************
+https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
+************************************************************************************************************
+
+sshfs -odebug,sshfs_debug,loglevel=debug -p 2222 -o allow_other  root@10.10.8.15:/ /mnt/konnektor/
+
+************************************************************************************************************
+grep -rl "" * | xargs sed -i s@"Telekom-Konnektor EBK (TKONEBK) in der Produktversion 1.5.1 - Build\: 26 - Revision\: db7e68fe32:2.2.4"@"Telekom-Konnektor EBK (TKONEBK) in der Produktversion 1.5.1 - Build\: 34 - Revision\: 7d3a73f94e:2.2.4"@g
+
+************************************************************************************************************
+
+systemctl start teamviewerd.service
+
+************************************************************************************************************
+
+/etc/resolvconf/update.d/libc: Warning: /etc/resolv.conf is not a symbolic link to /etc/resolvconf/run/resolv.conf
+
+sudo rm /etc/resolv.conf
+sudo ln -s ../run/resolvconf/resolv.conf /etc/resolv.conf
+sudo resolvconf -u
+************************************************************************************************************
+sudo ln -s workspace.docker_branch_v1/ workspace.docker_branch
+sudo ln -s workspace.docker_branch_v2/ workspace.docker_branch
+
+************************************************************************************************************
+ssh-keygen -t rsa
+ssh-copy-id root@10.10.8.15
+
+sshpass -p123456 ssh-copy-id -p2222 root@10.10.8.15
+************************************************************************************************************
+sshpass -p 123456 rsync -r /root/workspace.docker_branch/TestSuite-Konnektor-T-Systems/TestFallSteuerung/Protokollierung/ root@10.60.5.90:/tmp/
+
+sshpass -p 123456 rsync -r $SRC $DEST
+
+************************************************************************************************************
+sshpass -p123456 ssh -p 2222 root@10.10.8.15 "ps|grep InitService" 
+sshpass -p123456 ssh -p 2222 root@10.10.8.15 kill -9 931
+*******
+watch -n1 "timeout 1 sshpass -p123456 ssh -o ConnectTimeout=1 root@10.10.8.15 -p2222 ps|grep InitService"
+ping 10.10.8.15 -c1 && sshpass -p123456 ssh -p 2222 root@10.10.8.15 "kill -9 9xx"
+************************************************************************************************************
+Folgende Befehle sollten auf der Ubuntu-VM ausgeführt werden, damit der Konnektor über die 
+Management-IP lokal erreichbar ist:
+  sudo ifconfig eth0:0 10.10.8.xxx/24 up 
+wobei für xxx eine Ziffer zwischen 2 und 253 gewählt werden kann.
+  sudo arp -s 10.10.8.15 xx:xx:xx:xx:xx:xx
+wobei für xx:xx:xx:xx:xx:xx die MAC-Adresse der Konnektor-LAN-Schnittstelle eingesetzt werden muss.
+*********************
+arp -s 10.10.8.15 -i eth0  00:30:d6:1d:4c:bf
+
+alte konn
+arp -s 10.10.8.15 -i eth2  00:30:d6:16:62:9b
+
+
+
+ip -s -s neigh flush all
+************************************************************************************************************
+ikec -u username -p password -r configuration -a
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+
+root@CampusX:/mnt# dd if=/var/lib/docker/containers/33fe074d6a2834a9e73f6ee1121d5a548b78ae045fb0d4bc87507af04b8e0e35/33fe074d6a2834a9e73f6ee1121d5a548b78ae045fb0d4bc87507af04b8e0e35-json.log of=/mnt/cts.log bs=1M count=20
+20+0 Datensätze ein
+20+0 Datensätze aus
+20971520 Bytes (21 MB, 20 MiB) kopiert, 0,0761443 s, 275 MB/s
+root@CampusX:/mnt# ls -la
+insgesamt 20508
+drwxr-xr-x  4 root root     4096 Mai 28 09:13 .
+drwxr-xr-x 23 root root     4096 Apr  9 12:43 ..
+-rw-r--r--  1 root root 20971520 Mai 28 09:13 cts.log
+drwx------  2 root root    16384 Feb 22 12:39 lost+found
+drwxrwxrwx  2 test test     4096 Feb 22 17:46 Protokollierung
+root@CampusX:/mnt# less cts.log 
+
+
+************************************************************************************************************
+
+sudo ip route change default via 10.33.128.1 dev eth0
+
+************************************************************************************************************
+Fehlverhalten ist in 1.5.3 - Build: 2201-DEV bisher nicht aufgetreten.
+Wir lassen den Test automatisiert bis morgenfrüh weiterlaufen.
+Sollte das Fehlverhalten erneut auftreten, kommentieren wir das Ticket erneut.
+************************************************************************************************************
+truncate -s 10g big_file		Sparse File
+fallocate -l 10G big_file		+reale Plattenplatzbelegung
+************************************************************************************************************
+String lastProtocolEntries = KonnektorManagementFunctions.getInstance().getSecurityProtocolEntries();
+Utils.INSTANCE.writeWholeFile("TIP1_A_xxxx_xx_StepX_KonnektorSystemProtocol.txt", lastProtocolEntries);
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+nw2c1Host	10.33.120.222	C4:71:54:0C:EC:97	10h 57m 20s	nebenan
+************************************************************************************************************
+nw2c2Host	10.33.120.101	D4:6E:0E:57:3C:83	unlimited	drüben
+

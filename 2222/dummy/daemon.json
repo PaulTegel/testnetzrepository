@@ -1,0 +1,4 @@
+{
+    "bip": "10.250.0.1/16",
+    "insecure-registries" : ["docker-registry:5000"]
+}

@@ -1,0 +1,17 @@
+$  sudo systemctl enable vncserver@5.service
+
+
+
+Start the VNC service
+sudo systemctl start vncserver@5.service
+
+Verify that the service is successfully started
+sudo systemctl status vncserver@5.service
+
+Connecting to VNC server
+ssh -L 5905:127.0.0.1:5905 -N -f -l test 10.33.120.101
+
+Connecting using Vncviewer
+to connect to the VNC Server at localhost:5905
+
+

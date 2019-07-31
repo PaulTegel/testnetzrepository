@@ -1,0 +1,32 @@
+ip a s eth0
+
+inet 10.33.128.222/24 scope global eth0
+
+vorhanden: 
+
+./HelperScripts/unblock_DHCP_for_WP_on_LAN_DHCP-Server.sh
+
+
+nicht vorhanden: 
+
+    echo 123456 | sudo -S ip a a 10.33.128.222/24 dev eth0
+
+    ./HelperScripts/unblock_DHCP_for_WP_on_LAN_DHCP-Server.sh
+
+    sudo ip a d 10.33.128.222/24 dev eth0
+
+    echo 123456 | sudo -S dhclient -i eth0
+
+*****
+
+
+
+HelperScripts/unblock_DHCP_for_Konnektor_on_LAN_DHCP-Server.sh
+
+
+
+
+
+****************************
+
+TIP1_A_4761_02 auf CampusX nicht starten 

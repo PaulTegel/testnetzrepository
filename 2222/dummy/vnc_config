@@ -1,0 +1,104 @@
+Installing Desktop Environment
+
+sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+
+Installing VNC Server
+sudo apt install tigervnc-standalone-server tigervnc-common
+
+start vncserver, for create the initial configuration
+vncserver
+vncserver -kill :1
+
+Configuring VNC Server
+nano ~/.vnc/xstartup
+#!/bin/sh
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+exec startxfce4 
+
+chmod u+x ~/.vnc/xstartup
+
+
+Creating a Systemd unit file
+***change the username in line 7 to match your username
+sudo nano /etc/systemd/system/vncserver@.service
+[Unit]
+Description=Remote desktop service (VNC)
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=test
+PAMName=login
+PIDFile=/home/%u/.vnc/%H%i.pid
+ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill :%i > /dev/null 2>&1 || :'
+ExecStart=/usr/bin/vncserver :%i -geometry 1440x900 -alwaysshared -fg
+ExecStop=/usr/bin/vncserver -kill :%i
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo systemctl daemon-reload
+sudo systemctl enable vncserver@1.service
+1 - port 5901
+
+Start the VNC service
+sudo systemctl start vncserver@1.service
+
+Verify that the service is successfully started
+sudo systemctl status vncserver@1.service
+
+Connecting to VNC server
+ssh -L 5901:127.0.0.1:5901 -N -f -l username server_ip_address
+
+Connecting using Vncviewer
+to connect to the VNC Server at localhost:5901
+
+
+
+******************
+
+localhost:5902
+
+ssh -L 5902:127.0.0.1:5902 -N -f -l gematik 10.33.120.187
+
+*************************************************************************
+
+Auführungsrechner Network 2
+
+wan ip: 10.33.120.195
+
+ssh -L 5903:127.0.0.1:5903 -N -f -l test 10.33.120.195
+
+sudo systemctl restart vncserver@3.service
+
+
+test@netzwerk2:~$  sudo netstat -tulpen
+[sudo] password for test: 
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode      PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      0          18582      1016/sshd           
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      0          43399400   29866/cupsd         
+tcp6       0      0 :::22                   :::*                    LISTEN      0          18584      1016/sshd           
+udp        0      0 0.0.0.0:4500            0.0.0.0:*                           0          543        511/iked            
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           0          10932      880/dhclient        
+udp        0      0 0.0.0.0:69              0.0.0.0:*                           0          10981      1035/in.tftpd       
+udp        0      0 0.0.0.0:500             0.0.0.0:*                           0          542        511/iked            
+udp        0      0 0.0.0.0:631             0.0.0.0:*                           0          43400362   29867/cups-browsed  
+udp        0      0 0.0.0.0:1900            0.0.0.0:*                           0          19779      1006/minissdpd      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

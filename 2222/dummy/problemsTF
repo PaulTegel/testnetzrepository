@@ -1,0 +1,18 @@
+
+ TIP1_A_4772_07		Nach dem TF werden keine Tunnels aufgebaut
+
+
+TIP1_A_4765_07 remote geht nicht, da dhclient eth0 -r -v
+
+TIP1_A_4767_13   vorb. ifconfig eth0 10.33.128.100 netmask 255.255.255.0 up
+
+
+
+
+
+
+
+
+
+
+

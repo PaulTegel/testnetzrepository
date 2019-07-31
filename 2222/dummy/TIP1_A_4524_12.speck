@@ -1,0 +1,44 @@
+TIP1_A_4524_12
+
+Der Konnektor MUSS den technischen Use Case TUC_KON_000 ?Prüfe Zugriffsberechtigung? umsetzen.
+
+Siehe: Tabelle 12: TAB_KON_511 - TUC_KON_000 ?Prüfe Zugriffsberechtigung?
+
+Anmerkung zum Testumfang:
+
+    Fehler 4018 kann nicht motiviert werden, da keine Operation einen exklusiven Zugriff auf den HBA verlangt.
+    Fehler 4204 kann nicht motiviert werden, da noch Klärungsbedarf zur Authentisierung von Clientsystemen herrscht.
+
+Dieser Testfall prüft:
+1. Aufruf einer Operation mit einem Context, bei dem der Arbeitsplatz nicht dem Mandanten zugeordnet ist, führt zu einem Zugriffsberechtigungsfehler 4011
+
+Anmerkung:
+GetCards ohne optionale Parameter ruft TUC_KON_000 mit Parametern auf, die gemäß Regel R3 gegen das Informationsmodell zu prüfen sind. Der Aufruf mit einem Context, der einander nicht zugeordnete MandantID und WorkplaceID enthält, verletzt das Constraint
+· inv: Arbeitsplatz(workplaceId).mandant.includes(Mandant(mandantId).
+
+
+
+R3 Innerhalb des Mandanten m darf das Clientsystem cs den Arbeitsplatz ap nutzen.
+
+
+Basiskonfiguration [LDD/WDE 2/2M]
+
+
+Step 1
+Rufe von [WP1] die Operation GetCards (EventService) ohne optionale Parameter mit Context = (Mandant2, Clientsystem A, WP1)
+
+Expected:
+[WP1] empfängt einen gematik-SOAP-Fault 4011 mit:
+- ErrorType = Security
+- Severity = Error
+- Fehlertext = "Arbeitsplatz ist dem Mandanten nicht zugeordnet."
+
+
+
+Actual:
+Clientsystem ist dem Mandanten nicht zugeordnet
+
+
+
+
+

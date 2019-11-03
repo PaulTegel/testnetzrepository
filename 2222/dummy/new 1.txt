@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+grep -rl "" * | xargs sed -i s@"str1"@"str2"@g
